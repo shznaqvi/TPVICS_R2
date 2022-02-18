@@ -1,0 +1,209 @@
+<resources>
+    <string name="app_name">TPVICS_R2</string>
+    <string name="btnDownload" translatable="false">Download Data</string>
+    <string name="btnUpload">Upload Data</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Login</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="splashText"> </string>
+    <string name="check_pending_forms">CHECK PENDING FORMS</string>
+    <string name="start_interview" translatable="false">START INTERVIEW</string>
+    <string name="open_blood_form" translatable="false">UPDATE BLOOD INFORMANTION</string>
+    <string name="open_stool_form" translatable="false">UPDATE STOOL INFORMANTION</string>
+    <string name="records_summary">Records Summary</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="only_for_testing">ONLY FOR TESTING</string>
+    <string name="database">Database</string>
+    <string name="district" translatable="false">DISTRICT</string>
+    <string name="uc" translatable="false">UC</string>
+    <string name="btnSave" translatable="false">Save</string>
+    <string name="btnEnd" translatable="false">Cancel</string>
+    <string name="signin" translatable="false">SIGN IN</string>
+    <string name="username" translatable="false">Username</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="newPassword" translatable="false">New Password</string>
+    <string name="confirmPassword" translatable="false">Confirm Password</string>
+    <string name="country">Language (Click to change)</string>
+    <string name="pakistan" translatable="false">Pakistan</string>
+    <string name="tajikistan" translatable="false">Tajikistan</string>
+    <string name="btnLogin" translatable="false">Login</string>
+    <string name="btnReset" translatable="false">Reset</string>
+    <string name="btnDownloadData" translatable="false">Download Data</string>
+    <string name="cs_MAexist" translatable="false">might be already exist</string>
+
+    <string name="netwrok" translatable="false">Network connection not available!</string>
+    <string name="invalidpass" translatable="false">Invalid Password</string>
+    <string name="unameRequired" translatable="false">Username is required.</string>
+    <string name="incorrcetPass" translatable="false">Incorrect Password</string>
+    <string name="downData" translatable="false">Download Data</string>
+    <string name="permission" translatable="false">Permissions Required</string>
+    <string name="warning" translatable="false">Warning</string>
+    <string name="newApp" translatable="false">New App downloaded!!</string>
+    <string name="appVer" translatable="false">App New Version</string>
+    <string name="btnSync">Download Data</string>
+    <string name="downloaded" translatable="false">Downloaded</string>
+    <string name="appDownload" translatable="false">appDownload</string>
+    <string name="newVer" translatable="false">New Version</string>
+    <string name="downloading" translatable="false">Downloading</string>
+    <string name="available" translatable="false">Available</string>
+    <string name="downError" translatable="false">Cant download.. Internet connectivity issue!</string>
+    <string name="backbtn" translatable="false">Press Back again to Exit</string>
+    <string name="noNetwork" translatable="false">No network connection available!</string>
+    <string name="appAvailable" translatable="false">APP is available!</string>
+    <string name="oldAppMsg" translatable="false">App Ver." + " is now available. Your are currently using older Ver."</string>
+    <string name="installNewApp" translatable="false">Install new version to use this app</string>
+    <string name="install" translatable="false">Install</string>
+    <string name="cancel" translatable="false">Cancel</string>
+    <string name="complete" translatable="false">complete</string>
+    <string name="updatingError" translatable="false">Error in updating db!!</string>
+    <string name="updateDbError1" translatable="false">"Sorry. You can't go further."</string>
+    <string name="updateDbError2" translatable="false">"Please contact IT Team (Failed to update DB)"</string>
+    <string name="bckbtn" translatable="false">You Cant go back</string>
+    <string name="processing" translatable="false">Processing</string>
+    <string name="confirmation" translatable="false">Confirmation!</string>
+    <string name="cntbtn" translatable="false">Are you sure, you want to continue - interview</string>
+    <string name="failedUpdateDb" translatable="false">SORRY! Failed to update DB</string>
+    <string name="invalidDate" translatable="false">Invalid date!</string>
+    <string name="ageCalc" translatable="false">"Both Month and Year don't be zero!!"</string>
+    <string name="action_database" translatable="false">Database Manager</string>
+    <string name="action_data_sync" translatable="false">Sync Data</string>
+    <string name="dkn"> Don’t Know </string>
+    <string name="none"> No one </string>
+    <string name="never"> Never</string>
+    <string name="na"> Applicable /Not Available</string>
+    <string name="nap"> Not Applicable </string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="nav">Not Available </string>
+    <string name="ref"> Refused </string>
+    <string name="other"> Other </string>
+    <string name="specify"> Please explain </string>
+    <string name="year"> Year </string>
+    <string name="month"> Month </string>
+    <string name="week"> Week </string>
+    <string name="day"> Day </string>
+    <string name="hour"> Hour </string>
+    <string name="minute"> Minute </string>
+    <string name="years"> Year(s) </string>
+    <string name="months"> Month(s) </string>
+    <string name="weeks"> Week(s) </string>
+    <string name="days"> Day(s) </string>
+    <string name="hours"> Hour(s) </string>
+    <string name="minutes"> Minute(s) </string>
+    <string name="kg"> Kilograms </string>
+    <string name="km"> Kilometers </string>
+    <string name="cm"> cm </string>
+    <string name="in"> Inch </string>
+    <string name="rupees"> Rupees </string>
+    <string name="num"> Number </string>
+    <string name="name"> Name </string>
+
+    <!--Error Messages-->
+    <string name="upd_db_form" translatable="false"> updateDB(Form):\t </string>
+    <string name="upd_db_error" translatable="false"> Updating Database… ERROR! </string>
+    <string name="db_excp_error" translatable="false"> Database Exception... ERROR! </string>
+    <string name="upd_db" translatable="false"> Updating Database...\t </string>
+    <string name="fail_db_upd" translatable="false"> Failed to Update Database! </string>
+    <string name="backPress" translatable="false"> Back Press Not Allowed </string>
+    <string name="invalid_response" translatable="false"> Invalid Response </string>
+    <string name="agecal" translatable="false">ageCal:\t</string>
+    <string name="network_conn_error" translatable="false"> Network connection not available ! </string>
+    <string name="no_mother_selected_child_list" translatable="false"> No Mother has been selected. Please select a mother before opening Child List </string>
+    <string name="onitemselected" translatable="false"> onItemSelected(Samples):\t </string>
+    <string name="upd_samples" translatable="false"> updateDB(Samples):\t </string>
+    <string name="upd_anthro" translatable="false"> updateDB(Anthro):\t </string>
+    <string name="folder_not_created" translatable="false"> Folder Not Created </string>
+    <string name="invalid_password" translatable="false"> Invalid Password </string>
+    <string name="username_required" translatable="false"> Username is required. </string>
+    <string name="incorrect_username_or_password" translatable="false">Incorrect Username or Password</string>
+    <string name="open_hh_form" translatable="false"> Open Household Form </string>
+    <string name="hh_not_found" translatable="false">Household not Found</string>
+    <string name="hh_exists_form" translatable="false"> JSONException(Form): \t </string>
+    <string name="child_info_missing" translatable="false">Please fill child sections before entering this information</string>
+    <string name="open_new_form" translatable="false">OPEN NEW FORM</string>
+    <string name="options" translatable="false">Options</string>
+
+
+    <string name="istatus"> Result of Household Questionnaire interview </string>
+    <string name="istatusi"> Discuss any result not completed with team leader </string>
+    <string name="istatus01"> Completed </string>
+    <string name="istatus02"> Dwelling locked (Not At Home) </string>
+    <string name="istatus03"> Pending/Partially complete </string>
+    <string name="istatus04"> Unable to answer </string>
+    <string name="istatus05"> Ineligible respondent </string>
+    <string name="istatus06"> Household not found </string>
+    <string name="istatus07"> Didn’t answer due to illness caused by Corona </string>
+    <string name="istatus96"> Other (Specify) </string>
+
+    <string name="title_activity_change_password">ChangePasswordActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="btnResetPassword">Reset Password</string>
+
+
+    <!--TODO: REMOVE THESE STRINGS FROM FINAL APP-->
+    <string name="atitle">Module A: Household Level </string>
+    <string name="as1">Section 1: Household Information</string>
+    <string name="as1q01"> Country </string>
+    <string name="as1q01p"> Pakistan </string>
+    <string name="as1q01a"> Afghanistan </string>
+    <string name="as1q01t"> Tajikistan </string>
+    <string name="as1q01k"> Kyrgyztan </string>
+    <string name="householdidentification_mainheading">Household Identification: </string>
+    <string name="sectiondhouseholdmemberinformation_mainheading">Section D: Household Member Information: </string>
+    <string name="householdinformation_mainheading">Household Information: </string>
+    <string name="reproductivehealth_mainheading">Reproductive Health: </string>
+    <string name="e2maternalmortalitystatus_mainheading">E2: Maternal Mortality Status: </string>
+    <string name="sectionfantenatalcare_mainheading">Section F: Antenatal Care: </string>
+    <string name="sectiongdeliverypreparednessandexperience_mainheading">Section G: Delivery Preparedness and Experience: </string>
+    <string name="sectionh1newbornhealth_mainheading">Section H1: Newborn Health: </string>
+    <string name="sectionh2postnatalcare_mainheading">Section H2: Postnatal Care: </string>
+    <string name="sectionkfamilyplanning_mainheading">Section K: Family Planning: </string>
+    <string name="sectionlwomenempowerment_mainheading">Section L: Women Empowerment: </string>
+    <string name="sectioni1diarrheainformation_mainheading">Section I1: Diarrhea Information: </string>
+    <string name="sectioni2acuterespiratoryinfectionari_mainheading">Section I2: Acute Respiratory Infection (ARI): </string>
+    <string name="sectionimimmunizationinformation_mainheading">Section IM: Immunization Information: </string>
+    <string name="splashText2">  </string>
+
+    <string name="a1title">Complete Address</string>
+    <string name="a104">Name of Province</string>
+    <string name="a105">Name of District</string>
+    <string name="a106">Name of Tehsil/Taluka</string>
+    <string name="a107">Name of Union Council</string>
+    <string name="a101">Cluster Number </string>
+    <string name="a102">Cluster Type</string>
+    <string name="a10201">LHW Covered</string>
+    <string name="a10202">LHW Uncovered</string>
+    <string name="a108">Location</string>
+    <string name="a10801">Urban</string>
+    <string name="a10802">Rural</string>
+    <string name="a113">Household Number</string>
+    <string name="a103">Randomization Serial Number</string>
+    <string name="a109">Village</string>
+    <string name="a110">Block/ Mohalla</string>
+    <string name="a111">Street </string>
+    <string name="a112"> House / Khandan Number in LHW Covered Area </string>
+    <string name="a11201"> Khandan number in LHW covered area </string>
+    <string name="a11297"> Not Applicable </string>
+    <string name='Q_a101'>a101</string>
+    <string name='Q_a102'>a102</string>
+    <string name='Q_a103'>a103</string>
+    <string name='Q_a104'>a104</string>
+    <string name='Q_a105'>a105</string>
+    <string name='Q_a106'>a106</string>
+    <string name='Q_a107'>a107</string>
+    <string name='Q_a108'>a108</string>
+    <string name='Q_a109'>a109</string>
+    <string name='Q_a110'>a110</string>
+    <string name='Q_a111'>a111</string>
+    <string name='Q_a112'>a112</string>
+
+</resources>

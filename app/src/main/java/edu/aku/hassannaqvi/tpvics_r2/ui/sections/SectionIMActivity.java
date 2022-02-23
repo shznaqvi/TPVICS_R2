@@ -88,17 +88,13 @@ public class SectionIMActivity extends AppCompatActivity {
         // saveDraft();
         if (updateDB()) {
             Intent i;
-
-           /* i = new Intent(this, ConsentActivity.class).putExtra("complete", true);
-
-
-            startActivity(i);*/
+           i = new Intent(this, SectionHHActivity.class).putExtra("complete", true);
+            startActivity(i);
             finish();
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }
     }
-
 
     public void btnEnd(View view) {
         finish();

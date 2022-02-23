@@ -16,6 +16,7 @@ public class TableContracts {
         public static final String COLUMN_SNO = "sno";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
+
         public static final String COLUMN_SHH = "sHH";
         public static final String COLUMN_SSS = "sSS";
         public static final String COLUMN_SCB = "sCB";
@@ -130,7 +131,6 @@ public class TableContracts {
         public static final String COLUMN_CLUSTER_CODE = "hh02";
         public static final String COLUMN_HEAD_HH = "hh08";
         public static final String COLUMN_HH_NO = "hhno";
-
     }
 
     public static abstract class VersionTable implements BaseColumns {

@@ -71,6 +71,108 @@ public class Form extends BaseObservable implements Observable {
     private String a112 = _EMPTY_;
     private String a11297 = _EMPTY_;
 
+    // FIELD VARIABLES
+    private String hh01 = _EMPTY_;
+    private String hh02 = _EMPTY_;
+    private String hh03 = _EMPTY_;
+    private String hh03a = _EMPTY_;
+    private String hh04 = _EMPTY_;
+    private String hh04a = _EMPTY_;
+    private String hh05 = _EMPTY_;
+    private String hh06 = _EMPTY_;
+    private String hh07 = _EMPTY_;
+    private String hh08 = _EMPTY_;
+    private String hh09 = _EMPTY_;
+    private String hh10 = _EMPTY_;
+    private String hh11 = _EMPTY_;
+    private String hh12 = _EMPTY_;
+    private String hh13 = _EMPTY_;
+    private String hh18 = _EMPTY_;
+    private String hh13a = _EMPTY_;
+    private String hh14 = _EMPTY_;
+    private String hh15 = _EMPTY_;
+    private String hh16a = _EMPTY_;
+    private String hh16b = _EMPTY_;
+    private String hh19 = _EMPTY_;
+    private String hh19a = _EMPTY_;
+    private String hh19b = _EMPTY_;
+    private String hh20 = _EMPTY_;
+    private String hh20a = _EMPTY_;
+    private String hh21 = _EMPTY_;
+    private String hh21xx = _EMPTY_;
+
+    private String ss01= _EMPTY_;
+    private String ss01xx= _EMPTY_;
+    private String ss02= _EMPTY_;
+    private String ss02xx= _EMPTY_;
+    private String ss03= _EMPTY_;
+    private String ss03xx= _EMPTY_;
+    private String ss04= _EMPTY_;
+    private String ss05= _EMPTY_;
+    private String ss05xx= _EMPTY_;
+    private String ss06= _EMPTY_;
+    private String ss06xx= _EMPTY_;
+    private String ss07= _EMPTY_;
+    private String ss07xx= _EMPTY_;
+    private String ss08= _EMPTY_;
+    private String ss09= _EMPTY_;
+    private String ss11= _EMPTY_;
+    private String ss12= _EMPTY_;
+    private String ss12hhx = _EMPTY_;
+    private String ss13 = _EMPTY_;
+    private String ss13xx= _EMPTY_;
+    private String ss14a= _EMPTY_;
+    private String ss14b= _EMPTY_;
+    private String ss14c= _EMPTY_;
+    private String ss14d= _EMPTY_;
+    private String ss14e= _EMPTY_;
+    private String ss14f= _EMPTY_;
+    private String ss14g= _EMPTY_;
+    private String ss14h= _EMPTY_;
+    private String ss14i= _EMPTY_;
+    private String ss14j= _EMPTY_;
+    private String ss14k= _EMPTY_;
+    private String ss14l= _EMPTY_;
+    private String ss14m= _EMPTY_;
+    private String ss14n= _EMPTY_;
+    private String ss14o= _EMPTY_;
+    private String ss14p= _EMPTY_;
+    private String ss14q= _EMPTY_;
+    private String ss14r= _EMPTY_;
+    private String ss14s= _EMPTY_;
+    private String ss15a= _EMPTY_;
+    private String ss15b= _EMPTY_;
+    private String ss15c= _EMPTY_;
+    private String ss15d= _EMPTY_;
+    private String ss15e= _EMPTY_;
+    private String ss15f= _EMPTY_;
+    private String ss15g= _EMPTY_;
+    private String ss15h= _EMPTY_;
+    private String ss15i= _EMPTY_;
+    private String ss17= _EMPTY_;
+    private String ss17xx= _EMPTY_;
+    private String ss18= _EMPTY_;
+    private String ss18xx= _EMPTY_;
+    private String ss19= _EMPTY_;
+    private String ss19xx= _EMPTY_;
+    private String ss20= _EMPTY_;
+    private String ss20xx= _EMPTY_;
+    private String ss21a= _EMPTY_;
+    private String ss22= _EMPTY_;
+    private String ss23= _EMPTY_;
+    private String ss23landx= _EMPTY_;
+    private String ss24= _EMPTY_;
+    private String ss25a= _EMPTY_;
+    private String ss25b= _EMPTY_;
+    private String ss25c= _EMPTY_;
+    private String ss25d= _EMPTY_;
+    private String ss25e= _EMPTY_;
+    private String ss25f= _EMPTY_;
+    private String ss25g= _EMPTY_;
+    private String ss26= _EMPTY_;
+    private String ss27= _EMPTY_;
+    private String ss28= _EMPTY_;
+
 
     public Form() {
 
@@ -249,6 +351,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
 
+
     @Bindable
     public String getA104() {
         return a104;
@@ -391,6 +494,1022 @@ public class Form extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.a11297);
     }
 
+    @Bindable
+    public String getHh01() {
+        return hh01;
+    }
+
+    public void setHh01(String hh01) {
+        this.hh01 = hh01;
+        notifyPropertyChanged(BR.hh01);
+    }
+
+    @Bindable
+    public String getHh02() {
+        return hh02;
+    }
+
+    public void setHh02(String hh02) {
+        this.hh02 = hh02;
+        notifyPropertyChanged(BR.hh02);
+    }
+
+    @Bindable
+    public String getHh03() {
+        return hh03;
+    }
+
+    public void setHh03(String hh03) {
+        this.hh03 = hh03;
+        notifyPropertyChanged(BR.hh03);
+    }
+
+    @Bindable
+    public String getHh03a() {
+        return hh03a;
+    }
+
+    public void setHh03a(String hh03a) {
+        this.hh03a = hh03a;
+        notifyPropertyChanged(BR.hh03a);
+    }
+
+    @Bindable
+    public String getHh04() {
+        return hh04;
+    }
+
+    public void setHh04(String hh04) {
+        this.hh04 = hh04;
+        notifyPropertyChanged(BR.hh04);
+    }
+
+    @Bindable
+    public String getHh04a() {
+        return hh04a;
+    }
+
+    public void setHh04a(String hh04a) {
+        this.hh04a = hh04a;
+        notifyPropertyChanged(BR.hh04a);
+    }
+
+    @Bindable
+    public String getHh05() {
+        return hh05;
+    }
+
+    public void setHh05(String hh05) {
+        this.hh05 = hh05;
+        notifyPropertyChanged(BR.hh05);
+    }
+
+    @Bindable
+    public String getHh06() {
+        return hh06;
+    }
+
+    public void setHh06(String hh06) {
+        this.hh06 = hh06;
+        notifyPropertyChanged(BR.hh06);
+    }
+
+    @Bindable
+    public String getHh07() {
+        return hh07;
+    }
+
+    public void setHh07(String hh07) {
+        this.hh07 = hh07;
+        notifyPropertyChanged(BR.hh07);
+    }
+
+    @Bindable
+    public String getHh08() {
+        return hh08;
+    }
+
+    public void setHh08(String hh08) {
+        this.hh08 = hh08;
+        notifyPropertyChanged(BR.hh08);
+    }
+
+    @Bindable
+    public String getHh09() {
+        return hh09;
+    }
+
+    public void setHh09(String hh09) {
+        this.hh09 = hh09;
+        notifyPropertyChanged(BR.hh09);
+    }
+
+    @Bindable
+    public String getHh10() {
+        return hh10;
+    }
+
+    public void setHh10(String hh10) {
+        this.hh10 = hh10;
+        notifyPropertyChanged(BR.hh10);
+    }
+
+    @Bindable
+    public String getHh11() {
+        return hh11;
+    }
+
+    public void setHh11(String hh11) {
+        this.hh11 = hh11;
+        notifyPropertyChanged(BR.hh11);
+    }
+
+    @Bindable
+    public String getHh12() {
+        return hh12;
+    }
+
+    public void setHh12(String hh12) {
+        this.hh12 = hh12;
+        notifyPropertyChanged(BR.hh12);
+    }
+
+    @Bindable
+    public String getHh13() {
+        return hh13;
+    }
+
+    public void setHh13(String hh13) {
+        this.hh13 = hh13;
+        notifyPropertyChanged(BR.hh13);
+    }
+
+    @Bindable
+    public String getHh18() {
+        return hh18;
+    }
+
+    public void setHh18(String hh18) {
+        this.hh18 = hh18;
+        notifyPropertyChanged(BR.hh18);
+    }
+
+    @Bindable
+    public String getHh13a() {
+        return hh13a;
+    }
+
+    public void setHh13a(String hh13a) {
+        this.hh13a = hh13a;
+        notifyPropertyChanged(BR.hh13a);
+    }
+
+    @Bindable
+    public String getHh14() {
+        return hh14;
+    }
+
+    public void setHh14(String hh14) {
+        this.hh14 = hh14;
+        notifyPropertyChanged(BR.hh14);
+    }
+
+    @Bindable
+    public String getHh15() {
+        return hh15;
+    }
+
+    public void setHh15(String hh15) {
+        this.hh15 = hh15;
+        notifyPropertyChanged(BR.hh15);
+    }
+
+    @Bindable
+    public String getHh16a() {
+        return hh16a;
+    }
+
+    public void setHh16a(String hh16a) {
+        this.hh16a = hh16a;
+        notifyPropertyChanged(BR.hh16a);
+    }
+
+    @Bindable
+    public String getHh16b() {
+        return hh16b;
+    }
+
+    public void setHh16b(String hh16b) {
+        this.hh16b = hh16b;
+        notifyPropertyChanged(BR.hh16b);
+    }
+
+    @Bindable
+    public String getHh19() {
+        return hh19;
+    }
+
+    public void setHh19(String hh19) {
+        this.hh19 = hh19;
+        notifyPropertyChanged(BR.hh19);
+    }
+
+    @Bindable
+    public String getHh19a() {
+        return hh19a;
+    }
+
+    public void setHh19a(String hh19a) {
+        this.hh19a = hh19a;
+        notifyPropertyChanged(BR.hh19a);
+    }
+
+    @Bindable
+    public String getHh19b() {
+        return hh19b;
+    }
+
+    public void setHh19b(String hh19b) {
+        this.hh19b = hh19b;
+        notifyPropertyChanged(BR.hh19b);
+    }
+
+    @Bindable
+    public String getHh20() {
+        return hh20;
+    }
+
+    public void setHh20(String hh20) {
+        this.hh20 = hh20;
+        notifyPropertyChanged(BR.hh20);
+    }
+
+    @Bindable
+    public String getHh20a() {
+        return hh20a;
+    }
+
+    public void setHh20a(String hh20a) {
+        this.hh20a = hh20a;
+        notifyPropertyChanged(BR.hh20a);
+    }
+
+    @Bindable
+    public String getHh21() {
+        return hh21;
+    }
+
+    public void setHh21(String hh21) {
+        this.hh21 = hh21;
+        notifyPropertyChanged(BR.hh21);
+    }
+
+    @Bindable
+    public String getHh21xx() {
+        return hh21xx;
+    }
+
+    public void setHh21xx(String hh21xx) {
+        this.hh21xx = hh21xx;
+        notifyPropertyChanged(BR.hh21xx);
+    }
+
+    @Bindable
+    public String getsHH() {
+        return sHH;
+    }
+
+    @Bindable
+    public String getsCH() {
+        return sCH;
+    }
+
+    @Bindable
+    public String getsSS() {
+        return sSS;
+    }
+
+    @Bindable
+    public String getsCB() {
+        return sCB;
+    }
+
+    @Bindable
+    public String getsIM() {
+        return sIM;
+    }
+
+    @Bindable
+    public String getSs01() {
+        return ss01;
+    }
+
+    public void setSs01(String ss01) {
+        this.ss01 = ss01;
+        notifyPropertyChanged(BR.ss01);
+    }
+
+    @Bindable
+    public String getSs01xx() {
+        return ss01xx;
+    }
+
+    public void setSs01xx(String ss01xx) {
+        this.ss01xx = ss01xx;
+        notifyPropertyChanged(BR.ss01xx);
+    }
+
+    @Bindable
+    public String getSs02() {
+        return ss02;
+    }
+
+    public void setSs02(String ss02) {
+        this.ss02 = ss02;
+        notifyPropertyChanged(BR.ss02);
+    }
+
+    @Bindable
+    public String getSs02xx() {
+        return ss02xx;
+    }
+
+    public void setSs02xx(String ss02xx) {
+        this.ss02xx = ss02xx;
+        notifyPropertyChanged(BR.ss02xx);
+    }
+
+    @Bindable
+    public String getSs03() {
+        return ss03;
+    }
+
+    public void setSs03(String ss03) {
+        this.ss03 = ss03;
+        notifyPropertyChanged(BR.ss03);
+    }
+
+    @Bindable
+    public String getSs03xx() {
+        return ss03xx;
+    }
+
+    public void setSs03xx(String ss03xx) {
+        this.ss03xx = ss03xx;
+        notifyPropertyChanged(BR.ss03xx);
+    }
+
+    @Bindable
+    public String getSs04() {
+        return ss04;
+    }
+
+    public void setSs04(String ss04) {
+        this.ss04 = ss04;
+        notifyPropertyChanged(BR.ss04);
+    }
+
+    @Bindable
+    public String getSs05() {
+        return ss05;
+    }
+
+    public void setSs05(String ss05) {
+        this.ss05 = ss05;
+        notifyPropertyChanged(BR.ss05);
+    }
+
+    @Bindable
+    public String getSs05xx() {
+        return ss05xx;
+    }
+
+    public void setSs05xx(String ss05xx) {
+        this.ss05xx = ss05xx;
+        notifyPropertyChanged(BR.ss05xx);
+    }
+
+    @Bindable
+    public String getSs06() {
+        return ss06;
+    }
+
+    public void setSs06(String ss06) {
+        this.ss06 = ss06;
+        notifyPropertyChanged(BR.ss06);
+    }
+
+    @Bindable
+    public String getSs06xx() {
+        return ss06xx;
+    }
+
+    public void setSs06xx(String ss06xx) {
+        this.ss06xx = ss06xx;
+        notifyPropertyChanged(BR.ss06xx);
+    }
+
+    @Bindable
+    public String getSs07() {
+        return ss07;
+    }
+
+    public void setSs07(String ss07) {
+        this.ss07 = ss07;
+        notifyPropertyChanged(BR.ss07);
+    }
+
+    @Bindable
+    public String getSs07xx() {
+        return ss07xx;
+    }
+
+    public void setSs07xx(String ss07xx) {
+        this.ss07xx = ss07xx;
+        notifyPropertyChanged(BR.ss07xx);
+    }
+
+    @Bindable
+    public String getSs08() {
+        return ss08;
+    }
+
+    public void setSs08(String ss08) {
+        this.ss08 = ss08;
+        notifyPropertyChanged(BR.ss08);
+    }
+
+    @Bindable
+    public String getSs09() {
+        return ss09;
+    }
+
+    public void setSs09(String ss09) {
+        this.ss09 = ss09;
+        notifyPropertyChanged(BR.ss09);
+    }
+
+    @Bindable
+    public String getSs11() {
+        return ss11;
+    }
+
+    public void setSs11(String ss11) {
+        this.ss11 = ss11;
+        notifyPropertyChanged(BR.ss11);
+    }
+
+    @Bindable
+    public String getSs12() {
+        return ss12;
+    }
+
+    public void setSs12(String ss12) {
+        this.ss12 = ss12;
+        notifyPropertyChanged(BR.ss12);
+    }
+
+    @Bindable
+    public String getSs12hhx() {
+        return ss12hhx;
+    }
+
+    public void setSs12hhx(String ss12hhx) {
+        this.ss12hhx = ss12hhx;
+        notifyPropertyChanged(BR.ss12hhx);
+    }
+
+    @Bindable
+    public String getSs13() {
+        return ss13;
+    }
+
+    public void setSs13(String ss13) {
+        this.ss13 = ss13;
+        notifyPropertyChanged(BR.ss13);
+    }
+
+    @Bindable
+    public String getSs13xx() {
+        return ss13xx;
+    }
+
+    public void setSs13xx(String ss13xx) {
+        this.ss13xx = ss13xx;
+        notifyPropertyChanged(BR.ss13xx);
+    }
+
+    @Bindable
+    public String getSs14a() {
+        return ss14a;
+    }
+
+    public void setSs14a(String ss14a) {
+        this.ss14a = ss14a;
+        notifyPropertyChanged(BR.ss14a);
+    }
+
+    @Bindable
+    public String getSs14b() {
+        return ss14b;
+    }
+
+    public void setSs14b(String ss14b) {
+        this.ss14b = ss14b;
+        notifyPropertyChanged(BR.ss14b);
+    }
+
+    @Bindable
+    public String getSs14c() {
+        return ss14c;
+    }
+
+    public void setSs14c(String ss14c) {
+        this.ss14c = ss14c;
+        notifyPropertyChanged(BR.ss14c);
+    }
+
+    @Bindable
+    public String getSs14d() {
+        return ss14d;
+    }
+
+    public void setSs14d(String ss14d) {
+        this.ss14d = ss14d;
+        notifyPropertyChanged(BR.ss14d);
+    }
+
+    @Bindable
+    public String getSs14e() {
+        return ss14e;
+    }
+
+    public void setSs14e(String ss14e) {
+        this.ss14e = ss14e;
+        notifyPropertyChanged(BR.ss14e);
+    }
+
+    @Bindable
+    public String getSs14f() {
+        return ss14f;
+    }
+
+    public void setSs14f(String ss14f) {
+        this.ss14f = ss14f;
+        notifyPropertyChanged(BR.ss14f);
+    }
+
+    @Bindable
+    public String getSs14g() {
+        return ss14g;
+    }
+
+    public void setSs14g(String ss14g) {
+        this.ss14g = ss14g;
+        notifyPropertyChanged(BR.ss14g);
+    }
+
+    @Bindable
+    public String getSs14h() {
+        return ss14h;
+    }
+
+    public void setSs14h(String ss14h) {
+        this.ss14h = ss14h;
+        notifyPropertyChanged(BR.ss14h);
+    }
+
+    @Bindable
+    public String getSs14i() {
+        return ss14i;
+    }
+
+    public void setSs14i(String ss14i) {
+        this.ss14i = ss14i;
+        notifyPropertyChanged(BR.ss14i);
+    }
+
+    @Bindable
+    public String getSs14j() {
+        return ss14j;
+    }
+
+    public void setSs14j(String ss14j) {
+        this.ss14j = ss14j;
+        notifyPropertyChanged(BR.ss14j);
+    }
+
+    @Bindable
+    public String getSs14k() {
+        return ss14k;
+    }
+
+    public void setSs14k(String ss14k) {
+        this.ss14k = ss14k;
+        notifyPropertyChanged(BR.ss14k);
+    }
+
+    @Bindable
+    public String getSs14l() {
+        return ss14l;
+    }
+
+    public void setSs14l(String ss14l) {
+        this.ss14l = ss14l;
+        notifyPropertyChanged(BR.ss14l);
+    }
+
+    @Bindable
+    public String getSs14m() {
+        return ss14m;
+    }
+
+    public void setSs14m(String ss14m) {
+        this.ss14m = ss14m;
+        notifyPropertyChanged(BR.ss14m);
+    }
+
+    @Bindable
+    public String getSs14n() {
+        return ss14n;
+    }
+
+    public void setSs14n(String ss14n) {
+        this.ss14n = ss14n;
+        notifyPropertyChanged(BR.ss14n);
+    }
+
+    @Bindable
+    public String getSs14o() {
+        return ss14o;
+    }
+
+    public void setSs14o(String ss14o) {
+        this.ss14o = ss14o;
+        notifyPropertyChanged(BR.ss14o);
+    }
+
+    @Bindable
+    public String getSs14p() {
+        return ss14p;
+    }
+
+    public void setSs14p(String ss14p) {
+        this.ss14p = ss14p;
+        notifyPropertyChanged(BR.ss14p);
+    }
+
+    @Bindable
+    public String getSs14q() {
+        return ss14q;
+    }
+
+    public void setSs14q(String ss14q) {
+        this.ss14q = ss14q;
+        notifyPropertyChanged(BR.ss14q);
+    }
+
+    @Bindable
+    public String getSs14r() {
+        return ss14r;
+    }
+
+    public void setSs14r(String ss14r) {
+        this.ss14r = ss14r;
+        notifyPropertyChanged(BR.ss14r);
+    }
+
+    @Bindable
+    public String getSs14s() {
+        return ss14s;
+    }
+
+    public void setSs14s(String ss14s) {
+        this.ss14s = ss14s;
+        notifyPropertyChanged(BR.ss14s);
+    }
+
+    @Bindable
+    public String getSs15a() {
+        return ss15a;
+    }
+
+    public void setSs15a(String ss15a) {
+        this.ss15a = ss15a;
+        notifyPropertyChanged(BR.ss15a);
+    }
+
+    @Bindable
+    public String getSs15b() {
+        return ss15b;
+    }
+
+    public void setSs15b(String ss15b) {
+        this.ss15b = ss15b;
+        notifyPropertyChanged(BR.ss15b);
+    }
+
+    @Bindable
+    public String getSs15c() {
+        return ss15c;
+    }
+
+    public void setSs15c(String ss15c) {
+        this.ss15c = ss15c;
+        notifyPropertyChanged(BR.ss15c);
+    }
+
+    @Bindable
+    public String getSs15d() {
+        return ss15d;
+    }
+
+    public void setSs15d(String ss15d) {
+        this.ss15d = ss15d;
+        notifyPropertyChanged(BR.ss15d);
+    }
+
+    @Bindable
+    public String getSs15e() {
+        return ss15e;
+    }
+
+    public void setSs15e(String ss15e) {
+        this.ss15e = ss15e;
+        notifyPropertyChanged(BR.ss15e);
+    }
+
+    @Bindable
+    public String getSs15f() {
+        return ss15f;
+    }
+
+    public void setSs15f(String ss15f) {
+        this.ss15f = ss15f;
+        notifyPropertyChanged(BR.ss15f);
+    }
+
+    @Bindable
+    public String getSs15g() {
+        return ss15g;
+    }
+
+    public void setSs15g(String ss15g) {
+        this.ss15g = ss15g;
+        notifyPropertyChanged(BR.ss15g);
+    }
+
+    @Bindable
+    public String getSs15h() {
+        return ss15h;
+    }
+
+    public void setSs15h(String ss15h) {
+        this.ss15h = ss15h;
+        notifyPropertyChanged(BR.ss15h);
+    }
+
+    @Bindable
+    public String getSs15i() {
+        return ss15i;
+    }
+
+    public void setSs15i(String ss15i) {
+        this.ss15i = ss15i;
+        notifyPropertyChanged(BR.ss15i);
+    }
+
+    @Bindable
+    public String getSs17() {
+        return ss17;
+    }
+
+    public void setSs17(String ss17) {
+        this.ss17 = ss17;
+        notifyPropertyChanged(BR.ss17);
+    }
+
+    @Bindable
+    public String getSs17xx() {
+        return ss17xx;
+    }
+
+    public void setSs17xx(String ss17xx) {
+        this.ss17xx = ss17xx;
+        notifyPropertyChanged(BR.ss17xx);
+    }
+
+    @Bindable
+    public String getSs18() {
+        return ss18;
+    }
+
+    public void setSs18(String ss18) {
+        this.ss18 = ss18;
+        notifyPropertyChanged(BR.ss18);
+    }
+
+    @Bindable
+    public String getSs18xx() {
+        return ss18xx;
+    }
+
+    public void setSs18xx(String ss18xx) {
+        this.ss18xx = ss18xx;
+        notifyPropertyChanged(BR.ss18xx);
+    }
+
+    @Bindable
+    public String getSs19() {
+        return ss19;
+    }
+
+    public void setSs19(String ss19) {
+        this.ss19 = ss19;
+        notifyPropertyChanged(BR.ss19);
+    }
+
+    @Bindable
+    public String getSs19xx() {
+        return ss19xx;
+    }
+
+    public void setSs19xx(String ss19xx) {
+        this.ss19xx = ss19xx;
+        notifyPropertyChanged(BR.ss19xx);
+    }
+
+    @Bindable
+    public String getSs20() {
+        return ss20;
+    }
+
+    public void setSs20(String ss20) {
+        this.ss20 = ss20;
+        notifyPropertyChanged(BR.ss20);
+    }
+
+    @Bindable
+    public String getSs20xx() {
+        return ss20xx;
+    }
+
+    public void setSs20xx(String ss20xx) {
+        this.ss20xx = ss20xx;
+        notifyPropertyChanged(BR.ss20xx);
+    }
+
+    @Bindable
+    public String getSs21a() {
+        return ss21a;
+    }
+
+    public void setSs21a(String ss21a) {
+        this.ss21a = ss21a;
+        notifyPropertyChanged(BR.ss21a);
+    }
+
+    @Bindable
+    public String getSs22() {
+        return ss22;
+    }
+
+    public void setSs22(String ss22) {
+        this.ss22 = ss22;
+        notifyPropertyChanged(BR.ss22);
+    }
+
+    @Bindable
+    public String getSs23() {
+        return ss23;
+    }
+
+    public void setSs23(String ss23) {
+        this.ss23 = ss23;
+        notifyPropertyChanged(BR.ss23);
+    }
+
+    @Bindable
+    public String getSs23landx() {
+        return ss23landx;
+    }
+
+    public void setSs23landx(String ss23landx) {
+        this.ss23landx = ss23landx;
+        notifyPropertyChanged(BR.ss23landx);
+    }
+
+    @Bindable
+    public String getSs24() {
+        return ss24;
+    }
+
+    public void setSs24(String ss24) {
+        this.ss24 = ss24;
+        notifyPropertyChanged(BR.ss24);
+    }
+
+    @Bindable
+    public String getSs25a() {
+        return ss25a;
+    }
+
+    public void setSs25a(String ss25a) {
+        this.ss25a = ss25a;
+        notifyPropertyChanged(BR.ss25a);
+    }
+
+    @Bindable
+    public String getSs25b() {
+        return ss25b;
+    }
+
+    public void setSs25b(String ss25b) {
+        this.ss25b = ss25b;
+        notifyPropertyChanged(BR.ss25b);
+    }
+
+    @Bindable
+    public String getSs25c() {
+        return ss25c;
+    }
+
+    public void setSs25c(String ss25c) {
+        this.ss25c = ss25c;
+        notifyPropertyChanged(BR.ss25c);
+    }
+
+    @Bindable
+    public String getSs25d() {
+        return ss25d;
+    }
+
+    public void setSs25d(String ss25d) {
+        this.ss25d = ss25d;
+        notifyPropertyChanged(BR.ss25d);
+    }
+
+    @Bindable
+    public String getSs25e() {
+        return ss25e;
+    }
+
+    public void setSs25e(String ss25e) {
+        this.ss25e = ss25e;
+        notifyPropertyChanged(BR.ss25e);
+    }
+
+    @Bindable
+    public String getSs25f() {
+        return ss25f;
+    }
+
+    public void setSs25f(String ss25f) {
+        this.ss25f = ss25f;
+        notifyPropertyChanged(BR.ss25f);
+    }
+
+    @Bindable
+    public String getSs25g() {
+        return ss25g;
+    }
+
+    public void setSs25g(String ss25g) {
+        this.ss25g = ss25g;
+        notifyPropertyChanged(BR.ss25g);
+    }
+
+    @Bindable
+    public String getSs26() {
+        return ss26;
+    }
+
+    public void setSs26(String ss26) {
+        this.ss26 = ss26;
+        notifyPropertyChanged(BR.ss26);
+    }
+
+    @Bindable
+    public String getSs27() {
+        return ss27;
+    }
+
+    public void setSs27(String ss27) {
+        this.ss27 = ss27;
+        notifyPropertyChanged(BR.ss27);
+    }
+
+    @Bindable
+    public String getSs28() {
+        return ss28;
+    }
+
+    public void setSs28(String ss28) {
+        this.ss28 = ss28;
+        notifyPropertyChanged(BR.ss28);
+    }
+
+
 
     public Form Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
@@ -434,11 +1553,36 @@ public class Form extends BaseObservable implements Observable {
             this.a112 = json.getString("a112");
             this.a11297 = json.getString("a11297");
 
+            this.hh03 = json.getString("hh03");
+            this.hh03a = json.getString("hh03a");
+            this.hh04 = json.getString("hh04");
+            this.hh04a = json.getString("hh04a");
+            this.hh05 = json.getString("hh05");
+            this.hh06 = json.getString("hh06");
+            this.hh07 = json.getString("hh07");
+            this.hh08 = json.getString("hh08");
+            this.hh09 = json.getString("hh09");
+            this.hh10 = json.getString("hh10");
+            this.hh11 = json.getString("hh11");
+            this.hh12 = json.getString("hh12");
+            this.hh13 = json.getString("hh13");
+            this.hh18 = json.getString("hh18");
+            this.hh13a = json.getString("hh13a");
+            this.hh14 = json.getString("hh14");
+            this.hh15 = json.getString("hh15");
+            this.hh16a = json.getString("hh16a");
+            this.hh16b = json.getString("hh16b");
+            this.hh19 = json.getString("hh19");
+            this.hh19a = json.getString("hh19a");
+            this.hh19b = json.getString("hh19b");
+            this.hh20 = json.getString("hh20");
+            this.hh20a = json.getString("hh20a");
+            this.hh21 = json.getString("hh21");
+            this.hh21xx = json.getString("hh21xx");
             this.iStatus96x = json.has("iStatus96x") ? json.getString("iStatus96x") : "";
 
         }
     }
-
 
     public String sAtoString() throws JSONException {
         Log.d(TAG, "sAtoString: ");
@@ -457,11 +1601,36 @@ public class Form extends BaseObservable implements Observable {
                 .put("a111", a111)
                 .put("a112", a112)
                 .put("a11297", a11297)
-
+                .put("hh03", hh03)
+                .put("hh03a", hh03a)
+                .put("hh04", hh04)
+                .put("hh04a", hh04a)
+                .put("hh05", hh05)
+                .put("hh06", hh06)
+                .put("hh07", hh07)
+                .put("hh08", hh08)
+                .put("hh09", hh09)
+                .put("hh10", hh10)
+                .put("hh11", hh11)
+                .put("hh12", hh12)
+                .put("hh13", hh13)
+                .put("hh18", hh18)
+                .put("hh13a", hh13a)
+                .put("hh14", hh14)
+                .put("hh15", hh15)
+                .put("hh16a", hh16a)
+                .put("hh16b", hh16b)
+                .put("hh19", hh19)
+                .put("hh19a", hh19a)
+                .put("hh19b", hh19b)
+                .put("hh20", hh20)
+                .put("hh20a", hh20a)
+                .put("hh21", hh21)
+                .put("hh21xx", hh21xx)
                 .put("iStatus96x", iStatus96x);
+
         return json.toString();
     }
-
 
     public JSONObject toJSONObject() throws JSONException {
         JSONObject json = new JSONObject();
@@ -481,7 +1650,24 @@ public class Form extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_SYNCED, this.synced);
         json.put(FormsTable.COLUMN_SYNC_DATE, this.syncDate);
         json.put(FormsTable.COLUMN_APPVERSION, this.appver);
+
+        json.put(FormsTable.COLUMN_ID, this.id);
+        json.put(FormsTable.COLUMN_UID, this.uid);
+        json.put(FormsTable.COLUMN_USERNAME, this.userName);
+        json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
+        json.put(FormsTable.COLUMN_SYNCED, this.synced);
+
         json.put(FormsTable.COLUMN_SHH, new JSONObject(sAtoString()));
+
+//        json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
+//        json.put(FormsTable.COLUMN_DISTRICT_CODE, this.districtCode);
+//        json.put(FormsTable.COLUMN_TEHSIL_CODE, this.tehsilCode);
+//        json.put(FormsTable.COLUMN_UC_CODE, this.ucCode);
+//        json.put(FormsTable.COLUMN_HF_CODE, this.hfCode);
+//        json.put(FormsTable.COLUMN_SA, new JSONObject(sAtoString()));
 
         return json;
     }

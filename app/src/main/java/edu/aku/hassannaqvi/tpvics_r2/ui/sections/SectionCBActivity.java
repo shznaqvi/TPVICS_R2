@@ -42,7 +42,7 @@ public class SectionCBActivity extends AppCompatActivity {
 
 
     private boolean insertNewRecord() {
-        if (!MainApp.form.getUid().equals("") || MainApp.superuser) return true;
+        if (!MainApp.child.getUid().equals("") || MainApp.superuser) return true;
 
         MainApp.form.populateMeta();
 
@@ -91,10 +91,10 @@ public class SectionCBActivity extends AppCompatActivity {
         if (updateDB()) {
             Intent i;
 
-           /* i = new Intent(this, ConsentActivity.class).putExtra("complete", true);
+           i = new Intent(this, SectionIMActivity.class).putExtra("complete", true);
 
 
-            startActivity(i);*/
+            startActivity(i);
             finish();
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();

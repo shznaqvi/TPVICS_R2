@@ -89,10 +89,10 @@ public class SectionSSActivity extends AppCompatActivity {
         if (updateDB()) {
             Intent i;
 
-           /* i = new Intent(this, ConsentActivity.class).putExtra("complete", true);
+            i = new Intent(this, SectionCHActivity.class).putExtra("complete", true);
 
 
-            startActivity(i);*/
+            startActivity(i);
             finish();
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();

@@ -19,13 +19,14 @@ import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionSs1Binding;
+import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionSs2Binding;
 import edu.aku.hassannaqvi.tpvics_r2.ui.EndingActivity;
 
 public class SectionSS_2Activity extends AppCompatActivity {
 
 
     private static final String TAG = "SectionSS_2Activity";
-    ActivitySectionSs1Binding bi;
+    ActivitySectionSs2Binding bi;
     private DatabaseHelper db;
 
     @Override
@@ -110,7 +111,7 @@ public class SectionSS_2Activity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-        setResult(RESULT_CANCELED);
+       setResult(RESULT_CANCELED); finish();
     }
 
 

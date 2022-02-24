@@ -35,6 +35,12 @@ import edu.aku.hassannaqvi.tpvics_r2.ui.lists.FormsReportCluster;
 import edu.aku.hassannaqvi.tpvics_r2.ui.lists.FormsReportDate;
 import edu.aku.hassannaqvi.tpvics_r2.ui.lists.FormsReportPending;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionA1Activity;
+import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionCBActivity;
+import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionCHActivity;
+import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionHHActivity;
+import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionIMActivity;
+import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionSS_1Activity;
+import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionSS_2Activity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -110,29 +116,33 @@ public class MainActivity extends AppCompatActivity {
 
         switch (view.getId()) {
 
-            case R.id.startInterview:
-                MainApp.form = new Form();
-                startActivity(new Intent(this, IdentificationActivity.class));
-                break;
-            case R.id.changePassword:
-                startActivity(new Intent(this, ChangePasswordActivity.class));
-                break;
             case R.id.seca1:
                 MainApp.form = new Form();
                 startActivity(new Intent(this, SectionA1Activity.class));
                 break;
-            case R.id.secd1:
-                MainApp.familyMember = new FamilyMembers();
-                // startActivity(new Intent(this, SectionD1Activity.class));
+            case R.id.sechh:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionHHActivity.class));
+                break;
+            case R.id.secss1:
+                startActivity(new Intent(this, SectionSS_1Activity.class));
+                break;
+            case R.id.secess2:
+                startActivity(new Intent(this, SectionSS_2Activity.class));
                 break;
 
-            case R.id.secima:
-                MainApp.child = new Child();
-                //    startActivity(new Intent(this, SectionIMAActivity.class));
+            case R.id.seceCH:
+
+                startActivity(new Intent(this, SectionCHActivity.class));
                 break;
-            case R.id.secimb:
+            case R.id.secCB:
                 MainApp.child = new Child();
-                //    startActivity(new Intent(this, SectionIMBActivity.class));
+                startActivity(new Intent(this, SectionCBActivity.class));
+                break;
+
+            case R.id.secIM:
+                MainApp.child = new Child();
+                startActivity(new Intent(this, SectionIMActivity.class));
                 break;
 
             case R.id.dbManager:

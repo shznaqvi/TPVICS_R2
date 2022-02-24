@@ -264,14 +264,17 @@ public class IdentificationActivity extends AppCompatActivity {
     }
 
     public void btnContinue(View view) {
-        if (!formValidation()) return;
-        hhExists();
-        if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
-            Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
-        } else {
-            finish();
-            startActivity(new Intent(this, SectionA1Activity.class));
-        }
+        startActivity(new Intent(this, SectionA1Activity.class));
+//        return;
+//
+//        if (!formValidation()) return;
+//        hhExists();
+//        if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
+//            Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
+//        } else {
+//            finish();
+//            startActivity(new Intent(this, SectionA1Activity.class));
+//        }
 
     }
 
@@ -337,7 +340,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
 
     public void searchCluster(View view) {
-        bi.btnContinue.setEnabled(false);
+        bi.btnContinue.setEnabled(true);
 
         bi.a105.setText(null);
         bi.a106.setText(null);

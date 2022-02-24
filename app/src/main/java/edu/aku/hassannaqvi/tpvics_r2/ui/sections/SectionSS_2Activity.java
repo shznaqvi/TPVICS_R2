@@ -18,14 +18,14 @@ import edu.aku.hassannaqvi.tpvics_r2.R;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
-import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionSsBinding;
+import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionSs1Binding;
 import edu.aku.hassannaqvi.tpvics_r2.ui.EndingActivity;
 
 public class SectionSS_2Activity extends AppCompatActivity {
 
 
     private static final String TAG = "SectionSS_2Activity";
-    ActivitySectionSsBinding bi;
+    ActivitySectionSs1Binding bi;
     private DatabaseHelper db;
 
     @Override

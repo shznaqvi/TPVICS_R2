@@ -18,22 +18,21 @@ import edu.aku.hassannaqvi.tpvics_r2.R;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
-import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionA1Binding;
-import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionSsBinding;
+import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionSs1Binding;
 import edu.aku.hassannaqvi.tpvics_r2.ui.EndingActivity;
 
-public class SectionSSActivity extends AppCompatActivity {
+public class SectionSS_1Activity extends AppCompatActivity {
 
 
-    private static final String TAG = "SectionSSActivity";
-    ActivitySectionSsBinding bi;
+    private static final String TAG = "SectionSS_1Activity";
+    ActivitySectionSs1Binding bi;
     private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setTheme(sharedPref.getString("lang", "0").equals("2") ? R.style.AppThemeSindhi : sharedPref.getString("lang", "0").equals("1") ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_ss);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_ss_1);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.setForm(form);

@@ -1,7 +1,6 @@
 package edu.aku.hassannaqvi.tpvics_r2.ui.sections;
 
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.form;
-import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,7 +18,6 @@ import edu.aku.hassannaqvi.tpvics_r2.R;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
-import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionA1Binding;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionHhBinding;
 
 public class SectionHHActivity extends AppCompatActivity {
@@ -86,7 +84,7 @@ public class SectionHHActivity extends AppCompatActivity {
         // saveDraft();
         if (updateDB()) {
             Intent i;
-            i = new Intent(this, SectionSSActivity.class).putExtra("complete", true);
+            i = new Intent(this, SectionSS_1Activity.class).putExtra("complete", true);
             startActivity(i);
             finish();
         } else {

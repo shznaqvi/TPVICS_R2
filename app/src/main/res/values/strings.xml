@@ -149,9 +149,19 @@
     <string name="btnResetPassword">Reset Password</string>
 
 
+
     <!--TODO: REMOVE THESE STRINGS FROM FINAL APP-->
+
+    <string name="a104">Name of Province</string>
+    <string name="a105">Name of District</string>
+    <string name="a106">Name of Tehsil/Taluka</string>
+    <string name="a107">Name of Union Council</string>
     <string name="atitle">Module A: Household Level </string>
     <string name="as1">Section 1: Household Information</string>
+    <string name="a101">Cluster Number </string>
+    <string name="a113">Household Number</string>
+
+
     <string name="as1q01"> Country </string>
     <string name="as1q01p"> Pakistan </string>
     <string name="as1q01a"> Afghanistan </string>
@@ -171,21 +181,16 @@
     <string name="sectioni1diarrheainformation_mainheading">Section I1: Diarrhea Information: </string>
     <string name="sectioni2acuterespiratoryinfectionari_mainheading">Section I2: Acute Respiratory Infection (ARI): </string>
     <string name="sectionimimmunizationinformation_mainheading">Section IM: Immunization Information: </string>
-    <string name="splashText2">  </string>
+    <string name="splashText2">  </string>
 
     <string name="a1title">Complete Address</string>
-    <string name="a104">Name of Province</string>
-    <string name="a105">Name of District</string>
-    <string name="a106">Name of Tehsil/Taluka</string>
-    <string name="a107">Name of Union Council</string>
-    <string name="a101">Cluster Number </string>
+
     <string name="a102">Cluster Type</string>
     <string name="a10201">LHW Covered</string>
     <string name="a10202">LHW Uncovered</string>
     <string name="a108">Location</string>
     <string name="a10801">Urban</string>
     <string name="a10802">Rural</string>
-    <string name="a113">Household Number</string>
     <string name="a103">Randomization Serial Number</string>
     <string name="a109">Village</string>
     <string name="a110">Block/ Mohalla</string>
@@ -212,16 +217,16 @@
     <string name="sectionsssocioeconomicstatusss_mainheading">SECTION SS: SOCIO-ECONOMIC STATUS (SS) : Instructions: This section will be filled by the Head of the household (HH) or knowledgeable member atleast 18 years old</string>
     <string name="im_mainheading">IM: IMMUNIZATION</string>
     <string name="sectionchlistofchildren0623monthsold_mainheading">SECTION CH: List of Children 06-23 months old: List of Children 0623 months old</string>
+    <string name="no"> No </string>
 
     <string name="contactnum">Contact Number </string>
     <string name="checkHHpresent"> The name of head of the household corresponds to the line listing data.</string>
     <string name="newHHheadname"> Name of new head of the household </string>
-    <string name="hh01">Geographical Area</string>
     <string name="hh01">Date of interview:</string>
     <string name="hh02">Time of interview: </string>
-    <string name="hh03">Interview&#039;s Code</string>
+    <string name="hh03">Interviews Code</string>
     <string name="hh03a">Interviewer’s name</string>
-    <string name="hh04">Supervisor&#039;s Code</string>
+    <string name="hh04">Supervisors Code</string>
     <string name="hh04a">Supervisor’s name</string>
     <string name="hh05">Enumeration Block Number:</string>
     <string name="hh06">Province                        </string>
@@ -234,16 +239,16 @@
     <string name="hh13">Name of the Respondent</string>
     <string name="hh18t">Asalum-o-Alaikum, my name is (your name). We are from National Ministry of Health Services, Regulation and Coordination, Government of Pakistan. We are conducting a survey about the situation of the children health in Pakistan. I would like to talk to you about (child’s name)’s vaccination history. This interview will take about 30 minutes. All the information we obtain will remain strictly confidential and anonymous. If you wish not to answer a question or wish to stop the interview, please let me know.</string>
     <string name="hh18">May I start the interview now?</string>
-    <string name="hh13a">Respondent&#039;s Contact Number</string>
+    <string name="hh13a">Respondents Contact Number</string>
     <string name="hh18a">Yes, Permission is Given</string>
     <string name="hh18b">No, Permission is not Given</string>
     <string name="hh14">Age of Respondent in completed   years      </string>
     <string name="hh15">Is respondent Head of Household?</string>
     <string name="hh16">Name and contact number of the head of Household: </string>
     <string name="hh15a">Yes</string>
-    <string name="hh16a">Head of Household&#039;s Name</string>
+    <string name="hh16a">Head of Households Name</string>
     <string name="hh15b">No</string>
-    <string name="hh16b">Head of Household&#039;s Contact No </string>
+    <string name="hh16b">Head of Households Contact No </string>
     <string name="hh19">How many members are living in this household (NUMBER OF PERSONS) (If 95 or more, record ‘95’) Note for enumorators: Persons who live in this dwelling/ compound and usually share a meal together </string>
     <string name="hh20"> Does this HH have children 06-23 months years of age? (i.e., children who have reached their first birthday, but not their second birthday)</string>
     <string name="hh20_1">Yes</string>
@@ -262,10 +267,10 @@
     <string name="hh19b">Number of Female Members</string>
     <string name="ec01">Date of Interview</string>
     <string name="ec02">Record the time     </string>
-    <string name="ec03">Interview&#039;s Code</string>
+    <string name="ec03">Interviews Code</string>
     <string name="ec03a">Interviewer’s name</string>
     <string name="ec04">Supervisor’s name</string>
-    <string name="ec04a">Supervisor&#039;s Code Number</string>
+    <string name="ec04a">Supervisors Code Number</string>
     <string name="ec05">Village </string>
     <string name="ec06">Province </string>
     <string name="ec07">District </string>
@@ -282,7 +287,7 @@
     <string name="ec1896">Other Specify</string>
     <string name="ec19">Check if this respondent is interviewed for household or children questionnaire in this household?</string>
     <string name="ec20">Now I would like to talk to you about (child’s name)’s vaccination record in more detail. This interview will take about 30 minutes. Again, all the information we obtain will remain strictly confidential and anonymous. If you wish not to answer a question or wish to stop the interview, please let me know. May I start now?</string>
-    <string name="ec21">Now I would like to talk to you about (Child&#039;s name) vaccination record in detail. May I start now</string>
+    <string name="ec21">Now I would like to talk to you about (Childs name) vaccination record in detail. May I start now</string>
     <string name="ec19a">Yes, interviewed already</string>
     <string name="ec21a">Yes, permission is granted  </string>
     <string name="ec19b">No, first interview </string>
@@ -290,13 +295,10 @@
     <string name="ec22">Result of interview for children 06-23 months</string>
     <string name="ec2201">Completed</string>
     <string name="ec2202">Partially completed</string>
-    <string name="ec2203">No HH member or no competent respondent at home at time  of visit  </string>
-    <string name="ec2204">Entire household absent for extended period of Time</string>
+    <string name="ec2203">Refused</string>
+    <string name="ec2204">Mother /Care Taker not Available</string>
     <string name="ec2205">Child not eligible/Not 06-23 Months Age </string>
     <string name="ec2206">Incapacitated(Specify)</string>
-    <string name="ec2207">Refused</string>
-    <string name="ec2208">Dwelling vacant or address not a dwelling</string>
-    <string name="ec2209">Dwelling not found</string>
     <string name="ec2296">Other specify</string>
     <string name="cb01">What is your highest grade of completed education?  As for Education Grade passed for mother/caregiver (Write 77 if un educated and for Religious Education , write 20)</string>
     <string name="cb01a">Grade</string>
@@ -304,12 +306,6 @@
     <string name="cb02">What is highest grade of completed education of (names) father?As for Education Grade passed for mother/caregiver (Write 77 if un educated and for Religious education write 20)</string>
     <string name="cb02a">Grade</string>
     <string name="cb02b">Religious Education</string>
-    <string name="cb03_dd">Day of Birth</string>
-    <string name="cb03_mm">Month of Birth</string>
-    <string name="cb03_yy">Year of Birth</string>
-    <string name="cb03_dk">Don’t know</string>
-    <string name="cb04_mm">Age (in completed years)</string>
-    <string name="cb04_yy">Age (in completed Months)</string>
     <string name="ss01">What is the mother tongue of the head of household?</string>
     <string name="ss02">What is ownership status of household? </string>
     <string name="ss01a">Urdu   </string>
@@ -578,7 +574,7 @@
     <string name="ss23">If yes, how many acres or canals of agricultural land do members of this household own?  If less than 1, record ‘00’.</string>
     <string name="ss23a">Acres</string>
     <string name="ss23b">Kanals</string>
-    <string name="ss23c">Don&#039;t Know</string>
+    <string name="ss23c">Dont Know</string>
     <string name="ss23land">Land</string>
     <string name="ss24">Do you have your own livestock, animals or poultry?</string>
     <string name="ss24a">Yes</string>
@@ -592,7 +588,7 @@
     <string name="ss25f">Buffalo</string>
     <string name="ss25g">Camels</string>
     <string name="ss26">Does any member of this household have a bank account?</string>
-    <string name="ss27_title">Thank the respondent for his/her cooperation and then proceed with the administration of the children 12-23 month’s questionnaire for children present in this household۔</string>
+    <string name="ss27_title">Thank the respondent for his/her cooperation and then proceed with the administration of the children 06-23 month’s questionnaire for children present in this household۔</string>
     <string name="ss26a">YES</string>
     <string name="ss26b">NO</string>
     <string name="ss27">Record The Time</string>
@@ -618,9 +614,9 @@
     <string name="im0396">Other specify </string>
     <string name="im04">Check and copy Date of Birth recorded on card:</string>
     <string name="im04dd">Day</string>
-    <string name="im0497">Don’t know day </string>
     <string name="im04mm">Month</string>
     <string name="im04yy">Year</string>
+    <string name="im0497">Date not Visible on Card</string>
     <string name="im05_title1"> Immunization Status</string>
     <string name="im05_title2">IM5.COPY DATES FOR EACH VACCINATION FROM THE VACCINATION CARD  NOTE: WRITE ‘44’ IN DAY COLUMN IF CARD SHOWS THAT VACCINATION WAS GIVEN BUT NO DATE RECORDED. OR IF THE CARD SHOWS A DATE BUT YOU CANNOT READ IT CLEARLY. IF THE PARTICULAR VACCINE HAS NO ANY RECORD, WRITE ‘97’ IN DAY, MONTH AND YEAR COLUMN</string>
     <string name="im05_1bcg">At Birth  -BCG</string>
@@ -665,11 +661,11 @@
     <string name="im0510yy">Year</string>
     <string name="im0510ahp">Hep-B                                  </string>
     <string name="im0511opv3">Polio (OPV3)                 </string>
-    <string name="im0510dd">Day</string>
+    <string name="im0510add">Day</string>
     <string name="im0511dd">Day</string>
-    <string name="im0510mm">Month</string>
+    <string name="im0510amm">Month</string>
     <string name="im0511mm">Month</string>
-    <string name="im0510yy">Year</string>
+    <string name="im0510ayy">Year</string>
     <string name="im0511yy">Year</string>
     <string name="im0512penta3">Pentavalent3 (DPTHibHepB) (Penta 3)  </string>
     <string name="im0513pcv3">Pneumococcal3 (Conjugate) (PCV3)          </string>
@@ -712,7 +708,7 @@
     <string name="im11_3">Dont know</string>
     <string name="im12">How many times were the polio drops received at Govt or Private Health Facility or from Govt Outreach services?  </string>
     <string name="im12a">How many times was Polio vaccine received during a large campaign? </string>
-    <string name="im12d">Don&#039;t Know</string>
+    <string name="im12d">Dont Know</string>
     <string name="im14">Has (name) ever received a Pentavalent vaccination – that is, an injection in the thigh to prevent (him/her) from getting tetanus, whooping cough, diphtheria, Hepatitis B disease, and Haemophilus influenza type B?   Probe by indicating that Pentavalent vaccination is sometimes given at the same time as the Polio drops</string>
     <string name="im14_1">Yes </string>
     <string name="im14_2">No </string>
@@ -769,26 +765,23 @@
     <string name="im24a">How many times has the child received Polio vaccine drops during national polio campaign?</string>
     <string name="im24a1">Yes</string>
     <string name="im24a2">No</string>
-    <string name="im24a98">Don&#039;t Know</string>
+    <string name="im24a98">Dont Know</string>
     <string name="im24b">How many times has the child received Polio vaccine drops during national polio campaign?</string>
-    <string name="im24b98">Don&#039;t Know</string>
+    <string name="im24b98">Dont Know</string>
     <string name="im24c">Did the child receive polio drops during the last national polio campaign?</string>
     <string name="im24d">The last time (name) received the polio drops, did (he/she) also get an injection to protect against polio?</string>
     <string name="im24c1">Yes</string>
     <string name="im24d1">Yes</string>
     <string name="im24c2">No</string>
     <string name="im24d2">No</string>
-    <string name="im24c98">Don&#039;t know</string>
-    <string name="im24d98">Don&#039;t know</string>
+    <string name="im24c98">Dont know</string>
+    <string name="im24d98">Dont know</string>
     <string name="im25">Observe BCG Scar</string>
     <string name="im2501">Scar Present</string>
     <string name="im2502">Scar Absent</string>
     <string name="im2503">Child Not Available</string>
     <string name="im2504">Not Observed</string>
-    <string name="im26a">IM26A. RESPONDENT KNOWLEDGE ABOUT IMMUNIZATION</string>
-    <string name="im26b">IM26B. RESPONDENT COOPERATION AND BEHAVIOUR IN RESPONDING TO QUESTION</string>
-    <string name="im26c">IM26C. CARD AVAILABILITY, COMPLETENESS (SPECIFICALLY ABOUT CARD SHOWS A DATE BUT YOU CANNOT  READ IT CLEARLY) </string>
-    <string name="im26d">IM26D. OTHER COMMENTS IF ANY</string>
+    <string name="im26">COMMENTS IF ANY</string>
     <string name="ec13">CHILD Line Number</string>
     <string name="ec14">Child Name</string>
     <string name="ec15">Gender of Child </string>
@@ -798,9 +791,13 @@
     <string name="ec17">Age of  Mother/Care giver in complete years </string>
     <string name="cb0_title">Could you please bring (name)’s Birth Certificate, Immunization Card, and any other immunization record from a public or private health provider available in home? We will need to refer to those documents.</string>
     <string name="cb03">On what day, month and year was (name) born? Probe: What is (his/her) birthday? If the mother/caretaker knows the exact date of birth, also record the day; otherwise, circle ‘98’ for day. Month and year must be recorded</string>
+    <string name="cb03_dd">Day of Birth</string>
+    <string name="cb03_mm">Month of Birth</string>
+    <string name="cb03_yy">Year of Birth</string>
+    <string name="cb03_dk">Don’t know</string>
     <string name="cb04">How old is (name)?  Record age in completed years and months. Record ‘0’ if less than 1 year.If  Responses to CB3 and CB4 are inconsistent, probe further and correct. </string>
-
-
+    <string name="cb04_mm">Age (in completed years)</string>
+    <string name="cb04_yy">Age (in completed Months)</string>
 
     <string name='Q_cb0_title'>cb0_title</string>
     <string name='Q_cb01'>cb01</string>
@@ -858,6 +855,7 @@
     <string name='Q_hh21'>hh21</string>
     <string name='Q_im01'>im01</string>
     <string name='Q_im02'>im02</string>
+    <string name='Q_im02a'>im02a</string>
     <string name='Q_im03'>im03</string>
     <string name='Q_im04'>im04</string>
     <string name='Q_im05_1bcg'>im05_1bcg</string>
@@ -898,11 +896,14 @@
     <string name='Q_im23'>im23</string>
     <string name='Q_im23a'>im23a</string>
     <string name='Q_im24'>im24</string>
+    <string name='Q_im24d'>im24d</string>
+    <string name='Q_im24c'>im24c</string>
+    <string name='Q_im24b'>im24b</string>
+    <string name='Q_im24a'>im24a</string>
+
+
     <string name='Q_im25'>im25</string>
-    <string name='Q_im26a'>im26a</string>
-    <string name='Q_im26b'>im26b</string>
-    <string name='Q_im26c'>im26c</string>
-    <string name='Q_im26d'>im26d</string>
+    <string name='Q_im26'>im26</string>
     <string name='Q_ss01'>ss01</string>
     <string name='Q_ss02'>ss02</string>
     <string name='Q_ss03'>ss03</string>

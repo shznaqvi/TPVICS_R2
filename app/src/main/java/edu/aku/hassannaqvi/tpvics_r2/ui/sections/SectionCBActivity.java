@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.tpvics_r2.ui.sections;
 
+import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.child;
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.form;
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.sharedPref;
 
@@ -21,13 +22,14 @@ import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionA1Binding;
+import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionCbBinding;
 import edu.aku.hassannaqvi.tpvics_r2.ui.EndingActivity;
 
 public class SectionCBActivity extends AppCompatActivity {
 
 
     private static final String TAG = "SectionCBActivity";
-    ActivitySectionA1Binding bi;
+    ActivitySectionCbBinding bi;
     private DatabaseHelper db;
 
     @Override
@@ -37,7 +39,7 @@ public class SectionCBActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cb);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        bi.setForm(form);
+        bi.setForm(child);
     }
 
 

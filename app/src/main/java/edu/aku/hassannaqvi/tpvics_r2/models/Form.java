@@ -173,6 +173,19 @@ public class Form extends BaseObservable implements Observable {
     private String ss27= _EMPTY_;
     private String ss28= _EMPTY_;
 
+    private String ec13;
+    private String ec14;
+    private String ec15;
+    private String ec16;
+    private String ec17;
+    private String cb03_dd;
+    private String cb03_mm;
+    private String cb03_yy;
+    private String cb03_dk;
+    private String cb04_mm;
+    private String cb04_yy;
+
+
 
     public Form() {
 
@@ -1509,6 +1522,115 @@ public class Form extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.ss28);
     }
 
+    @Bindable
+    public String getEc13() {
+        return ec13;
+    }
+
+    public void setEc13(String ec13) {
+        this.ec13 = ec13;
+        notifyPropertyChanged(BR.ec13);
+    }
+
+    @Bindable
+    public String getEc14() {
+        return ec14;
+    }
+
+    public void setEc14(String ec14) {
+        this.ec14 = ec14;
+        notifyPropertyChanged(BR.ec14);
+    }
+
+    @Bindable
+    public String getEc15() {
+        return ec15;
+    }
+
+    public void setEc15(String ec15) {
+        this.ec15 = ec15;
+        notifyPropertyChanged(BR.ec15);
+    }
+
+    @Bindable
+    public String getEc16() {
+        return ec16;
+    }
+
+    public void setEc16(String ec16) {
+        this.ec16 = ec16;
+        notifyPropertyChanged(BR.ec16);
+    }
+
+    @Bindable
+    public String getEc17() {
+        return ec17;
+    }
+
+    public void setEc17(String ec17) {
+        this.ec17 = ec17;
+        notifyPropertyChanged(BR.ec17);
+    }
+
+    @Bindable
+    public String getCb03_dd() {
+        return cb03_dd;
+    }
+
+    public void setCb03_dd(String cb03_dd) {
+        this.cb03_dd = cb03_dd;
+        notifyPropertyChanged(BR.cb03_dd);
+    }
+
+    @Bindable
+    public String getCb03_mm() {
+        return cb03_mm;
+    }
+
+    public void setCb03_mm(String cb03_mm) {
+        this.cb03_mm = cb03_mm;
+        notifyPropertyChanged(BR.cb03_mm);
+    }
+
+    @Bindable
+    public String getCb03_yy() {
+        return cb03_yy;
+    }
+
+    public void setCb03_yy(String cb03_yy) {
+        this.cb03_yy = cb03_yy;
+        notifyPropertyChanged(BR.cb03_yy);
+    }
+
+    @Bindable
+    public String getCb03_dk() {
+        return cb03_dk;
+    }
+
+    public void setCb03_dk(String cb03_dk) {
+        this.cb03_dk = cb03_dk;
+        notifyPropertyChanged(BR.cb03_dk);
+    }
+
+    @Bindable
+    public String getCb04_mm() {
+        return cb04_mm;
+    }
+
+    public void setCb04_mm(String cb04_mm) {
+        this.cb04_mm = cb04_mm;
+        notifyPropertyChanged(BR.cb04_mm);
+    }
+
+    @Bindable
+    public String getCb04_yy() {
+        return cb04_yy;
+    }
+
+    public void setCb04_yy(String cb04_yy) {
+        this.cb04_yy = cb04_yy;
+        notifyPropertyChanged(BR.cb04_yy);
+    }
 
 
     public Form Hydrate(Cursor cursor) throws JSONException {
@@ -1527,6 +1649,7 @@ public class Form extends BaseObservable implements Observable {
         this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNC_DATE));
+
 
         sAHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SHH)));
 
@@ -1581,6 +1704,89 @@ public class Form extends BaseObservable implements Observable {
             this.hh21xx = json.getString("hh21xx");
             this.iStatus96x = json.has("iStatus96x") ? json.getString("iStatus96x") : "";
 
+            this.ss01 = json.getString("ss01");
+            this.ss01xx = json.getString("ss01xx");
+            this.ss02 = json.getString("ss02");
+            this.ss02xx = json.getString("ss02xx");
+            this.ss03 = json.getString("ss03");
+            this.ss03xx = json.getString("ss03xx");
+            this.ss04 = json.getString("ss04");
+            this.ss05 = json.getString("ss05");
+            this.ss05xx = json.getString("ss05xx");
+            this.ss06 = json.getString("ss06");
+            this.ss06xx = json.getString("ss06xx");
+            this.ss07 = json.getString("ss07");
+            this.ss07xx = json.getString("ss07xx");
+            this.ss08 = json.getString("ss08");
+            this.ss09 = json.getString("ss09");
+            this.ss11 = json.getString("ss11");
+            this.ss12 = json.getString("ss12");
+            this.ss12hhx = json.getString("ss12hhx");
+            this.ss13 = json.getString("ss13");
+            this.ss13xx = json.getString("ss13xx");
+            this.ss14a = json.getString("ss14a");
+            this.ss14b = json.getString("ss14b");
+            this.ss14c = json.getString("ss14c");
+            this.ss14d = json.getString("ss14d");
+            this.ss14e = json.getString("ss14e");
+            this.ss14f = json.getString("ss14f");
+            this.ss14g = json.getString("ss14g");
+            this.ss14h = json.getString("ss14h");
+            this.ss14i = json.getString("ss14i");
+            this.ss14j = json.getString("ss14j");
+            this.ss14k = json.getString("ss14k");
+            this.ss14l = json.getString("ss14l");
+            this.ss14m = json.getString("ss14m");
+            this.ss14n = json.getString("ss14n");
+            this.ss14o = json.getString("ss14o");
+            this.ss14p = json.getString("ss14p");
+            this.ss14q = json.getString("ss14q");
+            this.ss14r = json.getString("ss14r");
+            this.ss14s = json.getString("ss14s");
+            this.ss15a = json.getString("ss15a");
+            this.ss15b = json.getString("ss15b");
+            this.ss15c = json.getString("ss15c");
+            this.ss15d = json.getString("ss15d");
+            this.ss15e = json.getString("ss15e");
+            this.ss15f = json.getString("ss15f");
+            this.ss15g = json.getString("ss15g");
+            this.ss15h = json.getString("ss15h");
+            this.ss15i = json.getString("ss15i");
+            this.ss17 = json.getString("ss17");
+            this.ss17xx = json.getString("ss17xx");
+            this.ss18 = json.getString("ss18");
+            this.ss18xx = json.getString("ss18xx");
+            this.ss19 = json.getString("ss19");
+            this.ss19xx = json.getString("ss19xx");
+            this.ss20 = json.getString("ss20");
+            this.ss20xx = json.getString("ss20xx");
+            this.ss21a = json.getString("ss21a");
+            this.ss22 = json.getString("ss22");
+            this.ss23 = json.getString("ss23");
+            this.ss23landx = json.getString("ss23landx");
+            this.ss24 = json.getString("ss24");
+            this.ss25a = json.getString("ss25a");
+            this.ss25b = json.getString("ss25b");
+            this.ss25c = json.getString("ss25c");
+            this.ss25d = json.getString("ss25d");
+            this.ss25e = json.getString("ss25e");
+            this.ss25f = json.getString("ss25f");
+            this.ss25g = json.getString("ss25g");
+            this.ss26 = json.getString("ss26");
+            this.ss27 = json.getString("ss27");
+            this.ec13 = json.getString("ec13");
+            this.ec14 = json.getString("ec14");
+            this.ec15 = json.getString("ec15");
+            this.ec16 = json.getString("ec16");
+            this.ec17 = json.getString("ec17");
+            this.cb03_dd = json.getString("cb03_dd");
+            this.cb03_mm = json.getString("cb03_mm");
+            this.cb03_yy = json.getString("cb03_yy");
+            this.cb04_mm = json.getString("cb04_mm");
+            this.cb04_yy = json.getString("cb04_yy");
+
+
+
         }
     }
 
@@ -1627,7 +1833,91 @@ public class Form extends BaseObservable implements Observable {
                 .put("hh20a", hh20a)
                 .put("hh21", hh21)
                 .put("hh21xx", hh21xx)
-                .put("iStatus96x", iStatus96x);
+                .put("iStatus96x", iStatus96x)
+
+                .put("ss01", ss01)
+                .put("ss01xx", ss01xx)
+                .put("ss02", ss02)
+                .put("ss02xx", ss02xx)
+                .put("ss03", ss03)
+                .put("ss03xx", ss03xx)
+                .put("ss04", ss04)
+                .put("ss05", ss05)
+                .put("ss05xx", ss05xx)
+                .put("ss06", ss06)
+                .put("ss06xx", ss06xx)
+                .put("ss07", ss07)
+                .put("ss07xx", ss07xx)
+                .put("ss08", ss08)
+                .put("ss09", ss09)
+                .put("ss11", ss11)
+                .put("ss12", ss12)
+                .put("ss12hhx", ss12hhx)
+                .put("ss13", ss13)
+                .put("ss13xx", ss13xx)
+                .put("ss14a", ss14a)
+                .put("ss14b", ss14b)
+                .put("ss14c", ss14c)
+                .put("ss14d", ss14d)
+                .put("ss14e", ss14e)
+                .put("ss14f", ss14f)
+                .put("ss14g", ss14g)
+                .put("ss14h", ss14h)
+                .put("ss14i", ss14i)
+                .put("ss14j", ss14j)
+                .put("ss14k", ss14k)
+                .put("ss14l", ss14l)
+                .put("ss14m", ss14m)
+                .put("ss14n", ss14n)
+                .put("ss14o", ss14o)
+                .put("ss14p", ss14p)
+                .put("ss14q", ss14q)
+                .put("ss14r", ss14r)
+                .put("ss14s", ss14s)
+                .put("ss15a", ss15a)
+                .put("ss15b", ss15b)
+                .put("ss15c", ss15c)
+                .put("ss15d", ss15d)
+                .put("ss15e", ss15e)
+                .put("ss15f", ss15f)
+                .put("ss15g", ss15g)
+                .put("ss15h", ss15h)
+                .put("ss15i", ss15i)
+                .put("ss17", ss17)
+                .put("ss17xx", ss17xx)
+                .put("ss18", ss18)
+                .put("ss18xx", ss18xx)
+                .put("ss19", ss19)
+                .put("ss19xx", ss19xx)
+                .put("ss20", ss20)
+                .put("ss20xx", ss20xx)
+                .put("ss21a", ss21a)
+                .put("ss22", ss22)
+                .put("ss23", ss23)
+                .put("ss23landx", ss23landx)
+                .put("ss24", ss24)
+                .put("ss25a", ss25a)
+                .put("ss25b", ss25b)
+                .put("ss25c", ss25c)
+                .put("ss25d", ss25d)
+                .put("ss25e", ss25e)
+                .put("ss25f", ss25f)
+                .put("ss25g", ss25g)
+                .put("ss26", ss26)
+                .put("ss27", ss27)
+                .put("ec13", ec13)
+                .put("ec14", ec14)
+                .put("ec15", ec15)
+                .put("ec16", ec16)
+                .put("ec17", ec17)
+                .put("cb03_dd", cb03_dd)
+                .put("cb03_mm", cb03_mm)
+                .put("cb03_yy", cb03_yy)
+                .put("cb04_mm", cb04_mm)
+                .put("cb04_yy", cb04_yy);
+
+
+
 
         return json.toString();
     }

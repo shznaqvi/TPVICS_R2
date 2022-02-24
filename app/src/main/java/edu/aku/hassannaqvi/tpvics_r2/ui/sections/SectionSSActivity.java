@@ -19,13 +19,14 @@ import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionA1Binding;
+import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionSsBinding;
 import edu.aku.hassannaqvi.tpvics_r2.ui.EndingActivity;
 
 public class SectionSSActivity extends AppCompatActivity {
 
 
     private static final String TAG = "SectionSSActivity";
-    ActivitySectionA1Binding bi;
+    ActivitySectionSsBinding bi;
     private DatabaseHelper db;
 
     @Override
@@ -84,14 +85,11 @@ public class SectionSSActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        if (!insertNewRecord()) return;
+        // if (!insertNewRecord()) return;
         // saveDraft();
         if (updateDB()) {
             Intent i;
-
-            i = new Intent(this, SectionCHActivity.class).putExtra("complete", true);
-
-
+            i = new Intent(this, SectionSS_2Activity.class).putExtra("complete", true);
             startActivity(i);
             finish();
         } else {

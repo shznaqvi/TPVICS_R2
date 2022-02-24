@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.tpvics_r2.ui.sections;
 
+import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.child;
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.form;
 
 import android.content.Intent;
@@ -19,13 +20,14 @@ import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionA1Binding;
+import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionImBinding;
 import edu.aku.hassannaqvi.tpvics_r2.ui.EndingActivity;
 
 public class SectionIMActivity extends AppCompatActivity {
 
 
     private static final String TAG = "SectionIMActivity";
-    ActivitySectionA1Binding bi;
+    ActivitySectionImBinding bi;
     private DatabaseHelper db;
 
     @Override
@@ -35,7 +37,7 @@ public class SectionIMActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_im);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        bi.setForm(form);
+        bi.setForm(child);
     }
 
 
@@ -84,7 +86,7 @@ public class SectionIMActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        if (!insertNewRecord()) return;
+        //if (!insertNewRecord()) return;
         // saveDraft();
         if (updateDB()) {
             Intent i;

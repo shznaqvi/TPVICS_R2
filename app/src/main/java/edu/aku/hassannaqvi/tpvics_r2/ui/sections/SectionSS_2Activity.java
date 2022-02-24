@@ -1,7 +1,6 @@
 package edu.aku.hassannaqvi.tpvics_r2.ui.sections;
 
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.form;
-import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,25 +18,26 @@ import edu.aku.hassannaqvi.tpvics_r2.R;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
-import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionA1Binding;
-import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionHhBinding;
+import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionSsBinding;
+import edu.aku.hassannaqvi.tpvics_r2.ui.EndingActivity;
 
-public class SectionHHActivity extends AppCompatActivity {
+public class SectionSS_2Activity extends AppCompatActivity {
 
 
-    private static final String TAG = "SectionHHActivity";
-    ActivitySectionHhBinding bi;
+    private static final String TAG = "SectionSS_2Activity";
+    ActivitySectionSsBinding bi;
     private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setTheme(sharedPref.getString("lang", "0").equals("2") ? R.style.AppThemeSindhi : sharedPref.getString("lang", "0").equals("1") ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_hh);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_ss_2);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.setForm(form);
     }
+
 
     private boolean insertNewRecord() {
         if (!MainApp.form.getUid().equals("") || MainApp.superuser) return true;
@@ -66,15 +66,17 @@ public class SectionHHActivity extends AppCompatActivity {
     private boolean updateDB() {
         if (MainApp.superuser) return true;
 
-        int updcount = 0;
-        try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SHH, MainApp.form.sAtoString());
-        } catch (JSONException e) {
-            Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-        if (updcount == 1) {
-            return true;
-        } else {
+        db = MainApp.appInfo.getDbHelper();
+        long updcount = 0;
+//        try {
+//            updcount = db.updatesFormColumn(TableContracts.FormsTable.Co, moduleD.sD1toString());
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//            Log.d(TAG, R.string.upd_db + e.getMessage());
+//            Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
+//        }
+        if (updcount > 0) return true;
+        else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -82,11 +84,11 @@ public class SectionHHActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        if (!insertNewRecord()) return;
+        // if (!insertNewRecord()) return;
         // saveDraft();
         if (updateDB()) {
             Intent i;
-            i = new Intent(this, SectionSSActivity.class).putExtra("complete", true);
+            i = new Intent(this, SectionCHActivity.class).putExtra("complete", true);
             startActivity(i);
             finish();
         } else {
@@ -97,8 +99,7 @@ public class SectionHHActivity extends AppCompatActivity {
 
     public void btnEnd(View view) {
         finish();
-        //startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
-        //startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
     private boolean formValidation() {
@@ -108,7 +109,7 @@ public class SectionHHActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        // Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
         setResult(RESULT_CANCELED);
     }
 

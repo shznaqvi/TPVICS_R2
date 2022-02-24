@@ -29,9 +29,9 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/householdinformation_mainheading"
+            app:subtitle="@string/sectionhhhouseholdinformationhh_mainheading"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/householdidentification_mainheading"
+            app:title="@string/sectionhhhouseholdinformationhh_mainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 

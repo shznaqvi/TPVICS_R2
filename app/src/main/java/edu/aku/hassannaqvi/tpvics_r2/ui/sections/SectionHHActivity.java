@@ -19,6 +19,7 @@ import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionHhBinding;
+import edu.aku.hassannaqvi.tpvics_r2.ui.EndingActivity;
 
 public class SectionHHActivity extends AppCompatActivity {
 
@@ -83,19 +84,20 @@ public class SectionHHActivity extends AppCompatActivity {
         if (!insertNewRecord()) return;
         // saveDraft();
         if (updateDB()) {
-            Intent i;
-            i = new Intent(this, SectionSS_1Activity.class).putExtra("complete", true);
-            startActivity(i);
             finish();
-        } else {
+            if (form.getHh18().equals("1")) {
+                startActivity(new Intent(this, SectionSS_1Activity.class));
+            } else {
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+            }
+        } else
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
-        }
     }
 
 
     public void btnEnd(View view) {
         finish();
-        //startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
         //startActivity(new Intent(this, MainActivity.class));
     }
 

@@ -664,6 +664,14 @@ public class Form extends BaseObservable implements Observable {
 
     public void setHh18(String hh18) {
         this.hh18 = hh18;
+        setHh13a(hh18.equals("1") ? this.hh13a : "");
+        setHh14(hh18.equals("1") ? this.hh14 : "");
+        setHh15(hh18.equals("1") ? this.hh15 : "");
+        setHh16a(hh18.equals("1") ? this.hh16a : "");
+        setHh16b(hh18.equals("1") ? this.hh16b : "");
+        setHh19(hh18.equals("1") ? this.hh19 : "");
+        setHh20(hh18.equals("1") ? this.hh20 : "");
+        setHh20a(hh18.equals("1") ? this.hh20a : "");
         notifyPropertyChanged(BR.hh18);
     }
 

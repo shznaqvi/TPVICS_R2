@@ -26,15 +26,12 @@ import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.AndroidManager;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.tpvics_r2.models.Child;
-import edu.aku.hassannaqvi.tpvics_r2.models.FamilyMembers;
 import edu.aku.hassannaqvi.tpvics_r2.models.Form;
 import edu.aku.hassannaqvi.tpvics_r2.ui.ChangePasswordActivity;
-import edu.aku.hassannaqvi.tpvics_r2.ui.IdentificationActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.SyncActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.lists.FormsReportCluster;
 import edu.aku.hassannaqvi.tpvics_r2.ui.lists.FormsReportDate;
 import edu.aku.hassannaqvi.tpvics_r2.ui.lists.FormsReportPending;
-import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionA1Activity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionCBActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionCHActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionHHActivity;
@@ -117,9 +114,9 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
 
             case R.id.seca1:
-                MainApp.form = new Form();
-                startActivity(new Intent(this, SectionA1Activity.class));
-                break;
+                /*MainApp.form = new Form();
+                startActivity(new Intent(this, SectionHHActivity.class));
+                break;*/
             case R.id.sechh:
                 MainApp.form = new Form();
                 startActivity(new Intent(this, SectionHHActivity.class));

@@ -1322,6 +1322,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setSs17(String ss17) {
         this.ss17 = ss17;
+        setSs17xx(ss17.equals("96") ? this.ss17xx : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.ss17);
     }
 
@@ -1342,6 +1343,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setSs18(String ss18) {
         this.ss18 = ss18;
+        setSs18xx(ss18.equals("96") ? this.ss18xx : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.ss18);
     }
 
@@ -1362,6 +1364,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setSs19(String ss19) {
         this.ss19 = ss19;
+        setSs19xx(ss19.equals("96") ? this.ss19xx : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.ss19);
     }
 
@@ -1382,6 +1385,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setSs20(String ss20) {
         this.ss20 = ss20;
+        setSs20xx(ss20.equals("96") ? this.ss20xx : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.ss20);
     }
 
@@ -1412,6 +1416,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setSs22(String ss22) {
         this.ss22 = ss22;
+        setSs23(ss22.equals("1") ? this.ss23 : "");
         notifyPropertyChanged(BR.ss22);
     }
 
@@ -1442,6 +1447,13 @@ public class Form extends BaseObservable implements Observable {
 
     public void setSs24(String ss24) {
         this.ss24 = ss24;
+        setSs25a(ss24.equals("1") ? this.ss25a : "");
+        setSs25b(ss24.equals("1") ? this.ss25b : "");
+        setSs25c(ss24.equals("1") ? this.ss25c : "");
+        setSs25d(ss24.equals("1") ? this.ss25d : "");
+        setSs25e(ss24.equals("1") ? this.ss25e : "");
+        setSs25f(ss24.equals("1") ? this.ss25f : "");
+        setSs25g(ss24.equals("1") ? this.ss25g : "");
         notifyPropertyChanged(BR.ss24);
     }
 

@@ -580,7 +580,7 @@
     <string name="ss24a">Yes</string>
     <string name="ss24b">No</string>
     <string name="ss25">If yes, how many livestock, animals or poultry does your household own?  Ask for each listed animals, one by one and observation by enumerator  Insert  000 if none</string>
-    <string name="ss25a">. Cows, Bulls </string>
+    <string name="ss25a">Cows, Bulls </string>
     <string name="ss25b">Horses/Donkeys/ Mules</string>
     <string name="ss25c">Goats</string>
     <string name="ss25d">Sheep</string>

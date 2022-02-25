@@ -523,6 +523,8 @@ public class Child extends BaseObservable implements Observable {
 
     public void setEc22(String ec22) {
         this.ec22 = ec22;
+        setEc2206x(ec22.equals("6") ? this.ec2206x : ""); // for all skips, mention all skipped questions
+        setEc2296x(ec22.equals("96") ? this.ec2296x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.ec22);
     }
 

@@ -900,7 +900,8 @@
                 <!-- cb01  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcb01"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.ec21.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -977,7 +978,8 @@
                 <!-- cb02  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcb02"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.ec21.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

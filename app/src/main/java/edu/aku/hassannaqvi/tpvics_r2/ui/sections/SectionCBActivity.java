@@ -1,12 +1,9 @@
 package edu.aku.hassannaqvi.tpvics_r2.ui.sections;
 
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.child;
-import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.form;
-import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -21,7 +18,6 @@ import edu.aku.hassannaqvi.tpvics_r2.R;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
-import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionA1Binding;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionCbBinding;
 import edu.aku.hassannaqvi.tpvics_r2.ui.EndingActivity;
 
@@ -91,16 +87,14 @@ public class SectionCBActivity extends AppCompatActivity {
         if (!insertNewRecord()) return;
         // saveDraft();
         if (updateDB()) {
-            Intent i;
-
-           i = new Intent(this, SectionIMActivity.class).putExtra("complete", true);
-
-
-            startActivity(i);
             finish();
-        } else {
+            if (child.getEc21().equals("1")) {
+                startActivity(new Intent(this, SectionIMActivity.class));
+            } else {
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+            }
+        } else
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
-        }
     }
 
 

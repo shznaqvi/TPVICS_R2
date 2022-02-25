@@ -513,6 +513,10 @@ public class Child extends BaseObservable implements Observable {
 
     public void setEc21(String ec21) {
         this.ec21 = ec21;
+        setCb01a(ec21.equals("1") ? this.cb01a : "");
+        setCb01b(ec21.equals("1") ? this.cb01b : "");
+        setCb02a(ec21.equals("1") ? this.cb02a : "");
+        setCb02b(ec21.equals("1") ? this.cb02b : "");
         notifyPropertyChanged(BR.ec21);
     }
 

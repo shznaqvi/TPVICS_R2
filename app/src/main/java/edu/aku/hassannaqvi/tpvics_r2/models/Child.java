@@ -599,6 +599,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm01(String im01) {
         this.im01 = im01;
+        setIm02(im01.equals("1") ? this.im02 : "");
         notifyPropertyChanged(BR.im01);
     }
 
@@ -609,6 +610,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm02(String im02) {
         this.im02 = im02;
+        setIm02a(im02.equals("2") ? this.im02a : "");
         notifyPropertyChanged(BR.im02);
     }
 
@@ -619,6 +621,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm02a(String im02a) {
         this.im02a = im02a;
+        setIm02a96x(im02a.equals("96") ? this.im02a96x : ""); // for all skips, mention all skipped questions
         notifyPropertyChanged(BR.im02a);
     }
 

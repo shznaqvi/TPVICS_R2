@@ -619,6 +619,13 @@
     <string name="im0497">Date not Visible on Card</string>
     <string name="im05_title1"> Immunization Status</string>
     <string name="im05_title2">IM5.COPY DATES FOR EACH VACCINATION FROM THE VACCINATION CARD  NOTE: WRITE ‘44’ IN DAY COLUMN IF CARD SHOWS THAT VACCINATION WAS GIVEN BUT NO DATE RECORDED. OR IF THE CARD SHOWS A DATE BUT YOU CANNOT READ IT CLEARLY. IF THE PARTICULAR VACCINE HAS NO ANY RECORD, WRITE ‘97’ IN DAY, MONTH AND YEAR COLUMN</string>
+    <string name="im05">Vaccine Names</string>
+    <string name="im05t1"> Vaccinations At Birth </string>
+    <string name="im05t2"> Vaccinations At 6 Weeks </string>
+    <string name="im05t3"> Vaccinations At 10 Weeks </string>
+    <string name="im05t4"> Vaccinations At 14 Weeks </string>
+    <string name="im05t5"> Vaccinations At 9 Months </string>
+    <string name="im05t6"> Vaccinations At 15 Months </string>
     <string name="im05_1bcg">At Birth  -BCG</string>
     <string name="im0501dd">Day</string>
     <string name="im0501mm">Month</string>

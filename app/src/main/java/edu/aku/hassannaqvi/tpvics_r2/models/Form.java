@@ -173,17 +173,17 @@ public class Form extends BaseObservable implements Observable {
     private String ss27= _EMPTY_;
     private String ss28= _EMPTY_;
 
-    private String ec13;
-    private String ec14;
-    private String ec15;
-    private String ec16;
-    private String ec17;
-    private String cb03_dd;
-    private String cb03_mm;
-    private String cb03_yy;
-    private String cb03_dk;
-    private String cb04_mm;
-    private String cb04_yy;
+    private String ec13= _EMPTY_;
+    private String ec14= _EMPTY_;
+    private String ec15= _EMPTY_;
+    private String ec16= _EMPTY_;
+    private String ec17= _EMPTY_;
+    private String cb03_dd= _EMPTY_;
+    private String cb03_mm= _EMPTY_;
+    private String cb03_yy= _EMPTY_;
+    private String cb03_dk= _EMPTY_;
+    private String cb04_mm= _EMPTY_;
+    private String cb04_yy= _EMPTY_;
 
 
 

@@ -22,14 +22,14 @@
         <entry key="..\:/Users/ibrahim.mushtaque/Documents/GitHub/TPVICS_R2/app/src/main/res/layout/activity_section_cb.xml" value="0.5" />
         <entry key="..\:/Users/ibrahim.mushtaque/Documents/GitHub/TPVICS_R2/app/src/main/res/layout/activity_section_ch.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ibrahim.mushtaque/Documents/GitHub/TPVICS_R2/app/src/main/res/layout/activity_section_hh.xml" value="0.2759702077616621" />
-        <entry key="..\:/Users/ibrahim.mushtaque/Documents/GitHub/TPVICS_R2/app/src/main/res/layout/activity_section_im.xml" value="0.16506447831184057" />
+        <entry key="..\:/Users/ibrahim.mushtaque/Documents/GitHub/TPVICS_R2/app/src/main/res/layout/activity_section_im.xml" value="0.5" />
         <entry key="..\:/Users/ibrahim.mushtaque/Documents/GitHub/TPVICS_R2/app/src/main/res/layout/activity_section_ss.xml" value="0.22" />
         <entry key="..\:/Users/ibrahim.mushtaque/Documents/GitHub/TPVICS_R2/app/src/main/res/layout/activity_section_ss_2.xml" value="0.15956482320942883" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

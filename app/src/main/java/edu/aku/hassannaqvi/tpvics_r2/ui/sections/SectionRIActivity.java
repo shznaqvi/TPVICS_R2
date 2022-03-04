@@ -12,14 +12,10 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
-import org.json.JSONException;
-
 import edu.aku.hassannaqvi.tpvics_r2.R;
-import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionRiBinding;
-import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionSs1Binding;
 import edu.aku.hassannaqvi.tpvics_r2.ui.EndingActivity;
 
 public class SectionRIActivity extends AppCompatActivity {
@@ -37,31 +33,6 @@ public class SectionRIActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.setForm(form);
-    }
-
-
-    private boolean insertNewRecord() {
-        if (!MainApp.form.getUid().equals("") || MainApp.superuser) return true;
-
-        MainApp.form.populateMeta();
-
-        long rowId = 0;
-        try {
-            rowId = db.addForm(MainApp.form);
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        MainApp.form.setId(String.valueOf(rowId));
-        if (rowId > 0) {
-            MainApp.form.setUid(MainApp.form.getDeviceId() + MainApp.form.getId());
-            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, MainApp.form.getUid());
-            return true;
-        } else {
-            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
-            return false;
-        }
     }
 
     private boolean updateDB() {
@@ -85,16 +56,15 @@ public class SectionRIActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        // if (!insertNewRecord()) return;
-        // saveDraft();
         if (updateDB()) {
-            Intent i;
-            i = new Intent(this, SectionSS_1Activity.class).putExtra("complete", true);
-            startActivity(i);
             finish();
-        } else {
+            if (form.getHh20().equals("1")) {
+                startActivity(new Intent(this, SectionSS_1Activity.class));
+            } else {
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+            }
+        } else
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
-        }
     }
 
 

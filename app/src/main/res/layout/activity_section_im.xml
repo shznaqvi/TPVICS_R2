@@ -100,7 +100,7 @@
 
                 <!-- im02  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVim02"
+                    android:id="@+id/fldGrpCVimim24a02"
                     style="@style/cardView"
                     android:visibility="@{form.im01.equals(`1`)  ? View.VISIBLE : View.GONE}">
 
@@ -159,7 +159,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVim02a"
                     style="@style/cardView"
-                    android:visibility="@{form.im02.equals(`1`)  ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.im02.equals(`3`)  ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -239,7 +239,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVim03"
                     style="@style/cardView"
-                    android:visibility="@{form. im01.equals(`2`)  ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.im01.equals(`2`)  ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -324,7 +324,8 @@
                 <!-- im04  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVim04"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.im02.equals(`1`)  ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -437,6 +438,14 @@
                 </androidx.cardview.widget.CardView>
 
                 <!-- im05_title1  Title   -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="@{form.im02.equals(`1`)  ? View.VISIBLE : View.GONE}">
+
+                >
+
                 <TextView
                     style="@style/labelsHead"
                     android:layout_width="match_parent"
@@ -1221,32 +1230,7 @@
 
                 </androidx.cardview.widget.CardView>
 
-                <!-- im0502opv0  Title   -->
 
-                <!-- im0503opv1  Title   -->
-
-
-                <!-- im0504penta1  Title   -->
-
-
-                <!-- im0505pcv1  Title   -->
-
-
-                <!-- im0506rv1  Title   -->
-
-
-                <!-- im0507opv2  Title   -->
-
-
-                <!-- im0508penta2  Title   -->
-
-                <!-- im0509pcv2  Title   -->
-
-
-                <!-- im0510rv2  Title   -->
-
-
-                <!-- im0510ahp  Title   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVim0510ahp"
                     style="@style/cardView">
@@ -1754,21 +1738,6 @@
 
                 </androidx.cardview.widget.CardView>
 
-                <!-- im0511opv3  Title   -->
-
-
-                <!-- im0512penta3  Title   -->
-
-                <!-- im0513pcv3  Title   -->
-
-
-                <!-- im0514ipv  Title   -->
-
-
-                <!-- im0515measles1  Title   -->
-
-
-                <!-- im0516measles2  Title   -->
 
                 <!-- im07  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -1826,10 +1795,14 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+                </LinearLayout>
+
+
                 <!-- im08  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVim08"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.im01.equals(`2`) || form.im02.equals(`3`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

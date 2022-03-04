@@ -27,9 +27,9 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/sectionchlistofchildren0623monthsold_mainheading"
+            app:subtitle="@string/sectionsssocioeconomicstatusss_mainheading"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/sectionchlistofchildren0623monthsold_mainheading"
+            app:title="@string/sectionsssocioeconomicstatusss_mainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
         <ScrollView

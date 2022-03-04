@@ -418,6 +418,21 @@
                             android:textSize="14sp" />
 
                         <TextView
+                            android:id="@+id/secri"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:background="@color/colorPrimary"
+                            android:elevation="1dp"
+                            android:gravity="center"
+                            android:onClick="sectionPress"
+                            android:padding="8dp"
+                            android:shadowRadius="8"
+                            android:text="RI"
+                            android:textColor="@color/colorAccentLight"
+                            android:textSize="14sp" />
+
+                        <TextView
                             android:id="@+id/secss1"
                             android:layout_width="60dp"
                             android:layout_height="wrap_content"

@@ -762,6 +762,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setHh20(String hh20) {
         this.hh20 = hh20;
+        setHh20a(hh20.equals("1") ? this.hh20a : "");
         notifyPropertyChanged(BR.hh20);
     }
 

@@ -611,6 +611,10 @@ public class Child extends BaseObservable implements Observable {
     public void setIm02(String im02) {
         this.im02 = im02;
         setIm02a(im02.equals("1") ? this.im02a : "");
+        setIm04dd(im02.equals("1") ? this.im04dd : "");
+        setIm04mm(im02.equals("1") ? this.im04mm : "");
+        setIm04yy(im02.equals("1") ? this.im04yy : "");
+
         notifyPropertyChanged(BR.im02);
     }
 

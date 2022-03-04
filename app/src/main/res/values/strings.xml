@@ -129,12 +129,12 @@
     <string name="istatus"> Result of Household Questionnaire interview </string>
     <string name="istatusi"> Discuss any result not completed with team leader </string>
     <string name="istatus01"> Completed </string>
-    <string name="istatus02"> Dwelling locked (Not At Home) </string>
-    <string name="istatus03"> Pending/Partially complete </string>
-    <string name="istatus04"> Unable to answer </string>
-    <string name="istatus05"> Ineligible respondent </string>
-    <string name="istatus06"> Household not found </string>
-    <string name="istatus07"> Didn’t answer due to illness caused by Corona </string>
+    <string name="istatus02"> No HH member at home or no competent respondent at home at time of visit </string>
+    <string name="istatus03"> Entire household absent for extended period of time </string>
+    <string name="istatus04"> Refused </string>
+    <string name="istatus05"> Dwelling vacant or address not a dwelling </string>
+    <string name="istatus06"> Dwelling not found </string>
+    <string name="istatus07"> No child of 06-23 months in this household </string>
     <string name="istatus96"> Other (Specify) </string>
 
     <string name="title_activity_change_password">ChangePasswordActivity</string>
@@ -181,6 +181,8 @@
     <string name="sectioni1diarrheainformation_mainheading">Section I1: Diarrhea Information: </string>
     <string name="sectioni2acuterespiratoryinfectionari_mainheading">Section I2: Acute Respiratory Infection (ARI): </string>
     <string name="sectionimimmunizationinformation_mainheading">Section IM: Immunization Information: </string>
+    <string name="respondentinfo_mainheading">Respondent Info: Enter the respondents information and write down the exact number of people in the household and eligible children</string>
+
     <string name="splashText2">  </string>
 
     <string name="a1title">Complete Address</string>
@@ -854,6 +856,8 @@
     <string name='Q_hh14'>hh14</string>
     <string name='Q_hh15'>hh15</string>
     <string name='Q_hh16'>hh16</string>
+    <string name='Q_hh16a'>hh16a</string>
+    <string name='Q_hh16b'>hh16b</string>
     <string name='Q_hh18'>hh18</string>
     <string name='Q_hh18t'>hh18t</string>
     <string name='Q_hh19'>hh19</string>

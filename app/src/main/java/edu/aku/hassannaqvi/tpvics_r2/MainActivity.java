@@ -36,6 +36,7 @@ import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionCBActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionCHActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionHHActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionIMActivity;
+import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionRIActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionSS_1Activity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionSS_2Activity;
 
@@ -121,9 +122,14 @@ public class MainActivity extends AppCompatActivity {
                 MainApp.form = new Form();
                 startActivity(new Intent(this, SectionHHActivity.class));
                 break;
+            case R.id.secri:
+                startActivity(new Intent(this, SectionRIActivity.class));
+                break;
+
             case R.id.secss1:
                 startActivity(new Intent(this, SectionSS_1Activity.class));
                 break;
+
             case R.id.secess2:
                 startActivity(new Intent(this, SectionSS_2Activity.class));
                 break;

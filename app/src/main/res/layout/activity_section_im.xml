@@ -1320,6 +1320,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/im05t4" />
 
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -1382,11 +1383,10 @@
                                     app:minValue="1"
                                     app:type="range" />
 
-
                             </LinearLayout>
 
-
                         </LinearLayout>
+
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1451,11 +1451,10 @@
                                     app:minValue="1"
                                     app:type="range" />
 
-
                             </LinearLayout>
 
-
                         </LinearLayout>
+
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1519,11 +1518,10 @@
                                     app:minValue="1"
                                     app:type="range" />
 
-
                             </LinearLayout>
 
-
                         </LinearLayout>
+
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1586,7 +1584,6 @@
                                     app:maxValue="31"
                                     app:minValue="1"
                                     app:type="range" />
-
 
                             </LinearLayout>
 
@@ -1660,9 +1657,7 @@
                                     app:minValue="1"
                                     app:type="range" />
 
-
                             </LinearLayout>
-
 
                         </LinearLayout>
 
@@ -1777,30 +1772,25 @@
                             android:id="@+id/im07"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-
-
-                            >
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/im0701"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im07.equals(`1`)}"
                                 android:onClick="@{()->form.setIm07(`1`)}"
-                                android:text="@string/im0701"
-                                android:layout_weight="1"
-                                />
+                                android:text="@string/im0701" />
 
                             <RadioButton
                                 android:id="@+id/im0702"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im07.equals(`2`)}"
                                 android:onClick="@{()->form.setIm07(`2`)}"
-                                android:text="@string/im0702"
-                                android:layout_weight="1"
-                                />
+                                android:text="@string/im0702" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -1847,8 +1837,8 @@
                             <RadioButton
                                 android:id="@+id/im08_1"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im08.equals(`1`)}"
                                 android:onClick="@{()->form.setIm08(`1`)}"
                                 android:text="@string/im08_1" />
@@ -1856,7 +1846,8 @@
                             <RadioButton
                                 android:id="@+id/im08_2"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"                                android:layout_height="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im08.equals(`2`)}"
                                 android:onClick="@{()->form.setIm08(`2`)}"
                                 android:text="@string/im08_2" />
@@ -1864,7 +1855,8 @@
                             <RadioButton
                                 android:id="@+id/im08_3"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"                                android:layout_height="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im08.equals(`98`)}"
                                 android:onClick="@{()->form.setIm08(`98`)}"
                                 android:text="@string/im08_3" />
@@ -1905,14 +1897,13 @@
                             android:id="@+id/im09"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            >
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/im09_1"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im09.equals(`1`)}"
                                 android:onClick="@{()->form.setIm09(`1`)}"
                                 android:text="@string/im09_1" />
@@ -1920,8 +1911,8 @@
                             <RadioButton
                                 android:id="@+id/im09_2"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im09.equals(`2`)}"
                                 android:onClick="@{()->form.setIm09(`2`)}"
                                 android:text="@string/im09_2" />
@@ -1929,8 +1920,8 @@
                             <RadioButton
                                 android:id="@+id/im09_3"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im09.equals(`98`)}"
                                 android:onClick="@{()->form.setIm09(`98`)}"
                                 android:text="@string/im09_3" />
@@ -1971,14 +1962,13 @@
                             android:id="@+id/im10"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            >
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/im10_1"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im10.equals(`1`)}"
                                 android:onClick="@{()->form.setIm10(`1`)}"
                                 android:text="@string/im10_1" />
@@ -1986,8 +1976,8 @@
                             <RadioButton
                                 android:id="@+id/im10_2"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im10.equals(`2`)}"
                                 android:onClick="@{()->form.setIm10(`2`)}"
                                 android:text="@string/im10_2" />
@@ -1995,8 +1985,8 @@
                             <RadioButton
                                 android:id="@+id/im10_3"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im10.equals(`98`)}"
                                 android:onClick="@{()->form.setIm10(`98`)}"
                                 android:text="@string/im10_3" />
@@ -2037,14 +2027,13 @@
                             android:id="@+id/im11"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            >
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/im11_1"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im11.equals(`1`)}"
                                 android:onClick="@{()->form.setIm11(`1`)}"
                                 android:text="@string/im11_1" />
@@ -2052,8 +2041,8 @@
                             <RadioButton
                                 android:id="@+id/im11_2"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im11.equals(`2`)}"
                                 android:onClick="@{()->form.setIm11(`2`)}"
                                 android:text="@string/im11_2" />
@@ -2061,8 +2050,8 @@
                             <RadioButton
                                 android:id="@+id/im11_3"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im11.equals(`98`)}"
                                 android:onClick="@{()->form.setIm11(`98`)}"
                                 android:text="@string/im11_3" />
@@ -2186,14 +2175,13 @@
                             android:id="@+id/im14"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            >
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/im14_1"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im14.equals(`1`)}"
                                 android:onClick="@{()->form.setIm14(`1`)}"
                                 android:text="@string/im14_1" />
@@ -2201,8 +2189,8 @@
                             <RadioButton
                                 android:id="@+id/im14_2"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im14.equals(`2`)}"
                                 android:onClick="@{()->form.setIm14(`2`)}"
                                 android:text="@string/im14_2" />
@@ -2210,8 +2198,8 @@
                             <RadioButton
                                 android:id="@+id/im14_3"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im14.equals(`98`)}"
                                 android:onClick="@{()->form.setIm14(`98`)}"
                                 android:text="@string/im14_3" />
@@ -2296,14 +2284,13 @@
                             android:id="@+id/im16"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            >
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/im16_1"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im16.equals(`1`)}"
                                 android:onClick="@{()->form.setIm16(`1`)}"
                                 android:text="@string/im16_1" />
@@ -2311,8 +2298,8 @@
                             <RadioButton
                                 android:id="@+id/im16_2"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im16.equals(`2`)}"
                                 android:onClick="@{()->form.setIm16(`2`)}"
                                 android:text="@string/im16_2" />
@@ -2320,8 +2307,8 @@
                             <RadioButton
                                 android:id="@+id/im16_3"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im16.equals(`98`)}"
                                 android:onClick="@{()->form.setIm16(`98`)}"
                                 android:text="@string/im16_3" />
@@ -2406,14 +2393,13 @@
                             android:id="@+id/im18"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            >
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/im18_1"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im18.equals(`1`)}"
                                 android:onClick="@{()->form.setIm18(`1`)}"
                                 android:text="@string/im18_1" />
@@ -2421,8 +2407,8 @@
                             <RadioButton
                                 android:id="@+id/im18_2"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im18.equals(`2`)}"
                                 android:onClick="@{()->form.setIm18(`2`)}"
                                 android:text="@string/im18_2" />
@@ -2430,8 +2416,8 @@
                             <RadioButton
                                 android:id="@+id/im18_3"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im18.equals(`98`)}"
                                 android:onClick="@{()->form.setIm18(`98`)}"
                                 android:text="@string/im18_3" />
@@ -2504,14 +2490,13 @@
                             android:id="@+id/im20"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            >
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/im20_1"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im20.equals(`1`)}"
                                 android:onClick="@{()->form.setIm20(`1`)}"
                                 android:text="@string/im20_1" />
@@ -2519,8 +2504,8 @@
                             <RadioButton
                                 android:id="@+id/im20_2"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im20.equals(`2`)}"
                                 android:onClick="@{()->form.setIm20(`2`)}"
                                 android:text="@string/im20_2" />
@@ -2528,8 +2513,8 @@
                             <RadioButton
                                 android:id="@+id/im20_3"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im20.equals(`98`)}"
                                 android:onClick="@{()->form.setIm20(`98`)}"
                                 android:text="@string/im20_3" />
@@ -2570,14 +2555,13 @@
                             android:id="@+id/im21"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            >
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/im21_1"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im21.equals(`1`)}"
                                 android:onClick="@{()->form.setIm21(`1`)}"
                                 android:text="@string/im21_1" />
@@ -2585,8 +2569,8 @@
                             <RadioButton
                                 android:id="@+id/im21_2"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im21.equals(`2`)}"
                                 android:onClick="@{()->form.setIm21(`2`)}"
                                 android:text="@string/im21_2" />
@@ -2594,8 +2578,8 @@
                             <RadioButton
                                 android:id="@+id/im21_3"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im21.equals(`98`)}"
                                 android:onClick="@{()->form.setIm21(`98`)}"
                                 android:text="@string/im21_3" />
@@ -2831,8 +2815,7 @@
                         <RadioGroup
                             android:id="@+id/im24"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            >
+                            android:layout_height="wrap_content">
 
                             <RadioButton
                                 android:id="@+id/im24_1"
@@ -2852,43 +2835,49 @@
 
                             <RadioButton
                                 android:id="@+id/im24_11"
-                                android:layout_width="match_parent"                                android:layout_weight="1"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im24.equals(`11`)}"
                                 android:onClick="@{()->form.setIm24(`11`)}"
                                 android:text="@string/im24_11" />
 
                             <RadioButton
                                 android:id="@+id/im24_12"
-                                android:layout_width="match_parent"                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:checked="@{form.im24.equals(`12`)}"
                                 android:onClick="@{()->form.setIm24(`12`)}"
                                 android:text="@string/im24_12" />
 
                             <RadioButton
                                 android:id="@+id/im24_13"
-                                android:layout_width="match_parent"                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:checked="@{form.im24.equals(`13`)}"
                                 android:onClick="@{()->form.setIm24(`13`)}"
                                 android:text="@string/im24_13" />
 
                             <RadioButton
                                 android:id="@+id/im24_14"
-                                android:layout_width="match_parent"                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:checked="@{form.im24.equals(`14`)}"
                                 android:onClick="@{()->form.setIm24(`14`)}"
                                 android:text="@string/im24_14" />
 
                             <RadioButton
                                 android:id="@+id/im24_15"
-                                android:layout_width="match_parent"                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:checked="@{form.im24.equals(`15`)}"
                                 android:onClick="@{()->form.setIm24(`15`)}"
                                 android:text="@string/im24_15" />
 
                             <RadioButton
                                 android:id="@+id/im24_16"
-                                android:layout_width="match_parent"                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:checked="@{form.im24.equals(`16`)}"
                                 android:onClick="@{()->form.setIm24(`16`)}"
                                 android:text="@string/im24_16" />
@@ -3019,14 +3008,13 @@
                             android:id="@+id/im24a"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            >
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/im24a1"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im24a.equals(`1`)}"
                                 android:onClick="@{()->form.setIm24a(`1`)}"
                                 android:text="@string/im24a1" />
@@ -3034,8 +3022,8 @@
                             <RadioButton
                                 android:id="@+id/im24a2"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im24a.equals(`2`)}"
                                 android:onClick="@{()->form.setIm24a(`2`)}"
                                 android:text="@string/im24a2" />
@@ -3043,8 +3031,8 @@
                             <RadioButton
                                 android:id="@+id/im24a98"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im24a.equals(`98`)}"
                                 android:onClick="@{()->form.setIm24a(`98`)}"
                                 android:text="@string/im24a98" />
@@ -3126,14 +3114,13 @@
                             android:id="@+id/im24c"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            >
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/im24c1"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im24c.equals(`1`)}"
                                 android:onClick="@{()->form.setIm24c(`1`)}"
                                 android:text="@string/im24c1" />
@@ -3141,8 +3128,8 @@
                             <RadioButton
                                 android:id="@+id/im24c2"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im24c.equals(`2`)}"
                                 android:onClick="@{()->form.setIm24c(`2`)}"
                                 android:text="@string/im24c2" />
@@ -3150,8 +3137,8 @@
                             <RadioButton
                                 android:id="@+id/im24c98"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im24c.equals(`98`)}"
                                 android:onClick="@{()->form.setIm24c(`98`)}"
                                 android:text="@string/im24c98" />
@@ -3193,14 +3180,13 @@
                             android:id="@+id/im24d"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            >
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/im24d1"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im24d.equals(`1`)}"
                                 android:onClick="@{()->form.setIm24d(`1`)}"
                                 android:text="@string/im24d1" />
@@ -3208,8 +3194,8 @@
                             <RadioButton
                                 android:id="@+id/im24d2"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im24d.equals(`2`)}"
                                 android:onClick="@{()->form.setIm24d(`2`)}"
                                 android:text="@string/im24d2" />
@@ -3217,8 +3203,8 @@
                             <RadioButton
                                 android:id="@+id/im24d98"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.im24d.equals(`98`)}"
                                 android:onClick="@{()->form.setIm24d(`98`)}"
                                 android:text="@string/im24d98" />

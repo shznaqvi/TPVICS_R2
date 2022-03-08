@@ -1108,10 +1108,10 @@
                             android:gravity="center"
                             android:hint="@string/ss21a"
                             android:inputType="number"
-                            android:maxLength="1"
+                            android:maxLength="2"
                             android:text="@={form.ss21a}"
-                            app:maxValue="1"
-                            app:minValue="0"
+                            app:maxValue="15"
+                            app:minValue="1"
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

@@ -1,8 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="tpvics_r2.ui.EndingActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -13,11 +10,10 @@
             type="edu.aku.hassannaqvi.tpvics_r2.models.Form" />
     </data>
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/app_bg_effect"
+        android:background="@drawable/app_bg_gray"
         android:orientation="vertical">
 
 
@@ -29,9 +25,11 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             android:minHeight="?attr/actionBarSize"
-            android:theme="@style/ToolbarTheme"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:theme="@style/CustomToolbarTheme"
+            app:popupTheme="@style/CustomPopupTheme"
+            app:subtitle="@string/sectionchlistofchildren0623monthsold_mainheading"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            app:title="@string/sectionchlistofchildren0623monthsold_mainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
         <ScrollView
@@ -39,15 +37,14 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:id="@+id/fldGrpEnd"
+                android:id="@+id/GrpName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-
-                <!-- istatus  Radio   -->
+                <!-- hh21  Radio   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVistatus"
+                    android:id="@+id/fldGrpCVhh21"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -61,6 +58,11 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_hh21" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -70,115 +72,117 @@
                         </LinearLayout>
 
                         <RadioGroup
-                            android:id="@+id/istatus"
+                            android:id="@+id/hh21"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <RadioButton
-                                android:id="@+id/istatusa"
+                                android:id="@+id/hh21a"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/istatus01" />
+                                android:checked="@{form.hh21.equals(`1`)}"
+                                android:onClick="@{()->form.setHh21(`1`)}"
+                                android:text="@string/hh21a" />
 
                             <RadioButton
-                                android:id="@+id/istatusb"
+                                android:id="@+id/hh21b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/istatus02" />
+                                android:checked="@{form.hh21.equals(`2`)}"
+                                android:onClick="@{()->form.setHh21(`2`)}"
+                                android:text="@string/hh21b" />
 
                             <RadioButton
-                                android:id="@+id/istatusc"
+                                android:id="@+id/hh21c"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/istatus03" />
+                                android:checked="@{form.hh21.equals(`3`)}"
+                                android:onClick="@{()->form.setHh21(`3`)}"
+                                android:text="@string/hh21c" />
 
                             <RadioButton
-                                android:id="@+id/istatusd"
+                                android:id="@+id/hh21d"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/istatus04" />
+                                android:checked="@{form.hh21.equals(`4`)}"
+                                android:onClick="@{()->form.setHh21(`4`)}"
+                                android:text="@string/hh21d" />
 
                             <RadioButton
-                                android:id="@+id/istatuse"
+                                android:id="@+id/hh21e"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/istatus05" />
+                                android:checked="@{form.hh21.equals(`5`)}"
+                                android:onClick="@{()->form.setHh21(`5`)}"
+                                android:text="@string/hh21e" />
 
                             <RadioButton
-                                android:id="@+id/istatusf"
+                                android:id="@+id/hh21f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/istatus06" />
+                                android:checked="@{form.hh21.equals(`6`)}"
+                                android:onClick="@{()->form.setHh21(`6`)}"
+                                android:text="@string/hh21f" />
 
                             <RadioButton
-                                android:id="@+id/istatusg"
+                                android:id="@+id/hh21g"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/istatus07" />
+                                android:checked="@{form.hh21.equals(`7`)}"
+                                android:onClick="@{()->form.setHh21(`7`)}"
+                                android:text="@string/hh21g" />
 
                             <RadioButton
-                                android:id="@+id/istatus96"
+                                android:id="@+id/hh21x"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/istatus96" />
+                                android:checked="@{form.hh21.equals(`96`)}"
+                                android:onClick="@{()->form.setHh21(`96`)}"
+                                android:text="@string/hh21x" />
 
                             <EditText
-                                android:id="@+id/istatus96x"
+                                android:id="@+id/hh21xx"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/istatus96"
-                                android:tag="istatus96"
-                                android:text='@{istatus96.checked ? istatus96x.getText().toString() : ""}'
-                                android:visibility='@{istatus96.checked? View.VISIBLE : View.GONE}' />
-
+                                android:hint="@string/hh21x"
+                                android:tag="hh21x"
+                                android:text="@={form.hh21xx}"
+                                android:visibility="@{form.hh21.equals(`96`) ? View.VISIBLE : View.GONE}" />
                         </RadioGroup>
-
                     </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-                <!--EndButton LinearLayout-->
+                </androidx.cardview.widget.CardView><!--EndButton LinearLayout-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginTop="100dp"
-                    android:orientation="horizontal"
-                    android:padding="24dp">
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal">
 
+                    <Button
+                        android:id="@+id/btn_End"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:background="@color/red_overlay"
+                        android:onClick="btnEnd"
+                        android:text="Cancel"
+                        android:textColor="@color/white" />
 
-                    <!--
-                             <enum name="src_over" value="3" />
-                                <enum name="src_in" value="5" />
-                                <enum name="src_atop" value="9" />
-                                <enum name="multiply" value="14" />
-                                <enum name="screen" value="15" />
-                                <enum name="add" value="16" />
-                    -->
                     <Button
                         android:id="@+id/btn_Continue"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/capsule"
-                        android:backgroundTint="@color/colorAccentOverlay"
-                        android:backgroundTintMode="src_atop"
-                        android:onClick="btnEnd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:background="@color/green_overlay"
+                        android:onClick="btnContinue"
                         android:text="Save"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        tools:ignore="OnClick" />
+                        android:textColor="@color/white" />
 
                 </LinearLayout>
-                <!--EndButton LinearLayout-->
-
             </LinearLayout>
-
         </ScrollView>
 
 
     </LinearLayout>
-
 </layout>

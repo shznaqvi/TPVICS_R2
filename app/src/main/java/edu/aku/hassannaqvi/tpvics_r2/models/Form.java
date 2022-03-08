@@ -702,6 +702,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setHh15(String hh15) {
         this.hh15 = hh15;
+        setHh16a(hh15.equals("2") ? this.hh16a : "");
+        setHh16b(hh15.equals("2") ? this.hh16b : "");
         notifyPropertyChanged(BR.hh15);
     }
 
@@ -945,10 +947,10 @@ public class Form extends BaseObservable implements Observable {
     public void setSs07(String ss07) {
         this.ss07 = ss07;
         setSs07xx(ss07.equals("96") ? this.ss07xx : ""); // for all skips, mention all skipped questions
-        setSs08(ss07.equals("8") ? "" : this.ss08);
-        setSs09(ss07.equals("8") ? "" : this.ss09);
-        setSs11(ss07.equals("8") ? "" : this.ss11);
-        setSs02(ss07.equals("8") ? "" : this.ss12);
+        setSs08(ss07.equals("8") || ss07.equals("9") ? "" : this.ss08);
+        setSs09(ss07.equals("8") || ss07.equals("9") ? "" : this.ss09);
+        setSs11(ss07.equals("8") || ss07.equals("9") ? "" : this.ss11);
+        setSs02(ss07.equals("8") || ss07.equals("9") ? "" : this.ss12);
         notifyPropertyChanged(BR.ss07);
     }
 
@@ -1697,6 +1699,7 @@ public class Form extends BaseObservable implements Observable {
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
+
             this.a101 = json.getString("a101");
             this.a102 = json.getString("a102");
             this.a103 = json.getString("a103");

@@ -234,27 +234,27 @@ public class IdentificationActivity extends AppCompatActivity {
         testRand.setClusteCcode("9000001");
         testRand.setHeadhh("Test Head");
         testRand.setHhno("999");*/
-        RandomHH randHH = db.getHHbyCluster(bi.a101.getText().toString(), bi.a113.getText().toString());
+        //RandomHH randHH = db.getHHbyCluster(bi.a101.getText().toString(), bi.a113.getText().toString());
       /*  if (!bi.a101.getText().toString().equals("9000001")) {
             randHH = db.getHHbyCluster(bi.a101.getText().toString(), bi.a113.getText().toString());
         } else {
             randHH = testRand;
         }*/
-        if (!randHH.getClusteCcode().equals("")) {
-         /*   bi.ahhead.setError(null);
-            bi.ahhead.setText(randHH.getHeadhh());*/
-            bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
-            bi.btnContinue.setEnabled(true);
-
-            MainApp.currentHousehold = randHH;
-
-        } else {
-/*
-            bi.ahhead.setError("Not Found!");
-*/
-            bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
-            bi.btnContinue.setEnabled(false);
-        }
+//        if (!randHH.getClusteCcode().equals("")) {
+//         /*   bi.ahhead.setError(null);
+//            bi.ahhead.setText(randHH.getHeadhh());*/
+//            bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
+//            bi.btnContinue.setEnabled(true);
+//
+//            MainApp.currentHousehold = randHH;
+//
+//        } else {
+///*
+//            bi.ahhead.setError("Not Found!");
+//*/
+//            bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
+//            bi.btnContinue.setEnabled(false);
+//        }
         /*ArrayList<String> households = new ArrayList<String>();
         for (RandomHH r : randHH) {
             households.add(r.getHhno());
@@ -339,28 +339,28 @@ public class IdentificationActivity extends AppCompatActivity {
     }
 
 
-    public void searchCluster(View view) {
-        bi.btnContinue.setEnabled(true);
-
-        bi.a105.setText(null);
-        bi.a106.setText(null);
-        bi.a107.setText(null);
-        bi.a113.setText(null);
-        bi.fldGrpA113.setVisibility(View.GONE);
-
-        Clusters clusters = db.getCluster(bi.a101.getText().toString());
-
-        String geoarea = clusters.getGeoarea();
-        if (!clusters.getClusterNo().equals("")) {
-            bi.a105.setText(geoarea.split("\\|")[0]);
-            bi.a106.setText(geoarea.split("\\|")[1]);
-            bi.a107.setText(geoarea.split("\\|")[2]);
-
-            bi.fldGrpA113.setVisibility(View.VISIBLE);
-
-            MainApp.selectedTehsil = bi.a106.getText().toString();
-            MainApp.selectedUC = bi.a107.getText().toString();
-
-        }
-    }
+//    public void searchCluster(View view) {
+//        bi.btnContinue.setEnabled(true);
+//
+//        bi.a105.setText(null);
+//        bi.a106.setText(null);
+//        bi.a107.setText(null);
+//        bi.a113.setText(null);
+//        bi.fldGrpA113.setVisibility(View.GONE);
+//
+//        Clusters clusters = db.getCluster(bi.a101.getText().toString());
+//
+//        String geoarea = clusters.getGeoarea();
+//        if (!clusters.getClusterNo().equals("")) {
+//            bi.a105.setText(geoarea.split("\\|")[0]);
+//            bi.a106.setText(geoarea.split("\\|")[1]);
+//            bi.a107.setText(geoarea.split("\\|")[2]);
+//
+//            bi.fldGrpA113.setVisibility(View.VISIBLE);
+//
+//            MainApp.selectedTehsil = bi.a106.getText().toString();
+//            MainApp.selectedUC = bi.a107.getText().toString();
+//
+//        }
+//    }
 }

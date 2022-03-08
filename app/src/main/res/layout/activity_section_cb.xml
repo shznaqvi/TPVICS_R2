@@ -127,385 +127,6 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- ec03  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVec03"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_ec03" />
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/ec03" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/ec03"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="@string/ec03"
-                                android:inputType="number"
-                                android:maxLength="1"
-                                android:text="@={form.ec03}"
-                                app:maxValue="0"
-                                app:minValue="0"
-                                app:type="range" />
-
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- ec03a  Title   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVec03a"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/ec03a" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- ec04  Input   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVec04"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_ec04" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/ec04" />
-
-                        </LinearLayout>
-
-                        <EditText
-                            android:id="@+id/ec04"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/ec04"
-                            android:text="@={form.ec04}" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- ec04a  Input-Numeric   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVec04a"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_ec04a" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/ec04a" />
-
-                        </LinearLayout>
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/ec04a"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/ec04a"
-                            android:inputType="number"
-                            android:maxLength="1"
-                            android:text="@={form.ec04a}"
-                            app:maxValue="0"
-                            app:minValue="0"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- ec05  Input   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVec05"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_ec05" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/ec05" />
-
-                        </LinearLayout>
-
-                        <EditText
-                            android:id="@+id/ec05"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/ec05"
-                            android:text="@={form.ec05}" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- ec06  Input   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVec06"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_ec06" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/ec06" />
-
-                        </LinearLayout>
-
-                        <EditText
-                            android:id="@+id/ec06"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/ec06"
-                            android:text="@={form.ec06}" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- ec07  Input   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVec07"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_ec07" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/ec07" />
-
-                        </LinearLayout>
-
-                        <EditText
-                            android:id="@+id/ec07"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/ec07"
-                            android:text="@={form.ec07}" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- ec09  Input   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVec09"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_ec09" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/ec09" />
-
-                        </LinearLayout>
-
-                        <EditText
-                            android:id="@+id/ec09"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/ec09"
-                            android:text="@={form.ec09}" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- ec11  Input   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVec11"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_ec11" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/ec11" />
-
-                        </LinearLayout>
-
-                        <EditText
-                            android:id="@+id/ec11"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/ec11"
-                            android:text="@={form.ec11}" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- ec12  Input   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVec12"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Q_ec12" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/ec12" />
-
-                        </LinearLayout>
-
-                        <EditText
-                            android:id="@+id/ec12"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/ec12"
-                            android:text="@={form.ec12}" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
                 <!-- ec13cline  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVec13cline"
@@ -651,7 +272,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.ec18.equals(`4`)}"
-                                android:onClick="@{()->form.setEc18(`4`)}"
+                                android:onClick="@{()->form.setEc18(`4`) + ec19.clearCheck() + ec21.clearCheck()}"
                                 android:text="@string/ec1804" />
 
                             <RadioButton
@@ -659,7 +280,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.ec18.equals(`96`)}"
-                                android:onClick="@{()->form.setEc18(`96`)}"
+                                android:onClick="@{()->form.setEc18(`96`) + ec19.clearCheck() + ec21.clearCheck()}"
                                 android:text="@string/ec1896" />
                         </RadioGroup>
                     </LinearLayout>
@@ -668,7 +289,8 @@
                 <!-- ec19  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVec19"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.ec18.equals(`4`) || form.ec18.equals(`96`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -726,12 +348,16 @@
                     style="@style/info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/ec20" />
+                    android:text="@string/ec20"
+                    android:visibility="@{form.ec18.equals(`4`) || form.ec18.equals(`96`) ? View.GONE : View.VISIBLE}"
+
+                    />
 
                 <!-- ec21  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVec21"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.ec18.equals(`4`) || form.ec18.equals(`96`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -769,7 +395,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{form.ec21.equals(`1`)}"
-                                android:onClick="@{()->form.setEc21(`1`)}"
+                                android:onClick="@{()->form.setEc21(`1`) + ec22.clearCheck()}"
                                 android:text="@string/ec21a" />
 
                             <RadioButton
@@ -787,7 +413,9 @@
                 <!-- ec22  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVec22"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.ec21.equals(`1`) ? View.GONE : View.VISIBLE}">
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -824,7 +452,9 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.ec22.equals(`1`)}"
                                 android:onClick="@{()->form.setEc22(`1`)}"
-                                android:text="@string/ec2201" />
+                                android:text="@string/ec2201"
+                                android:enabled="@{!form.ec21.equals(`2`)}"
+                                />
 
                             <RadioButton
                                 android:id="@+id/ec2202"
@@ -832,7 +462,9 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.ec22.equals(`2`)}"
                                 android:onClick="@{()->form.setEc22(`2`)}"
-                                android:text="@string/ec2202" />
+                                android:text="@string/ec2202"
+                                android:enabled="@{!form.ec21.equals(`2`)}"
+                                />
 
                             <RadioButton
                                 android:id="@+id/ec2203"
@@ -840,7 +472,8 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.ec22.equals(`3`)}"
                                 android:onClick="@{()->form.setEc22(`3`)}"
-                                android:text="@string/ec2203" />
+                                android:text="@string/ec2203"
+                                />
 
                             <RadioButton
                                 android:id="@+id/ec2204"
@@ -848,7 +481,9 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.ec22.equals(`4`)}"
                                 android:onClick="@{()->form.setEc22(`4`)}"
-                                android:text="@string/ec2204" />
+                                android:text="@string/ec2204"
+                                android:enabled="@{!form.ec21.equals(`2`)}"
+                                />
 
                             <RadioButton
                                 android:id="@+id/ec2205"
@@ -856,7 +491,9 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.ec22.equals(`5`)}"
                                 android:onClick="@{()->form.setEc22(`5`)}"
-                                android:text="@string/ec2205" />
+                                android:text="@string/ec2205"
+                                android:enabled="@{!form.ec21.equals(`2`)}"
+                                />
 
                             <RadioButton
                                 android:id="@+id/ec2206"
@@ -864,7 +501,9 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.ec22.equals(`6`)}"
                                 android:onClick="@{()->form.setEc22(`6`)}"
-                                android:text="@string/ec2206" />
+                                android:text="@string/ec2206"
+                                android:enabled="@{!form.ec21.equals(`2`)}"
+                                />
 
                             <EditText
                                 android:id="@+id/ec2206x"
@@ -874,7 +513,9 @@
                                 android:hint="@string/ec2206"
                                 android:tag="ec2206"
                                 android:text="@={form.ec2206x}"
-                                android:visibility="@{form.ec22.equals(`6`) ? View.VISIBLE : View.GONE}" />
+                                android:visibility="@{form.ec22.equals(`6`) ? View.VISIBLE : View.GONE}"
+                                android:enabled="@{!form.ec21.equals(`2`)}"
+                                />
 
                             <RadioButton
                                 android:id="@+id/ec2296"
@@ -882,7 +523,9 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.ec22.equals(`96`)}"
                                 android:onClick="@{()->form.setEc22(`96`)}"
-                                android:text="@string/ec2296" />
+                                android:text="@string/ec2296"
+                                android:enabled="@{!form.ec21.equals(`2`)}"
+                                />
 
                             <EditText
                                 android:id="@+id/ec2296x"
@@ -892,7 +535,9 @@
                                 android:hint="@string/ec2296"
                                 android:tag="ec2296"
                                 android:text="@={form.ec2296x}"
-                                android:visibility="@{form.ec22.equals(`96`) ? View.VISIBLE : View.GONE}" />
+                                android:visibility="@{form.ec22.equals(`96`) ? View.VISIBLE : View.GONE}"
+                                android:enabled="@{!form.ec21.equals(`2`)}"
+                                />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -1093,4 +738,8 @@
         </ScrollView>
 
     </LinearLayout>
+
+
+
+
 </layout>

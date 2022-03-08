@@ -39,6 +39,8 @@
             android:name=".ui.ChangePasswordActivity"
             android:exported="true" />
 
+
+
         <activity
             android:name=".ui.EndingActivity"
             android:screenOrientation="portrait"
@@ -84,6 +86,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.sections.SectionCSActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
         <activity
             android:name=".ui.sections.SectionA1Activity"
             android:screenOrientation="portrait"

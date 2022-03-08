@@ -16,7 +16,6 @@
         android:background="@drawable/app_bg_gray"
         android:orientation="vertical">
 
-
         <!-- CUSTOM TOOLBAR -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -158,8 +157,8 @@
                             <RadioButton
                                 android:id="@+id/ec1501"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.ec15.equals(`1`)}"
                                 android:onClick="@{()->form.setEc15(`1`)}"
                                 android:text="@string/ec1501" />
@@ -167,8 +166,8 @@
                             <RadioButton
                                 android:id="@+id/ec1502"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:checked="@{form.ec15.equals(`2`)}"
                                 android:onClick="@{()->form.setEc15(`2`)}"
                                 android:text="@string/ec1502" />
@@ -280,6 +279,7 @@
                     android:id="@+id/fldGrpCVcb03"
                     style="@style/cardView">
 
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -289,7 +289,71 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/cb03" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cb03_dd" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/cb03_dd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/cb03_dd"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="@={form.cb03_dd}"
+                            app:maxValue="31"
+                            app:minValue="1"
+                            app:type="range" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cb03_mm" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/cb03_mm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/cb03_mm"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="@={form.cb03_mm}"
+                            app:maxValue="12"
+                            app:minValue="1"
+                            app:type="range" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cb03_yy" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/cb03_yy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/cb03_yy"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:text="@={form.cb03_yy}"
+                            app:maxValue="2022"
+                            app:minValue="2018"
+                            app:type="range" />
+
+                        <CheckBox
+                            android:id="@+id/cb03_dk"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="@{form.cb03_dk.equals(`98`)}"
+                            android:enabled="@{!form.cb03_dk.equals(`98`)}"
+                            android:onClick="@{()->form.setCb03_dk(form.cb03_dk.equals(`98`)?``:`98`)}"
+                            android:text="@string/cb03_dk"
+                            android:tag="-1"
+                            />
                     </LinearLayout>
+
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- cb04  Title   -->
@@ -306,7 +370,42 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/cb04" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cb04_mm" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/cb04_mm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/cb04_mm"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            android:text="@={form.cb04_mm}"
+                            app:maxValue="2"
+                            app:minValue="0"
+                            app:type="range" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cb04_yy" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/cb04_yy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/cb04_yy"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="@={form.cb04_yy}"
+                            app:maxValue="11"
+                            app:minValue="0"
+                            app:type="range" />
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
                 <!--EndButton LinearLayout-->
 

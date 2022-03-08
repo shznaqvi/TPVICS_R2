@@ -221,6 +221,9 @@
     <string name="sectionchlistofchildren0623monthsold_mainheading">SECTION CH: List of Children 06-23 months old: List of Children 0623 months old</string>
     <string name="no"> No </string>
 
+    <string name="consent_mainheading">Consent: Introduce yourself to the respondent and explain the reason for your visit and ask for permission</string>
+
+
     <string name="contactnum">Contact Number </string>
     <string name="checkHHpresent"> The name of head of the household corresponds to the line listing data.</string>
     <string name="newHHheadname"> Name of new head of the household </string>
@@ -627,6 +630,7 @@
     <string name="im05t3"> Vaccinations At 10 Weeks </string>
     <string name="im05t4"> Vaccinations At 14 Weeks </string>
     <string name="im05t5"> Vaccinations At 9 Months </string>
+    <string name="im0517typh">Typhoid</string>
     <string name="im05t6"> Vaccinations At 15 Months </string>
     <string name="im05_1bcg">At Birth  -BCG</string>
     <string name="im0501dd">Day</string>
@@ -736,12 +740,16 @@
     <string name="im20">Has (name) ever received an inactivated polio vaccine (IPV) – that is, a shot in the thigh at the age of 14 weeks or older - to prevent (him/her) from getting polio?</string>
     <string name="im20_1">Yes </string>
     <string name="im20_2">No  </string>
+    <string name="im2101">Yes </string>
+    <string name="im2102">No  </string>
+    <string name="im21a98">Dont know</string>
     <string name="im20_3">Dont know</string>
     <string name="im21">Has (name) ever received a Measles Injection – that is, a shot in the arm at the age of 9 months or older - to prevent (him/her) from getting measles?</string>
     <string name="im21_1">Yes </string>
     <string name="im21_2">No  </string>
     <string name="im21_3">Dont know</string>
     <string name="im22">How many times was a Measles Injection vaccine received? Number of times</string>
+    <string name="im22a">Has (name) ever received a Typhoid Injection – that is, a shot in the arm at the age of 9 months or older - to prevent (him/her) from getting Typhoid?</string>
     <string name="im23">Where from (name) is usually vaccinated?   If the child is vaccinated from multiple sources, mention the usual source with higher frequency of vaccine doses.</string>
     <string name="im23a">Can you please specify where is this facility located? </string>
     <string name="im23a1">Within Catchment area 10km</string>
@@ -904,6 +912,7 @@
     <string name='Q_im20'>im20</string>
     <string name='Q_im21'>im21</string>
     <string name='Q_im22'>im22</string>
+    <string name='Q_im22a'>im22a</string>
     <string name='Q_im23'>im23</string>
     <string name='Q_im23a'>im23a</string>
     <string name='Q_im24'>im24</string>

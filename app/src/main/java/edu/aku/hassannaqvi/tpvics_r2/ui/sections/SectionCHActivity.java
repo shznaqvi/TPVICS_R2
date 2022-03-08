@@ -39,7 +39,6 @@ public class SectionCHActivity extends AppCompatActivity {
         bi.setForm(form);
     }
 
-
     private boolean insertNewRecord() {
         if (!MainApp.form.getUid().equals("") || MainApp.superuser) return true;
 
@@ -97,14 +96,28 @@ public class SectionCHActivity extends AppCompatActivity {
         }
     }
 
-
     public void btnEnd(View view) {
         finish();
         startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName))
+        return false;
+
+        Long ageInMonths = 0L;
+        String months = MainApp.form.getCb03_mm();
+        String years = MainApp.form.getCb03_yy();
+
+        if (!months.isEmpty() && !years.isEmpty()) {
+            ageInMonths = Integer.parseInt(years) * 12L + Integer.parseInt(months);
+
+            if (ageInMonths < 6 || ageInMonths > 23)
+                return Validator.emptyCustomTextBox(this, bi.cb03Mm, "The Age Should not be less than 6 months and older than 23 months");
+        }
+
+
+        return true;
     }
 
 

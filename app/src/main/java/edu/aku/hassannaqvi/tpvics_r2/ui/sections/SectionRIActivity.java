@@ -4,6 +4,8 @@ import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.form;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
 
@@ -33,7 +35,40 @@ public class SectionRIActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.setForm(form);
+        setupListener();
     }
+
+    private void setupListener() {
+
+        bi.hh14.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String age = editable.toString();
+
+                if (!age.isEmpty()){
+                    if (Integer.parseInt(age) < 14 ){
+                        Validator.emptyCustomTextBox(SectionRIActivity.this, bi.hh14, "The Age Should not be less than 14 Years");
+                    }else {
+                        return;
+                    }
+
+                }
+
+
+            }
+        });
+    }
+
 
     private boolean updateDB() {
         if (MainApp.superuser) return true;
@@ -55,13 +90,15 @@ public class SectionRIActivity extends AppCompatActivity {
     }
 
     public void btnContinue(View view) {
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false).putExtra("checkToEnable", 7));
+
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
             if (form.getHh20().equals("1")) {
                 startActivity(new Intent(this, SectionSS_1Activity.class));
             } else {
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false).putExtra("checkToEnable", 7));
             }
         } else
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();

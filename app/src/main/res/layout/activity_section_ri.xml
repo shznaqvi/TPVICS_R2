@@ -109,14 +109,21 @@
 
                         </LinearLayout>
 
-                        <EditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/hh14"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/hh14"
-                            android:text="@={form.hh14}" />
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:hint="##"
+                            android:text="@={form.hh14}"
+                            app:maxValue="99"
+                            app:minValue="3"
+                            app:type="range"/>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- hh10  Input   -->
@@ -193,11 +200,12 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/hh13a"
                             android:inputType="number"
-                            android:maxLength="1"
+                            android:maxLength="13"
                             android:text="@={form.hh13a}"
-                            app:maxValue="0"
-                            app:minValue="0"
+                            app:maxValue="11"
+                            app:minValue="11"
                             app:type="range" />
+
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -264,7 +272,9 @@
                 <!-- hh16a  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVhh16a"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.hh15.equals(`2`) ? View.VISIBLE : View.GONE}"
+                    >
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -303,7 +313,10 @@
                 <!-- hh16b  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVhh16b"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.hh15.equals(`2`) ? View.VISIBLE : View.GONE}"
+
+                    >
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -335,10 +348,10 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/hh16b"
                             android:inputType="number"
-                            android:maxLength="2"
+                            android:maxLength="13"
                             android:text="@={form.hh16b}"
-                            app:maxValue="11"
-                            app:minValue="11"
+                            app:maxValue="0"
+                            app:minValue="0"
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -398,8 +411,8 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={form.hh19a}"
-                                    app:maxValue="30"
-                                    app:minValue="0"
+                                    app:maxValue="95"
+                                    app:minValue="1"
                                     app:type="range" />
                             </LinearLayout>
 
@@ -424,8 +437,8 @@
                                     android:inputType="number"
                                     android:maxLength="2"
                                     android:text="@={form.hh19b}"
-                                    app:maxValue="30"
-                                    app:minValue="0"
+                                    app:maxValue="95"
+                                    app:minValue="1"
                                     app:type="range" />
                             </LinearLayout>
                         </LinearLayout>
@@ -520,13 +533,19 @@
 
                         </LinearLayout>
 
-                        <EditText
+                        <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/hh20a"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/hh20a"
-                            android:text="@={form.hh20a}" />
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:hint="##"
+                            android:text="@={form.hh20a}"
+                            app:maxValue="30"
+                            app:minValue="1"
+                            app:type="range"/>
+
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

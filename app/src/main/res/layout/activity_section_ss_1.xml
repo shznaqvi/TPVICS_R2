@@ -931,7 +931,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.ss07.equals(`9`)}"
-                                android:onClick="@{()->form.setSs07(`9`)}"
+                                android:onClick="@{()->form.setSs07(`9`) + ss08.clearCheck() + ss09.clearCheck() + ss11.clearCheck() + ss12.clearCheck()}"
                                 android:text="@string/ss07i" />
 
                             <RadioButton
@@ -939,7 +939,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.ss07.equals(`96`)}"
-                                android:onClick="@{()->form.setSs07(`96`)}"
+                                android:onClick="@{()->form.setSs07(`96`) + ss08.clearCheck() + ss09.clearCheck() + ss11.clearCheck() + ss12.clearCheck()}"
                                 android:text="@string/ss07x" />
 
                             <EditText
@@ -959,7 +959,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVss08"
                     style="@style/cardView"
-                    android:visibility="@{!form.ss07.equals(`8`)  ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.ss07.equals(`8`) || form.ss07.equals(`9`) || form.ss07.equals(`96`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1025,7 +1025,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVss09"
                     style="@style/cardView"
-                    android:visibility="@{!form.ss07.equals(`8`)  ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.ss07.equals(`8`) || form.ss07.equals(`9`) || form.ss07.equals(`96`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1082,7 +1082,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVss11"
                     style="@style/cardView"
-                    android:visibility="@{!form.ss07.equals(`8`) || form.ss09.equals(`1`)  ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.ss07.equals(`8`) || form.ss07.equals(`9`) || form.ss07.equals(`96`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -1136,7 +1136,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVss12"
                     style="@style/cardView"
-                    android:visibility="@{!form.ss07.equals(`8`)  || form.ss09.equals(`1`)  ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.ss07.equals(`8`) || form.ss07.equals(`9`) || form.ss07.equals(`96`) || form.ss11.equals(`2`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

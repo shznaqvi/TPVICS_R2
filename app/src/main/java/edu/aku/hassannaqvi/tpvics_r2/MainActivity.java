@@ -28,12 +28,14 @@ import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.tpvics_r2.models.Child;
 import edu.aku.hassannaqvi.tpvics_r2.models.Form;
 import edu.aku.hassannaqvi.tpvics_r2.ui.ChangePasswordActivity;
+import edu.aku.hassannaqvi.tpvics_r2.ui.EndingActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.SyncActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.lists.FormsReportCluster;
 import edu.aku.hassannaqvi.tpvics_r2.ui.lists.FormsReportDate;
 import edu.aku.hassannaqvi.tpvics_r2.ui.lists.FormsReportPending;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionCBActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionCHActivity;
+import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionCSActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionHHActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionIMActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionRIActivity;
@@ -123,19 +125,22 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, SectionHHActivity.class));
                 break;
             case R.id.secri:
+                MainApp.form = new Form();
                 startActivity(new Intent(this, SectionRIActivity.class));
                 break;
 
             case R.id.secss1:
+                MainApp.form = new Form();
                 startActivity(new Intent(this, SectionSS_1Activity.class));
                 break;
 
             case R.id.secess2:
+                MainApp.form = new Form();
                 startActivity(new Intent(this, SectionSS_2Activity.class));
                 break;
 
             case R.id.seceCH:
-
+                MainApp.form = new Form();
                 startActivity(new Intent(this, SectionCHActivity.class));
                 break;
             case R.id.secCB:
@@ -146,6 +151,16 @@ public class MainActivity extends AppCompatActivity {
             case R.id.secIM:
                 MainApp.child = new Child();
                 startActivity(new Intent(this, SectionIMActivity.class));
+                break;
+
+            case R.id.seccs:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, SectionCSActivity.class));
+                break;
+
+            case R.id.secis:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, EndingActivity.class));
                 break;
 
             case R.id.dbManager:

@@ -26,6 +26,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
 import java.security.KeyManagementException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
@@ -37,6 +39,9 @@ import java.security.cert.CertificateFactory;
 import java.security.cert.CertificateNotYetValidException;
 import java.security.cert.X509Certificate;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
@@ -273,6 +278,7 @@ public class DataUpWorkerALL extends Worker {
             urlConnection.setRequestProperty("charset", "utf-8");
             urlConnection.setUseCaches(false);
             urlConnection.connect();
+            Log.d(TAG, "doInBackground: " + urlConnection.getResponseCode());
 
             Certificate[] certs = urlConnection.getServerCertificates();
 
@@ -361,11 +367,11 @@ public class DataUpWorkerALL extends Worker {
                     .build();
             return Result.failure(data);
 
-        } catch (IOException | JSONException e) {
+        } catch (IOException | JSONException | NoSuchPaddingException | NoSuchAlgorithmException | InvalidAlgorithmParameterException | InvalidKeyException | BadPaddingException | IllegalBlockSizeException e) {
             Log.d(TAG, "doWork (IO Error): " + e.getMessage());
             displayNotification(nTitle, "IO Error: " + e.getMessage());
             data = new Data.Builder()
-                    .putString("error", String.valueOf(e.getMessage()))
+                    .putString("error", e.getClass().getSimpleName() + ": " + e.getMessage())
                     .putInt("position", this.position)
                     .build();
 
@@ -374,7 +380,57 @@ public class DataUpWorkerALL extends Worker {
         } finally {
 //            urlConnection.disconnect();
         }
-        result = new StringBuilder(CipherSecure.decrypt(result.toString()));
+        try {
+            result = new StringBuilder(CipherSecure.decrypt(result.toString()));
+        } catch (NoSuchPaddingException e) {
+            e.printStackTrace();
+            data = new Data.Builder()
+                    .putString("error", e.getClass().getSimpleName() + ": " + e.getMessage())
+                    .putInt("position", this.position)
+                    .build();
+
+            return Result.failure(data);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            data = new Data.Builder()
+                    .putString("error", e.getClass().getSimpleName() + ": " + e.getMessage())
+                    .putInt("position", this.position)
+                    .build();
+
+            return Result.failure(data);
+        } catch (BadPaddingException e) {
+            e.printStackTrace();
+            data = new Data.Builder()
+                    .putString("error", e.getClass().getSimpleName() + ": " + e.getMessage())
+                    .putInt("position", this.position)
+                    .build();
+
+            return Result.failure(data);
+        } catch (IllegalBlockSizeException e) {
+            e.printStackTrace();
+            data = new Data.Builder()
+                    .putString("error", e.getClass().getSimpleName() + ": " + e.getMessage())
+                    .putInt("position", this.position)
+                    .build();
+
+            return Result.failure(data);
+        } catch (InvalidAlgorithmParameterException e) {
+            e.printStackTrace();
+            data = new Data.Builder()
+                    .putString("error", e.getClass().getSimpleName() + ": " + e.getMessage())
+                    .putInt("position", this.position)
+                    .build();
+
+            return Result.failure(data);
+        } catch (InvalidKeyException e) {
+            e.printStackTrace();
+            data = new Data.Builder()
+                    .putString("error", e.getClass().getSimpleName() + ": " + e.getMessage())
+                    .putInt("position", this.position)
+                    .build();
+
+            return Result.failure(data);
+        }
 
         //Do something with the JSON string
         if (result != null) {

@@ -28,6 +28,7 @@ import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.tpvics_r2.models.Child;
 import edu.aku.hassannaqvi.tpvics_r2.models.Form;
 import edu.aku.hassannaqvi.tpvics_r2.ui.ChangePasswordActivity;
+import edu.aku.hassannaqvi.tpvics_r2.ui.IdentificationActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.EndingActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.SyncActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.lists.FormsReportCluster;
@@ -116,6 +117,10 @@ public class MainActivity extends AppCompatActivity {
 
         switch (view.getId()) {
 
+            case R.id.startInterview:
+                MainApp.form = new Form();
+                startActivity(new Intent(this, IdentificationActivity.class));
+                break;
             case R.id.seca1:
                 /*MainApp.form = new Form();
                 startActivity(new Intent(this, SectionHHActivity.class));

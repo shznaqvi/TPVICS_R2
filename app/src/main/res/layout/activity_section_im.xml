@@ -371,7 +371,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.im04dd}"
-                                app:maxValue="30"
+                                app:maxValue="31"
                                 app:minValue="1"
                                 app:type="range" />
 
@@ -411,7 +411,7 @@
                                 android:inputType="number"
                                 android:maxLength="4"
                                 android:text="@={form.im04yy}"
-                                app:maxValue="2021"
+                                app:maxValue="2022"
                                 app:minValue="2020"
                                 app:type="range" />
 

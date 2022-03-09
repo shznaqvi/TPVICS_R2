@@ -35,7 +35,7 @@ public class SectionRIActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.setForm(form);
-        setupListener();
+        //setupListener();
     }
 
     private void setupListener() {

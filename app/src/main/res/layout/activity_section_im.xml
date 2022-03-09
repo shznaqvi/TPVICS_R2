@@ -2174,6 +2174,7 @@
                                 app:maxValue="30"
                                 app:minValue="1"
                                 app:type="range" />
+
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 

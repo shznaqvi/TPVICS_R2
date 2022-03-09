@@ -121,6 +121,21 @@ public class TableContracts {
         public static final String COLUMN_CLUSTER_NO = "cluster_no";
         public static final String COLUMN_GEOAREA = "geoarea";
 
+        public static final String COLUMN_PROVINCE = "province";
+        public static final String COLUMN_DISTRICT = "district";
+        public static final String COLUMN_CITY = "city";
+        public static final String COLUMN_AREA = "area";
+        public static final String COLUMN_EB_CODE = "ebcode";
+        public static final String COLUMN_RANDOMIZED = "randomized";
+        public static final String COLUMN_LOCKED = "locked";
+        public static final String COLUMN_LOCKED_BY = "lockedBy";
+        public static final String COLUMN_LOCKED_DATE_TIME = "lockedDateTime";
+        public static final String COLUMN_EXP_HH = "exphh";
+        public static final String COLUMN_COLFLAG = "colflag";
+        public static final String COLUMN_PROBLEM_CL = "problemcl";
+        public static final String COLUMN_PARTNERS = "partners";
+        public static final String COLUMN_EXPHH2 = "exphh2";
+
     }
 
     public static abstract class RandomHHTable implements BaseColumns {

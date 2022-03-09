@@ -146,6 +146,21 @@ object CreateTable {
             + ClusterTable.COLUMN_CLUSTER_NO + " TEXT,"
             + ClusterTable.COLUMN_GEOAREA + " TEXT,"
             + ClusterTable.COLUMN_DIST_ID + " TEXT"
+            + ClusterTable.COLUMN_PROVINCE + " TEXT,"
+            + ClusterTable.COLUMN_DISTRICT + " TEXT,"
+            + ClusterTable.COLUMN_CITY + " TEXT"
+            + ClusterTable.COLUMN_AREA + " TEXT"
+            + ClusterTable.COLUMN_EB_CODE + " TEXT,"
+            + ClusterTable.COLUMN_RANDOMIZED + " TEXT,"
+            + ClusterTable.COLUMN_LOCKED + " TEXT"
+            + ClusterTable.COLUMN_LOCKED_BY + " TEXT,"
+            + ClusterTable.COLUMN_LOCKED_DATE_TIME + " TEXT,"
+            + ClusterTable.COLUMN_EXP_HH + " TEXT"
+            + ClusterTable.COLUMN_COLFLAG + " TEXT,"
+            + ClusterTable.COLUMN_PROBLEM_CL + " TEXT,"
+            + ClusterTable.COLUMN_PARTNERS + " TEXT"
+            + ClusterTable.COLUMN_EXPHH2 + " TEXT"
+
             + " );"
             )
 

@@ -608,6 +608,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put(ClusterTable.COLUMN_GEOAREA, clusters.getGeoarea());
             values.put(ClusterTable.COLUMN_DIST_ID, clusters.getDistId());
 
+            values.put(ClusterTable.COLUMN_PROVINCE, clusters.getClusterNo());
+            values.put(ClusterTable.COLUMN_DISTRICT, clusters.getGeoarea());
+            values.put(ClusterTable.COLUMN_CITY, clusters.getDistId());
+            values.put(ClusterTable.COLUMN_AREA, clusters.getClusterNo());
+            values.put(ClusterTable.COLUMN_EB_CODE, clusters.getGeoarea());
+            values.put(ClusterTable.COLUMN_RANDOMIZED, clusters.getDistId());
+            values.put(ClusterTable.COLUMN_LOCKED, clusters.getClusterNo());
+            values.put(ClusterTable.COLUMN_LOCKED_BY, clusters.getGeoarea());
+            values.put(ClusterTable.COLUMN_LOCKED_DATE_TIME, clusters.getDistId());
+            values.put(ClusterTable.COLUMN_EXP_HH, clusters.getClusterNo());
+            values.put(ClusterTable.COLUMN_COLFLAG, clusters.getGeoarea());
+            values.put(ClusterTable.COLUMN_PROBLEM_CL, clusters.getDistId());
+            values.put(ClusterTable.COLUMN_PARTNERS, clusters.getClusterNo());
+            values.put(ClusterTable.COLUMN_EXPHH2, clusters.getGeoarea());
+
 
             long rowID = db.insert(ClusterTable.TABLE_NAME, null, values);
             if (rowID != -1) insertCount++;

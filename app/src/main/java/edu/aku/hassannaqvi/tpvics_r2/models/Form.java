@@ -2,9 +2,8 @@ package edu.aku.hassannaqvi.tpvics_r2.models;
 
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp._EMPTY_;
-import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.selectedDistrict;
-import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.selectedTehsil;
-import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.selectedUC;
+import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.selectedCluster;
+import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.selectedHousehold;
 
 import android.database.Cursor;
 import android.util.Log;
@@ -43,7 +42,7 @@ public class Form extends BaseObservable implements Observable {
     private String uid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
-    private String psuCode = _EMPTY_;
+    private String ebCode = _EMPTY_;
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
     private String deviceId = _EMPTY_;
@@ -55,21 +54,7 @@ public class Form extends BaseObservable implements Observable {
     private String synced = _EMPTY_;
     private String syncDate = _EMPTY_;
     private String entryType = _EMPTY_;
-    // FIELD VARIABLES
-    private String a104 = _EMPTY_;
-    private String a105 = _EMPTY_;
-    private String a106 = _EMPTY_;
-    private String a107 = _EMPTY_;
-    private String a101 = _EMPTY_;
-    private String a102 = _EMPTY_;
-    private String a108 = _EMPTY_;
-    private String a103 = _EMPTY_;
-    private String a113 = _EMPTY_;
-    private String a109 = _EMPTY_;
-    private String a110 = _EMPTY_;
-    private String a111 = _EMPTY_;
-    private String a112 = _EMPTY_;
-    private String a11297 = _EMPTY_;
+
 
     // FIELD VARIABLES
     private String hh01 = _EMPTY_;
@@ -206,17 +191,19 @@ public class Form extends BaseObservable implements Observable {
         //   setUuid(MainApp.form.getUid());  // not applicable in Form table
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setPsuCode(MainApp.currentHousehold.getClusteCcode());
-        setHhid(MainApp.currentHousehold.getHhno());
-        setSno(MainApp.currentHousehold.getSno());
+        setEbCode(MainApp.selectedHousehold.getEbCode());
+        setHhid(MainApp.selectedHousehold.getHhno());
+        setSno(MainApp.selectedHousehold.getSno());
         // setEntryType(String.valueOf(MainApp.entryType));
 
         //SECTION VARIABLES
-        setA101(MainApp.currentHousehold.getClusteCcode());
-        setA105(selectedDistrict);
-        setA106(selectedTehsil);
-        setA107(selectedUC);
-        setA113(MainApp.currentHousehold.getHhno());
+        setHh05(MainApp.selectedHousehold.getEbCode());
+        setHh06(selectedCluster.getGeoarea().split("\\|")[0]);
+        setHh07(selectedCluster.getGeoarea().split("\\|")[1]);
+        setHh08(selectedCluster.getGeoarea().split("\\|")[2]);
+        setHh09(selectedCluster.getGeoarea().split("\\|")[3]);
+        setHh12(selectedHousehold.getHh());
+
     }
 
 
@@ -245,13 +232,13 @@ public class Form extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getPsuCode() {
-        return psuCode;
+    public String getEbCode() {
+        return ebCode;
     }
 
-    public void setPsuCode(String psuCode) {
-        this.psuCode = psuCode;
-        notifyPropertyChanged(BR.psuCode);
+    public void setEbCode(String ebCode) {
+        this.ebCode = ebCode;
+        notifyPropertyChanged(BR.ebCode);
     }
 
     @Bindable
@@ -362,6 +349,7 @@ public class Form extends BaseObservable implements Observable {
     public void setSyncDate(String syncDate) {
         this.syncDate = syncDate;
     }
+/*
 
 
 
@@ -506,6 +494,7 @@ public class Form extends BaseObservable implements Observable {
         setA112(a11297.equals("97") ? "" : this.a112);
         notifyPropertyChanged(BR.a11297);
     }
+*/
 
     @Bindable
     public String getHh01() {
@@ -1675,7 +1664,7 @@ public class Form extends BaseObservable implements Observable {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_UID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_PROJECT_NAME));
-        this.psuCode = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_PSU_CODE));
+        this.ebCode = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_EB_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_HHID));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_USERNAME));
@@ -1700,21 +1689,7 @@ public class Form extends BaseObservable implements Observable {
             JSONObject json = null;
             json = new JSONObject(string);
 
-            this.a101 = json.getString("a101");
-            this.a102 = json.getString("a102");
-            this.a103 = json.getString("a103");
-            this.a104 = json.getString("a104");
-            this.a105 = json.getString("a105");
-            this.a106 = json.getString("a106");
-            this.a107 = json.getString("a107");
-            this.a108 = json.getString("a108");
-            this.a113 = json.getString("a113");
-            this.a109 = json.getString("a109");
-            this.a110 = json.getString("a110");
-            this.a111 = json.getString("a111");
-            this.a112 = json.getString("a112");
-            this.a11297 = json.getString("a11297");
-
+            this.hh01 = json.getString("hh01");
             this.hh03 = json.getString("hh03");
             this.hh03a = json.getString("hh03a");
             this.hh04 = json.getString("hh04");
@@ -1832,20 +1807,7 @@ public class Form extends BaseObservable implements Observable {
     public String sAtoString() throws JSONException {
         Log.d(TAG, "sAtoString: ");
         JSONObject json = new JSONObject();
-        json.put("a101", a101)
-                .put("a102", a102)
-                .put("a103", a103)
-                .put("a104", a104)
-                .put("a105", a105)
-                .put("a106", a106)
-                .put("a107", a107)
-                .put("a108", a108)
-                .put("a113", a113)
-                .put("a109", a109)
-                .put("a110", a110)
-                .put("a111", a111)
-                .put("a112", a112)
-                .put("a11297", a11297)
+        json.put("hh01", hh01)
                 .put("hh03", hh03)
                 .put("hh03a", hh03a)
                 .put("hh04", hh04)
@@ -1967,7 +1929,7 @@ public class Form extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_ID, this.id);
         json.put(FormsTable.COLUMN_UID, this.uid);
         json.put(FormsTable.COLUMN_PROJECT_NAME, this.projectName);
-        json.put(FormsTable.COLUMN_PSU_CODE, this.psuCode);
+        json.put(FormsTable.COLUMN_EB_CODE, this.ebCode);
         json.put(FormsTable.COLUMN_HHID, this.hhid);
         json.put(FormsTable.COLUMN_SNO, this.sno);
         json.put(FormsTable.COLUMN_USERNAME, this.userName);

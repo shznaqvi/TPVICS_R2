@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.tpvics_r2;
+package edu.aku.hassannaqvi.tpvics_r2.ui;
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
@@ -22,15 +22,12 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
+import edu.aku.hassannaqvi.tpvics_r2.R;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.AndroidManager;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.tpvics_r2.models.Child;
 import edu.aku.hassannaqvi.tpvics_r2.models.Form;
-import edu.aku.hassannaqvi.tpvics_r2.ui.ChangePasswordActivity;
-import edu.aku.hassannaqvi.tpvics_r2.ui.EndingActivity;
-import edu.aku.hassannaqvi.tpvics_r2.ui.IdentificationActivity;
-import edu.aku.hassannaqvi.tpvics_r2.ui.SyncActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.lists.FormsReportCluster;
 import edu.aku.hassannaqvi.tpvics_r2.ui.lists.FormsReportDate;
 import edu.aku.hassannaqvi.tpvics_r2.ui.lists.FormsReportPending;
@@ -44,7 +41,7 @@ import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionSS_1Activity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionSS_2Activity;
 
 
-public class MainActivity extends AppCompatActivity {
+public class HouseholdScreenActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     ActivityMainBinding bi;
@@ -53,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_household_screen);
         setSupportActionBar(bi.toolbar);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         //getSupportActionBar().setIcon(R.drawable.app_icon);
@@ -179,28 +176,28 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = null;
         switch (item.getItemId()) {
             case R.id.action_database:
-                intent = new Intent(MainActivity.this, AndroidManager.class);
+                intent = new Intent(HouseholdScreenActivity.this, AndroidManager.class);
                 startActivity(intent);
                 break;
 
             case R.id.onSync:
-                intent = new Intent(MainActivity.this, SyncActivity.class);
+                intent = new Intent(HouseholdScreenActivity.this, SyncActivity.class);
                 startActivity(intent);
                 break;
             case R.id.checkPendingForms:
-                intent = new Intent(MainActivity.this, FormsReportPending.class);
+                intent = new Intent(HouseholdScreenActivity.this, FormsReportPending.class);
                 startActivity(intent);
                 break;
             case R.id.formsReportDate:
-                intent = new Intent(MainActivity.this, FormsReportDate.class);
+                intent = new Intent(HouseholdScreenActivity.this, FormsReportDate.class);
                 startActivity(intent);
                 break;
             case R.id.changePassword:
-                intent = new Intent(MainActivity.this, ChangePasswordActivity.class);
+                intent = new Intent(HouseholdScreenActivity.this, ChangePasswordActivity.class);
                 startActivity(intent);
                 break;
             case R.id.formsReportCluster:
-                intent = new Intent(MainActivity.this, FormsReportCluster.class);
+                intent = new Intent(HouseholdScreenActivity.this, FormsReportCluster.class);
                 startActivity(intent);
                 break;
         }

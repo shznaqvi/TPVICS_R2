@@ -222,7 +222,7 @@ public class SyncActivity extends AppCompatActivity {
                 } else {
 
                     select = " * ";
-                    filter = " col_flag is null AND dist_id = '" + MainApp.user.getDist_id() + "' ";
+                    filter = " colflag != '1' AND dist_id = '" + MainApp.user.getDist_id() + "' ";
                     downloadTables.add(new SyncModel(ClusterTable.TABLE_NAME, select, filter));
                     downloadTables.add(new SyncModel(RandomHHTable.TABLE_NAME, select, filter));
                 }
@@ -265,24 +265,22 @@ public class SyncActivity extends AppCompatActivity {
         wc.getWorkInfosLiveData().observe(this, workInfos -> {
             Log.d(TAG, "workInfos: " + workInfos.size());
             for (WorkInfo workInfo : workInfos) {
-                Log.d(TAG, "workInfo: getState " + workInfo.getState());
-                Log.d(TAG, "workInfo: data " + workInfo.getOutputData().getString("data"));
-                Log.d(TAG, "workInfo: error " + workInfo.getOutputData().getString("error"));
-                Log.d(TAG, "workInfo: position " + workInfo.getOutputData().getInt("position", 0));
-            }
-            for (WorkInfo workInfo : workInfos) {
-                int position = workInfo.getOutputData().getInt("position", 0);
-                String tableName = downloadTables.get(position).gettableName();
 
-                        /*String progress = workInfo.getProgress().getString("progress");
-                        bi.wmError.setText("Progress: " + progress);*/
+                int position = workInfo.getOutputData().getInt("position", 0);
+
+                Log.d(TAG, "workInfo(getState): " + workInfo.getState());
+                Log.d(TAG, "workInfo(data): " + MainApp.downloadData[position]);
+                Log.d(TAG, "workInfo(error): " + workInfo.getOutputData().getString("error"));
+                Log.d(TAG, "workInfo(position): " + workInfo.getOutputData().getInt("position", 0));
+
+                String tableName = downloadTables.get(position).gettableName();
 
                 if (workInfo.getState() != null &&
                         workInfo.getState() == WorkInfo.State.SUCCEEDED) {
 
-                    //String result = workInfo.getOutputData().getString("data");
                     String result = MainApp.downloadData[position];
-//Do something with the JSON string
+
+                    //Do something with the JSON string
                     if (result != null) {
                         if (result.length() > 0) {
                             Log.d(TAG, "onChanged: result " + result);
@@ -290,7 +288,68 @@ public class SyncActivity extends AppCompatActivity {
                             DatabaseHelper db = new DatabaseHelper(SyncActivity.this);
                             JSONArray jsonArray = new JSONArray();
                             int insertCount = 0;
-                            switch (tableName) {
+
+                            Method method = null;
+                            for (Method method1 : db.getClass().getDeclaredMethods()) {
+
+                                Log.d(TAG, "onChanged Methods: " + method1.getName());
+                                /**
+                                 * MAKE SURE TABLE_NAME = <table> IS SAME AS updateSynced<table> :
+                                 *
+                                 *      -   public static final String TABLE_NAME = "<table>";  // in Contract
+                                 *      -   public JSONArray updateSynced<table>() {              // in DatabaseHelper
+                                 *
+                                 *      e.g: Forms and updateSyncedForms
+                                 *
+                                 */
+                                Log.d(TAG, "onChanged Names: sync" + tableName);
+                                Log.d(TAG, "onChanged Compare: " + method1.getName().equals("sync" + tableName));
+                                if (method1.getName().equals("sync" + tableName)) {
+                                    method = method1;
+                                    //Toast.makeText(SyncActivity.this, "updateSynced not found: updateSynced" + tableName, Toast.LENGTH_SHORT).show();
+                                    break;
+                                }
+                            }
+                            if (method != null) {
+                                try {
+
+                                    jsonArray = new JSONArray(result);
+
+                                    JSONObject jsonObject = new JSONObject(jsonArray.getString(0));
+                                    Log.d(TAG, "onChanged: " + jsonArray.getString(0));
+                                    if (jsonObject.has("error")) {
+                                        downloadTables.get(position).setstatus("Process Failed");
+                                        downloadTables.get(position).setstatusID(1);
+                                        downloadTables.get(position).setmessage(jsonObject.getString("message"));
+                                        syncListAdapter.updatesyncList(downloadTables);
+
+                                    } else {
+                                        Object returnValue = method.invoke(db, jsonArray);
+                                        insertCount = (int) returnValue;
+
+                                        downloadTables.get(position).setmessage("Received: " + jsonArray.length() + "  •  Saved: " + insertCount);
+                                        downloadTables.get(position).setstatus(insertCount == 0 ? "Unsuccessful" : "Successful");
+                                        downloadTables.get(position).setstatusID(insertCount == 0 ? 1 : 3);
+                                        syncListAdapter.updatesyncList(downloadTables);
+                                    }
+
+
+                                } catch (JSONException | IllegalAccessException | InvocationTargetException ite) {
+                                    ite.printStackTrace();
+                                    downloadTables.get(position).setstatus("Process Failed2");
+                                    downloadTables.get(position).setstatusID(1);
+                                    downloadTables.get(position).setmessage(ite.getCause().getMessage());
+                                    syncListAdapter.updatesyncList(downloadTables);
+                                }
+                            } else {
+
+                                // NOTE: Name of sync function in DataBaseHelper must match pattern 'sync'+TABLE_NAME e.g. syncAppUser()
+                                downloadTables.get(position).setmessage("Method not found in " + db.getClass().getSimpleName() + ": sync" + tableName);
+                                downloadTables.get(position).setstatus("Process Failed3");
+                                downloadTables.get(position).setstatusID(1);
+                                syncListAdapter.updatesyncList(downloadTables);
+                            }
+                          /*  switch (tableName) {
                                 case UsersTable.TABLE_NAME:
                                     try {
                                         jsonArray = new JSONArray(result);
@@ -345,12 +404,12 @@ public class SyncActivity extends AppCompatActivity {
                                         syncListAdapter.updatesyncList(downloadTables);
                                     }
                                     break;
-                            }
+                            }*/
 
-                            downloadTables.get(position).setmessage("Received: " + jsonArray.length() + "  •  Saved: " + insertCount);
+    /*                        downloadTables.get(position).setmessage("Received: " + jsonArray.length() + "  •  Saved: " + insertCount);
                             downloadTables.get(position).setstatus(insertCount == 0 ? "Unsuccessful" : "Successful");
                             downloadTables.get(position).setstatusID(insertCount == 0 ? 1 : 3);
-                            syncListAdapter.updatesyncList(downloadTables);
+                            syncListAdapter.updatesyncList(downloadTables);*/
 
 //                    pd.show();
 
@@ -423,14 +482,14 @@ public class SyncActivity extends AppCompatActivity {
         wc.getWorkInfosLiveData().observe(this, workInfos -> {
             Log.d(TAG, "workInfos: " + workInfos.size());
             for (WorkInfo workInfo : workInfos) {
-                Log.d(TAG, "workInfo: getState " + workInfo.getState());
-                Log.d(TAG, "workInfo: data " + workInfo.getTags());
-                Log.d(TAG, "workInfo: data " + workInfo.getOutputData().getString("message"));
-                Log.d(TAG, "workInfo: error " + workInfo.getOutputData().getString("error"));
-                Log.d(TAG, "workInfo: position " + workInfo.getOutputData().getInt("position", 0));
-            }
-            for (WorkInfo workInfo : workInfos) {
+
                 int position = workInfo.getOutputData().getInt("position", 0);
+
+                Log.d(TAG, "workInfo(getState): " + workInfo.getState());
+                Log.d(TAG, "workInfo(data): " + MainApp.downloadData[position]);
+                Log.d(TAG, "workInfo(error): " + workInfo.getOutputData().getString("error"));
+                Log.d(TAG, "workInfo(position): " + workInfo.getOutputData().getInt("position", 0));
+
                 String tableName = uploadTables.get(position).gettableName();
                 String result = MainApp.downloadData[position];
 

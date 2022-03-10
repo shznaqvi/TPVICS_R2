@@ -253,6 +253,22 @@ public class DataDownWorkerALL extends Worker {
                     result = new StringBuilder(CipherSecure.decrypt(result.toString()));
                     Log.d(TAG + " : " + uploadTable, "doWork: result-decrypt: " + result);
 
+                    // result = [{"status":0,"message":"No record found.","error":1}]
+
+                    JSONArray jsonArray = new JSONArray(result.toString());
+                    JSONObject jsonObject = jsonArray.getJSONObject(0);
+
+                    if (jsonObject.has("error") && jsonObject.getInt("error") > 0) {
+
+                        data = new Data.Builder()
+                                .putString("error", jsonObject.getString("message"))
+                                .putInt("position", this.position)
+                                .build();
+
+                        return Result.failure(data);
+                    }
+
+
                     if (result.toString().equals("[]")) {
                         data = new Data.Builder()
                                 .putString("error", "No data received from server: " + result)
@@ -302,6 +318,7 @@ public class DataDownWorkerALL extends Worker {
 
         ///BE CAREFULL DATA.BUILDER CAN HAVE ONLY 1024O BYTES. EACH CHAR HAS 8 bits
         MainApp.downloadData[this.position] = String.valueOf(result);
+
 
         data = new Data.Builder()
                 //     .putString("data", String.valueOf(result))

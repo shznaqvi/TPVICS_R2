@@ -45,6 +45,7 @@
     <item name="android:exitFadeDuration">200</item>
     <item name="android:layoutDirection">ltr</item>
     <item name="android:animateLayoutChanges">false</item>
+    <item name="android:datePickerDialogTheme">@style/AppTheme.DatePickerDialog</item>
 </style>
 
 <style name="AppThemeUrdu" parent="Theme.AppCompat.Light.NoActionBar">
@@ -73,6 +74,8 @@
     <item name="android:exitFadeDuration">200</item>
     <item name="android:layoutDirection">rtl</item>
     <item name="android:animateLayoutChanges">false</item>
+    <item name="android:datePickerDialogTheme">@style/AppTheme.DatePickerDialog</item>
+
 </style>
 
 <style name="AppThemeSindhi" parent="Theme.AppCompat.Light.NoActionBar">
@@ -101,6 +104,8 @@
     <item name="android:exitFadeDuration">200</item>
     <item name="android:layoutDirection">rtl</item>
     <item name="android:animateLayoutChanges">false</item>
+    <item name="android:datePickerDialogTheme">@style/AppTheme.DatePickerDialog</item>
+
 </style>
 
 <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
@@ -331,12 +336,14 @@
     <item name="android:textColor">@color/colorPrimaryDark</item>
 </style>
 
-<style name="DatePickerStyle" parent="Widget.AppCompat.EditText">
-    <item name="android:layout_gravity">center_horizontal|center_vertical</item>
-    <item name="android:textColor">@color/colorPrimaryDark</item>
-    <item name="android:selectableItemBackgroundBorderless">@color/white</item>
-    <item name="colorControlHighlight">@color/colorAccentLight</item>
-</style>
+    <style name="DatePickerStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:layout_gravity">center_horizontal|center_vertical</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:selectableItemBackgroundBorderless">@color/white</item>
+        <item name="colorControlHighlight">@color/colorAccentLight</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlActivated">@color/colorPrimaryLight</item>
+    </style>
 
 <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
@@ -490,12 +497,35 @@
     <item name="android:navigationBarColor">@color/colorAccentLightOverlay</item>
 </style>
 
-<style name="CustomPopupTheme" parent="Theme.AppCompat.Light.NoActionBar">
-    <item name="android:textColorPrimary">@color/colorPrimary</item>
-</style>
+    <style name="CustomPopupTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColorPrimary">@color/colorPrimary</item>
+    </style>
 
-<style name="Theme.splashscreen" parent="Theme.MaterialComponents.NoActionBar">
-    <item name="android:windowBackground">@drawable/splash_screen</item>
-    <item name="android:windowAnimationStyle">@drawable/splash_screen</item>
-</style>
+    <style name="Theme.splashscreen" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:windowAnimationStyle">@drawable/splash_screen</item>
+    </style>
+
+
+    <style name="AppTheme.DatePickerDialog" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="android:colorAccent">@color/colorPrimary</item>
+        <item name="android:colorControlActivated">@color/colorPrimaryDark</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/AppTheme.Alert.Button.Positive
+        </item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/AppTheme.Alert.Button.Negative
+        </item>
+        <item name="android:buttonBarNeutralButtonStyle">@style/AppTheme.Alert.Button.Neutral</item>
+    </style>
+
+    <style name="AppTheme.Alert.Button.Positive" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.Alert.Button.Negative" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/grayDark</item>
+    </style>
+
+    <style name="AppTheme.Alert.Button.Neutral" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/grayDark</item>
+    </style>
 </resources>

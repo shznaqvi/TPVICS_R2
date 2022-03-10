@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.aku.hassannaqvi.tpvics_r2.models.Child;
+import edu.aku.hassannaqvi.tpvics_r2.models.Clusters;
 import edu.aku.hassannaqvi.tpvics_r2.models.FamilyMembers;
 import edu.aku.hassannaqvi.tpvics_r2.models.Form;
 import edu.aku.hassannaqvi.tpvics_r2.models.RandomHH;
@@ -93,12 +94,13 @@ public class MainApp extends Application {
     public static String selectedTehsil = "";
     public static String selectedUC = "";
 
-    public static RandomHH currentHousehold;
+    public static RandomHH selectedHousehold;
     public static int selectedLanguage = 0;
     public static boolean langRTL = false;
     public static int ageOfIndexChild;
 
     public static List<FamilyMembers> allMWRAList = new ArrayList<>();
+    public static Clusters selectedCluster;
 
 
     public static void hideSystemUI(View decorView) {

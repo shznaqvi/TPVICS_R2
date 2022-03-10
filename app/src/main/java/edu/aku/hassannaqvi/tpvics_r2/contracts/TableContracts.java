@@ -6,12 +6,12 @@ public class TableContracts {
 
 
     public static abstract class FormsTable implements BaseColumns {
-        public static final String TABLE_NAME = "FormHH";
+        public static final String TABLE_NAME = "Forms";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
-        public static final String COLUMN_PSU_CODE = "psuCode";
+        public static final String COLUMN_EB_CODE = "ebCode";
         public static final String COLUMN_HHID = "hhid";
         public static final String COLUMN_SNO = "sno";
         public static final String COLUMN_USERNAME = "username";
@@ -32,13 +32,13 @@ public class TableContracts {
     }
 
     public static abstract class EntryLogTable implements BaseColumns {
-        public static final String TABLE_NAME = "EntryLog";
+        public static final String TABLE_NAME = "EntryLogs";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_UUID = "_uuid";
-        public static final String COLUMN_PSU_CODE = "psuCode";
+        public static final String COLUMN_EB_CODE = "ebCode";
         public static final String COLUMN_HHID = "hhid";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";
@@ -60,7 +60,7 @@ public class TableContracts {
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_UUID = "_uuid";
-        public static final String COLUMN_PSU_CODE = "psuCode";
+        public static final String COLUMN_PSU_CODE = "ebCode";
         public static final String COLUMN_HHID = "hhid";
         public static final String COLUMN_SNO = "sno";
         public static final String COLUMN_AGE_MONTHS = "ageinmonths";
@@ -81,7 +81,7 @@ public class TableContracts {
 
     public static abstract class UsersTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-        public static final String TABLE_NAME = "users";
+        public static final String TABLE_NAME = "AppUser";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_USERNAME = "username";
@@ -115,42 +115,35 @@ public class TableContracts {
 
     public static abstract class ClusterTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-        public static final String TABLE_NAME = "clusters";
+        public static final String TABLE_NAME = "Clusters";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_DIST_ID = "dist_id";
-        public static final String COLUMN_CLUSTER_NO = "cluster_no";
         public static final String COLUMN_GEOAREA = "geoarea";
-
-        public static final String COLUMN_PROVINCE = "province";
-        public static final String COLUMN_DISTRICT = "district";
-        public static final String COLUMN_CITY = "city";
-        public static final String COLUMN_AREA = "area";
         public static final String COLUMN_EB_CODE = "ebcode";
-        public static final String COLUMN_RANDOMIZED = "randomized";
-        public static final String COLUMN_LOCKED = "locked";
-        public static final String COLUMN_LOCKED_BY = "lockedBy";
-        public static final String COLUMN_LOCKED_DATE_TIME = "lockedDateTime";
-        public static final String COLUMN_EXP_HH = "exphh";
-        public static final String COLUMN_COLFLAG = "colflag";
-        public static final String COLUMN_PROBLEM_CL = "problemcl";
-        public static final String COLUMN_PARTNERS = "partners";
-        public static final String COLUMN_EXPHH2 = "exphh2";
 
     }
 
     public static abstract class RandomHHTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-        public static final String TABLE_NAME = "bl_randomised";
+        public static final String TABLE_NAME = "Randomised";
         public static final String COLUMN_ID = "_id";
+        public static final String COLUMN_RANDOMDT = "randDT";
+        public static final String COLUMN_LUID = "UID";
+        public static final String COLUMN_EB_CODE = "hh02";
+        public static final String COLUMN_STRUCTURE_NO = "hh03";
+        public static final String COLUMN_FAMILY_EXT_CODE = "hh07";
+        public static final String COLUMN_HH_NO = "hh";
+        public static final String COLUMN_HH_HEAD = "hh08";
+        public static final String COLUMN_CONTACT = "hh09";
+        public static final String COLUMN_HH_SELECTED_STRUCT = "hhss";
         public static final String COLUMN_SNO = "sno";
-        public static final String COLUMN_CLUSTER_CODE = "hh02";
-        public static final String COLUMN_HEAD_HH = "hh08";
-        public static final String COLUMN_HH_NO = "hhno";
+        public static final String COLUMN_TAB_NO = "tabNo";
+        public static String COLUMN_DIST_CODE = "dist_id";
     }
 
     public static abstract class VersionTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-        public static final String TABLE_NAME = "versionApp";
+        public static final String TABLE_NAME = "VersionApp";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_VERSION_PATH = "elements";
         public static final String COLUMN_VERSION_CODE = "versionCode";
@@ -162,7 +155,7 @@ public class TableContracts {
 
 
     public static abstract class ChildTable implements BaseColumns {
-        public static final String TABLE_NAME = "Child";
+        public static final String TABLE_NAME = "Children";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";
@@ -170,7 +163,7 @@ public class TableContracts {
         public static final String COLUMN_UUID = "_uuid";
         public static final String COLUMN_FMUID = "_fmuid";
         public static final String COLUMN_MUID = "_muid";
-        public static final String COLUMN_PSU_CODE = "psuCode";
+        public static final String COLUMN_PSU_CODE = "ebCode";
         public static final String COLUMN_HHID = "hhid";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_SYSDATE = "sysdate";

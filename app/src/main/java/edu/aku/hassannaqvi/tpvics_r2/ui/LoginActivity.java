@@ -355,17 +355,19 @@ public class LoginActivity extends AppCompatActivity {
         Long rowId = null;
         try {
             rowId = db.addEntryLog(entryLog);
-        } catch (SQLiteException e) {
-            Toast.makeText(this, "SQLiteException(EntryLog)" + entryLog, Toast.LENGTH_SHORT).show();
-        }
-        if (rowId != -1) {
-            entryLog.setId(String.valueOf(rowId));
-            entryLog.setUid(entryLog.getDeviceId() + entryLog.getId());
-            db.updatesEntryLogColumn(TableContracts.EntryLogTable.COLUMN_UID, entryLog.getUid(), entryLog.getId());
-        } else {
-            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
+            if (rowId != -1) {
+                entryLog.setId(String.valueOf(rowId));
+                entryLog.setUid(entryLog.getDeviceId() + entryLog.getId());
+                db.updatesEntryLogColumn(TableContracts.EntryLogTable.COLUMN_UID, entryLog.getUid(), entryLog.getId());
+            } else {
+                Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
 
+            }
+        } catch (SQLiteException e) {
+            Toast.makeText(this, "SQLiteException(EntryLog)" + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "recordEntry: " + e.getMessage());
         }
+
 
     }
 

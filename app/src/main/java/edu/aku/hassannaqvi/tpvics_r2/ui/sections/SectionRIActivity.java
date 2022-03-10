@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -14,7 +15,10 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import org.json.JSONException;
+
 import edu.aku.hassannaqvi.tpvics_r2.R;
+import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionRiBinding;
@@ -75,13 +79,13 @@ public class SectionRIActivity extends AppCompatActivity {
 
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
-//        try {
-//            updcount = db.updatesFormColumn(TableContracts.FormsTable.Co, moduleD.sD1toString());
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//            Log.d(TAG, R.string.upd_db + e.getMessage());
-//            Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
-//        }
+        try {
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SHH, form.sAtoString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Log.d(TAG, R.string.upd_db + e.getMessage());
+            Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
         if (updcount > 0) return true;
         else {
             Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
@@ -90,7 +94,6 @@ public class SectionRIActivity extends AppCompatActivity {
     }
 
     public void btnContinue(View view) {
-        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false).putExtra("checkToEnable", 7));
 
         if (!formValidation()) return;
         if (updateDB()) {

@@ -1,5 +1,8 @@
 package edu.aku.hassannaqvi.tpvics_r2.ui;
 
+import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.selectedCluster;
+import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.selectedHousehold;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,10 +23,8 @@ import edu.aku.hassannaqvi.tpvics_r2.R;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivityIdentificationBinding;
-import edu.aku.hassannaqvi.tpvics_r2.models.Clusters;
 import edu.aku.hassannaqvi.tpvics_r2.models.Form;
-import edu.aku.hassannaqvi.tpvics_r2.models.RandomHH;
-import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionA1Activity;
+import edu.aku.hassannaqvi.tpvics_r2.ui.sections.ConsentActivity;
 
 
 public class IdentificationActivity extends AppCompatActivity {
@@ -37,7 +38,7 @@ public class IdentificationActivity extends AppCompatActivity {
     private ArrayList<String> tehsilCodes;
     private ArrayList<String> ucNames;
     private ArrayList<String> ucCodes;
-    private ArrayList<String> psuCode;
+    private ArrayList<String> ebCode;
     private ArrayList<String> headHH;
     private Intent openIntent;
 
@@ -119,13 +120,13 @@ public class IdentificationActivity extends AppCompatActivity {
                     ucCodes.add("9202");
                     ucCodes.add("9303");
                 }
-                psuCode = new ArrayList<>();
+                ebCode = new ArrayList<>();
 
                 for (Villages uc : ucs) {
 
                     ucNames.add(uc.getUcName());
                     ucCodes.add(uc.getUccode());
-                    psuCode.add(uc.getPsucode());
+                    ebCode.add(uc.getPsucode());
 
                 }
 
@@ -231,7 +232,7 @@ public class IdentificationActivity extends AppCompatActivity {
 /*
         RandomHH testRand = new RandomHH();
         testRand.setSno("1");
-        testRand.setClusteCcode("9000001");
+        testRand.setEbCode("9000001");
         testRand.setHeadhh("Test Head");
         testRand.setHhno("999");*/
         //RandomHH randHH = db.getHHbyCluster(bi.a101.getText().toString(), bi.a113.getText().toString());
@@ -240,13 +241,13 @@ public class IdentificationActivity extends AppCompatActivity {
         } else {
             randHH = testRand;
         }*/
-//        if (!randHH.getClusteCcode().equals("")) {
+//        if (!randHH.getEbCode().equals("")) {
 //         /*   bi.ahhead.setError(null);
 //            bi.ahhead.setText(randHH.getHeadhh());*/
 //            bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.colorAccent));
 //            bi.btnContinue.setEnabled(true);
 //
-//            MainApp.currentHousehold = randHH;
+//            MainApp.selectedHousehold = randHH;
 //
 //        } else {
 ///*
@@ -264,17 +265,15 @@ public class IdentificationActivity extends AppCompatActivity {
     }
 
     public void btnContinue(View view) {
-        startActivity(new Intent(this, SectionA1Activity.class));
-//        return;
-//
-//        if (!formValidation()) return;
-//        hhExists();
-//        if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
-//            Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
-//        } else {
-//            finish();
-//            startActivity(new Intent(this, SectionA1Activity.class));
-//        }
+
+        if (!formValidation()) return;
+        hhExists();
+        if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
+            Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
+        } else {
+            finish();
+            startActivity(new Intent(this, ConsentActivity.class));
+        }
 
     }
 
@@ -319,7 +318,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
     public void btnEnd(View view) {
         finish();
-        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+        // startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
 
@@ -328,13 +327,69 @@ public class IdentificationActivity extends AppCompatActivity {
 
         MainApp.form = new Form();
         try {
-            MainApp.form = db.getFormByPSUHHNo(MainApp.currentHousehold.getClusteCcode(), MainApp.currentHousehold.getHhno());
+            MainApp.form = db.getFormByHHNo();
         } catch (JSONException e) {
             Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
             Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
         return MainApp.form != null;
 
+
+    }
+
+    public void checkEBNumber(View view) {
+        bi.hh06.setText(null);      //  Province
+        bi.hh07.setText(null);      //  District
+        bi.hh08.setText(null);      //  Tehsil
+        bi.hh09.setText(null);      //  City/Village
+        bi.hh16a.setText(null);
+
+        bi.checkHh06.setChecked(false);
+        bi.checkHh07.setChecked(false);
+        bi.checkHh08.setChecked(false);
+        bi.checkHh09.setChecked(false);
+
+        bi.fldGrpIdentifier.setVisibility(View.GONE);
+        bi.headhh.setVisibility(View.GONE);
+
+        bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
+        bi.btnContinue.setEnabled(false);
+
+        selectedHousehold = null;
+
+        selectedCluster = db.getClusterByEBNum(bi.hh05.getText().toString());
+
+        if (selectedCluster != null) {
+            String[] geoarea = selectedCluster.getGeoarea().split("\\|");
+            bi.hh06.setText(geoarea[0]);    //  Province
+            bi.hh07.setText(geoarea[1]);    //  District
+            bi.hh08.setText(geoarea[2]);    //  Tehsil
+            bi.hh09.setText(geoarea[3]);    //  City/Village
+            bi.fldGrpIdentifier.setVisibility(View.VISIBLE);
+        } else {
+            Toast.makeText(this, "Enumeration Block not found", Toast.LENGTH_SHORT).show();
+
+
+        }
+    }
+
+    public void checkHH(View view) {
+        bi.hh16a.setText(null);
+        bi.headhh.setVisibility(View.GONE);
+
+        bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
+        bi.btnContinue.setEnabled(false);
+
+        selectedHousehold = db.getRandomByHhno(bi.hh12.getText().toString());
+        if (selectedHousehold != null) {
+            bi.hh16a.setText(selectedHousehold.getHhhead());    // Name of Head
+            bi.headhh.setVisibility(View.VISIBLE);
+
+            bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.colorAccent));
+            bi.btnContinue.setEnabled(true);
+        } else {
+            Toast.makeText(this, "Household not found", Toast.LENGTH_SHORT).show();
+        }
 
     }
 

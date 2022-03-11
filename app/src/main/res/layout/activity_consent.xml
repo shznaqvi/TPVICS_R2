@@ -1,9 +1,13 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <import type="android.view.View" />
+
         <variable
             name="form"
-            type="edu.aku.hassannaqvi.tpvics_r2.models.Form"/>
+            type="edu.aku.hassannaqvi.tpvics_r2.models.Form" />
     </data>
 
     <LinearLayout
@@ -70,11 +74,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:hint="DD-MM-YYYY"
-                        app:dateFormat="dd-MM-yyyy"
+                        android:hint="YYYY-MM-DD"
+                        android:text="@={form.hh01}"
+                        app:dateFormat="yyyy-MM-dd"
                         app:maxDate="CR_DATE"
-                        app:minDate="CR_DATE"
-                        app:theme="@style/DatePickerStyle" />
+
+                        />
 
 
                 </LinearLayout>

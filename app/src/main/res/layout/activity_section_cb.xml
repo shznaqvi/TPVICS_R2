@@ -75,11 +75,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="DD-MM-YYYY"
-                                app:dateFormat="dd-MM-yyyy"
+                                android:hint="YYYY-MM-DD"
+                                android:text="@={form.ec01}"
+                                app:dateFormat="yyyy-MM-dd"
                                 app:maxDate="CR_DATE"
-                                app:minDate="CR_DATE"
-                                app:theme="@style/DatePickerStyle" />
+                                app:minDate="CR_DATE" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -118,10 +118,11 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:focusable="false"
                                 android:gravity="center"
                                 android:hint="HH:mm"
-                                app:theme="@style/DatePickerStyle" />
+                                android:text="@={form.ec02}"
+                                app:timeFormat = "HH:mm"
+                                />
 
                         </LinearLayout>
                     </LinearLayout>

@@ -94,6 +94,7 @@ public class Child extends BaseObservable implements Observable {
     private String im02a = _EMPTY_;
     private String im02a96x = _EMPTY_;
     private String im03 = _EMPTY_;
+    private String im0396x = _EMPTY_;
     private String im04dd = _EMPTY_;
     private String im04mm = _EMPTY_;
     private String im04yy = _EMPTY_;
@@ -717,7 +718,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm02a(String im02a) {
         this.im02a = im02a;
-        setIm02a96x(im02a.equals("96") ? this.im02a96x : ""); // for all skips, mention all skipped questions
+        setIm02a96x(im02a.equals("96") ? this.im02a96x : "");
         notifyPropertyChanged(BR.im02a);
     }
 
@@ -738,7 +739,18 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm03(String im03) {
         this.im03 = im03;
+        setIm0396x(im03.equals("96") ? this.im0396x : "");
         notifyPropertyChanged(BR.im03);
+    }
+
+    @Bindable
+    public String getIm0396x() {
+        return im0396x;
+    }
+
+    public void setIm0396x(String im0396x) {
+        this.im0396x = im0396x;
+        notifyPropertyChanged(BR.im0396x);
     }
 
     @Bindable
@@ -1758,6 +1770,7 @@ public class Child extends BaseObservable implements Observable {
             this.im02a = json.getString("im02a");
             this.im02a96x = json.getString("im02a96x");
             this.im03 = json.getString("im03");
+            this.im0396x = json.getString("im0396x");
             this.im04dd = json.getString("im04dd");
             this.im04mm = json.getString("im04mm");
             this.im04yy = json.getString("im04yy");
@@ -1870,6 +1883,7 @@ public class Child extends BaseObservable implements Observable {
                 .put("im02a", im02a)
                 .put("im02a96x", im02a96x)
                 .put("im03", im03)
+                .put("im0396x", im0396x)
                 .put("im04dd", im04dd)
                 .put("im04mm", im04mm)
                 .put("im04yy", im04yy)

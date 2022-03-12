@@ -216,7 +216,7 @@ public class SectionIMActivity extends AppCompatActivity {
     private boolean formValidation() {
         if (!Validator.emptyCheckingContainer(this, bi.GrpName)) return false;
 
-        if (child.getIm02().equals("1")) {
+        if (child.getIm02().equals("1") && !child.getIm0497().equals("97")) {
             // Only set once
             // IM04 - DOB
             String dobDate = child.getIm04yy()

@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -8,7 +9,9 @@
         <variable
             name="form"
             type="edu.aku.hassannaqvi.tpvics_r2.models.Child" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,15 +34,18 @@
             app:title="@string/immainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
 
                 <!-- im01  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -78,8 +84,8 @@
 
                             <RadioButton
                                 android:id="@+id/im01_1"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.im01.equals(`1`)}"
                                 android:onClick="@{()->form.setIm01(`1`)}"
@@ -87,15 +93,19 @@
 
                             <RadioButton
                                 android:id="@+id/im01_2"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.im01.equals(`2`)}"
                                 android:onClick="@{()->form.setIm01(`2`) + im02.clearCheck()}"
                                 android:text="@string/im012" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im02  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -135,8 +145,8 @@
 
                             <RadioButton
                                 android:id="@+id/im02_1"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.im02.equals(`1`)}"
                                 android:onClick="@{()->form.setIm02(`1`) + im02a.clearCheck()}"
@@ -144,15 +154,19 @@
 
                             <RadioButton
                                 android:id="@+id/im02_2"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.im02.equals(`3`)}"
                                 android:onClick="@{()->form.setIm02(`3`)}"
                                 android:text="@string/im022" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im02a  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -224,15 +238,19 @@
                             <EditText
                                 android:id="@+id/im02a96x"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="52dp"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/im02a96"
                                 android:tag="im02a96"
                                 android:text="@={form.im02a96x}"
                                 android:visibility="@{form.im02a.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im03  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -316,9 +334,23 @@
                                 android:checked="@{form.im03.equals(`96`)}"
                                 android:onClick="@{()->form.setIm03(`96`)}"
                                 android:text="@string/im0396" />
+
+                            <EditText
+                                android:id="@+id/im0396x"
+                                android:layout_width="match_parent"
+                                android:layout_height="52dp"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:hint="@string/im0396"
+                                android:tag="im0396"
+                                android:text="@={form.im0396x}"
+                                android:visibility="@{form.im03.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im04  Title   -->
                 <androidx.cardview.widget.CardView
@@ -3490,7 +3522,10 @@
                 <!--EndButton LinearLayout-->
 
             </LinearLayout>
+
+
         </ScrollView>
+
 
     </LinearLayout>
 

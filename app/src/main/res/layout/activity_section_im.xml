@@ -356,16 +356,18 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                style="@style/textView"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/im04dd" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im04dd"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!form.im0497.equals(`97`)}"
                                 android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
@@ -376,16 +378,18 @@
                                 app:type="range" />
 
                             <TextView
+                                style="@style/textView"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/im04mm" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im04mm"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!form.im0497.equals(`97`)}"
                                 android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
@@ -396,16 +400,18 @@
                                 app:type="range" />
 
                             <TextView
+                                style="@style/textView"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/im04yy" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/im04yy"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{!form.im0497.equals(`97`)}"
                                 android:gravity="center"
                                 android:hint="####"
                                 android:inputType="number"
@@ -417,24 +423,18 @@
 
                         </LinearLayout>
 
-                        <TextView
+                        <CheckBox
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:checked="@{form.im0497.equals(`97`)}"
+                            android:onClick="@{()->form.setIm0497(form.im0497.equals(`97`)?``:`97`)}"
+                            android:tag="-1"
                             android:text="@string/im0497" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/im0497"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/im0497"
-                            android:inputType="number"
-                            android:maxLength="1"
-                            android:text="@={form.im0497}"
-                            app:maxValue="0"
-                            app:minValue="0"
-                            app:type="range" />
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im05title1  Title   -->
                 <LinearLayout

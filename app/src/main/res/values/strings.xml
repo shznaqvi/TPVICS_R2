@@ -634,7 +634,7 @@
     <string name="im05t5"> Vaccinations At 9 Months </string>
     <string name="im0517typh">Typhoid</string>
     <string name="im05t6"> Vaccinations At 15 Months </string>
-    <string name="im051bcg">At Birth  -BCG</string>
+    <string name="im0501bcg"> B C G At Birth </string>
     <string name="im0501dd">Day</string>
     <string name="im0501mm">Month</string>
     <string name="im0501yy">Year</string>

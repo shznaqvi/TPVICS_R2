@@ -589,6 +589,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={child.cb01a}"
+                                app:defaultValue="77"
                                 app:maxValue="20"
                                 app:minValue="1"
                                 app:type="range" />
@@ -609,6 +610,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={child.cb01b}"
+                                app:defaultValue="88"
                                 app:maxValue="20"
                                 app:minValue="1"
                                 app:type="range" />
@@ -667,6 +669,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={child.cb02a}"
+                                app:defaultValue="77"
                                 app:maxValue="20"
                                 app:minValue="1"
                                 app:type="range" />
@@ -687,6 +690,7 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={child.cb02b}"
+                                app:defaultValue="88"
                                 app:maxValue="20"
                                 app:minValue="1"
                                 app:type="range" />

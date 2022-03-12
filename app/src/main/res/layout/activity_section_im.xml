@@ -577,7 +577,7 @@
                                         android:inputType="number"
                                         android:text="@={form.im0501mm}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
+                                        app:maxValue="12"
                                         app:minValue="1"
                                         app:type="range" />
 
@@ -591,8 +591,8 @@
                                         android:inputType="number"
                                         android:text="@={form.im0501yy}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
-                                        app:minValue="1"
+                                        app:maxValue="2022"
+                                        app:minValue="2020"
                                         app:type="range" />
                                 </LinearLayout>
                             </LinearLayout>
@@ -642,7 +642,7 @@
                                         android:inputType="number"
                                         android:text="@={form.im0502mm}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
+                                        app:maxValue="12"
                                         app:minValue="1"
                                         app:type="range" />
 
@@ -656,8 +656,8 @@
                                         android:inputType="number"
                                         android:text="@={form.im0502yy}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
-                                        app:minValue="1"
+                                        app:maxValue="2022"
+                                        app:minValue="2020"
                                         app:type="range" />
                                 </LinearLayout>
 
@@ -714,7 +714,7 @@
                                         android:inputType="number"
                                         android:text="@={form.im0503mm}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
+                                        app:maxValue="12"
                                         app:minValue="1"
                                         app:type="range" />
 
@@ -728,8 +728,8 @@
                                         android:inputType="number"
                                         android:text="@={form.im0503yy}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
-                                        app:minValue="1"
+                                        app:maxValue="2022"
+                                        app:minValue="2020"
                                         app:type="range" />
 
 
@@ -783,7 +783,7 @@
                                         android:inputType="number"
                                         android:text="@={form.im0504mm}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
+                                        app:maxValue="12"
                                         app:minValue="1"
                                         app:type="range" />
 
@@ -797,8 +797,8 @@
                                         android:inputType="number"
                                         android:text="@={form.im0504yy}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
-                                        app:minValue="1"
+                                        app:maxValue="2022"
+                                        app:minValue="2020"
                                         app:type="range" />
 
 
@@ -851,7 +851,7 @@
                                         android:hint="##"
                                         android:text="@={form.im0505mm}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
+                                        app:maxValue="12"
                                         app:minValue="1"
                                         app:type="range" />
 
@@ -865,8 +865,8 @@
                                         android:inputType="number"
                                         android:text="@={form.im0505yy}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
-                                        app:minValue="1"
+                                        app:maxValue="2022"
+                                        app:minValue="2020"
                                         app:type="range" />
 
 
@@ -919,7 +919,7 @@
                                         android:hint="##"
                                         android:text="@={form.im0506mm}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
+                                        app:maxValue="12"
                                         app:minValue="1"
                                         app:type="range" />
 
@@ -933,8 +933,8 @@
                                         android:inputType="number"
                                         android:text="@={form.im0506yy}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
-                                        app:minValue="1"
+                                        app:maxValue="2022"
+                                        app:minValue="2020"
                                         app:type="range" />
 
 
@@ -994,7 +994,7 @@
                                         android:inputType="number"
                                         android:text="@={form.im0507mm}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
+                                        app:maxValue="12"
                                         app:minValue="1"
                                         app:type="range" />
 
@@ -1008,8 +1008,8 @@
                                         android:inputType="number"
                                         android:text="@={form.im0507yy}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
-                                        app:minValue="1"
+                                        app:maxValue="2022"
+                                        app:minValue="2020"
                                         app:type="range" />
 
 
@@ -1063,7 +1063,7 @@
                                         android:inputType="number"
                                         android:text="@={form.im0508mm}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
+                                        app:maxValue="12"
                                         app:minValue="1"
                                         app:type="range" />
 
@@ -1077,8 +1077,8 @@
                                         android:inputType="number"
                                         android:text="@={form.im0508yy}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
-                                        app:minValue="1"
+                                        app:maxValue="2022"
+                                        app:minValue="2020"
                                         app:type="range" />
 
 
@@ -1131,7 +1131,7 @@
                                         android:hint="##"
                                         android:text="@={form.im0509mm}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
+                                        app:maxValue="12"
                                         app:minValue="1"
                                         app:type="range" />
 
@@ -1145,8 +1145,8 @@
                                         android:inputType="number"
                                         android:text="@={form.im0509yy}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
-                                        app:minValue="1"
+                                        app:maxValue="2022"
+                                        app:minValue="2020"
                                         app:type="range" />
 
 
@@ -1199,7 +1199,7 @@
                                         android:hint="##"
                                         android:text="@={form.im0510mm}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
+                                        app:maxValue="12"
                                         app:minValue="1"
                                         app:type="range" />
 
@@ -1213,8 +1213,8 @@
                                         android:inputType="number"
                                         android:text="@={form.im0510yy}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
-                                        app:minValue="1"
+                                        app:maxValue="2022"
+                                        app:minValue="2020"
                                         app:type="range" />
 
 
@@ -1277,7 +1277,7 @@
                                     android:hint="##"
                                     android:text="@={form.im0510amm}"
                                     android:textDirection="ltr"
-                                    app:maxValue="31"
+                                    app:maxValue="12"
                                     app:minValue="1"
                                     app:type="range" />
 
@@ -1291,8 +1291,8 @@
                                     android:inputType="number"
                                     android:text="@={form.im0510ayy}"
                                     android:textDirection="ltr"
-                                    app:maxValue="31"
-                                    app:minValue="1"
+                                    app:maxValue="2022"
+                                    app:minValue="2020"
                                     app:type="range" />
 
                             </LinearLayout>
@@ -1362,7 +1362,7 @@
                                         android:inputType="number"
                                         android:text="@={form.im0511mm}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
+                                        app:maxValue="12"
                                         app:minValue="1"
                                         app:type="range" />
 
@@ -1376,8 +1376,8 @@
                                         android:inputType="number"
                                         android:text="@={form.im0511yy}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
-                                        app:minValue="1"
+                                        app:maxValue="2022"
+                                        app:minValue="2020"
                                         app:type="range" />
 
                                 </LinearLayout>
@@ -1430,7 +1430,7 @@
                                         android:inputType="number"
                                         android:text="@={form.im0512mm}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
+                                        app:maxValue="12"
                                         app:minValue="1"
                                         app:type="range" />
 
@@ -1444,8 +1444,8 @@
                                         android:inputType="number"
                                         android:text="@={form.im0512yy}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
-                                        app:minValue="1"
+                                        app:maxValue="2022"
+                                        app:minValue="2020"
                                         app:type="range" />
 
                                 </LinearLayout>
@@ -1497,7 +1497,7 @@
                                         android:hint="##"
                                         android:text="@={form.im0513mm}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
+                                        app:maxValue="12"
                                         app:minValue="1"
                                         app:type="range" />
 
@@ -1511,8 +1511,8 @@
                                         android:inputType="number"
                                         android:text="@={form.im0513yy}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
-                                        app:minValue="1"
+                                        app:maxValue="2022"
+                                        app:minValue="2020"
                                         app:type="range" />
 
                                 </LinearLayout>
@@ -1564,7 +1564,7 @@
                                         android:hint="##"
                                         android:text="@={form.im0514mm}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
+                                        app:maxValue="12"
                                         app:minValue="1"
                                         app:type="range" />
 
@@ -1578,8 +1578,8 @@
                                         android:inputType="number"
                                         android:text="@={form.im0514yy}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
-                                        app:minValue="1"
+                                        app:maxValue="2022"
+                                        app:minValue="2020"
                                         app:type="range" />
 
                                 </LinearLayout>
@@ -1636,7 +1636,7 @@
                                         android:inputType="number"
                                         android:text="@={form.im0515mm}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
+                                        app:maxValue="12"
                                         app:minValue="1"
                                         app:type="range" />
 
@@ -1650,8 +1650,8 @@
                                         android:inputType="number"
                                         android:text="@={form.im0515yy}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
-                                        app:minValue="1"
+                                        app:maxValue="2022"
+                                        app:minValue="2020"
                                         app:type="range" />
 
                                 </LinearLayout>
@@ -1703,7 +1703,7 @@
                                         android:inputType="number"
                                         android:text="@={form.im0517mm}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
+                                        app:maxValue="12"
                                         app:minValue="1"
                                         app:type="range" />
 
@@ -1717,8 +1717,8 @@
                                         android:inputType="number"
                                         android:text="@={form.im0517yy}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
-                                        app:minValue="1"
+                                        app:maxValue="2022"
+                                        app:minValue="2020"
                                         app:type="range" />
 
                                 </LinearLayout>
@@ -1776,7 +1776,7 @@
                                         android:inputType="number"
                                         android:text="@={form.im0516mm}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
+                                        app:maxValue="12"
                                         app:minValue="1"
                                         app:type="range" />
 
@@ -1790,8 +1790,8 @@
                                         android:inputType="number"
                                         android:text="@={form.im0516yy}"
                                         android:textDirection="ltr"
-                                        app:maxValue="31"
-                                        app:minValue="1"
+                                        app:maxValue="2022"
+                                        app:minValue="2020"
                                         app:type="range" />
 
 

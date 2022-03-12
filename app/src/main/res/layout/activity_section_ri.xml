@@ -122,7 +122,7 @@
                             android:maxLength="2"
                             android:text="@={form.hh14}"
                             app:maxValue="99"
-                            app:minValue="14"
+                            app:minValue="3"
                             app:type="range" />
 
                     </LinearLayout>

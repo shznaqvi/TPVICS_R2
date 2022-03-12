@@ -32,7 +32,6 @@ import java.util.List;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.ChildTable;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.ClusterTable;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.EntryLogTable;
-import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.FamilyMembersTable;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.FormsTable;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.RandomHHTable;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.UsersTable;
@@ -41,7 +40,6 @@ import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.models.Child;
 import edu.aku.hassannaqvi.tpvics_r2.models.Clusters;
 import edu.aku.hassannaqvi.tpvics_r2.models.EntryLog;
-import edu.aku.hassannaqvi.tpvics_r2.models.FamilyMembers;
 import edu.aku.hassannaqvi.tpvics_r2.models.Form;
 import edu.aku.hassannaqvi.tpvics_r2.models.RandomHH;
 import edu.aku.hassannaqvi.tpvics_r2.models.Users;
@@ -72,18 +70,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+
         db.execSQL(CreateTable.SQL_CREATE_USERS);
         db.execSQL(CreateTable.SQL_CREATE_CLUSTERS);
         db.execSQL(CreateTable.SQL_CREATE_RANDOM_HH);
+        db.execSQL(CreateTable.SQL_CREATE_VERSIONAPP);
 
         db.execSQL(CreateTable.SQL_CREATE_FORMS);
         db.execSQL(CreateTable.SQL_CREATE_ENTRYLOGS);
-
         db.execSQL(CreateTable.SQL_CREATE_CHILD);
-
-
-        db.execSQL(CreateTable.SQL_CREATE_FAMILYMEMBERS);
-        db.execSQL(CreateTable.SQL_CREATE_VERSIONAPP);
 
     }
 
@@ -108,7 +103,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_USERNAME, form.getUserName());
         values.put(FormsTable.COLUMN_SYSDATE, form.getSysDate());
 
-        values.put(FormsTable.COLUMN_SHH, form.sAtoString());
+        values.put(FormsTable.COLUMN_SHH, form.sHHtoString());
 
      /*   values.put(FormsTable.COLUMN_SSS, form.sMtoString());
         values.put(FormsTable.COLUMN_SCB, form.sNtoString());
@@ -128,6 +123,41 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         newRowId = db.insertOrThrow(
                 FormsTable.TABLE_NAME,
                 FormsTable.COLUMN_NAME_NULLABLE,
+                values);
+        return newRowId;
+    }
+
+    public Long addChild(Child child) throws JSONException {
+        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
+        ContentValues values = new ContentValues();
+        values.put(ChildTable.COLUMN_PROJECT_NAME, child.getProjectName());
+        values.put(ChildTable.COLUMN_UID, child.getUid());
+        values.put(ChildTable.COLUMN_UUID, child.getUuid());
+        values.put(ChildTable.COLUMN_EB_CODE, child.getEbCode());
+        values.put(ChildTable.COLUMN_HHID, child.getHhid());
+        values.put(ChildTable.COLUMN_SNO, child.getSno());
+        values.put(ChildTable.COLUMN_USERNAME, child.getUserName());
+        values.put(ChildTable.COLUMN_SYSDATE, child.getSysDate());
+
+        values.put(ChildTable.COLUMN_SCH, child.sCHtoString());
+
+     /*   values.put(ChildsTable.COLUMN_SSS, child.sMtoString());
+        values.put(ChildsTable.COLUMN_SCB, child.sNtoString());
+        values.put(ChildsTable.COLUMN_IM, child.sOtoString());*/
+
+        values.put(ChildTable.COLUMN_DEVICETAGID, child.getDeviceTag());
+/*
+        values.put(ChildTable.COLUMN_ENTRY_TYPE, child.getEntryType());
+*/
+        values.put(ChildTable.COLUMN_DEVICEID, child.getDeviceId());
+        values.put(ChildTable.COLUMN_APPVERSION, child.getAppver());
+        values.put(ChildTable.COLUMN_SYNCED, child.getSynced());
+        values.put(ChildTable.COLUMN_SYNC_DATE, child.getSyncDate());
+
+        long newRowId;
+        newRowId = db.insertOrThrow(
+                ChildTable.TABLE_NAME,
+                ChildTable.COLUMN_NAME_NULLABLE,
                 values);
         return newRowId;
     }
@@ -158,70 +188,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-
-    public Long addHHMembers(FamilyMembers members) throws JSONException {
-        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
-        ContentValues values = new ContentValues();
-        values.put(FamilyMembersTable.COLUMN_PROJECT_NAME, members.getProjectName());
-        values.put(FamilyMembersTable.COLUMN_UID, members.getUid());
-        values.put(FamilyMembersTable.COLUMN_UUID, members.getUuid());
-        values.put(FamilyMembersTable.COLUMN_PSU_CODE, members.getpsuCode());
-        values.put(FamilyMembersTable.COLUMN_HHID, members.getHhid());
-        values.put(FamilyMembersTable.COLUMN_SNO, members.getSno());
-        values.put(FamilyMembersTable.COLUMN_AGE_MONTHS, members.getAgeInMonths());
-        values.put(FamilyMembersTable.COLUMN_MUID, members.getMuid());
-        values.put(FamilyMembersTable.COLUMN_USERNAME, members.getUserName());
-        values.put(FamilyMembersTable.COLUMN_SYSDATE, members.getSysDate());
-        values.put(FamilyMembersTable.COLUMN_SD, members.sDtoString());
-        values.put(FamilyMembersTable.COLUMN_ISTATUS, members.getiStatus());
-        values.put(FamilyMembersTable.COLUMN_DEVICETAGID, members.getDeviceTag());
-        values.put(FamilyMembersTable.COLUMN_DEVICEID, members.getDeviceId());
-        values.put(FamilyMembersTable.COLUMN_APPVERSION, members.getAppver());
-
-
-        long newRowId;
-        newRowId = db.insertOrThrow(
-                FamilyMembersTable.TABLE_NAME,
-                FamilyMembersTable.COLUMN_NAME_NULLABLE,
-                values);
-        return newRowId;
-    }
-
-
-    public Long addFamilyMembers(FamilyMembers members) throws JSONException {
-
-        // Gets the data repository in write mode
-        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
-
-// Create a new map of values, where column names are the keys
-        ContentValues values = new ContentValues();
-        values.put(FamilyMembersTable.COLUMN_PROJECT_NAME, members.getProjectName());
-        values.put(FamilyMembersTable.COLUMN_UID, members.getUid());
-        values.put(FamilyMembersTable.COLUMN_UUID, members.getUuid());
-        values.put(FamilyMembersTable.COLUMN_PSU_CODE, members.getpsuCode());
-        values.put(FamilyMembersTable.COLUMN_HHID, members.getHhid());
-        values.put(FamilyMembersTable.COLUMN_AGE_MONTHS, members.getAgeInMonths());
-        values.put(FamilyMembersTable.COLUMN_MUID, members.getMuid());
-        values.put(FamilyMembersTable.COLUMN_MOTHER_PRESENT, members.getMotherPresent());
-        values.put(FamilyMembersTable.COLUMN_USERNAME, members.getUserName());
-        values.put(FamilyMembersTable.COLUMN_SYSDATE, members.getSysDate());
-        values.put(FamilyMembersTable.COLUMN_INDEXED, members.getIndexed());
-        values.put(FamilyMembersTable.COLUMN_SD, members.sDtoString());
-        values.put(FamilyMembersTable.COLUMN_ISTATUS, members.getiStatus());
-        values.put(FamilyMembersTable.COLUMN_DEVICETAGID, members.getDeviceTag());
-        values.put(FamilyMembersTable.COLUMN_DEVICEID, members.getDeviceId());
-        values.put(FamilyMembersTable.COLUMN_APPVERSION, members.getAppver());
-        values.put(FamilyMembersTable.COLUMN_SYNCED, members.getSynced());
-        values.put(FamilyMembersTable.COLUMN_SYNC_DATE, members.getSyncDate());
-
-        // Insert the new row, returning the primary key value of the new row
-        long newRowId;
-        newRowId = db.insertOrThrow(
-                FamilyMembersTable.TABLE_NAME,
-                FamilyMembersTable.COLUMN_NAME_NULLABLE,
-                values);
-        return newRowId;
-    }
 
 
     //UPDATE in DB
@@ -329,32 +295,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-/*    public String validatePassword(String password, String encodedPassword) throws NoSuchAlgorithmException, UnsupportedEncodingException {
-
-
-        byte[] cipherPassword = Base64.decode(encodedPassword, Base64.NO_WRAP);
-        byte[] salt = Arrays.copyOfRange(cipherPassword, 0, 16);
-        byte[] hash = Arrays.copyOfRange(cipherPassword, 16, cipherPassword.length);
-
-        MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        digest.reset();
-        digest.update(salt);
-        byte[] byteData = digest.digest(password.getBytes(StandardCharsets.UTF_8));
-        StringBuffer sb = new StringBuffer();
-        for (int i = 0; i < byteData.length; i++) {
-            sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
-        }
-        Log.d("TAG", "computeHash: " + sb);
-        return sb.toString();
-    }
-
-
-    private static byte[] getSalt() throws NoSuchAlgorithmException {
-        SecureRandom random = new SecureRandom();
-        byte[] salt = new byte[16];
-        random.nextBytes(salt);
-        return salt;
-    }*/
 
     public ArrayList<Form> getFormsByDate(String sysdate) {
 
@@ -441,27 +381,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    /*public int updateTemp(String assessNo, String temp) {
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put(FormsTable.COLUMN_TSF305, temp);
-        values.put(FormsTable.COLUMN_SYSDATE, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()) + "-Updated");
-        values.put(FormsTable.COLUMN_ISTATUS, "1");
-        values.put(FormsTable.COLUMN_SYNCED, (byte[]) null);
-
-        String selection = FormsTable.COLUMN_ASSESMENT_NO + " =? AND " + FormsTable.COLUMN_ISTATUS + " =? ";
-        // String selection = FormsTable.COLUMN_ASSESMENT_NO + " =? ";
-        String[] selectionArgs = {assessNo, "9"};
-        // String[] selectionArgs = {assessNo};
-
-        return db.update(FormsTable.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-    }*/
-
-
     public int syncVersionApp(JSONObject VersionList) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         db.delete(VersionTable.TABLE_NAME, null, null);
@@ -518,41 +437,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return insertCount;
     }
 
-   /* public int syncVillages(JSONArray clusterList) throws JSONException {
-        SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
-        db.delete(VillagesTable.TABLE_NAME, null, null);
-        int insertCount = 0;
-        for (int i = 0; i < clusterList.length(); i++) {
-
-            JSONObject json = clusterList.getJSONObject(i);
-
-            Villages villages = new Villages();
-            villages.sync(json);
-            ContentValues values = new ContentValues();
-
-                values.put(VillagesTable.COLUMN_COUNTRY, villages.getCountry());
-                values.put(VillagesTable.COLUMN_CCODE, villages.getCcode());
-                values.put(VillagesTable.COLUMN_PROVINCE, villages.getProvince());
-                values.put(VillagesTable.COLUMN_PROVCODE, villages.getProvcode());
-                values.put(VillagesTable.COLUMN_DISTRICT_NAME, villages.getDistrictName());
-                values.put(VillagesTable.COLUMN_DCODE, villages.getDcode());
-                values.put(VillagesTable.COLUMN_VILLAGE, villages.getVillage());
-                values.put(VillagesTable.COLUMN_VCODE, villages.getVcode());
-                values.put(VillagesTable.COLUMN_PSUCODE, villages.getPsucode());
-
-
-                long rowID = db.insertOrThrow(VillagesTable.TABLE_NAME, null, values);
-            if (rowID != -1) insertCount++;
-        }
-
-
-        db.close();
-
-        db.close();
-
-        return insertCount;
-    }*/
-
     public int syncClusters(JSONArray clusterList) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         db.delete(ClusterTable.TABLE_NAME, null, null);
@@ -600,7 +484,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put(RandomHHTable.COLUMN_LUID, randomHH.getLUID());
             values.put(RandomHHTable.COLUMN_STRUCTURE_NO, randomHH.getStructure());
             values.put(RandomHHTable.COLUMN_FAMILY_EXT_CODE, randomHH.getExtension());
-            values.put(RandomHHTable.COLUMN_HH_NO, randomHH.getHh());
+            values.put(RandomHHTable.COLUMN_HH_NO, randomHH.getHhid());
             values.put(RandomHHTable.COLUMN_EB_CODE, randomHH.getEbCode());
             values.put(RandomHHTable.COLUMN_RANDOMDT, randomHH.getRandomDT());
             values.put(RandomHHTable.COLUMN_HH_HEAD, randomHH.getHhhead());
@@ -667,42 +551,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allForms;
     }
 
-    public JSONArray getUnsyncedFamilyMembers() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-        String[] columns = null;
-        String whereClause;
-        whereClause = FamilyMembersTable.COLUMN_SYNCED + " = '' ";
-
-        String[] whereArgs = null;
-        String groupBy = null;
-        String having = null;
-        String orderBy = FamilyMembersTable.COLUMN_ID + " ASC";
-
-        JSONArray all = new JSONArray();
-        c = db.query(
-                FamilyMembersTable.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy                    // The sort order
-        );
-        while (c.moveToNext()) {
-            Log.d(TAG, "getUnsyncedFamilyMembers: " + c.getCount());
-            FamilyMembers fm = new FamilyMembers();
-            all.put(fm.Hydrate(c).toJSONObject());
-        }
-
-        c.close();
-
-        db.close();
-
-        Log.d(TAG, "getUnsyncedFamilyMembers: " + all.toString().length());
-        Log.d(TAG, "getUnsyncedFamilyMembers: " + all);
-        return all;
-    }
 
     public JSONArray getUnsyncedChild() throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
@@ -791,20 +639,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    public void updateSyncedFamilyMembers(String id) {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        ContentValues values = new ContentValues();
-        values.put(FamilyMembersTable.COLUMN_SYNCED, true);
-        values.put(FamilyMembersTable.COLUMN_SYNC_DATE, new Date().toString());
-        String where = FamilyMembersTable.COLUMN_ID + " = ?";
-        String[] whereArgs = {id};
-        int count = db.update(
-                FamilyMembersTable.TABLE_NAME,
-                values,
-                where,
-                whereArgs);
-    }
-
 
     public void updateSyncedChild(String id) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
@@ -879,45 +713,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    /*public RandomHH checkHousehold(String cluster_no, String hh_no) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = null;
-        String[] columns = null;
-        String selection = RandomHHTable.COLUMN_EB_CODE + "= ? AND "
-                + RandomHHTable.COLUMN_HH_NO + "= ? ";
-        String[] selectionArgs = {cluster_no, hh_no};
-
-        int cCount;
-        RandomHH hh = null;
-        try {
-            c = db.query(
-                    RandomHHTable.TABLE_NAME,
-                    columns,
-                    selection,
-                    selectionArgs,
-                    null,
-                    null,
-                    null
-            );
-            while (c.moveToNext()) {
-
-                hh = new RandomHH().hydrate(c);
-
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
-
-        return hh;
-
-    }*/
-
-    public Form getFormByPsuHHNo(String ebCode, String hhid) throws JSONException {
+    public Form getFormByPsuhhid(String ebCode, String hhid) throws JSONException {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
@@ -1094,222 +890,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public String getDistrictNameByCode() {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-        String[] columns = null;
-
-        String whereClause = ClusterTable.COLUMN_DIST_ID + " = ?";
-
-        String[] whereArgs = {MainApp.selectedDistrict};
-
-        String groupBy = null;
-        String having = null;
-
-        String orderBy = ClusterTable.COLUMN_GEOAREA + " ASC";
-
-        String cl = null;
-        c = db.query(
-                ClusterTable.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy,
-                "1"
-        );
-        while (c.moveToNext()) {
-            cl = new Clusters().hydrate(c).getGeoarea();
-        }
-        c.close();
-        db.close();
-
-        return cl;
-
-    }
-
-    /*public RandomHH getHHbyEnumBlocks(String ebCode, String hhno) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = null;
-        String[] columns = null;
-
-        String whereClause = RandomHHTable.COLUMN_EB_CODE + " = ? AND " +
-                RandomHHTable.COLUMN_HH_NO + " = ?";
-
-        String[] whereArgs = {ebCode, hhno};
-
-        String groupBy = null;
-        String having = null;
-
-        String orderBy = RandomHHTable.COLUMN_HH_NO + " ASC";
-
-        String limit = "5000";
-
-        RandomHH randHH = new RandomHH();
-        try {
-            c = db.query(true,
-                    RandomHHTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy,
-                    limit
-                    // The sort order
-            );
-            while (c.moveToNext()) {
-                randHH = new RandomHH().hydrate(c);
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
-        return randHH;
-    }*/
-
-    public List<FamilyMembers> getMemberBYUID(String uid) throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-        String[] columns = null;
-
-        String whereClause;
-        whereClause = FamilyMembersTable.COLUMN_UUID + "=?";
-
-        String[] whereArgs = {uid};
-
-        String groupBy = null;
-        String having = null;
-
-        String orderBy = FamilyMembersTable.COLUMN_ID + " ASC";
-
-        ArrayList<FamilyMembers> membersByUID = new ArrayList<>();
-            c = db.query(
-                    FamilyMembersTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                FamilyMembers mwra = new FamilyMembers().Hydrate(c);
-
-                membersByUID.add(mwra);
-            }
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-
-        return membersByUID;
-    }
-
-    public FamilyMembers getSelectedMemberBYUID(String uid) throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c = null;
-        String[] columns = null;
-
-        String whereClause;
-        whereClause = FamilyMembersTable.COLUMN_UUID + "=? AND "
-                + FamilyMembersTable.COLUMN_INDEXED + "=?";
-
-        String[] whereArgs = {uid, "1"};
-
-        String groupBy = null;
-        String having = null;
-
-        String orderBy = FamilyMembersTable.COLUMN_ID + " ASC";
-
-        FamilyMembers membersByUID = new FamilyMembers();
-            c = db.query(
-                    FamilyMembersTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                membersByUID = new FamilyMembers().Hydrate(c);
-            }
-
-        if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-
-        return membersByUID;
-    }
-
-    /*public List<FoodConsumption> getFoodConsumptionBYUID(String uid) throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = null;
-        String[] columns = null;
-
-        String whereClause;
-        whereClause = FoodConsumptionTable.COLUMN_UUID + "=? ";
-
-        String[] whereArgs = {uid};
-
-        String groupBy = null;
-        String having = null;
-
-        String orderBy = FoodConsumptionTable.COLUMN_ID + " ASC";
-
-        List<FoodConsumption> foodConsumption = new ArrayList<>();
-        try {
-            c = db.query(
-                    FoodConsumptionTable.TABLE_NAME,  // The table to query
-                    columns,                   // The columns to return
-                    whereClause,               // The columns for the WHERE clause
-                    whereArgs,                 // The values for the WHERE clause
-                    groupBy,                   // don't group the rows
-                    having,                    // don't filter by row groups
-                    orderBy                    // The sort order
-            );
-            while (c.moveToNext()) {
-                foodConsumption.add(new FoodConsumption().Hydrate(c));
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
-        return foodConsumption;
-    }*/
-
-    public int updatesfamilyListColumn(String column, String value) {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-
-        ContentValues values = new ContentValues();
-        values.put(column, value);
-
-        String selection = FamilyMembersTable._ID + " =? ";
-        String[] selectionArgs = {String.valueOf(MainApp.familyMember.getId())};
-
-        return db.update(FamilyMembersTable.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-    }
-
-
-    public Form getFormByHHNo() throws JSONException {
+    public Form getFormByhhid() throws JSONException {
 
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -1319,7 +900,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = null;
         String whereClause = FormsTable.COLUMN_EB_CODE + "= ? AND " +
                 FormsTable.COLUMN_HHID + "= ? ";
-        String[] whereArgs = {selectedCluster.getEbcode(), selectedHousehold.getHh()};
+        String[] whereArgs = {selectedCluster.getEbcode(), selectedHousehold.getHhid()};
         String groupBy = null;
         String having = null;
         String orderBy = FormsTable.COLUMN_SYSDATE + " ASC";
@@ -1349,46 +930,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public int getSNoYoungestChild() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c;
-        String[] columns = null;
-
-        String whereClause = FamilyMembersTable.COLUMN_UUID + "=? AND " +
-                FamilyMembersTable.COLUMN_MOTHER_PRESENT + "='1' AND " +
-                "CAST(" + FamilyMembersTable.COLUMN_AGE_MONTHS + " AS INTEGER) < 1825 ";
-
-        String[] whereArgs = {MainApp.form.getUid()};
-
-        String groupBy = null;
-        String having = null;
-
-        // Not working
-        String orderBy = "CAST(" + FamilyMembersTable.COLUMN_AGE_MONTHS + " AS INTEGER) ASC";
-        //String orderBy = null;
-
-        c = db.query(
-                FamilyMembersTable.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy,                    // The sort order
-                "1"
-        );
-        int chSNo = 999;
-
-        c.moveToFirst();
-        chSNo = Integer.parseInt(new FamilyMembers().Hydrate(c).getD101());
-
-        db.close();
-
-        return chSNo;
-    }
-
-
-    public RandomHH getHHbyCluster(String clustercode, String hhno) {
+    public RandomHH getHHbyCluster(String clustercode, String hhid) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
         String[] columns = null;
@@ -1396,7 +938,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String whereClause = RandomHHTable.COLUMN_EB_CODE + " = ? AND " +
                 RandomHHTable.COLUMN_HH_NO + " = ?";
 
-        String[] whereArgs = {clustercode, hhno};
+        String[] whereArgs = {clustercode, hhid};
 
         String groupBy = null;
         String having = null;
@@ -1428,44 +970,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return randHH;
     }
-
-    public List<FamilyMembers> getAllRespondents() throws JSONException {
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c;
-        String[] columns = null;
-
-        String whereClause;
-        whereClause = FamilyMembersTable.COLUMN_UUID + "=? ";
-
-        String[] whereArgs = {MainApp.form.getUid()};
-
-        String groupBy = null;
-        String having = null;
-
-        String orderBy = FamilyMembersTable.COLUMN_ID + " ASC";
-
-        List<FamilyMembers> resp = new ArrayList<>();
-
-        c = db.query(
-                FamilyMembersTable.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy                    // The sort order
-        );
-        while (c.moveToNext()) {
-            FamilyMembers fm = new FamilyMembers().Hydrate(c);
-            if (Integer.parseInt(fm.getD109y()) > 15)
-                resp.add(fm);
-        }
-
-        db.close();
-
-        return resp;
-    }
-
 
     public Clusters getCluster(String ebCode) {
 
@@ -1502,42 +1006,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return cluster;
 
-    }
-
-    public List<FamilyMembers> AllChildrenByMUID(String muid) throws JSONException {
-
-        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
-        Cursor c;
-        String[] columns = null;
-
-        String whereClause = FamilyMembersTable.COLUMN_UUID + "=? AND " +
-                FamilyMembersTable.COLUMN_MUID + "=?";
-
-        String[] whereArgs = {MainApp.form.getUid(), muid};
-
-        String groupBy = null;
-        String having = null;
-
-        String orderBy = FamilyMembersTable.COLUMN_AGE_MONTHS + " ASC";
-
-        c = db.query(
-                FamilyMembersTable.TABLE_NAME,  // The table to query
-                columns,                   // The columns to return
-                whereClause,               // The columns for the WHERE clause
-                whereArgs,                 // The values for the WHERE clause
-                groupBy,                   // don't group the rows
-                having,                    // don't filter by row groups
-                orderBy                    // The sort order
-
-        );
-        List<FamilyMembers> allChildren = new ArrayList<>();
-        while (c.moveToNext()) {
-            allChildren.add(new FamilyMembers().Hydrate(c));
-        }
-
-        db.close();
-
-        return allChildren;
     }
 
     public int updatePassword(String hashedPassword) {
@@ -1594,7 +1062,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public RandomHH getRandomByHhno(String hhno) {
+    public RandomHH getRandomByhhid(String hhid) {
 
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c = null;
@@ -1602,7 +1070,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String whereClause = RandomHHTable.COLUMN_EB_CODE + " = ? AND " +
                 RandomHHTable.COLUMN_HH_NO + " = ? ";
 
-        String[] whereArgs = {selectedCluster.getEbcode(), hhno};
+        String[] whereArgs = {selectedCluster.getEbcode(), hhid};
         String groupBy = null;
         String having = null;
         String orderBy = null;
@@ -1624,5 +1092,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         c.close();
         db.close();
         return randomHH;
+    }
+
+    public List<Child> getChildrenBYUID() throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = ChildTable.COLUMN_UUID + "=? ";
+
+        String[] whereArgs = {MainApp.form.getUid()};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = ChildTable.COLUMN_ID + " ASC";
+
+        List<Child> childrenByUID = new ArrayList<>();
+        c = db.query(
+                ChildTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            childrenByUID.add(new Child().Hydrate(c));
+        }
+
+        if (c != null) {
+            c.close();
+        }
+        if (db != null) {
+            db.close();
+        }
+
+        return childrenByUID;
     }
 }

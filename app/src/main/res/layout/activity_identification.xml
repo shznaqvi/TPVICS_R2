@@ -33,7 +33,7 @@
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/householdidentification_mainheading"
+            app:title="@string/householdidentificationmainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
         <ScrollView
@@ -296,7 +296,11 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:hint="@string/hh16a" />
+                                android:hint="X-####-###"
+                                android:inputType="number"
+                                android:maxLength="9"
+                                app:mask="X-0000-00" />
+
 
                             <CheckBox
                                 android:id="@+id/checkHh16a"

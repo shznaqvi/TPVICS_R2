@@ -81,6 +81,10 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
+            android:name=".ui.HouseholdScreenActivity"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
             android:name=".ui.IdentificationActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"

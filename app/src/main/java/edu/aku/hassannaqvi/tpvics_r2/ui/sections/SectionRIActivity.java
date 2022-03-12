@@ -23,6 +23,7 @@ import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionRiBinding;
 import edu.aku.hassannaqvi.tpvics_r2.ui.EndingActivity;
+import edu.aku.hassannaqvi.tpvics_r2.ui.HouseholdScreenActivity;
 
 public class SectionRIActivity extends AppCompatActivity {
 
@@ -62,13 +63,8 @@ public class SectionRIActivity extends AppCompatActivity {
                 if (!age.isEmpty()){
                     if (Integer.parseInt(age) < 14 ){
                         Validator.emptyCustomTextBox(SectionRIActivity.this, bi.hh14, "The Age Should not be less than 14 Years");
-                    }else {
-                        return;
                     }
-
                 }
-
-
             }
         });
     }
@@ -80,7 +76,7 @@ public class SectionRIActivity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SHH, form.sAtoString());
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SHH, form.sHHtoString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -99,7 +95,7 @@ public class SectionRIActivity extends AppCompatActivity {
         if (updateDB()) {
             finish();
             if (form.getHh20().equals("1")) {
-                startActivity(new Intent(this, SectionSS_1Activity.class));
+                startActivity(new Intent(this, HouseholdScreenActivity.class));
             } else {
                 startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false).putExtra("checkToEnable", 7));
             }

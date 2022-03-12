@@ -10,7 +10,7 @@
 
             <item
                 android:id="@+id/action_database"
-                android:title="@string/action_database" />
+                android:title="@string/actiondatabase" />
             <item
                 android:id="@+id/onSync"
                 android:title="Sync Data"

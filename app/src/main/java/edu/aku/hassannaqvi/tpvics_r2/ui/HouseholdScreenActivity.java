@@ -1,218 +1,179 @@
 package edu.aku.hassannaqvi.tpvics_r2.ui;
 
-import static java.util.concurrent.TimeUnit.MILLISECONDS;
-
+import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Locale;
+import java.util.ArrayList;
 
 import edu.aku.hassannaqvi.tpvics_r2.R;
+import edu.aku.hassannaqvi.tpvics_r2.adapters.ChildAdapter;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
-import edu.aku.hassannaqvi.tpvics_r2.database.AndroidManager;
-import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivityMainBinding;
+import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
+import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivityHouseholdScreenBinding;
 import edu.aku.hassannaqvi.tpvics_r2.models.Child;
-import edu.aku.hassannaqvi.tpvics_r2.models.Form;
-import edu.aku.hassannaqvi.tpvics_r2.ui.lists.FormsReportCluster;
-import edu.aku.hassannaqvi.tpvics_r2.ui.lists.FormsReportDate;
-import edu.aku.hassannaqvi.tpvics_r2.ui.lists.FormsReportPending;
-import edu.aku.hassannaqvi.tpvics_r2.ui.sections.ConsentActivity;
-import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionCBActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionCHActivity;
-import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionHHActivity;
-import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionIMActivity;
-import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionRIActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionSS_1Activity;
-import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionSS_2Activity;
 
 
 public class HouseholdScreenActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
-    ActivityMainBinding bi;
-    SharedPreferences sp;
+
+    private static final String TAG = "ChildListActivit";
+    private final boolean selectionCheck = false;
+    ActivityHouseholdScreenBinding bi;
+    DatabaseHelper db;
+    private ChildAdapter childsAdapter;
+    ActivityResultLauncher<Intent> MemberInfoLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+
+                    if (result.getResultCode() == Activity.RESULT_OK && !MainApp.superuser) {
+
+                        Intent data = result.getData();
+                        if (data.getStringExtra("requestCode").equals("1")) {
+                            Toast.makeText(HouseholdScreenActivity.this, "Household information entered.", Toast.LENGTH_SHORT).show();
+                            bi.addHousehold.setEnabled(false);
+
+                        } else {
+
+                            MainApp.childList.add(MainApp.child);
+
+                            MainApp.childCount++;
+                            childsAdapter.notifyItemInserted(MainApp.childList.size() - 1);
+                        }
+                    }
+
+                    if (result.getResultCode() == Activity.RESULT_CANCELED) {
+                        Toast.makeText(HouseholdScreenActivity.this, "No data has been updated.", Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+            });
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         bi = DataBindingUtil.setContentView(this, R.layout.activity_household_screen);
-        setSupportActionBar(bi.toolbar);
-        getSupportActionBar().setDisplayUseLogoEnabled(true);
-        //getSupportActionBar().setIcon(R.drawable.app_icon);
-        bi.adminView.setVisibility(MainApp.admin ? View.VISIBLE : View.GONE);
-        bi.toolbar.setSubtitle("Welcome, " + MainApp.user.getFullname() + (MainApp.admin ? " (Admin)" : "") + "!");
-        invalidateOptionsMenu();
+        if (MainApp.superuser)
+            bi.btnContinue.setText("Review Next");
+        db = MainApp.appInfo.dbHelper;
+        MainApp.childList = new ArrayList<>();
 
 
+        Log.d(TAG, "onCreate(childList): " + MainApp.childList.size());
         try {
-            String pwExpiry = String.valueOf(new JSONObject(MainApp.user.getPwdExpiry()).get("date")).substring(0, 10);
-            //     Toast.makeText(this, pwExpiry, Toast.LENGTH_LONG).show();
-            Log.d(TAG, "onCreate: pwExpiry: " + pwExpiry);
+            MainApp.childList = db.getChildrenBYUID();
 
-            Calendar cal = Calendar.getInstance();
-
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
-            cal.setTime(sdf.parse(pwExpiry));// all done
-
-            int daysLeft = (int) MILLISECONDS.toDays(cal.getTimeInMillis() - System.currentTimeMillis());
-            //  Toast.makeText(this, daysLeft+" Days left", Toast.LENGTH_LONG).show();
-            if (daysLeft < 1) {
-                Toast.makeText(this, "Your password has expired. Please contact your supervisor.", Toast.LENGTH_LONG).show();
-                finish();
-            }
-            if (daysLeft < 10) {
-                bi.message.setText("Your current password is expiring in " + daysLeft + " day(s) on " + pwExpiry + ". Please change your password to avoid account lockout. (Internet Required.)");
-                // bi.message.setText("Your password will expire on " + pwExpiry + ". There are only " + daysLeft + " Days left.");
-                bi.message.setVisibility(View.VISIBLE);
-            } else {
-                bi.message.setVisibility(View.GONE);
-            }
-
-        } catch (JSONException | ParseException e) {
+        } catch (JSONException e) {
             e.printStackTrace();
-        }
-    }
-
-    public void sectionPress(View view) {
-
-
-        switch (view.getId()) {
-            case R.id.startInterview:
-                MainApp.entryType = 1;
-                break;
-/*            case R.id.startDataEntry:
-                MainApp.entryType = 2;
-                break;*/
-/*
-            case R.id.updateBlood:
-                MainApp.entryType = 3;
-                break;
-
-            case R.id.updateStool:
-                MainApp.entryType = 4;
-                break;*/
-            default:
-                MainApp.entryType = 0;
-
+            Toast.makeText(this, "JSONException(Child): " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
 
+        bi.btnContinue.setEnabled(MainApp.childList.size() > 0);
+        bi.btnContinue.setBackground(MainApp.childList.size() > 0 ? getResources().getDrawable(R.drawable.button_shape_green) : getResources().getDrawable(R.drawable.button_shape_gray));
 
-        switch (view.getId()) {
+        MainApp.childCount = Math.round(MainApp.childList.size());
 
-            case R.id.startInterview:
-                MainApp.form = new Form();
-                startActivity(new Intent(this, IdentificationActivity.class));
-                break;
-            case R.id.seca1:
-                /*MainApp.form = new Form();
-                startActivity(new Intent(this, SectionHHActivity.class));
-                break;*/
-            case R.id.sechh:
-                MainApp.form = new Form();
-                startActivity(new Intent(this, SectionHHActivity.class));
-                break;
-            case R.id.secri:
-                MainApp.form = new Form();
-                startActivity(new Intent(this, SectionRIActivity.class));
-                break;
+        childsAdapter = new ChildAdapter(this, MainApp.childList);
+       /* GridLayoutManager layoutManager =
+                new GridLayoutManager(this, 3, GridLayoutManager.HORIZONTAL, false);*/
+        bi.rvChild.setAdapter(childsAdapter);
+        // bi.rvChild.setLayoutManager(layoutManager);
 
-            case R.id.secss1:
-                MainApp.form = new Form();
-                startActivity(new Intent(this, SectionSS_1Activity.class));
-                break;
 
-            case R.id.secess2:
-                MainApp.form = new Form();
-                startActivity(new Intent(this, SectionSS_2Activity.class));
-                break;
+        bi.addChild.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (MainApp.superuser) {
+                    Toast.makeText(HouseholdScreenActivity.this, "Supervisors cannot add new members.", Toast.LENGTH_LONG).show();
 
-            case R.id.seceCH:
-                MainApp.form = new Form();
-                startActivity(new Intent(this, SectionCHActivity.class));
-                break;
-            case R.id.secCB:
-                MainApp.child = new Child();
-                startActivity(new Intent(this, SectionCBActivity.class));
-                break;
+                } else {
+                    //     Toast.makeText(MwraActivity.this, "Opening Mwra Form", Toast.LENGTH_LONG).show();
+                    MainApp.child = new Child();
+                    addChild();
+                }
+            }
+        });
 
-            case R.id.secIM:
-                MainApp.child = new Child();
-                startActivity(new Intent(this, SectionIMActivity.class));
-                break;
+        bi.addHousehold.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (MainApp.superuser) {
+                    Toast.makeText(HouseholdScreenActivity.this, "Supervisors cannot add new members.", Toast.LENGTH_LONG).show();
 
-            case R.id.seccs:
-                MainApp.form = new Form();
-                startActivity(new Intent(this, ConsentActivity.class));
-                break;
+                } else {
+                    addHouseholdInfo();
+                    //Toast.makeText(HouseholdScreenActivity.this, "This form has been locked. You cannot add new family member to locked forms", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
-            case R.id.secis:
-                MainApp.form = new Form();
-                startActivity(new Intent(this, EndingActivity.class));
-                break;
-
-            case R.id.dbManager:
-                startActivity(new Intent(this, AndroidManager.class));
-                break;
-        }
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = null;
-        switch (item.getItemId()) {
-            case R.id.action_database:
-                intent = new Intent(HouseholdScreenActivity.this, AndroidManager.class);
-                startActivity(intent);
-                break;
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(this, "Activity Resumed!", Toast.LENGTH_SHORT).show();
 
-            case R.id.onSync:
-                intent = new Intent(HouseholdScreenActivity.this, SyncActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.checkPendingForms:
-                intent = new Intent(HouseholdScreenActivity.this, FormsReportPending.class);
-                startActivity(intent);
-                break;
-            case R.id.formsReportDate:
-                intent = new Intent(HouseholdScreenActivity.this, FormsReportDate.class);
-                startActivity(intent);
-                break;
-            case R.id.changePassword:
-                intent = new Intent(HouseholdScreenActivity.this, ChangePasswordActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.formsReportCluster:
-                intent = new Intent(HouseholdScreenActivity.this, FormsReportCluster.class);
-                startActivity(intent);
-                break;
-        }
+    }
 
-        return super.onOptionsItemSelected(item);
+
+    public void btnContinue(View view) {
+
+
+        finish();
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+
+    }
+
+
+    private void addChild() {
+        MainApp.child = new Child();
+        //TODO: UNCOMMENT two line to launch the child info activity (CH)
+        Intent intent = new Intent(this, SectionCHActivity.class);
+        MemberInfoLauncher.launch(intent);
+    }
+
+    private void addHouseholdInfo() {
+        //TODO: UNCOMMENT two line to launch the child info activity (CH)
+        Intent intent = new Intent(this, SectionSS_1Activity.class);
+        MemberInfoLauncher.launch(intent);
+    }
+
+    public void btnEnd(View view) {
+
+        finish();
+        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.item_menu, menu);
-        MenuItem action_database = menu.findItem(R.id.action_database);
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RESULT_OK)
 
-        action_database.setVisible(MainApp.admin);
-        return true;
+            // A213 is line number
+            childsAdapter.notifyItemInserted(Integer.parseInt(MainApp.child.getEc13()) - 1);
 
     }
+
 
 }

@@ -86,79 +86,79 @@ public class Form extends BaseObservable implements Observable {
     private String hh21 = _EMPTY_;
     private String hh21xx = _EMPTY_;
 
-    private String ss01= _EMPTY_;
-    private String ss01xx= _EMPTY_;
-    private String ss02= _EMPTY_;
-    private String ss02xx= _EMPTY_;
-    private String ss03= _EMPTY_;
-    private String ss03xx= _EMPTY_;
-    private String ss04= _EMPTY_;
-    private String ss05= _EMPTY_;
-    private String ss05xx= _EMPTY_;
-    private String ss06= _EMPTY_;
-    private String ss06xx= _EMPTY_;
-    private String ss07= _EMPTY_;
-    private String ss07xx= _EMPTY_;
-    private String ss08= _EMPTY_;
-    private String ss09= _EMPTY_;
-    private String ss11= _EMPTY_;
-    private String ss12= _EMPTY_;
+    private String ss01 = _EMPTY_;
+    private String ss01xx = _EMPTY_;
+    private String ss02 = _EMPTY_;
+    private String ss02xx = _EMPTY_;
+    private String ss03 = _EMPTY_;
+    private String ss03xx = _EMPTY_;
+    private String ss04 = _EMPTY_;
+    private String ss05 = _EMPTY_;
+    private String ss05xx = _EMPTY_;
+    private String ss06 = _EMPTY_;
+    private String ss06xx = _EMPTY_;
+    private String ss07 = _EMPTY_;
+    private String ss07xx = _EMPTY_;
+    private String ss08 = _EMPTY_;
+    private String ss09 = _EMPTY_;
+    private String ss11 = _EMPTY_;
+    private String ss12 = _EMPTY_;
     private String ss12hhx = _EMPTY_;
     private String ss13 = _EMPTY_;
-    private String ss13xx= _EMPTY_;
-    private String ss14a= _EMPTY_;
-    private String ss14b= _EMPTY_;
-    private String ss14c= _EMPTY_;
-    private String ss14d= _EMPTY_;
-    private String ss14e= _EMPTY_;
-    private String ss14f= _EMPTY_;
-    private String ss14g= _EMPTY_;
-    private String ss14h= _EMPTY_;
-    private String ss14i= _EMPTY_;
-    private String ss14j= _EMPTY_;
-    private String ss14k= _EMPTY_;
-    private String ss14l= _EMPTY_;
-    private String ss14m= _EMPTY_;
-    private String ss14n= _EMPTY_;
-    private String ss14o= _EMPTY_;
-    private String ss14p= _EMPTY_;
-    private String ss14q= _EMPTY_;
-    private String ss14r= _EMPTY_;
-    private String ss14s= _EMPTY_;
-    private String ss15a= _EMPTY_;
-    private String ss15b= _EMPTY_;
-    private String ss15c= _EMPTY_;
-    private String ss15d= _EMPTY_;
-    private String ss15e= _EMPTY_;
-    private String ss15f= _EMPTY_;
-    private String ss15g= _EMPTY_;
-    private String ss15h= _EMPTY_;
-    private String ss15i= _EMPTY_;
-    private String ss17= _EMPTY_;
-    private String ss17xx= _EMPTY_;
-    private String ss18= _EMPTY_;
-    private String ss18xx= _EMPTY_;
-    private String ss19= _EMPTY_;
-    private String ss19xx= _EMPTY_;
-    private String ss20= _EMPTY_;
-    private String ss20xx= _EMPTY_;
-    private String ss21a= _EMPTY_;
-    private String ss22= _EMPTY_;
-    private String ss23= _EMPTY_;
-    private String ss23landx= _EMPTY_;
-    private String ss24= _EMPTY_;
-    private String ss25a= _EMPTY_;
-    private String ss25b= _EMPTY_;
-    private String ss25c= _EMPTY_;
-    private String ss25d= _EMPTY_;
-    private String ss25e= _EMPTY_;
-    private String ss25f= _EMPTY_;
-    private String ss25g= _EMPTY_;
-    private String ss26= _EMPTY_;
-    private String ss27= _EMPTY_;
-    private String ss28= _EMPTY_;
+    private String ss13xx = _EMPTY_;
+    private String ss14a = _EMPTY_;
+    private String ss14b = _EMPTY_;
+    private String ss14c = _EMPTY_;
+    private String ss14d = _EMPTY_;
+    private String ss14e = _EMPTY_;
+    private String ss14f = _EMPTY_;
+    private String ss14g = _EMPTY_;
+    private String ss14h = _EMPTY_;
+    private String ss14i = _EMPTY_;
+    private String ss14j = _EMPTY_;
+    private String ss14k = _EMPTY_;
+    private String ss14l = _EMPTY_;
+    private String ss14m = _EMPTY_;
+    private String ss14n = _EMPTY_;
+    private String ss14o = _EMPTY_;
+    private String ss14p = _EMPTY_;
+    private String ss14q = _EMPTY_;
+    private String ss14r = _EMPTY_;
+    private String ss14s = _EMPTY_;
+    private String ss15a = _EMPTY_;
+    private String ss15b = _EMPTY_;
+    private String ss15c = _EMPTY_;
+    private String ss15d = _EMPTY_;
+    private String ss15e = _EMPTY_;
+    private String ss15f = _EMPTY_;
+    private String ss15g = _EMPTY_;
+    private String ss15h = _EMPTY_;
+    private String ss15i = _EMPTY_;
+    private String ss17 = _EMPTY_;
+    private String ss17xx = _EMPTY_;
+    private String ss18 = _EMPTY_;
+    private String ss18xx = _EMPTY_;
+    private String ss19 = _EMPTY_;
+    private String ss19xx = _EMPTY_;
+    private String ss20 = _EMPTY_;
+    private String ss20xx = _EMPTY_;
+    private String ss21a = _EMPTY_;
+    private String ss22 = _EMPTY_;
+    private String ss23 = _EMPTY_;
+    private String ss23landx = _EMPTY_;
+    private String ss24 = _EMPTY_;
+    private String ss25a = _EMPTY_;
+    private String ss25b = _EMPTY_;
+    private String ss25c = _EMPTY_;
+    private String ss25d = _EMPTY_;
+    private String ss25e = _EMPTY_;
+    private String ss25f = _EMPTY_;
+    private String ss25g = _EMPTY_;
+    private String ss26 = _EMPTY_;
+    private String ss27 = _EMPTY_;
+    private String ss28 = _EMPTY_;
 
-    private String ec13= _EMPTY_;
+/*    private String ec13= _EMPTY_;
     private String ec14= _EMPTY_;
     private String ec15= _EMPTY_;
     private String ec16= _EMPTY_;
@@ -168,8 +168,7 @@ public class Form extends BaseObservable implements Observable {
     private String cb03_yy= _EMPTY_;
     private String cb03_dk= _EMPTY_;
     private String cb04_mm= _EMPTY_;
-    private String cb04_yy= _EMPTY_;
-
+    private String cb04_yy= _EMPTY_;*/
 
 
     public Form() {
@@ -192,7 +191,7 @@ public class Form extends BaseObservable implements Observable {
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
         setEbCode(MainApp.selectedHousehold.getEbCode());
-        setHhid(MainApp.selectedHousehold.getHhno());
+        setHhid(MainApp.selectedHousehold.getHhid());
         setSno(MainApp.selectedHousehold.getSno());
         // setEntryType(String.valueOf(MainApp.entryType));
 
@@ -202,7 +201,7 @@ public class Form extends BaseObservable implements Observable {
         setHh07(selectedCluster.getGeoarea().split("\\|")[1]);
         setHh08(selectedCluster.getGeoarea().split("\\|")[2]);
         setHh09(selectedCluster.getGeoarea().split("\\|")[3]);
-        setHh12(selectedHousehold.getHh());
+        setHh12(selectedHousehold.getHhid());
 
     }
 
@@ -1548,6 +1547,7 @@ public class Form extends BaseObservable implements Observable {
         this.ss28 = ss28;
         notifyPropertyChanged(BR.ss28);
     }
+/*
 
     @Bindable
     public String getEc13() {
@@ -1658,6 +1658,7 @@ public class Form extends BaseObservable implements Observable {
         this.cb04_yy = cb04_yy;
         notifyPropertyChanged(BR.cb04_yy);
     }
+*/
 
 
     public Form Hydrate(Cursor cursor) throws JSONException {
@@ -1678,12 +1679,13 @@ public class Form extends BaseObservable implements Observable {
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNC_DATE));
 
 
-        sAHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SHH)));
+        sHHHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SHH)));
+        sSSHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SSS)));
 
         return this;
     }
 
-    public void sAHydrate(String string) throws JSONException {
+    public void sHHHydrate(String string) throws JSONException {
         Log.d(TAG, "sAHydrate: " + string);
         if (string != null) {
             JSONObject json = null;
@@ -1717,6 +1719,27 @@ public class Form extends BaseObservable implements Observable {
             this.hh21 = json.getString("hh21");
             this.hh21xx = json.getString("hh21xx");
             this.iStatus96x = json.has("iStatus96x") ? json.getString("iStatus96x") : "";
+
+/*            this.ec13 = json.getString("ec13");
+            this.ec14 = json.getString("ec14");
+            this.ec15 = json.getString("ec15");
+            this.ec16 = json.getString("ec16");
+            this.ec17 = json.getString("ec17");
+            this.cb03_dd = json.getString("cb03_dd");
+            this.cb03_mm = json.getString("cb03_mm");
+            this.cb03_yy = json.getString("cb03_yy");
+            this.cb04_mm = json.getString("cb04_mm");
+            this.cb04_yy = json.getString("cb04_yy");*/
+
+
+        }
+    }
+
+    public void sSSHydrate(String string) throws JSONException {
+        Log.d(TAG, "sAHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
 
             this.ss01 = json.getString("ss01");
             this.ss01xx = json.getString("ss01xx");
@@ -1788,23 +1811,12 @@ public class Form extends BaseObservable implements Observable {
             this.ss25g = json.getString("ss25g");
             this.ss26 = json.getString("ss26");
             this.ss27 = json.getString("ss27");
-            this.ec13 = json.getString("ec13");
-            this.ec14 = json.getString("ec14");
-            this.ec15 = json.getString("ec15");
-            this.ec16 = json.getString("ec16");
-            this.ec17 = json.getString("ec17");
-            this.cb03_dd = json.getString("cb03_dd");
-            this.cb03_mm = json.getString("cb03_mm");
-            this.cb03_yy = json.getString("cb03_yy");
-            this.cb04_mm = json.getString("cb04_mm");
-            this.cb04_yy = json.getString("cb04_yy");
-
-
 
         }
+
     }
 
-    public String sAtoString() throws JSONException {
+    public String sHHtoString() throws JSONException {
         Log.d(TAG, "sAtoString: ");
         JSONObject json = new JSONObject();
         json.put("hh01", hh01)
@@ -1834,9 +1846,28 @@ public class Form extends BaseObservable implements Observable {
                 .put("hh20a", hh20a)
                 .put("hh21", hh21)
                 .put("hh21xx", hh21xx)
-                .put("iStatus96x", iStatus96x)
+                .put("iStatus96x", iStatus96x);
 
-                .put("ss01", ss01)
+
+               /* .put("ec13", ec13)
+                .put("ec14", ec14)
+                .put("ec15", ec15)
+                .put("ec16", ec16)
+                .put("ec17", ec17)
+                .put("cb03_dd", cb03_dd)
+                .put("cb03_mm", cb03_mm)
+                .put("cb03_yy", cb03_yy)
+                .put("cb04_mm", cb04_mm)
+                .put("cb04_yy", cb04_yy);
+*/
+
+        return json.toString();
+    }
+
+    public String sSStoString() throws JSONException {
+        Log.d(TAG, "sAtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("ss01", ss01)
                 .put("ss01xx", ss01xx)
                 .put("ss02", ss02)
                 .put("ss02xx", ss02xx)
@@ -1905,22 +1936,10 @@ public class Form extends BaseObservable implements Observable {
                 .put("ss25f", ss25f)
                 .put("ss25g", ss25g)
                 .put("ss26", ss26)
-                .put("ss27", ss27)
-                .put("ec13", ec13)
-                .put("ec14", ec14)
-                .put("ec15", ec15)
-                .put("ec16", ec16)
-                .put("ec17", ec17)
-                .put("cb03_dd", cb03_dd)
-                .put("cb03_mm", cb03_mm)
-                .put("cb03_yy", cb03_yy)
-                .put("cb04_mm", cb04_mm)
-                .put("cb04_yy", cb04_yy);
-
-
-
+                .put("ss27", ss27);
 
         return json.toString();
+
     }
 
     public JSONObject toJSONObject() throws JSONException {
@@ -1951,7 +1970,8 @@ public class Form extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
         json.put(FormsTable.COLUMN_SYNCED, this.synced);
 
-        json.put(FormsTable.COLUMN_SHH, new JSONObject(sAtoString()));
+        json.put(FormsTable.COLUMN_SHH, new JSONObject(sHHtoString()));
+        json.put(FormsTable.COLUMN_SSS, new JSONObject(sSStoString()));
 
 //        json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
 //        json.put(FormsTable.COLUMN_DISTRICT_CODE, this.districtCode);

@@ -48,11 +48,11 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/hhno"
+                            android:id="@+id/hhid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="0dp"
-                            android:text="HHNO:"
+                            android:text="hhid:"
                             android:textColor="@color/colorPrimary"
                             android:textSize="20sp"
                             android:textStyle="bold" />

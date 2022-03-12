@@ -20,12 +20,10 @@ import net.sqlcipher.database.SQLiteDatabase;
 import org.json.JSONArray;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 import edu.aku.hassannaqvi.tpvics_r2.models.Child;
 import edu.aku.hassannaqvi.tpvics_r2.models.Clusters;
-import edu.aku.hassannaqvi.tpvics_r2.models.FamilyMembers;
 import edu.aku.hassannaqvi.tpvics_r2.models.Form;
 import edu.aku.hassannaqvi.tpvics_r2.models.RandomHH;
 import edu.aku.hassannaqvi.tpvics_r2.models.Users;
@@ -59,7 +57,6 @@ public class MainApp extends Application {
     // public static Pregnancy pregnancy;
     public static Child child;
 
-    public static FamilyMembers familyMember;
 
     //public static Samples samples;
 
@@ -76,14 +73,12 @@ public class MainApp extends Application {
     public static boolean permissionCheck = false;
     public static int entryType = 0;
 
-    public static List<FamilyMembers> familyList;
+    public static List<Child> childList;
     public static List<Integer> mwraList;
-    public static List<FamilyMembers> allChildrenList;
-    public static List<FamilyMembers> fatherList;
-    public static List<FamilyMembers> motherList;
-    public static int memberCount = 0;
+
+    public static int childCount = 0;
     public static String selectedMWRA;
-    public static String selectedChild;
+    public static int selectedChild;
     public static String selectedChildName = "";
     public static int memberCountComplete;
     public static boolean memberComplete;
@@ -99,7 +94,6 @@ public class MainApp extends Application {
     public static boolean langRTL = false;
     public static int ageOfIndexChild;
 
-    public static List<FamilyMembers> allMWRAList = new ArrayList<>();
     public static Clusters selectedCluster;
 
 

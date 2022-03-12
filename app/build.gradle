@@ -91,7 +91,7 @@ android {
         }
 
         debug {
-            resValue("string", "DB_PASSWORD_tpvics_r2", "nT@3rNA1Ev#eRyON")
+            resValue("string", "DB_PASSWORD_tpvics_r2.db", "VaLu@b1ePeRcE!V3")
         }
     }
     compileOptions {

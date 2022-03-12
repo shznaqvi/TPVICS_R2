@@ -6,7 +6,7 @@
         <import type="android.view.View" />
 
         <variable
-            name="form"
+            name="child"
             type="edu.aku.hassannaqvi.tpvics_r2.models.Child" />
     </data>
 
@@ -26,9 +26,9 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/cb_mainheading"
+            app:subtitle="@string/cbmainheading"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/cb_mainheading"
+            app:title="@string/cbmainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
         <ScrollView
@@ -61,7 +61,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ec01" />
+                                android:text="@string/Qec01" />
 
                             <TextView
                                 android:layout_width="0dp"
@@ -76,10 +76,11 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:hint="DD-MM-YYYY"
+                                android:text="@={child.ec01}"
                                 app:dateFormat="dd-MM-yyyy"
                                 app:maxDate="CR_DATE"
-                                app:minDate="CR_DATE"
                                 app:theme="@style/DatePickerStyle" />
+
 
                         </LinearLayout>
                     </LinearLayout>
@@ -105,7 +106,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ec02" />
+                                android:text="@string/Qec02" />
 
                             <TextView
                                 android:layout_width="0dp"
@@ -120,6 +121,7 @@
                                 android:layout_weight="1"
                                 android:focusable="false"
                                 android:gravity="center"
+                                android:text="@={child.ec02}"
                                 android:hint="HH:mm"
                                 app:theme="@style/DatePickerStyle" />
 
@@ -147,7 +149,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ec13cline" />
+                                android:text="@string/Qec13cline" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -159,11 +161,12 @@
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/ec13cline"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:hint="@string/ec13cline"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:text="@={form.ec13cline}"
+                            android:enabled="false"
+                            android:text="@={child.ec13cline}"
                             app:maxValue="12"
                             app:minValue="1"
                             app:type="range" />
@@ -190,7 +193,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ec14cname" />
+                                android:text="@string/Qec14cname" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -205,7 +208,8 @@
                             android:layout_height="wrap_content"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                             android:hint="@string/ec14cname"
-                            android:text="@={form.ec14cname}" />
+                            android:enabled="false"
+                            android:text="@={child.ec14cname}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -229,7 +233,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ec18" />
+                                android:text="@string/Qec18" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -247,40 +251,40 @@
                                 android:id="@+id/ec1801"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ec18.equals(`1`)}"
-                                android:onClick="@{()->form.setEc18(`1`)}"
+                                android:checked="@{child.ec18.equals(`1`)}"
+                                android:onClick="@{()->child.setEc18(`1`)}"
                                 android:text="@string/ec1801" />
 
                             <RadioButton
                                 android:id="@+id/ec1802"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ec18.equals(`2`)}"
-                                android:onClick="@{()->form.setEc18(`2`)}"
+                                android:checked="@{child.ec18.equals(`2`)}"
+                                android:onClick="@{()->child.setEc18(`2`)}"
                                 android:text="@string/ec1802" />
 
                             <RadioButton
                                 android:id="@+id/ec1803"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ec18.equals(`3`)}"
-                                android:onClick="@{()->form.setEc18(`3`)}"
+                                android:checked="@{child.ec18.equals(`3`)}"
+                                android:onClick="@{()->child.setEc18(`3`)}"
                                 android:text="@string/ec1803" />
 
                             <RadioButton
                                 android:id="@+id/ec1804"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ec18.equals(`4`)}"
-                                android:onClick="@{()->form.setEc18(`4`) + ec19.clearCheck() + ec21.clearCheck()}"
+                                android:checked="@{child.ec18.equals(`4`)}"
+                                android:onClick="@{()->child.setEc18(`4`) + ec19.clearCheck() + ec21.clearCheck()}"
                                 android:text="@string/ec1804" />
 
                             <RadioButton
                                 android:id="@+id/ec1896"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ec18.equals(`96`)}"
-                                android:onClick="@{()->form.setEc18(`96`) + ec19.clearCheck() + ec21.clearCheck()}"
+                                android:checked="@{child.ec18.equals(`96`)}"
+                                android:onClick="@{()->child.setEc18(`96`) + ec19.clearCheck() + ec21.clearCheck()}"
                                 android:text="@string/ec1896" />
                         </RadioGroup>
                     </LinearLayout>
@@ -290,7 +294,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVec19"
                     style="@style/cardView"
-                    android:visibility="@{form.ec18.equals(`4`) || form.ec18.equals(`96`) ? View.GONE : View.VISIBLE}">
+                    android:visibility="@{child.ec18.equals(`4`) || child.ec18.equals(`96`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -307,7 +311,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ec19" />
+                                android:text="@string/Qec19" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -327,8 +331,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked="@{form.ec19.equals(`1`)}"
-                                android:onClick="@{()->form.setEc19(`1`)}"
+                                android:checked="@{child.ec19.equals(`1`)}"
+                                android:onClick="@{()->child.setEc19(`1`)}"
                                 android:text="@string/ec19a" />
 
                             <RadioButton
@@ -336,8 +340,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked="@{form.ec19.equals(`2`)}"
-                                android:onClick="@{()->form.setEc19(`2`)}"
+                                android:checked="@{child.ec19.equals(`2`)}"
+                                android:onClick="@{()->child.setEc19(`2`)}"
                                 android:text="@string/ec19b" />
                         </RadioGroup>
                     </LinearLayout>
@@ -349,7 +353,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/ec20"
-                    android:visibility="@{form.ec18.equals(`4`) || form.ec18.equals(`96`) ? View.GONE : View.VISIBLE}"
+                    android:visibility="@{child.ec18.equals(`4`) || child.ec18.equals(`96`) ? View.GONE : View.VISIBLE}"
 
                     />
 
@@ -357,7 +361,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVec21"
                     style="@style/cardView"
-                    android:visibility="@{form.ec18.equals(`4`) || form.ec18.equals(`96`) ? View.GONE : View.VISIBLE}">
+                    android:visibility="@{child.ec18.equals(`4`) || child.ec18.equals(`96`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -374,7 +378,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ec21" />
+                                android:text="@string/Qec21" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -394,8 +398,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked="@{form.ec21.equals(`1`)}"
-                                android:onClick="@{()->form.setEc21(`1`) + ec22.clearCheck()}"
+                                android:checked="@{child.ec21.equals(`1`)}"
+                                android:onClick="@{()->child.setEc21(`1`) + ec22.clearCheck()}"
                                 android:text="@string/ec21a" />
 
                             <RadioButton
@@ -403,8 +407,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:checked="@{form.ec21.equals(`2`)}"
-                                android:onClick="@{()->form.setEc21(`2`)}"
+                                android:checked="@{child.ec21.equals(`2`)}"
+                                android:onClick="@{()->child.setEc21(`2`)}"
                                 android:text="@string/ec21b" />
                         </RadioGroup>
                     </LinearLayout>
@@ -414,7 +418,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVec22"
                     style="@style/cardView"
-                    android:visibility="@{form.ec21.equals(`1`) ? View.GONE : View.VISIBLE}">
+                    android:visibility="@{child.ec21.equals(`1`) ? View.GONE : View.VISIBLE}">
 
 
                     <LinearLayout
@@ -432,7 +436,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ec22" />
+                                android:text="@string/Qec22" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -450,60 +454,54 @@
                                 android:id="@+id/ec2201"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ec22.equals(`1`)}"
-                                android:onClick="@{()->form.setEc22(`1`)}"
+                                android:checked="@{child.ec22.equals(`1`)}"
+                                android:enabled="@{!child.ec21.equals(`2`)}"
                                 android:text="@string/ec2201"
-                                android:enabled="@{!form.ec21.equals(`2`)}"
-                                />
+                                android:onClick="@{()->child.setEc22(`1`)}" />
 
                             <RadioButton
                                 android:id="@+id/ec2202"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ec22.equals(`2`)}"
-                                android:onClick="@{()->form.setEc22(`2`)}"
+                                android:checked="@{child.ec22.equals(`2`)}"
+                                android:enabled="@{!child.ec21.equals(`2`)}"
                                 android:text="@string/ec2202"
-                                android:enabled="@{!form.ec21.equals(`2`)}"
-                                />
+                                android:onClick="@{()->child.setEc22(`2`)}" />
 
                             <RadioButton
                                 android:id="@+id/ec2203"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ec22.equals(`3`)}"
-                                android:onClick="@{()->form.setEc22(`3`)}"
-                                android:text="@string/ec2203"
-                                />
+                                android:checked="@{child.ec22.equals(`3`)}"
+                                android:onClick="@{()->child.setEc22(`3`)}"
+                                android:text="@string/ec2203" />
 
                             <RadioButton
                                 android:id="@+id/ec2204"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ec22.equals(`4`)}"
-                                android:onClick="@{()->form.setEc22(`4`)}"
+                                android:checked="@{child.ec22.equals(`4`)}"
+                                android:enabled="@{!child.ec21.equals(`2`)}"
                                 android:text="@string/ec2204"
-                                android:enabled="@{!form.ec21.equals(`2`)}"
-                                />
+                                android:onClick="@{()->child.setEc22(`4`)}" />
 
                             <RadioButton
                                 android:id="@+id/ec2205"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ec22.equals(`5`)}"
-                                android:onClick="@{()->form.setEc22(`5`)}"
+                                android:checked="@{child.ec22.equals(`5`)}"
+                                android:enabled="@{!child.ec21.equals(`2`)}"
                                 android:text="@string/ec2205"
-                                android:enabled="@{!form.ec21.equals(`2`)}"
-                                />
+                                android:onClick="@{()->child.setEc22(`5`)}" />
 
                             <RadioButton
                                 android:id="@+id/ec2206"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ec22.equals(`6`)}"
-                                android:onClick="@{()->form.setEc22(`6`)}"
+                                android:checked="@{child.ec22.equals(`6`)}"
+                                android:enabled="@{!child.ec21.equals(`2`)}"
                                 android:text="@string/ec2206"
-                                android:enabled="@{!form.ec21.equals(`2`)}"
-                                />
+                                android:onClick="@{()->child.setEc22(`6`)}" />
 
                             <EditText
                                 android:id="@+id/ec2206x"
@@ -512,20 +510,18 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/ec2206"
                                 android:tag="ec2206"
-                                android:text="@={form.ec2206x}"
-                                android:visibility="@{form.ec22.equals(`6`) ? View.VISIBLE : View.GONE}"
-                                android:enabled="@{!form.ec21.equals(`2`)}"
-                                />
+                                android:enabled="@{!child.ec21.equals(`2`)}"
+                                android:text="@={child.ec2206x}"
+                                android:visibility="@{child.ec22.equals(`6`) ? View.VISIBLE : View.GONE}" />
 
                             <RadioButton
                                 android:id="@+id/ec2296"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.ec22.equals(`96`)}"
-                                android:onClick="@{()->form.setEc22(`96`)}"
+                                android:checked="@{child.ec22.equals(`96`)}"
+                                android:enabled="@{!child.ec21.equals(`2`)}"
                                 android:text="@string/ec2296"
-                                android:enabled="@{!form.ec21.equals(`2`)}"
-                                />
+                                android:onClick="@{()->child.setEc22(`96`)}" />
 
                             <EditText
                                 android:id="@+id/ec2296x"
@@ -534,10 +530,9 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/ec2296"
                                 android:tag="ec2296"
-                                android:text="@={form.ec2296x}"
-                                android:visibility="@{form.ec22.equals(`96`) ? View.VISIBLE : View.GONE}"
-                                android:enabled="@{!form.ec21.equals(`2`)}"
-                                />
+                                android:enabled="@{!child.ec21.equals(`2`)}"
+                                android:text="@={child.ec2296x}"
+                                android:visibility="@{child.ec22.equals(`96`) ? View.VISIBLE : View.GONE}" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -546,7 +541,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcb01"
                     style="@style/cardView"
-                    android:visibility="@{form.ec21.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{child.ec21.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -563,7 +558,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cb01" />
+                                android:text="@string/Qcb01" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -584,6 +579,7 @@
                                 android:text="@string/cb01a" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
+
                                 android:id="@+id/cb01a"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -592,7 +588,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={form.cb01a}"
+                                android:text="@={child.cb01a}"
                                 app:maxValue="20"
                                 app:minValue="1"
                                 app:type="range" />
@@ -612,7 +608,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={form.cb01b}"
+                                android:text="@={child.cb01b}"
                                 app:maxValue="20"
                                 app:minValue="1"
                                 app:type="range" />
@@ -624,7 +620,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVcb02"
                     style="@style/cardView"
-                    android:visibility="@{form.ec21.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{child.ec21.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -641,7 +637,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_cb02" />
+                                android:text="@string/Qcb02" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -670,7 +666,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={form.cb02a}"
+                                android:text="@={child.cb02a}"
                                 app:maxValue="20"
                                 app:minValue="1"
                                 app:type="range" />
@@ -690,7 +686,7 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={form.cb02b}"
+                                android:text="@={child.cb02b}"
                                 app:maxValue="20"
                                 app:minValue="1"
                                 app:type="range" />
@@ -701,34 +697,38 @@
 
                 <!--EndButton LinearLayout-->
                 <LinearLayout
-                    android:id="@+id/llbtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="24dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="24dp">
 
                     <Button
                         android:id="@+id/btn_End"
-                        android:layout_width="130dp"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="12dp"
-                        android:background="@color/red_overlay"
-                        android:elevation="20dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
                         android:onClick="btnEnd"
-                        android:text="@string/cancel"
-                        android:textColor="@color/white" />
+                        android:text="Cancel"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                     <Button
                         android:id="@+id/btn_Continue"
-                        android:layout_width="130dp"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="12dp"
-                        android:background="@color/green_overlay"
-                        android:elevation="20dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/capsule"
+                        android:backgroundTint="@color/colorAccent"
+                        android:backgroundTintMode="src_atop"
                         android:onClick="btnContinue"
-                        android:text="@string/btnSave"
-                        android:textColor="@color/white" />
+                        android:text="Save"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
                 <!--EndButton LinearLayout-->

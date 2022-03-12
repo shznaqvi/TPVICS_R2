@@ -7,19 +7,19 @@
     <item
         android:id="@+id/action_settings_main"
         android:icon="@drawable/ic_menu_hamburger"
-        android:title="@string/action_database"
+        android:title="@string/actiondatabase"
         app:showAsAction="always">
         <menu>
 
 
             <item
                 android:id="@+id/action_database"
-                android:title="@string/action_database"
+                android:title="@string/actiondatabase"
                 android:visible="false"
                 tools:visible="true" />
             <item
                 android:id="@+id/action_data_sync"
-                android:title="@string/action_data_sync" />
+                android:title="@string/actiondatasync" />
 
 
             <item

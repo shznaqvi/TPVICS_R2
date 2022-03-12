@@ -1,9 +1,9 @@
 package edu.aku.hassannaqvi.tpvics_r2.models;
 
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp._EMPTY_;
-import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.selectedChild;
-import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.selectedMWRA;
+import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.form;
 
 import android.database.Cursor;
 import android.util.Log;
@@ -16,6 +16,11 @@ import androidx.databinding.PropertyChangeRegistry;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
 import edu.aku.hassannaqvi.tpvics_r2.BR;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
@@ -25,16 +30,13 @@ public class Child extends BaseObservable implements Observable {
     private final String TAG = "Form";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
     // APP VARIABLES
-    private String projectName = MainApp.PROJECT_NAME;
+    private String projectName = PROJECT_NAME;
     // APP VARIABLES
     private String id = _EMPTY_;
     private String uid = _EMPTY_;
     private String uuid = _EMPTY_;
-    private String fmuid = _EMPTY_;
-    private String muid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
-    private String indexed = _EMPTY_;
     private String ebCode = _EMPTY_;
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
@@ -42,14 +44,26 @@ public class Child extends BaseObservable implements Observable {
     private String deviceTag = _EMPTY_;
     private String appver = _EMPTY_;
     private String endTime = _EMPTY_;
-    private String iStatus = _EMPTY_;
-    private String iStatus96x = _EMPTY_;
+
     private String synced = _EMPTY_;
     private String syncDate = _EMPTY_;
 
 
     // Field Variables
+    // CH
+    private String ec13 = _EMPTY_;
+    private String ec14 = _EMPTY_;
+    private String ec15 = _EMPTY_;
+    private String ec16 = _EMPTY_;
+    private String ec17 = _EMPTY_;
+    private String cb03dd = _EMPTY_;
+    private String cb03mm = _EMPTY_;
+    private String cb03yy = _EMPTY_;
+    private String cb03dk = _EMPTY_;
+    private String cb04mm = _EMPTY_;
+    private String cb04yy = _EMPTY_;
 
+    // CB
     private String ec01 = _EMPTY_;
     private String ec02 = _EMPTY_;
     private String ec03 = _EMPTY_;
@@ -73,6 +87,8 @@ public class Child extends BaseObservable implements Observable {
     private String cb01b = _EMPTY_;
     private String cb02a = _EMPTY_;
     private String cb02b = _EMPTY_;
+
+    // IM
     private String im01 = _EMPTY_;
     private String im02 = _EMPTY_;
     private String im02a = _EMPTY_;
@@ -153,18 +169,17 @@ public class Child extends BaseObservable implements Observable {
     private String im21 = _EMPTY_;
     private String im22 = _EMPTY_;
     private String im22a = _EMPTY_;
-
     private String im23 = _EMPTY_;
-    private String im23_6x = _EMPTY_;
+    private String im236x = _EMPTY_;
     private String im23a = _EMPTY_;
     private String im24 = _EMPTY_;
-    private String im24_17x = _EMPTY_;
+    private String im2417x = _EMPTY_;
     private String im24a = _EMPTY_;
     private String im24b = _EMPTY_;
     private String im24c = _EMPTY_;
     private String im24d = _EMPTY_;
     private String im25 = _EMPTY_;
-
+    private long ageInMonths;
 
 
     public void Child() {
@@ -179,13 +194,10 @@ public class Child extends BaseObservable implements Observable {
         setUserName(MainApp.user.getUserName());
         setDeviceId(MainApp.deviceid);
         setUuid(MainApp.form.getUid());  // not applicable in Form table
-        setFmuid(MainApp.familyList.get(Integer.parseInt(selectedChild)).getUid()); //// not applicable in Form table
-        setMuid(MainApp.familyList.get(Integer.parseInt(selectedMWRA)).getUid());  // not applicable in Form table
-        setSno(selectedChild + 1);
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
-        setpsuCode(MainApp.selectedHousehold.getEbCode());
-        setHhid(MainApp.selectedHousehold.getHhno());
+        setEbCode(MainApp.selectedHousehold.getEbCode());
+        setHhid(MainApp.selectedHousehold.getHhid());
 
     }
 
@@ -213,22 +225,6 @@ public class Child extends BaseObservable implements Observable {
         this.uuid = uuid;
     }
 
-    public String getFmuid() {
-        return fmuid;
-    }
-
-    public void setFmuid(String fmuid) {
-        this.fmuid = fmuid;
-    }
-
-    public String getMuid() {
-        return muid;
-    }
-
-    public void setMuid(String muid) {
-        this.muid = muid;
-    }
-
     public String getUid() {
         return uid;
     }
@@ -253,9 +249,6 @@ public class Child extends BaseObservable implements Observable {
         this.sysDate = sysDate;
     }
 
-    public String getpsuCode() {
-        return ebCode;
-    }
 
     public String getHhid() {
         return hhid;
@@ -271,14 +264,6 @@ public class Child extends BaseObservable implements Observable {
 
     public void setSno(String sno) {
         this.sno = sno;
-    }
-
-    public String getIndexed() {
-        return indexed;
-    }
-
-    public void setIndexed(String indexed) {
-        this.indexed = indexed;
     }
 
     public String getDeviceId() {
@@ -313,21 +298,6 @@ public class Child extends BaseObservable implements Observable {
         this.endTime = endTime;
     }
 
-    public String getiStatus() {
-        return iStatus;
-    }
-
-    public void setiStatus(String iStatus) {
-        this.iStatus = iStatus;
-    }
-
-    public String getiStatus96x() {
-        return iStatus96x;
-    }
-
-    public void setiStatus96x(String iStatus96x) {
-        this.iStatus96x = iStatus96x;
-    }
 
     public String getSynced() {
         return synced;
@@ -345,17 +315,13 @@ public class Child extends BaseObservable implements Observable {
         this.syncDate = syncDate;
     }
 
-    public void setpsuCode(String ebCode) {
-        this.ebCode = ebCode;
-    }
-
 
     @Bindable
-    public String getPsuCode() {
+    public String getEbCode() {
         return ebCode;
     }
 
-    public void setPsuCode(String ebCode) {
+    public void setEbCode(String ebCode) {
         this.ebCode = ebCode;
         notifyPropertyChanged(BR.ebCode);
     }
@@ -599,6 +565,122 @@ public class Child extends BaseObservable implements Observable {
     public void setCb02b(String cb02b) {
         this.cb02b = cb02b;
         notifyPropertyChanged(BR.cb02b);
+    }
+
+    @Bindable
+    public String getEc13() {
+        return ec13;
+    }
+
+    public void setEc13(String ec13) {
+        this.ec13 = ec13;
+        this.sno = ec13;
+        this.ec13cline = ec13;
+        notifyPropertyChanged(BR.ec13);
+    }
+
+    @Bindable
+    public String getEc14() {
+        return ec14;
+    }
+
+    public void setEc14(String ec14) {
+        this.ec14 = ec14;
+        this.ec14cname = ec14;
+        notifyPropertyChanged(BR.ec14);
+    }
+
+    @Bindable
+    public String getEc15() {
+        return ec15;
+    }
+
+    public void setEc15(String ec15) {
+        this.ec15 = ec15;
+        notifyPropertyChanged(BR.ec15);
+    }
+
+    @Bindable
+    public String getEc16() {
+        return ec16;
+    }
+
+    public void setEc16(String ec16) {
+        this.ec16 = ec16;
+        notifyPropertyChanged(BR.ec16);
+    }
+
+    @Bindable
+    public String getEc17() {
+        return ec17;
+    }
+
+    public void setEc17(String ec17) {
+        this.ec17 = ec17;
+        notifyPropertyChanged(BR.ec17);
+    }
+
+    @Bindable
+    public String getCb03dd() {
+        return cb03dd;
+    }
+
+    public void setCb03dd(String cb03dd) {
+        this.cb03dd = cb03dd;
+        CaluculateAge();
+        notifyPropertyChanged(BR.cb03dd);
+    }
+
+    @Bindable
+    public String getCb03mm() {
+        return cb03mm;
+    }
+
+    public void setCb03mm(String cb03mm) {
+        this.cb03mm = cb03mm;
+        CaluculateAge();
+        notifyPropertyChanged(BR.cb03mm);
+    }
+
+    @Bindable
+    public String getCb03yy() {
+        return cb03yy;
+    }
+
+    public void setCb03yy(String cb03yy) {
+        this.cb03yy = cb03yy;
+        CaluculateAge();
+        notifyPropertyChanged(BR.cb03yy);
+    }
+
+    @Bindable
+    public String getCb03dk() {
+        return cb03dk;
+    }
+
+    public void setCb03dk(String cb03dk) {
+        this.cb03dk = cb03dk;
+        notifyPropertyChanged(BR.cb03dk);
+    }
+
+    @Bindable
+    public String getCb04mm() {
+        return cb04mm;
+    }
+
+    public void setCb04mm(String cb04mm) {
+        this.cb04mm = cb04mm;
+        notifyPropertyChanged(BR.cb04mm);
+    }
+
+    @Bindable
+    public String getCb04yy() {
+        return cb04yy;
+    }
+
+    public void setCb04yy(String cb04yy) {
+        this.cb04yy = cb04yy;
+        notifyPropertyChanged(BR.cb04yy);
     }
 
     @Bindable
@@ -1439,13 +1521,13 @@ public class Child extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getIm23_6x() {
-        return im23_6x;
+    public String getIm236x() {
+        return im236x;
     }
 
-    public void setIm23_6x(String im23_6x) {
-        this.im23_6x = im23_6x;
-        notifyPropertyChanged(BR.im23_6x);
+    public void setIm236x(String im236x) {
+        this.im236x = im236x;
+        notifyPropertyChanged(BR.im236x);
     }
 
     @Bindable
@@ -1469,13 +1551,13 @@ public class Child extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getIm24_17x() {
-        return im24_17x;
+    public String getIm2417x() {
+        return im2417x;
     }
 
-    public void setIm24_17x(String im24_17x) {
-        this.im24_17x = im24_17x;
-        notifyPropertyChanged(BR.im24_17x);
+    public void setIm2417x(String im2417x) {
+        this.im2417x = im2417x;
+        notifyPropertyChanged(BR.im2417x);
     }
 
     @Bindable
@@ -1529,15 +1611,14 @@ public class Child extends BaseObservable implements Observable {
     }
 
 
-
     public Child Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_UID));
         this.uuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_UUID));
-        this.fmuid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_FMUID));
+/*
         this.muid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_MUID));
-        this.indexed = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_INDEXED));
-        this.ebCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_PSU_CODE));
+*/
+        this.ebCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_EB_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_HHID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_PROJECT_NAME));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SNO));
@@ -1546,16 +1627,39 @@ public class Child extends BaseObservable implements Observable {
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_DEVICETAGID));
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_APPVERSION));
-        this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_ISTATUS));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SYNC_DATE));
 
+        sCHHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SCH)));
+        sCBHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SCB)));
         sIMHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SIM)));
+        CaluculateAge();
 
         return this;
     }
 
-    public void sIMHydrate(String string) throws JSONException {
+
+    public void sCHHydrate(String string) throws JSONException {
+        Log.d(TAG, "sCHHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+
+            this.ec13 = json.getString("ec13");
+            this.ec14 = json.getString("ec14");
+            this.ec15 = json.getString("ec15");
+            this.ec16 = json.getString("ec16");
+            this.ec17 = json.getString("ec17");
+            this.cb03dd = json.getString("cb03dd");
+            this.cb03mm = json.getString("cb03mm");
+            this.cb03yy = json.getString("cb03yy");
+            this.cb04mm = json.getString("cb04mm");
+            this.cb04yy = json.getString("cb04yy");
+        }
+
+    }
+
+    public void sCBHydrate(String string) throws JSONException {
         Log.d(TAG, "sIMHydrate: " + string);
         if (string != null) {
             JSONObject json = null;
@@ -1582,7 +1686,14 @@ public class Child extends BaseObservable implements Observable {
             this.cb01b = json.getString("cb01b");
             this.cb02a = json.getString("cb02a");
             this.cb02b = json.getString("cb02b");
+        }
+    }
 
+    public void sIMHydrate(String string) throws JSONException {
+        Log.d(TAG, "sIMHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
 
             this.im01 = json.getString("im01");
             this.im02 = json.getString("im02");
@@ -1662,46 +1773,41 @@ public class Child extends BaseObservable implements Observable {
             this.im21 = json.getString("im21");
             this.im22 = json.getString("im22");
             this.im23 = json.getString("im23");
-            this.im23_6x = json.getString("im23_6x");
+            this.im236x = json.getString("im236x");
             this.im23a = json.getString("im23a");
             this.im24 = json.getString("im24");
-            this.im24_17x = json.getString("im24_17x");
+            this.im2417x = json.getString("im2417x");
             this.im24a = json.getString("im24a");
             this.im24b = json.getString("im24b");
             this.im24c = json.getString("im24c");
             this.im24d = json.getString("im24d");
             this.im25 = json.getString("im25");
-
-
-
         }
+    }
+
+    public String sCHtoString() throws JSONException {
+        Log.d(TAG, "sIMtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("ec13", ec13)
+                .put("ec14", ec14)
+                .put("ec15", ec15)
+                .put("ec16", ec16)
+                .put("ec17", ec17)
+                .put("cb03dd", cb03dd)
+                .put("cb03mm", cb03mm)
+                .put("cb03yy", cb03yy)
+                .put("cb04mm", cb04mm)
+                .put("cb04yy", cb04yy);
+
+        return json.toString();
+
+
     }
 
     public String sIMtoString() throws JSONException {
         Log.d(TAG, "sIMtoString: ");
         JSONObject json = new JSONObject();
-                json.put("ec03", ec03)
-                .put("ec04", ec04)
-                .put("ec04a", ec04a)
-                .put("ec05", ec05)
-                .put("ec06", ec06)
-                .put("ec07", ec07)
-                .put("ec09", ec09)
-                .put("ec11", ec11)
-                .put("ec12", ec12)
-                .put("ec13cline", ec13cline)
-                .put("ec14cname", ec14cname)
-                .put("ec18", ec18)
-                .put("ec19", ec19)
-                .put("ec21", ec21)
-                .put("ec22", ec22)
-                .put("ec2206x", ec2206x)
-                .put("ec2296x", ec2296x)
-                .put("cb01a", cb01a)
-                .put("cb01b", cb01b)
-                .put("cb02a", cb02a)
-                .put("cb02b", cb02b)
-                .put("im01", im01)
+        json.put("im01", im01)
                 .put("im02", im02)
                 .put("im02a", im02a)
                 .put("im02a96x", im02a96x)
@@ -1779,15 +1885,44 @@ public class Child extends BaseObservable implements Observable {
                 .put("im21", im21)
                 .put("im22", im22)
                 .put("im23", im23)
-                .put("im23_6x", im23_6x)
+                .put("im236x", im236x)
                 .put("im23a", im23a)
                 .put("im24", im24)
-                .put("im24_17x", im24_17x)
+                .put("im2417x", im2417x)
                 .put("im24a", im24a)
                 .put("im24b", im24b)
                 .put("im24c", im24c)
                 .put("im24d", im24d)
                 .put("im25", im25);
+
+        return json.toString();
+    }
+
+
+    public String sCBtoString() throws JSONException {
+        Log.d(TAG, "sCBtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("ec03", ec03)
+                .put("ec04", ec04)
+                .put("ec04a", ec04a)
+                .put("ec05", ec05)
+                .put("ec06", ec06)
+                .put("ec07", ec07)
+                .put("ec09", ec09)
+                .put("ec11", ec11)
+                .put("ec12", ec12)
+                .put("ec13cline", ec13cline)
+                .put("ec14cname", ec14cname)
+                .put("ec18", ec18)
+                .put("ec19", ec19)
+                .put("ec21", ec21)
+                .put("ec22", ec22)
+                .put("ec2206x", ec2206x)
+                .put("ec2296x", ec2296x)
+                .put("cb01a", cb01a)
+                .put("cb01b", cb01b)
+                .put("cb02a", cb02a)
+                .put("cb02b", cb02b);
 
 
         return json.toString();
@@ -1798,25 +1933,110 @@ public class Child extends BaseObservable implements Observable {
 
         json.put(TableContracts.ChildTable.COLUMN_ID, this.id);
         json.put(TableContracts.ChildTable.COLUMN_UID, this.uid);
-        json.put(TableContracts.ChildTable.COLUMN_PSU_CODE, this.ebCode);
+        json.put(TableContracts.ChildTable.COLUMN_EB_CODE, this.ebCode);
         json.put(TableContracts.ChildTable.COLUMN_HHID, this.hhid);
         json.put(TableContracts.ChildTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(TableContracts.ChildTable.COLUMN_UUID, this.uuid);
-        json.put(TableContracts.ChildTable.COLUMN_FMUID, this.fmuid);
-        json.put(TableContracts.ChildTable.COLUMN_MUID, this.muid);
-        json.put(TableContracts.ChildTable.COLUMN_INDEXED, this.indexed);
         json.put(TableContracts.ChildTable.COLUMN_SNO, this.sno);
         json.put(TableContracts.ChildTable.COLUMN_USERNAME, this.userName);
         json.put(TableContracts.ChildTable.COLUMN_SYSDATE, this.sysDate);
         json.put(TableContracts.ChildTable.COLUMN_DEVICEID, this.deviceId);
         json.put(TableContracts.ChildTable.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(TableContracts.ChildTable.COLUMN_ISTATUS, this.iStatus);
         json.put(TableContracts.ChildTable.COLUMN_SYNCED, this.synced);
         json.put(TableContracts.ChildTable.COLUMN_SYNC_DATE, this.syncDate);
         json.put(TableContracts.ChildTable.COLUMN_APPVERSION, this.appver);
+        json.put(TableContracts.ChildTable.COLUMN_SCH, new JSONObject(sCHtoString()));
+        json.put(TableContracts.ChildTable.COLUMN_SCB, new JSONObject(sCBtoString()));
         json.put(TableContracts.ChildTable.COLUMN_SIM, new JSONObject(sIMtoString()));
 
         return json;
     }
 
+
+    private void CaluculateAge() {
+        Log.d(TAG, "CaluculateAge: " + this.cb03yy + "-" + this.cb03mm + "-" + this.cb03dd);
+
+        if (!this.cb03yy.equals("") && !this.cb03yy.equals("9998") && !this.cb03mm.equals("") && !this.cb03dd.equals("")) {
+
+            if ((Integer.parseInt(this.cb03mm) > 12 && !this.cb03mm.equals("98"))
+                    || (Integer.parseInt(this.cb03dd) > 31 && !this.cb03dd.equals("98"))
+                    || Integer.parseInt(this.cb03yy) < 1920) {
+                setCb04yy("");
+                setCb04mm("");
+                this.ageInMonths = 0;
+                return;
+            }
+            try {
+                SimpleDateFormat df = new SimpleDateFormat("yyyy MM dd", Locale.ENGLISH);
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+
+                // set current Date
+                Calendar cur = Calendar.getInstance();
+                cur.setTime(sdf.parse(form.getHh01()));// all done
+
+
+                // set Date of birth
+                int day = !this.cb03dd.equals("98") ? Integer.parseInt(this.cb03dd) : 15;
+                int month = !this.cb03mm.equals("98") ? Integer.parseInt(this.cb03mm) : 6;
+                int year = Integer.parseInt(this.cb03yy);
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(df.parse(year + " " + month + " " + day));
+
+
+//             String todayDate = df.format(Calendar.getInstance().getTime());
+
+
+
+
+/*                System.out.println(df.format("Current: " + cur.getTime()));
+                System.out.println(df.format("DOB: " + cal.getTime()));*/
+
+
+                //long millis = System.currentTimeMillis() - cal.getTimeInMillis();
+                long millis = cur.getTimeInMillis() - cal.getTimeInMillis();
+                cal.setTimeInMillis(millis);
+
+             /*   int mYear = cal.get(Calendar.YEAR)-1970;
+                int mMonth = cal.get(Calendar.MONTH);
+                int mDay = cal.get(Calendar.DAY_OF_MONTH)-1;
+
+                Log.d(TAG, "CaluculateAge: " + (mYear) + "-" + mMonth + "-" + mDay);
+*/
+                this.ageInMonths = MILLISECONDS.toDays(millis) / 30;
+                long tYear = MILLISECONDS.toDays(millis) / 365;
+                long tMonth = (MILLISECONDS.toDays(millis) - (tYear * 365)) / 30;
+                long tDay = MILLISECONDS.toDays(millis) - ((tYear * 365) + (tMonth * 30));
+
+                Log.d(TAG, "CaluculateAge: Y-" + tYear + " M-" + tMonth + " D-" + tDay);
+               /* setH231d(String.valueOf(tDay));
+                setH231m(String.valueOf(tMonth));*/
+
+                setCb04yy(String.valueOf(tYear));
+                setCb04mm(String.valueOf(tMonth));
+                if (tYear < 0)
+                    setCb04yy("");
+                //setAge(String.valueOf(((tYear) * 12) + tMonth));
+
+
+        /*        String.format("%d min, %d sec",
+                        ,
+                        TimeUnit.MILLISECONDS.toSeconds(millis) -
+                                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis))
+                );*/
+
+            } catch (ParseException e) {
+                Log.d(TAG, "CaluculateAge: " + e.getMessage());
+                e.printStackTrace();
+
+            }
+        }
+    }
+
+    public long getAgeInMonths() {
+        return ageInMonths;
+    }
+
+    public void setAgeInMonths(long ageInMonths) {
+        this.ageInMonths = ageInMonths;
+    }
 }

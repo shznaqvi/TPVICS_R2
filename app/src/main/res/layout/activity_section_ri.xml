@@ -32,7 +32,7 @@
                 android:theme="@style/CustomToolbarTheme"
                 app:popupTheme="@style/CustomPopupTheme"
                 app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-                app:title="@string/respondentinfo_mainheading"
+                app:title="@string/respondentinfomainheading"
                 app:titleTextAppearance="@style/Toolbar.TitleText" />
 
             <LinearLayout
@@ -61,7 +61,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_hh13" />
+                                android:text="@string/Qhh13" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -103,7 +103,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_hh14" />
+                                android:text="@string/Qhh14" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -117,13 +117,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
+                            android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:hint="##"
                             android:text="@={form.hh14}"
                             app:maxValue="99"
                             app:minValue="14"
-                            app:type="range"/>
+                            app:type="range" />
 
                     </LinearLayout>
 
@@ -149,7 +149,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_hh10" />
+                                android:text="@string/Qhh10" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -188,7 +188,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_hh13a" />
+                                android:text="@string/Qhh13a" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -201,16 +201,13 @@
                             android:id="@+id/hh13a"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/hh13a"
+                            android:hint="03000000000"
                             android:inputType="number"
                             android:maxLength="11"
                             android:text="@={form.hh13a}"
-                            app:maxValue="999999999999"
-                            app:minValue="900000000000"
-                            app:type="range"
-
-
-                            />
+                            app:maxValue="9999999999"
+                            app:minValue="1000000000"
+                            app:type="range" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -235,7 +232,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_hh15" />
+                                android:text="@string/Qhh15" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -279,8 +276,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVhh16a"
                     style="@style/cardView"
-                    android:visibility="@{form.hh15.equals(`2`) ? View.VISIBLE : View.GONE}"
-                    >
+                    android:visibility="@{form.hh15.equals(`2`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -297,7 +293,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_hh16a" />
+                                android:text="@string/Qhh16a" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -339,7 +335,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_hh16b" />
+                                android:text="@string/Qhh16b" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -352,12 +348,12 @@
                             android:id="@+id/hh16b"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="009XX000000000"
+                            android:hint="03000000000"
                             android:inputType="number"
-                            android:maxLength="14"
+                            android:maxLength="11"
                             android:text="@={form.hh16b}"
-                            app:maxValue="999999999999"
-                            app:minValue="900000000000"
+                            app:maxValue="9999999999"
+                            app:minValue="1000000000"
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -382,7 +378,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_hh19" />
+                                android:text="@string/Qhh19" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -472,7 +468,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_hh20" />
+                                android:text="@string/Qhh20" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -495,7 +491,7 @@
                                 android:layout_weight="0.5"
                                 android:checked="@{form.hh20.equals(`1`)}"
                                 android:onClick="@{()->form.setHh20(`1`)}"
-                                android:text="@string/hh20_1" />
+                                android:text="@string/hh201" />
 
                             <RadioButton
                                 android:id="@+id/hh20_2"
@@ -504,7 +500,7 @@
                                 android:layout_weight="0.5"
                                 android:checked="@{form.hh20.equals(`2`)}"
                                 android:onClick="@{()->form.setHh20(`2`)}"
-                                android:text="@string/hh20_2" />
+                                android:text="@string/hh202" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -530,7 +526,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_hh20a" />
+                                android:text="@string/Qhh20a" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -544,13 +540,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
+                            android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
-                            android:hint="##"
                             android:text="@={form.hh20a}"
                             app:maxValue="30"
                             app:minValue="1"
-                            app:type="range"/>
+                            app:type="range" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

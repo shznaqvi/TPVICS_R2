@@ -50,7 +50,6 @@ import edu.aku.hassannaqvi.tpvics_r2.adapters.SyncListAdapter;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.ChildTable;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.ClusterTable;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.EntryLogTable;
-import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.FamilyMembersTable;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.FormsTable;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.RandomHHTable;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.UsersTable;
@@ -158,16 +157,6 @@ public class SyncActivity extends AppCompatActivity {
                     Toast.makeText(this, "JSONException(Forms): " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
-                //FamilyMembers
-                uploadTables.add(new SyncModel(FamilyMembersTable.TABLE_NAME));
-                try {
-                    MainApp.uploadData.add(db.getUnsyncedFamilyMembers());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Log.d(TAG, "ProcessStart: JSONException(FamilyMembers): " + e.getMessage());
-                    Toast.makeText(SyncActivity.this, "JSONException(FamilyMembers)" + e.getMessage(), Toast.LENGTH_LONG).show();
-
-                }
 
 
                 //Child

@@ -38,7 +38,7 @@ public class EndingActivity extends AppCompatActivity {
         bi.setForm(form);
 
         setSupportActionBar(bi.toolbar);
-        //setTitle(R.string.section1_mainheading);
+        //setTitle(R.string.section1mainheading);
         if (MainApp.superuser)
             bi.btnContinue.setText("End Review");
 
@@ -151,7 +151,7 @@ public class EndingActivity extends AppCompatActivity {
     private boolean UpdateDB() {
         if (MainApp.superuser) return true;
         try {
-            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SHH, form.sAtoString());
+            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SHH, form.sHHtoString());
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(Forms): ", Toast.LENGTH_SHORT).show();

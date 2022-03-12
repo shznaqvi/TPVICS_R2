@@ -27,9 +27,9 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/sectionchlistofchildren0623monthsold_mainheading"
+            app:subtitle="@string/sectionchlistofchildren0623monthsoldmainheading"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/sectionchlistofchildren0623monthsold_mainheading"
+            app:title="@string/sectionchlistofchildren0623monthsoldmainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
         <ScrollView
@@ -62,7 +62,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ss15" />
+                                android:text="@string/Qss15" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -391,7 +391,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ss17" />
+                                android:text="@string/Qss17" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -534,7 +534,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ss18" />
+                                android:text="@string/Qss18" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -553,7 +553,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/ss18a_title" />
+                                android:text="@string/ss18atitle" />
 
                             <RadioButton
                                 android:id="@+id/ss18a"
@@ -576,7 +576,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/ss18c_title" />
+                                android:text="@string/ss18ctitle" />
 
                             <RadioButton
                                 android:id="@+id/ss18e"
@@ -599,7 +599,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/ss18g_title" />
+                                android:text="@string/ss18gtitle" />
 
                             <RadioButton
                                 android:id="@+id/ss18g"
@@ -698,7 +698,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ss19" />
+                                android:text="@string/Qss19" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -717,7 +717,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/ss19a_title" />
+                                android:text="@string/ss19atitle" />
 
                             <RadioButton
                                 android:id="@+id/ss19a"
@@ -748,7 +748,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/ss19d_title" />
+                                android:text="@string/ss19dtitle" />
 
                             <RadioButton
                                 android:id="@+id/ss19d"
@@ -787,7 +787,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/ss19h_title" />
+                                android:text="@string/ss19htitle" />
 
                             <RadioButton
                                 android:id="@+id/ss19h"
@@ -887,7 +887,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ss20" />
+                                android:text="@string/Qss20" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -906,7 +906,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/ss20a_title" />
+                                android:text="@string/ss20atitle" />
 
                             <RadioButton
                                 android:id="@+id/ss20a"
@@ -941,12 +941,12 @@
                                 android:text="@string/ss20d" />
 
                             <RadioButton
-                                android:id="@+id/ss20d_title"
+                                android:id="@+id/ss20dtitle"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.ss20.equals(`0`)}"
                                 android:onClick="@{()->form.setSs20(`0`)}"
-                                android:text="@string/ss20d_title" />
+                                android:text="@string/ss20dtitle" />
 
                             <RadioButton
                                 android:id="@+id/ss20e"
@@ -1009,7 +1009,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/ss20k_title" />
+                                android:text="@string/ss20ktitle" />
 
                             <RadioButton
                                 android:id="@+id/ss20l"
@@ -1092,7 +1092,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ss21" />
+                                android:text="@string/Qss21" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -1136,7 +1136,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ss22" />
+                                android:text="@string/Qss22" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -1193,7 +1193,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ss23" />
+                                android:text="@string/Qss23" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -1276,7 +1276,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ss24" />
+                                android:text="@string/Qss24" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -1333,7 +1333,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ss25" />
+                                android:text="@string/Qss25" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -1553,7 +1553,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ss26" />
+                                android:text="@string/Qss26" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -1589,9 +1589,9 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- ss27_title  Title   -->
+                <!-- ss27title  Title   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVss27_title"
+                    android:id="@+id/fldGrpCVss27title"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -1602,7 +1602,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/ss27_title" />
+                            android:text="@string/ss27title" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1626,7 +1626,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ss27" />
+                                android:text="@string/Qss27" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -1665,7 +1665,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_ss28" />
+                                android:text="@string/Qss28" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -1678,34 +1678,38 @@
 
                 <!--EndButton LinearLayout-->
                 <LinearLayout
-                    android:id="@+id/llbtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="24dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="24dp">
 
                     <Button
                         android:id="@+id/btn_End"
-                        android:layout_width="130dp"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="12dp"
-                        android:background="@color/red_overlay"
-                        android:elevation="20dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
                         android:onClick="btnEnd"
-                        android:text="@string/cancel"
-                        android:textColor="@color/white" />
+                        android:text="Cancel"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                     <Button
                         android:id="@+id/btn_Continue"
-                        android:layout_width="130dp"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="12dp"
-                        android:background="@color/green_overlay"
-                        android:elevation="20dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/capsule"
+                        android:backgroundTint="@color/colorAccent"
+                        android:backgroundTintMode="src_atop"
                         android:onClick="btnContinue"
-                        android:text="@string/btnSave"
-                        android:textColor="@color/white" />
+                        android:text="Save"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
                 <!--EndButton LinearLayout-->

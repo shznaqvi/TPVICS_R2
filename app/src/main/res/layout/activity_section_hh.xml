@@ -27,9 +27,9 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/sectionhhhouseholdinformationhh_mainheading"
+            app:subtitle="@string/sectionhhhouseholdinformationhhmainheading"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/sectionhhhouseholdinformationhh_mainheading"
+            app:title="@string/sectionhhhouseholdinformationhhmainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
         <ScrollView
@@ -62,7 +62,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_hh01" />
+                                android:text="@string/Qhh01" />
 
                             <TextView
                                 android:layout_width="0dp"
@@ -78,8 +78,8 @@
                                 android:gravity="center"
                                 android:hint="DD-MM-YYYY"
                                 app:dateFormat="dd-MM-yyyy"
+                                android:text="@={form.hh01}"
                                 app:maxDate="CR_DATE"
-                                app:minDate="CR_DATE"
                                 app:theme="@style/DatePickerStyle" />
 
                         </LinearLayout>
@@ -106,7 +106,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_hh02" />
+                                android:text="@string/Qhh02" />
 
                             <TextView
                                 android:layout_width="0dp"
@@ -122,6 +122,7 @@
                                 android:focusable="false"
                                 android:gravity="center"
                                 android:hint="HH:mm"
+                                android:text="@={form.hh02}"
                                 app:theme="@style/DatePickerStyle" />
 
                         </LinearLayout>
@@ -149,7 +150,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_hh03" />
+                                android:text="@string/Qhh03" />
 
                             <TextView
                                 android:layout_width="0dp"
@@ -192,7 +193,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_hh03a" />
+                                android:text="@string/Qhh03a" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -232,7 +233,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_hh04" />
+                                android:text="@string/Qhh04" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -272,7 +273,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_hh04a" />
+                                android:text="@string/Qhh04a" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -312,7 +313,7 @@
                                                 style="@style/quesNum"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="match_parent"
-                                                android:text="@string/Q_hh05" />
+                                                android:text="@string/Qhh05" />
 
                                             <TextView
                                                 android:layout_width="match_parent"
@@ -351,7 +352,7 @@
                                                 style="@style/quesNum"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="match_parent"
-                                                android:text="@string/Q_hh06" />
+                                                android:text="@string/Qhh06" />
 
                                             <TextView
                                                 android:layout_width="match_parent"
@@ -390,7 +391,7 @@
                                                 style="@style/quesNum"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="match_parent"
-                                                android:text="@string/Q_hh07" />
+                                                android:text="@string/Qhh07" />
 
                                             <TextView
                                                 android:layout_width="match_parent"
@@ -429,7 +430,7 @@
                                                 style="@style/quesNum"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="match_parent"
-                                                android:text="@string/Q_hh08" />
+                                                android:text="@string/Qhh08" />
 
                                             <TextView
                                                 android:layout_width="match_parent"
@@ -468,7 +469,7 @@
                                                 style="@style/quesNum"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="match_parent"
-                                                android:text="@string/Q_hh09" />
+                                                android:text="@string/Qhh09" />
 
                                             <TextView
                                                 android:layout_width="match_parent"
@@ -509,7 +510,7 @@
                                                 style="@style/quesNum"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="match_parent"
-                                                android:text="@string/Q_hh11" />
+                                                android:text="@string/Qhh11" />
 
                                             <TextView
                                                 android:layout_width="match_parent"
@@ -548,7 +549,7 @@
                                                 style="@style/quesNum"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="match_parent"
-                                                android:text="@string/Q_hh12" />
+                                                android:text="@string/Qhh12" />
 
                                             <TextView
                                                 android:layout_width="match_parent"
@@ -595,7 +596,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_hh18" />
+                                android:text="@string/Qhh18" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -633,34 +634,38 @@
 
                 <!--EndButton LinearLayout-->
                 <LinearLayout
-                    android:id="@+id/llbtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="24dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="24dp">
 
                     <Button
                         android:id="@+id/btn_End"
-                        android:layout_width="130dp"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="12dp"
-                        android:background="@color/red_overlay"
-                        android:elevation="20dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
                         android:onClick="btnEnd"
-                        android:text="@string/cancel"
-                        android:textColor="@color/white" />
+                        android:text="Cancel"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                     <Button
                         android:id="@+id/btn_Continue"
-                        android:layout_width="130dp"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="12dp"
-                        android:background="@color/green_overlay"
-                        android:elevation="20dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/capsule"
+                        android:backgroundTint="@color/colorAccent"
+                        android:backgroundTintMode="src_atop"
                         android:onClick="btnContinue"
-                        android:text="@string/btnSave"
-                        android:textColor="@color/white" />
+                        android:text="Save"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
                 <!--EndButton LinearLayout-->

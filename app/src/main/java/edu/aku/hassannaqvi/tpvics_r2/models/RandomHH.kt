@@ -10,11 +10,10 @@ import org.json.JSONObject
  * Created by hassan.naqvi on 11/30/2016.
  */
 class RandomHH {
-    var hh: String = _EMPTY_
     var ID: Long = 0
     var sno: String = _EMPTY_
     var ebCode: String = _EMPTY_
-    var hhno: String = _EMPTY_
+    var hhid: String = _EMPTY_
     var LUID: String? = _EMPTY_
     var structure: String? = _EMPTY_
     var extension: String? = _EMPTY_
@@ -44,7 +43,7 @@ class RandomHH {
 
         this.tabno = jsonObject.getString(RandomHHTable.COLUMN_TAB_NO)
 
-        this.hh = "$tabno-$structure-$extension"
+        this.hhid = "$tabno-$structure-$extension"
         this.randomDT = jsonObject.getString(RandomHHTable.COLUMN_RANDOMDT)
         this.hhhead = jsonObject.getString(RandomHHTable.COLUMN_HH_HEAD)
         this.contact = jsonObject.getString(RandomHHTable.COLUMN_CONTACT)
@@ -55,14 +54,14 @@ class RandomHH {
     }
 
     fun hydrate(cursor: Cursor): RandomHH {
-        this.ID = cursor.getLong(cursor.getColumnIndexOrThrow(RandomHHTable.COLUMN_ID))
+        ID = cursor.getLong(cursor.getColumnIndexOrThrow(RandomHHTable.COLUMN_ID))
         LUID = cursor.getString(cursor.getColumnIndexOrThrow(RandomHHTable.COLUMN_LUID))
         ebCode = cursor.getString(cursor.getColumnIndexOrThrow(RandomHHTable.COLUMN_EB_CODE))
         structure =
             cursor.getString(cursor.getColumnIndexOrThrow(RandomHHTable.COLUMN_STRUCTURE_NO))
-        this.extension =
+        extension =
             cursor.getString(cursor.getColumnIndexOrThrow(RandomHHTable.COLUMN_FAMILY_EXT_CODE))
-        hh = cursor.getString(cursor.getColumnIndexOrThrow(RandomHHTable.COLUMN_HH_NO))
+        hhid = cursor.getString(cursor.getColumnIndexOrThrow(RandomHHTable.COLUMN_HH_NO))
         randomDT = cursor.getString(cursor.getColumnIndexOrThrow(RandomHHTable.COLUMN_RANDOMDT))
         hhhead = cursor.getString(cursor.getColumnIndexOrThrow(RandomHHTable.COLUMN_HH_HEAD))
         contact = cursor.getString(cursor.getColumnIndexOrThrow(RandomHHTable.COLUMN_CONTACT))

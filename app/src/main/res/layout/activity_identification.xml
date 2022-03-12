@@ -70,14 +70,16 @@
 
                         </LinearLayout>
 
-                        <RelativeLayout
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                            android:orientation="horizontal">
+
 
                             <EditText
                                 android:id="@+id/hh05"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/hh05" />
@@ -85,14 +87,12 @@
                             <ImageButton
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerInParent="true"
+
                                 android:onClick="checkEBNumber"
-                                android:src="@drawable/search"
-                                android:text="CHECK BLOCK" />
+                                android:src="@drawable/search" />
 
 
-                        </RelativeLayout>
+                        </LinearLayout>
 
                         <LinearLayout
                             android:id="@+id/fldGrpIdentifier"
@@ -250,14 +250,15 @@
 
                         </LinearLayout>
 
-                        <RelativeLayout
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                            android:orientation="horizontal">
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/hh12"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="match_parent"
                                 android:hint="#-####-###"
                                 android:inputType="textCapCharacters"
@@ -266,14 +267,12 @@
                             <ImageButton
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerInParent="true"
+
                                 android:onClick="checkHH"
-                                android:src="@drawable/search"
-                                android:text="CHECK HOUSEHOLD" />
+                                android:src="@drawable/search" />
 
 
-                        </RelativeLayout>
+                        </LinearLayout>
 
                         <LinearLayout
                             android:id="@+id/headhh"

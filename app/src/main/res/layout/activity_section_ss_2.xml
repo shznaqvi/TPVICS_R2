@@ -1636,13 +1636,17 @@
 
                         </LinearLayout>
 
-                        <EditText
+                        <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
                             android:id="@+id/ss27"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/ss27"
-                            android:text="@={form.ss27}" />
+                            android:layout_weight="1"
+                            android:focusable="false"
+                            android:gravity="center"
+                            android:hint="HH:mm"
+                            android:text="@={form.ss27}"
+                            app:theme="@style/DatePickerStyle" />
+
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

@@ -5,6 +5,8 @@ import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.selectedHousehold;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -46,6 +48,38 @@ public class IdentificationActivity extends AppCompatActivity {
             bi.btnContinue.setText("Review Form");
         MainApp.form = new Form();
 
+
+        bi.hh12.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                //  Log.d(TAG, "beforeTextChanged: charSequence-"+charSequence+" i-"+i+ " i1-"+i1 +" i2-"+i2);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                Log.d(TAG, "onTextChanged: i-" + i + " i1-" + i1 + " i2-" + i2 + "\t\t\tCHAR: " + charSequence);
+
+                if (i == 0 && i1 == 0 && i2 == 1)
+                    bi.hh12.setText(bi.hh12.getText().toString() + "-"); // A-
+                if (i == 0 && i1 == 5 && i2 == 6)
+                    bi.hh12.setText(bi.hh12.getText().toString() + "-"); // A-0001-
+
+                if (i == 0 && i1 == 8 && i2 == 7)
+                    bi.hh12.setText(bi.hh12.getText().toString().substring(0, 6)); // A-0001
+                if (i == 2 && i1 == 3 && i2 == 2)
+                    bi.hh12.setText(bi.hh12.getText().toString().substring(0, 1)); // A
+
+
+                bi.hh12.setSelection(bi.hh12.getText().length());
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
     }
 

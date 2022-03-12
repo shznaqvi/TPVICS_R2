@@ -376,7 +376,6 @@
                                 android:hint="@string/cb03yy"
                                 android:inputType="number"
                                 android:maxLength="4"
-                                android:tag="-1"
                                 android:text="@={child.cb03yy}"
                                 app:maxValue="2022"
                                 app:minValue="2018"
@@ -388,6 +387,7 @@
                             android:id="@+id/cb03dk"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:tag="-1"
                             android:checked="@{child.cb03dk.equals(`98`)}"
                             android:onClick="@{()->child.setCb03dk(child.cb03dk.equals(`98`)?``:`98`)}"
                             android:text="@string/cb03dk" />

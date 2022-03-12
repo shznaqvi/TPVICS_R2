@@ -195,6 +195,10 @@
                                 android:layout_height="match_parent"
                                 android:text="@string/Qec14cname" />
 
+                            <View
+                                android:layout_width="24dp"
+                                android:layout_height="match_parent" />
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"

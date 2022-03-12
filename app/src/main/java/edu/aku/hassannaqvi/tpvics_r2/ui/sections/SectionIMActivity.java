@@ -53,10 +53,30 @@ public class SectionIMActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (bi.im04yy.getText().toString().isEmpty()) return;
-                bi.im04dd.setMaxvalue(Integer.parseInt(bi.im04yy.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
-                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
                 bi.im04mm.setMaxvalue(Integer.parseInt(bi.im04yy.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
                         Calendar.getInstance().get(Calendar.MONTH) + 1 : 12f);
+                bi.im04dd.setMaxvalue(Integer.parseInt(bi.im04yy.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR)
+                        && Integer.parseInt(bi.im04mm.getText().toString()) == Calendar.getInstance().get(Calendar.MONTH) + 1 ?
+                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        bi.im04mm.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.im04yy.getText().toString().isEmpty() || bi.im04mm.getText().toString().isEmpty())
+                    return;
+                bi.im04dd.setMaxvalue(Integer.parseInt(bi.im04yy.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR)
+                        && Integer.parseInt(bi.im04mm.getText().toString()) == Calendar.getInstance().get(Calendar.MONTH) + 1 ?
+                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
             }
 
             @Override
@@ -133,10 +153,11 @@ public class SectionIMActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (year.getText().toString().isEmpty()) return;
-                day.setMaxvalue(Integer.parseInt(year.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
-                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
                 mon.setMaxvalue(Integer.parseInt(year.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
                         Calendar.getInstance().get(Calendar.MONTH) + 1 : 12f);
+                day.setMaxvalue(Integer.parseInt(year.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR)
+                        && Integer.parseInt(mon.getText().toString()) == Calendar.getInstance().get(Calendar.MONTH) + 1 ?
+                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
             }
 
             @Override

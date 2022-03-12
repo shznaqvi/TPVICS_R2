@@ -468,18 +468,20 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!-- im05title1  Title   -->
+                <!-- im05 VACCINATIONS -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:visibility="@{form.im02.equals(`1`)  ? View.VISIBLE : View.GONE}">
 
+
                     <TextView
                         style="@style/labelsHead"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/im05title1" />
+
 
                     <!-- im05title2  Title   -->
                     <androidx.cardview.widget.CardView
@@ -497,10 +499,13 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="start"
                                 android:text="@string/im05title2" />
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
 
-                    <!-- im05_1bcg  Title   -->
+
+                    <!-- im05 VACCINATION -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVim05_1bcg"
                         style="@style/cardView">
@@ -559,12 +564,14 @@
 
                             </LinearLayout>
 
+
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/im05t1" />
 
+                            <!-- im0501 -->
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -576,7 +583,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="3.5"
                                     android:minHeight="52dp"
-                                    android:text="@string/im051bcg" />
+                                    android:text="@string/im0501bcg" />
 
                                 <LinearLayout
                                     android:layout_width="0dp"
@@ -592,6 +599,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0501dd}"
                                         android:textDirection="ltr"
@@ -606,6 +614,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0501mm}"
                                         android:textDirection="ltr"
@@ -621,15 +630,17 @@
                                         android:gravity="center"
                                         android:hint="####"
                                         android:inputType="number"
+                                        android:maxLength="4"
                                         android:text="@={form.im0501yy}"
-                                        android:textDirection="ltr"
                                         app:maxValue="2022"
                                         app:minValue="2020"
                                         app:type="range" />
+
                                 </LinearLayout>
+
                             </LinearLayout>
 
-                            <!-- im0502opv0  Title   -->
+                            <!-- im0502 -->
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -657,6 +668,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0502dd}"
                                         android:textDirection="ltr"
@@ -671,6 +683,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0502mm}"
                                         android:textDirection="ltr"
@@ -686,13 +699,13 @@
                                         android:gravity="center"
                                         android:hint="####"
                                         android:inputType="number"
+                                        android:maxLength="4"
                                         android:text="@={form.im0502yy}"
-                                        android:textDirection="ltr"
                                         app:maxValue="2022"
                                         app:minValue="2020"
                                         app:type="range" />
-                                </LinearLayout>
 
+                                </LinearLayout>
 
                             </LinearLayout>
 
@@ -729,6 +742,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0503dd}"
                                         android:textDirection="ltr"
@@ -743,6 +757,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0503mm}"
                                         android:textDirection="ltr"
@@ -758,15 +773,13 @@
                                         android:gravity="center"
                                         android:hint="####"
                                         android:inputType="number"
+                                        android:maxLength="4"
                                         android:text="@={form.im0503yy}"
-                                        android:textDirection="ltr"
                                         app:maxValue="2022"
                                         app:minValue="2020"
                                         app:type="range" />
 
-
                                 </LinearLayout>
-
 
                             </LinearLayout>
 
@@ -783,7 +796,6 @@
                                     android:minHeight="52dp"
                                     android:text="@string/im0504penta1" />
 
-
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
@@ -798,6 +810,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0504dd}"
                                         android:textDirection="ltr"
@@ -812,6 +825,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0504mm}"
                                         android:textDirection="ltr"
@@ -827,12 +841,11 @@
                                         android:gravity="center"
                                         android:hint="####"
                                         android:inputType="number"
+                                        android:maxLength="4"
                                         android:text="@={form.im0504yy}"
-                                        android:textDirection="ltr"
                                         app:maxValue="2022"
                                         app:minValue="2020"
                                         app:type="range" />
-
 
                                 </LinearLayout>
 
@@ -852,7 +865,6 @@
                                     android:minHeight="52dp"
                                     android:text="@string/im0505pcv1" />
 
-
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
@@ -867,6 +879,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0505dd}"
                                         android:textDirection="ltr"
@@ -881,6 +894,8 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
                                         android:text="@={form.im0505mm}"
                                         android:textDirection="ltr"
                                         app:maxValue="12"
@@ -895,12 +910,11 @@
                                         android:gravity="center"
                                         android:hint="####"
                                         android:inputType="number"
+                                        android:maxLength="4"
                                         android:text="@={form.im0505yy}"
-                                        android:textDirection="ltr"
                                         app:maxValue="2022"
                                         app:minValue="2020"
                                         app:type="range" />
-
 
                                 </LinearLayout>
 
@@ -920,7 +934,6 @@
                                     android:minHeight="52dp"
                                     android:text="@string/im0506rv1" />
 
-
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
@@ -935,6 +948,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0506dd}"
                                         android:textDirection="ltr"
@@ -949,6 +963,8 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
                                         android:text="@={form.im0506mm}"
                                         android:textDirection="ltr"
                                         app:maxValue="12"
@@ -963,12 +979,11 @@
                                         android:gravity="center"
                                         android:hint="####"
                                         android:inputType="number"
+                                        android:maxLength="4"
                                         android:text="@={form.im0506yy}"
-                                        android:textDirection="ltr"
                                         app:maxValue="2022"
                                         app:minValue="2020"
                                         app:type="range" />
-
 
                                 </LinearLayout>
 
@@ -1009,6 +1024,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0507dd}"
                                         android:textDirection="ltr"
@@ -1023,6 +1039,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0507mm}"
                                         android:textDirection="ltr"
@@ -1038,12 +1055,11 @@
                                         android:gravity="center"
                                         android:hint="####"
                                         android:inputType="number"
+                                        android:maxLength="4"
                                         android:text="@={form.im0507yy}"
-                                        android:textDirection="ltr"
                                         app:maxValue="2022"
                                         app:minValue="2020"
                                         app:type="range" />
-
 
                                 </LinearLayout>
 
@@ -1063,7 +1079,6 @@
                                     android:minHeight="52dp"
                                     android:text="@string/im0508penta2" />
 
-
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
@@ -1078,6 +1093,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0508dd}"
                                         android:textDirection="ltr"
@@ -1092,6 +1108,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0508mm}"
                                         android:textDirection="ltr"
@@ -1107,12 +1124,11 @@
                                         android:gravity="center"
                                         android:hint="####"
                                         android:inputType="number"
+                                        android:maxLength="4"
                                         android:text="@={form.im0508yy}"
-                                        android:textDirection="ltr"
                                         app:maxValue="2022"
                                         app:minValue="2020"
                                         app:type="range" />
-
 
                                 </LinearLayout>
 
@@ -1132,7 +1148,6 @@
                                     android:minHeight="52dp"
                                     android:text="@string/im0509pcv2" />
 
-
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
@@ -1147,6 +1162,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0509dd}"
                                         android:textDirection="ltr"
@@ -1161,6 +1177,8 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
                                         android:text="@={form.im0509mm}"
                                         android:textDirection="ltr"
                                         app:maxValue="12"
@@ -1175,12 +1193,11 @@
                                         android:gravity="center"
                                         android:hint="####"
                                         android:inputType="number"
+                                        android:maxLength="4"
                                         android:text="@={form.im0509yy}"
-                                        android:textDirection="ltr"
                                         app:maxValue="2022"
                                         app:minValue="2020"
                                         app:type="range" />
-
 
                                 </LinearLayout>
 
@@ -1200,7 +1217,6 @@
                                     android:minHeight="52dp"
                                     android:text="@string/im0510rv2" />
 
-
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
@@ -1215,6 +1231,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0510dd}"
                                         android:textDirection="ltr"
@@ -1229,6 +1246,8 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
                                         android:text="@={form.im0510mm}"
                                         android:textDirection="ltr"
                                         app:maxValue="12"
@@ -1243,12 +1262,11 @@
                                         android:gravity="center"
                                         android:hint="####"
                                         android:inputType="number"
+                                        android:maxLength="4"
                                         android:text="@={form.im0510yy}"
-                                        android:textDirection="ltr"
                                         app:maxValue="2022"
                                         app:minValue="2020"
                                         app:type="range" />
-
 
                                 </LinearLayout>
 
@@ -1278,7 +1296,6 @@
                                 android:minHeight="52dp"
                                 android:text="@string/im0510ahp" />
 
-
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
@@ -1293,6 +1310,7 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:hint="##"
+                                    android:maxLength="2"
                                     android:inputType="number"
                                     android:text="@={form.im0510add}"
                                     android:textDirection="ltr"
@@ -1307,6 +1325,8 @@
                                     android:layout_weight="1"
                                     android:gravity="center"
                                     android:hint="##"
+                                    android:inputType="number"
+                                    android:maxLength="2"
                                     android:text="@={form.im0510amm}"
                                     android:textDirection="ltr"
                                     app:maxValue="12"
@@ -1321,8 +1341,8 @@
                                     android:gravity="center"
                                     android:hint="####"
                                     android:inputType="number"
+                                    android:maxLength="4"
                                     android:text="@={form.im0510ayy}"
-                                    android:textDirection="ltr"
                                     app:maxValue="2022"
                                     app:minValue="2020"
                                     app:type="range" />
@@ -1377,6 +1397,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0511dd}"
                                         android:textDirection="ltr"
@@ -1391,6 +1412,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0511mm}"
                                         android:textDirection="ltr"
@@ -1406,8 +1428,8 @@
                                         android:gravity="center"
                                         android:hint="####"
                                         android:inputType="number"
+                                        android:maxLength="4"
                                         android:text="@={form.im0511yy}"
-                                        android:textDirection="ltr"
                                         app:maxValue="2022"
                                         app:minValue="2020"
                                         app:type="range" />
@@ -1430,7 +1452,6 @@
                                     android:minHeight="52dp"
                                     android:text="@string/im0512penta3" />
 
-
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
@@ -1445,6 +1466,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0512dd}"
                                         android:textDirection="ltr"
@@ -1459,6 +1481,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0512mm}"
                                         android:textDirection="ltr"
@@ -1474,8 +1497,8 @@
                                         android:gravity="center"
                                         android:hint="####"
                                         android:inputType="number"
+                                        android:maxLength="4"
                                         android:text="@={form.im0512yy}"
-                                        android:textDirection="ltr"
                                         app:maxValue="2022"
                                         app:minValue="2020"
                                         app:type="range" />
@@ -1498,7 +1521,6 @@
                                     android:minHeight="52dp"
                                     android:text="@string/im0513pcv3" />
 
-
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
@@ -1513,6 +1535,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0513dd}"
                                         android:textDirection="ltr"
@@ -1527,6 +1550,8 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
                                         android:text="@={form.im0513mm}"
                                         android:textDirection="ltr"
                                         app:maxValue="12"
@@ -1541,8 +1566,8 @@
                                         android:gravity="center"
                                         android:hint="####"
                                         android:inputType="number"
+                                        android:maxLength="4"
                                         android:text="@={form.im0513yy}"
-                                        android:textDirection="ltr"
                                         app:maxValue="2022"
                                         app:minValue="2020"
                                         app:type="range" />
@@ -1565,7 +1590,6 @@
                                     android:minHeight="52dp"
                                     android:text="@string/im0514ipv" />
 
-
                                 <LinearLayout
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
@@ -1580,6 +1604,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0514dd}"
                                         android:textDirection="ltr"
@@ -1594,6 +1619,8 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
                                         android:text="@={form.im0514mm}"
                                         android:textDirection="ltr"
                                         app:maxValue="12"
@@ -1608,8 +1635,8 @@
                                         android:gravity="center"
                                         android:hint="####"
                                         android:inputType="number"
+                                        android:maxLength="4"
                                         android:text="@={form.im0514yy}"
-                                        android:textDirection="ltr"
                                         app:maxValue="2022"
                                         app:minValue="2020"
                                         app:type="range" />
@@ -1651,6 +1678,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0515dd}"
                                         android:textDirection="ltr"
@@ -1665,6 +1693,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0515mm}"
                                         android:textDirection="ltr"
@@ -1680,8 +1709,8 @@
                                         android:gravity="center"
                                         android:hint="####"
                                         android:inputType="number"
+                                        android:maxLength="4"
                                         android:text="@={form.im0515yy}"
-                                        android:textDirection="ltr"
                                         app:maxValue="2022"
                                         app:minValue="2020"
                                         app:type="range" />
@@ -1718,6 +1747,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0517dd}"
                                         android:textDirection="ltr"
@@ -1732,6 +1762,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0517mm}"
                                         android:textDirection="ltr"
@@ -1747,8 +1778,8 @@
                                         android:gravity="center"
                                         android:hint="####"
                                         android:inputType="number"
+                                        android:maxLength="4"
                                         android:text="@={form.im0517yy}"
-                                        android:textDirection="ltr"
                                         app:maxValue="2022"
                                         app:minValue="2020"
                                         app:type="range" />
@@ -1791,6 +1822,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0516dd}"
                                         android:textDirection="ltr"
@@ -1805,6 +1837,7 @@
                                         android:layout_weight="1"
                                         android:gravity="center"
                                         android:hint="##"
+                                        android:maxLength="2"
                                         android:inputType="number"
                                         android:text="@={form.im0516mm}"
                                         android:textDirection="ltr"
@@ -1820,12 +1853,11 @@
                                         android:gravity="center"
                                         android:hint="####"
                                         android:inputType="number"
+                                        android:maxLength="4"
                                         android:text="@={form.im0516yy}"
-                                        android:textDirection="ltr"
                                         app:maxValue="2022"
                                         app:minValue="2020"
                                         app:type="range" />
-
 
                                 </LinearLayout>
 
@@ -1960,6 +1992,7 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"

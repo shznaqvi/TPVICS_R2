@@ -27,9 +27,9 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/sectionchlistofchildren0623monthsoldmainheading"
+            app:subtitle="@string/sectionsssocioeconomicstatusssmainheading"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/sectionchlistofchildren0623monthsoldmainheading"
+            app:title="@string/sectionsssocioeconomicstatusssmainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
         <ScrollView
@@ -1245,12 +1245,13 @@
                                 android:layout_height="wrap_content"
                                 android:hint="@string/ss23land"
                                 android:inputType="number"
-                                android:maxLength="1"
+                                android:maxLength="7"
                                 android:tag="ss23land"
                                 android:text="@={form.ss23landx}"
                                 android:visibility="@{form.ss23.equals(``) ? View.VISIBLE : View.GONE}"
-                                app:maxValue="0"
-                                app:minValue="0"
+                                app:mask="####.##"
+                                app:maxValue="9999.99"
+                                app:minValue="0001.00"
                                 app:type="range" />
                         </RadioGroup>
                     </LinearLayout>
@@ -1673,6 +1674,15 @@
                                 android:text="@string/ss28" />
 
                         </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/ss28"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:hint="@string/ss28"
+                            android:text="@={form.ss28}" />
+
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

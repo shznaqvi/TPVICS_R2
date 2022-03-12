@@ -661,6 +661,9 @@ public class Child extends BaseObservable implements Observable {
 
     public void setCb03dk(String cb03dk) {
         this.cb03dk = cb03dk;
+        setCb03dd(cb03dk.equals("98") ? "" : this.cb03dd);
+        setCb03mm(cb03dk.equals("98") ? "" : this.cb03mm);
+        setCb03yy(cb03dk.equals("98") ? "" : this.cb03yy);
         notifyPropertyChanged(BR.cb03dk);
     }
 

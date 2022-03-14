@@ -160,6 +160,7 @@ public class Child extends BaseObservable implements Observable {
     private String im11 = _EMPTY_;
     private String im12 = _EMPTY_;
     private String im12a = _EMPTY_;
+    private String im12a98 = _EMPTY_;
     private String im14 = _EMPTY_;
     private String im15 = _EMPTY_;
     private String im16 = _EMPTY_;
@@ -177,9 +178,11 @@ public class Child extends BaseObservable implements Observable {
     private String im2417x = _EMPTY_;
     private String im24a = _EMPTY_;
     private String im24b = _EMPTY_;
+    private String im24b98 = _EMPTY_;
     private String im24c = _EMPTY_;
     private String im24d = _EMPTY_;
     private String im25 = _EMPTY_;
+    private String im26 = _EMPTY_;
     private long ageInMonths;
 
 
@@ -1484,6 +1487,18 @@ public class Child extends BaseObservable implements Observable {
     }
 
     @Bindable
+    public String getIm12a98() {
+        return im12a98;
+    }
+
+    public void setIm12a98(String im12a98) {
+        if (this.im12a98.equals(im12a98)) return;
+        this.im12a98 = im12a98;
+        setIm12a(im12a98.equals("98") ? "" : this.im12a);
+        notifyPropertyChanged(BR.im12a98);
+    }
+
+    @Bindable
     public String getIm14() {
         return im14;
     }
@@ -1530,6 +1545,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm18(String im18) {
         this.im18 = im18;
+        setIm19(im18.equals("1") ? this.im19 : "");
         notifyPropertyChanged(BR.im18);
     }
 
@@ -1654,6 +1670,18 @@ public class Child extends BaseObservable implements Observable {
     }
 
     @Bindable
+    public String getIm24b98() {
+        return im24b98;
+    }
+
+    public void setIm24b98(String im24b98) {
+        if (this.im24b98.equals(im24b98)) return;
+        this.im24b98 = im24b98;
+        setIm24b(im24b98.equals("98") ? "" : this.im24b);
+        notifyPropertyChanged(BR.im24b98);
+    }
+
+    @Bindable
     public String getIm24c() {
         return im24c;
     }
@@ -1681,6 +1709,16 @@ public class Child extends BaseObservable implements Observable {
     public void setIm25(String im25) {
         this.im25 = im25;
         notifyPropertyChanged(BR.im25);
+    }
+
+    @Bindable
+    public String getIm26() {
+        return im26;
+    }
+
+    public void setIm26(String im26) {
+        this.im26 = im26;
+        notifyPropertyChanged(BR.im26);
     }
 
 
@@ -1837,6 +1875,7 @@ public class Child extends BaseObservable implements Observable {
             this.im11 = json.getString("im11");
             this.im12 = json.getString("im12");
             this.im12a = json.getString("im12a");
+            this.im12a98 = json.getString("im12a98");
             this.im14 = json.getString("im14");
             this.im15 = json.getString("im15");
             this.im16 = json.getString("im16");
@@ -1853,9 +1892,11 @@ public class Child extends BaseObservable implements Observable {
             this.im2417x = json.getString("im2417x");
             this.im24a = json.getString("im24a");
             this.im24b = json.getString("im24b");
+            this.im24b98 = json.getString("im24b98");
             this.im24c = json.getString("im24c");
             this.im24d = json.getString("im24d");
             this.im25 = json.getString("im25");
+            this.im26 = json.getString("im26");
         }
     }
 
@@ -1950,6 +1991,7 @@ public class Child extends BaseObservable implements Observable {
                 .put("im11", im11)
                 .put("im12", im12)
                 .put("im12a", im12a)
+                .put("im12a98", im12a98)
                 .put("im14", im14)
                 .put("im15", im15)
                 .put("im16", im16)
@@ -1966,9 +2008,11 @@ public class Child extends BaseObservable implements Observable {
                 .put("im2417x", im2417x)
                 .put("im24a", im24a)
                 .put("im24b", im24b)
+                .put("im24b98", im24b98)
                 .put("im24c", im24c)
                 .put("im24d", im24d)
-                .put("im25", im25);
+                .put("im25", im25)
+                .put("im26", im26);
 
         return json.toString();
     }

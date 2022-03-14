@@ -2192,6 +2192,7 @@
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
+
                     <!-- im12  Input-Numeric   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVim12"
@@ -2226,7 +2227,8 @@
                                 android:id="@+id/im12"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/im12"
+                                android:gravity="center"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={form.im12}"
@@ -2235,7 +2237,9 @@
                                 app:type="range" />
 
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
+
 
                     <!-- im12a  Input-Numeric   -->
                     <androidx.cardview.widget.CardView
@@ -2267,18 +2271,41 @@
 
                             </LinearLayout>
 
-                            <CheckBox
-                                android:id="@+id/im12d"
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im12a.equals(`98`)}"
-                                android:enabled="@{!form.im12a.equals(`98`)}"
-                                android:onClick="@{()->form.setIm12a(form.im12a.equals(`98`)?``:`98`)}"
-                                android:text="@string/im12d" />
+                                android:orientation="horizontal">
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/im12a"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:enabled="@{!form.im12a98.equals(`98`)}"
+                                    android:gravity="center"
+                                    android:hint="##"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:text="@={form.im12a}"
+                                    app:maxValue="24"
+                                    app:minValue="1"
+                                    app:type="range" />
+
+                                <CheckBox
+                                    android:id="@+id/im12a98"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:checked="@{form.im12a98.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm12a98(form.im12a98.equals(`98`)?``:`98`)}"
+                                    android:tag="-1"
+                                    android:text="@string/im12d" />
+
+                            </LinearLayout>
 
                         </LinearLayout>
 
                     </androidx.cardview.widget.CardView>
+
 
                     <!-- im14  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -2379,15 +2406,19 @@
                                 android:id="@+id/im15"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/im15"
+                                android:gravity="center"
+                                android:hint="#"
                                 android:inputType="number"
                                 android:maxLength="1"
                                 android:text="@={form.im15}"
                                 app:maxValue="3"
                                 app:minValue="1"
                                 app:type="range" />
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
+
 
                     <!-- im16  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -2455,6 +2486,7 @@
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
+
                     <!-- im17  Input-Numeric   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVim17"
@@ -2489,15 +2521,19 @@
                                 android:id="@+id/im17"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/im17"
+                                android:gravity="center"
+                                android:hint="#"
                                 android:inputType="number"
                                 android:maxLength="1"
                                 android:text="@={form.im17}"
                                 app:maxValue="3"
                                 app:minValue="1"
                                 app:type="range" />
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
+
 
                     <!-- im18  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -2561,11 +2597,15 @@
                                     android:checked="@{form.im18.equals(`98`)}"
                                     android:onClick="@{()->form.setIm18(`98`)}"
                                     android:text="@string/im183" />
+
                             </RadioGroup>
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
 
-                    <!-- im19  Radio   -->
+
+                    <!-- im19 Input-Numeric   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVim19"
                         style="@style/cardView"
@@ -2594,8 +2634,24 @@
                                     android:text="@string/im19" />
 
                             </LinearLayout>
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/im19"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:hint="#"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:text="@={form.im19}"
+                                app:maxValue="3"
+                                app:minValue="1"
+                                app:type="range" />
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
+
 
                     <!-- im20  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -2762,15 +2818,19 @@
                                 android:id="@+id/im22"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/im22"
+                                android:gravity="center"
+                                android:hint="#"
                                 android:inputType="number"
                                 android:maxLength="1"
                                 android:text="@={form.im22}"
                                 app:maxValue="2"
                                 app:minValue="1"
                                 app:type="range" />
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
+
 
                     <!-- im22a  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -2805,34 +2865,42 @@
                             <RadioGroup
                                 android:id="@+id/im22a"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
                                 <RadioButton
                                     android:id="@+id/im2101"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:checked="@{form.im22a.equals(`1`)}"
                                     android:onClick="@{()->form.setIm22a(`1`)}"
                                     android:text="@string/im2101" />
 
                                 <RadioButton
                                     android:id="@+id/im2102"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:checked="@{form.im22a.equals(`2`)}"
                                     android:onClick="@{()->form.setIm22a(`2`)}"
                                     android:text="@string/im2102" />
 
                                 <RadioButton
                                     android:id="@+id/im21a98"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:checked="@{form.im22a.equals(`98`)}"
                                     android:onClick="@{()->form.setIm22a(`98`)}"
                                     android:text="@string/im21a98" />
+
                             </RadioGroup>
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
+
 
                     <!-- im23  Radio   -->
                     <androidx.cardview.widget.CardView
@@ -2915,6 +2983,7 @@
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
+
                     <!-- im23a  Radio   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVim23a"
@@ -2996,7 +3065,6 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
@@ -3178,9 +3246,13 @@
                                 android:checked="@{form.im24.equals(`98`)}"
                                 android:onClick="@{()->form.setIm24(`98`)}"
                                 android:text="@string/im2499" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im24a  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -3243,9 +3315,13 @@
                                 android:checked="@{form.im24a.equals(`98`)}"
                                 android:onClick="@{()->form.setIm24a(`98`)}"
                                 android:text="@string/im24a98" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im24b  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
@@ -3277,15 +3353,41 @@
 
                         </LinearLayout>
 
-                        <RadioButton
-                            android:id="@+id/im24b98"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:checked="@{form.im24b.equals(`98`)}"
-                            android:onClick="@{()->form.setIm24b(`98`)}"
-                            android:text="@string/im24b98" />
+                            android:orientation="horizontal">
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/im24b"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:enabled="@{!form.im24b98.equals(`98`)}"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.im24b}"
+                                app:maxValue="30"
+                                app:minValue="1"
+                                app:type="range" />
+
+                            <CheckBox
+                                android:id="@+id/im24b98"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.im24b98.equals(`98`)}"
+                                android:onClick="@{()->form.setIm24b98(form.im24b98.equals(`98`)?``:`98`)}"
+                                android:tag="-1"
+                                android:text="@string/im24b98" />
+
+                        </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im24c  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -3486,9 +3588,13 @@
                                 android:checked="@{form.im25.equals(`4`)}"
                                 android:onClick="@{()->form.setIm25(`4`)}"
                                 android:text="@string/im2504" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im26  Title   -->
                 <androidx.cardview.widget.CardView
@@ -3500,11 +3606,39 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/im26" />
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Qim26" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/im26" />
+
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/im26"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="1234567890 QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm,.-()#"
+                            android:gravity="top"
+                            android:hint="@string/im26"
+                            android:inputType="textNoSuggestions"
+                            android:minLines="5"
+                            android:tag="-1"
+                            android:text="@={form.im26}" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 

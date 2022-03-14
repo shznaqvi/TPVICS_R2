@@ -396,14 +396,10 @@ public class SectionIMActivity extends AppCompatActivity {
         try {
             Calendar baseCal = Calendar.getInstance();
             Calendar forwardCal = Calendar.getInstance();
-
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
             baseCal.setTime(sdf.parse(baseDate));// all done
             forwardCal.setTime(sdf.parse(forwardDate));// all done
-
             return forwardCal.getTimeInMillis() >= baseCal.getTimeInMillis();
-
-
         } catch (ParseException e) {
             e.printStackTrace();
             Toast.makeText(this, "ParseException(setDateRanges()): " + e.getMessage(), Toast.LENGTH_SHORT).show();

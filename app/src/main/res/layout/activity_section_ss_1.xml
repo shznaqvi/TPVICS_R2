@@ -1205,13 +1205,15 @@
                                 android:onClick="@{()->form.setSs12(`98`)}"
                                 android:text="@string/ss12c" />
 
-                            <RadioButton
-                                android:id="@+id/ss12hh"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.ss12.equals(``)}"
-                                android:onClick="@{()->form.setSs12(``)}"
-                                android:text="@string/ss12hh" />
+<!--                            <RadioButton-->
+<!--                                android:id="@+id/ss12hh"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:checked="@{form.ss12.equals(``)}"-->
+<!--                                android:onClick="@{()->form.setSs12(``)}"-->
+<!--                                android:text="@string/ss12hh" />-->
+
+
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

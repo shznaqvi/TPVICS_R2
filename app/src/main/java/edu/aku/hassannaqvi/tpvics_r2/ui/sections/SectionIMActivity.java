@@ -19,6 +19,7 @@ import org.json.JSONException;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Locale;
 
@@ -34,6 +35,7 @@ public class SectionIMActivity extends AppCompatActivity {
     private static final String TAG = "SectionIMActivity";
     ActivitySectionImBinding bi;
     private DatabaseHelper db;
+    String[] deff = {"44", "66", "88", "97"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,27 +123,11 @@ public class SectionIMActivity extends AppCompatActivity {
                 if (day.getText().toString().isEmpty()) return;
                 mon.setEnabled(true);
                 year.setEnabled(true);
-                if (Integer.parseInt(day.getText().toString()) == 44) {
-                    day.setRangedefaultvalue(44f);
+                if (Arrays.asList(deff).contains(day.getText().toString())) {
+                    day.setRangedefaultvalue(Float.parseFloat(day.getText().toString()));
                     mon.setEnabled(false);
                     year.setEnabled(false);
                 }
-                if (Integer.parseInt(day.getText().toString()) == 66) {
-                    day.setRangedefaultvalue(66f);
-                    mon.setEnabled(false);
-                    year.setEnabled(false);
-                }
-                if (Integer.parseInt(day.getText().toString()) == 88) {
-                    day.setRangedefaultvalue(88f);
-                    mon.setEnabled(false);
-                    year.setEnabled(false);
-                }
-                if (Integer.parseInt(day.getText().toString()) == 97) {
-                    day.setRangedefaultvalue(97f);
-                    mon.setEnabled(false);
-                    year.setEnabled(false);
-                }
-
             }
 
             @Override
@@ -195,21 +181,16 @@ public class SectionIMActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        //if (!insertNewRecord()) return;
-        // saveDraft();
         if (updateDB()) {
             setResult(RESULT_OK);
             finish();
-        } else {
-            Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
-        }
+        } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
 
     public void btnEnd(View view) {
         setResult(RESULT_CANCELED);
         finish();
-        //startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
 
@@ -375,7 +356,7 @@ public class SectionIMActivity extends AppCompatActivity {
                 return Validator.emptyCustomTextBox(this, bi.im0515yy, "Vaccine Date Should be Greater Than 14 Week Vaccine date");
             }
 
-            // im0515
+            // im0517
             String im0517date = child.getIm0517yy()
                     + "-" + child.getIm0517mm()
                     + "-" + child.getIm0517dd();
@@ -404,14 +385,11 @@ public class SectionIMActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-
     }
 
 
 
     /*IMMUNIZATION DATES DIFFERENCE*/
-
-
     private boolean validateDatesBCG(String baseDate, String forwardDate) {
         if (baseDate.length() < 8 || forwardDate.length() < 8)
             return true;

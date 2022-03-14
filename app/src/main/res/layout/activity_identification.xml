@@ -15,6 +15,7 @@
 
     </data>
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,15 +37,18 @@
             app:title="@string/householdidentificationmainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
 
                 <!-- hh05  Input   -->
                 <androidx.cardview.widget.CardView
@@ -62,7 +66,6 @@
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
-
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
@@ -75,7 +78,6 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-
                             <EditText
                                 android:id="@+id/hh05"
                                 android:layout_width="0dp"
@@ -87,10 +89,8 @@
                             <ImageButton
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-
                                 android:onClick="checkEBNumber"
                                 android:src="@drawable/search" />
-
 
                         </LinearLayout>
 
@@ -102,13 +102,11 @@
                             android:visibility="gone"
                             tools:visibility="visible">
 
-
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/bottom"
                                 android:orientation="horizontal">
-
 
                                 <TextView
                                     style="@style/sub_labels"
@@ -131,7 +129,6 @@
                                     android:text="Confirm?" />
 
                             </LinearLayout>
-
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -169,7 +166,6 @@
                             android:visibility="@{checkHh07.checked?View.VISIBLE:View.GONE}"
                             android:orientation="horizontal">
 
-
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
@@ -191,7 +187,6 @@
                                 android:text="Confirm?" />
 
                         </LinearLayout>
-
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -221,15 +216,19 @@
                                     android:text="Confirm?" />
 
                             </LinearLayout>
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- hh12  Input   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVhh12"
-                    android:visibility="@{checkHh09.checked?View.VISIBLE:View.GONE}"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{checkHh09.checked?View.VISIBLE:View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -241,7 +240,6 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
-
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -258,8 +256,9 @@
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/hh12"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
                                 android:hint="#-####-###"
                                 android:inputType="textCapCharacters"
                                 android:maxLength="10" />
@@ -267,10 +266,8 @@
                             <ImageButton
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-
                                 android:onClick="checkHH"
                                 android:src="@drawable/search" />
-
 
                         </LinearLayout>
 
@@ -285,31 +282,32 @@
 
                             <TextView
                                 style="@style/sub_labels"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/hh16a" />
 
                             <TextView
                                 android:id="@+id/hh16a"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:hint="X-####-###"
                                 android:inputType="number"
                                 android:maxLength="9"
                                 app:mask="X-0000-00" />
 
-
                             <CheckBox
                                 android:id="@+id/checkHh16a"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:text="Confirm?" />
 
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!--EndButton LinearLayout-->
                 <LinearLayout
@@ -319,7 +317,6 @@
                     android:layout_marginTop="24dp"
                     android:orientation="horizontal"
                     android:padding="24dp">
-
 
                     <!--
                              <enum name="src_over" value="3" />
@@ -346,8 +343,16 @@
                         tools:ignore="OnClick" />
 
                 </LinearLayout>
+                <!--EndButton LinearLayout-->
+
+
             </LinearLayout>
+
+
         </ScrollView>
 
+
     </LinearLayout>
+
+
 </layout>

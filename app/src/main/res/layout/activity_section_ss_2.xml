@@ -1630,22 +1630,23 @@
                                 android:text="@string/Qss27" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="match_parent"
                                 android:text="@string/ss27" />
 
-                        </LinearLayout>
+                            <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                                android:id="@+id/ss27"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:hint="HH:mm"
+                                android:text="@={form.ss27}"
+                                app:theme="@style/DatePickerStyle" />
 
-                        <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
-                            android:id="@+id/ss27"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:focusable="false"
-                            android:gravity="center"
-                            android:hint="HH:mm"
-                            android:text="@={form.ss27}"
-                            app:theme="@style/DatePickerStyle" />
+                        </LinearLayout>
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

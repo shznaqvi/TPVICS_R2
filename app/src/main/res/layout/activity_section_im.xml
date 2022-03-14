@@ -88,7 +88,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.im01.equals(`1`)}"
-                                android:onClick="@{()->form.setIm01(`1`)}"
+                                android:onClick="@{()->form.setIm01(`1`) + im03.clearCheck()}"
                                 android:text="@string/im011" />
 
                             <RadioButton
@@ -97,7 +97,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.im01.equals(`2`)}"
-                                android:onClick="@{()->form.setIm01(`2`) + im02.clearCheck()}"
+                                android:onClick="@{()->form.setIm01(`2`) + im02.clearCheck() + im02a.clearCheck()}"
                                 android:text="@string/im012" />
 
                         </RadioGroup>

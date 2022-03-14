@@ -695,6 +695,7 @@ public class Child extends BaseObservable implements Observable {
     public void setIm01(String im01) {
         this.im01 = im01;
         setIm02(im01.equals("1") ? this.im02 : "");
+        setIm02a(im01.equals("1") ? this.im02a : "");
         setIm03(im01.equals("2") ? this.im03 : "");
         notifyPropertyChanged(BR.im01);
     }
@@ -710,6 +711,79 @@ public class Child extends BaseObservable implements Observable {
         setIm04dd(im02.equals("1") ? this.im04dd : "");
         setIm04mm(im02.equals("1") ? this.im04mm : "");
         setIm04yy(im02.equals("1") ? this.im04yy : "");
+
+        setIm0501dd(im02.equals("1") ? this.im0501dd : "");
+        setIm0501mm(im02.equals("1") ? this.im0501mm : "");
+        setIm0501yy(im02.equals("1") ? this.im0501yy : "");
+
+        setIm0502dd(im02.equals("1") ? this.im0502dd : "");
+        setIm0502mm(im02.equals("1") ? this.im0502mm : "");
+        setIm0502yy(im02.equals("1") ? this.im0502yy : "");
+
+        setIm0503dd(im02.equals("1") ? this.im0503dd : "");
+        setIm0503mm(im02.equals("1") ? this.im0503mm : "");
+        setIm0503yy(im02.equals("1") ? this.im0503yy : "");
+
+        setIm0504dd(im02.equals("1") ? this.im0504dd : "");
+        setIm0504mm(im02.equals("1") ? this.im0504mm : "");
+        setIm0504yy(im02.equals("1") ? this.im0504yy : "");
+
+        setIm0505dd(im02.equals("1") ? this.im0505dd : "");
+        setIm0505mm(im02.equals("1") ? this.im0505mm : "");
+        setIm0505yy(im02.equals("1") ? this.im0505yy : "");
+
+        setIm0506dd(im02.equals("1") ? this.im0506dd : "");
+        setIm0506mm(im02.equals("1") ? this.im0506mm : "");
+        setIm0506yy(im02.equals("1") ? this.im0506yy : "");
+
+        setIm0507dd(im02.equals("1") ? this.im0507dd : "");
+        setIm0507mm(im02.equals("1") ? this.im0507mm : "");
+        setIm0507yy(im02.equals("1") ? this.im0507yy : "");
+
+        setIm0508dd(im02.equals("1") ? this.im0508dd : "");
+        setIm0508mm(im02.equals("1") ? this.im0508mm : "");
+        setIm0508yy(im02.equals("1") ? this.im0508yy : "");
+
+        setIm0509dd(im02.equals("1") ? this.im0509dd : "");
+        setIm0509mm(im02.equals("1") ? this.im0509mm : "");
+        setIm0509yy(im02.equals("1") ? this.im0509yy : "");
+
+        setIm0510dd(im02.equals("1") ? this.im0510dd : "");
+        setIm0510mm(im02.equals("1") ? this.im0510mm : "");
+        setIm0510yy(im02.equals("1") ? this.im0510yy : "");
+
+        setIm0510add(im02.equals("1") ? this.im0510add : "");
+        setIm0510amm(im02.equals("1") ? this.im0510amm : "");
+        setIm0510ayy(im02.equals("1") ? this.im0510ayy : "");
+
+        setIm0511dd(im02.equals("1") ? this.im0511dd : "");
+        setIm0511mm(im02.equals("1") ? this.im0511mm : "");
+        setIm0511yy(im02.equals("1") ? this.im0511yy : "");
+
+        setIm0512dd(im02.equals("1") ? this.im0512dd : "");
+        setIm0512mm(im02.equals("1") ? this.im0512mm : "");
+        setIm0512yy(im02.equals("1") ? this.im0512yy : "");
+
+        setIm0513dd(im02.equals("1") ? this.im0513dd : "");
+        setIm0513mm(im02.equals("1") ? this.im0513mm : "");
+        setIm0513yy(im02.equals("1") ? this.im0513yy : "");
+
+        setIm0514dd(im02.equals("1") ? this.im0514dd : "");
+        setIm0514mm(im02.equals("1") ? this.im0514mm : "");
+        setIm0514yy(im02.equals("1") ? this.im0514yy : "");
+
+
+        setIm0515dd(im02.equals("1") ? this.im0515dd : "");
+        setIm0515mm(im02.equals("1") ? this.im0515mm : "");
+        setIm0515yy(im02.equals("1") ? this.im0515yy : "");
+
+        setIm0516dd(im02.equals("1") ? this.im0516dd : "");
+        setIm0516mm(im02.equals("1") ? this.im0516mm : "");
+        setIm0516yy(im02.equals("1") ? this.im0516yy : "");
+
+        setIm0517dd(im02.equals("1") ? this.im0517dd : "");
+        setIm0517mm(im02.equals("1") ? this.im0517mm : "");
+        setIm0517yy(im02.equals("1") ? this.im0517yy : "");
 
         notifyPropertyChanged(BR.im02);
     }

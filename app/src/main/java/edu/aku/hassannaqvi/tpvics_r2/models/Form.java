@@ -935,10 +935,11 @@ public class Form extends BaseObservable implements Observable {
     public void setSs07(String ss07) {
         this.ss07 = ss07;
         setSs07xx(ss07.equals("96") ? this.ss07xx : ""); // for all skips, mention all skipped questions
-        setSs08(ss07.equals("8") || ss07.equals("9") ? "" : this.ss08);
-        setSs09(ss07.equals("8") || ss07.equals("9") ? "" : this.ss09);
-        setSs11(ss07.equals("8") || ss07.equals("9") ? "" : this.ss11);
-        setSs02(ss07.equals("8") || ss07.equals("9") ? "" : this.ss12);
+        final boolean b = ss07.equals("8") || ss07.equals("9") || ss07.equals("96");
+        setSs08(b ? "" : this.ss08);
+        setSs09(b ? "" : this.ss09);
+        setSs11(b ? "" : this.ss11);
+        setSs12(b ? "" : this.ss12);
         notifyPropertyChanged(BR.ss07);
     }
 
@@ -981,6 +982,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setSs11(String ss11) {
         this.ss11 = ss11;
+        setSs12(ss11.equals("2") ? "" : this.ss12);
         notifyPropertyChanged(BR.ss11);
     }
 

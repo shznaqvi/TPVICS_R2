@@ -74,7 +74,7 @@
                             android:id="@+id/hh13"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
                             android:hint="@string/hh13"
                             android:text="@={form.hh13}"
 
@@ -306,7 +306,7 @@
                             android:id="@+id/hh16a"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
                             android:hint="@string/hh16a"
                             android:text="@={form.hh16a}" />
                     </LinearLayout>

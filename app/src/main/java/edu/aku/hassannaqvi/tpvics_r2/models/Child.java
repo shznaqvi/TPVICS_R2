@@ -788,6 +788,24 @@ public class Child extends BaseObservable implements Observable {
         setIm0517mm(im02.equals("1") ? this.im0517mm : "");
         setIm0517yy(im02.equals("1") ? this.im0517yy : "");
 
+
+
+        setIm09(im02.equals("2") ? this.im09 : "");
+        setIm10(im02.equals("2") ? this.im10 : "");
+        setIm11(im02.equals("2") ? this.im11 : "");
+        setIm12(im02.equals("2") ? this.im12 : "");
+        setIm12a(im02.equals("2") ? this.im12a : "");
+        setIm14(im02.equals("2") ? this.im14 : "");
+        setIm15(im02.equals("2") ? this.im15 : "");
+        setIm16(im02.equals("2") ? this.im16 : "");
+        setIm17(im02.equals("2") ? this.im17 : "");
+        setIm18(im02.equals("2") ? this.im18 : "");
+        setIm19(im02.equals("2") ? this.im19 : "");
+        setIm20(im02.equals("2") ? this.im20 : "");
+        setIm21(im02.equals("2") ? this.im21 : "");
+        setIm22(im02.equals("2") ? this.im22 : "");
+        setIm22a(im02.equals("2") ? this.im22a : "");
+
         notifyPropertyChanged(BR.im02);
     }
 
@@ -799,6 +817,14 @@ public class Child extends BaseObservable implements Observable {
     public void setIm02a(String im02a) {
         this.im02a = im02a;
         setIm02a96x(im02a.equals("96") ? this.im02a96x : "");
+        final boolean b = im02a.equals("1") || im02a.equals("2") || im02a.equals("3") || im02a.equals("96");
+
+        setIm03(b ? "" : this.im03);
+        setIm04dd(b ? "" : this.im04dd);
+        setIm04mm(b ? "" : this.im04mm);
+        setIm04yy(b ? "" : this.im04yy);
+        setIm07(b ? "" : this.im07);
+
         notifyPropertyChanged(BR.im02a);
     }
 

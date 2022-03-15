@@ -970,8 +970,8 @@ public class Form extends BaseObservable implements Observable {
 
     public void setSs09(String ss09) {
         this.ss09 = ss09;
-        setSs11(ss09.equals("2") ? "" : this.ss11);
-        setSs12(ss09.equals("2") ? "" : this.ss12);
+        setSs11(ss09.equals("1") ? this.ss11 : "");
+        setSs12(ss09.equals("1") ? this.ss12 : "");
         notifyPropertyChanged(BR.ss09);
     }
 

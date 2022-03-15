@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.tpvics_r2.adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -11,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -19,6 +19,7 @@ import edu.aku.hassannaqvi.tpvics_r2.R;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.models.Child;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionCBActivity;
+import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionCHActivity;
 
 
 public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> {
@@ -28,17 +29,20 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
     private final int mExpandedPosition = -1;
     private final int completeCount;
     private final boolean motherPresent = false;
+    private final ActivityResultLauncher<Intent> childInfoLauncher;
 
     /**
      * Initialize the dataset of the Adapter.
      *
-     * @param child List<FemaleChildModel> containing the data to populate views to be used by RecyclerView.
+     * @param child              List<FemaleChildModel> containing the data to populate views to be used by RecyclerView.
+     * @param memberInfoLauncher
      */
-    public ChildAdapter(Context mContext, List<Child> child) {
+    public ChildAdapter(Context mContext, List<Child> child, ActivityResultLauncher<Intent> memberInfoLauncher) {
         this.member = child;
         this.mContext = mContext;
         completeCount = 0;
         MainApp.memberComplete = false;
+        childInfoLauncher = memberInfoLauncher;
 
     }
 
@@ -173,16 +177,40 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
                 Intent intent = new Intent(mContext, SectionCBActivity.class);
 
                 intent.putExtra("position", position);
+                intent.putExtra("requestCode", "2");
 
                 MainApp.selectedChild = position;
 
                 intent.putExtra("position", position);
+                childInfoLauncher.launch(intent);
 
-                ((Activity) mContext).startActivityForResult(intent, 2);
+                //  ((Activity) mContext).startActivityForResult(intent, 2);
             } else {
                 Toast.makeText(mContext, "INELIGIBLE: Child is " + child.getAgeInMonths() + " months old", Toast.LENGTH_SHORT).show();
             }
 
+        });
+
+        viewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                MainApp.child = MainApp.childList.get(position);
+                if (MainApp.child.getEc21().equals("")) {
+                    Intent intent = new Intent(mContext, SectionCHActivity.class);
+
+                    intent.putExtra("position", position);
+                    intent.putExtra("requestCode", "3");
+
+                    MainApp.selectedChild = position;
+
+                    intent.putExtra("position", position);
+                    childInfoLauncher.launch(intent);
+
+                } else {
+                    Toast.makeText(mContext, "This child has been locked.", Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            }
         });
 
     }

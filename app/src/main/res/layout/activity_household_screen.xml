@@ -43,6 +43,7 @@
                 android:layout_margin="24dp"
                 android:maxHeight="280dp"
                 android:orientation="vertical"
+                android:background="?android:attr/selectableItemBackground"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="3"
                 tools:itemCount="1"

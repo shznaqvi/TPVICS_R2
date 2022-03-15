@@ -23,7 +23,7 @@ import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionRiBinding;
 import edu.aku.hassannaqvi.tpvics_r2.ui.EndingActivity;
-import edu.aku.hassannaqvi.tpvics_r2.ui.HouseholdScreenActivity;
+import edu.aku.hassannaqvi.tpvics_r2.ui.lists.HouseholdScreenActivity;
 
 public class SectionRIActivity extends AppCompatActivity {
 

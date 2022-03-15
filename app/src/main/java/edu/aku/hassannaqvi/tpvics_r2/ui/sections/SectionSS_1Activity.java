@@ -45,7 +45,7 @@ public class SectionSS_1Activity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SSS, form.sHHtoString());
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SSS, form.sSStoString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());

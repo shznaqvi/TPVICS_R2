@@ -37,7 +37,6 @@ import edu.aku.hassannaqvi.tpvics_r2.ui.lists.FormsReportPending;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.ConsentActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionCBActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionCHActivity;
-import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionHHActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionIMActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionRIActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionSS_1Activity;
@@ -125,10 +124,6 @@ public class MainActivity extends AppCompatActivity {
                 /*MainApp.form = new Form();
                 startActivity(new Intent(this, SectionHHActivity.class));
                 break;*/
-            case R.id.sechh:
-                MainApp.form = new Form();
-                startActivity(new Intent(this, SectionHHActivity.class));
-                break;
             case R.id.secri:
                 MainApp.form = new Form();
                 startActivity(new Intent(this, SectionRIActivity.class));

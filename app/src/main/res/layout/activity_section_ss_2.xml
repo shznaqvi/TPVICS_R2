@@ -1205,11 +1205,13 @@
                         <RadioGroup
                             android:id="@+id/ss23"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/ss23a"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.ss23.equals(`1`)}"
                                 android:onClick="@{()->form.setSs23(`1`)}"
@@ -1217,30 +1219,19 @@
 
                             <RadioButton
                                 android:id="@+id/ss23b"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.ss23.equals(`2`)}"
                                 android:onClick="@{()->form.setSs23(`2`)}"
                                 android:text="@string/ss23b" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/ss23landx"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/ss23land"
-                                android:inputType="number"
-                                android:maxLength="7"
-                                android:tag="ss23land"
-                                android:text="@={form.ss23landx}"
-                                android:visibility="@{form.ss23.equals(`1`) || form.ss23.equals(`2`) ? View.VISIBLE : View.GONE}"
-                                app:mask="####.##"
-                                app:maxValue="9999.99"
-                                app:minValue="0001.00"
-                                app:type="range" />
+
 
                             <RadioButton
                                 android:id="@+id/ss23c"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.ss23.equals(`98`)}"
                                 android:onClick="@{()->form.setSs23(`98`)}"
@@ -1256,6 +1247,21 @@
 
 
                         </RadioGroup>
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/ss23landx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/ss23land"
+                            android:inputType="number"
+                            android:maxLength="7"
+                            android:tag="ss23land"
+                            android:text="@={form.ss23landx}"
+                            android:visibility="@{form.ss23.equals(`1`) || form.ss23.equals(`2`) ? View.VISIBLE : View.GONE}"
+                            app:mask="####.##"
+                            app:maxValue="9999.99"
+                            app:minValue="0001.00"
+                            app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

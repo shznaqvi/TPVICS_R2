@@ -64,7 +64,7 @@ public class SectionHHActivity extends AppCompatActivity {
             if (form.getHh18().equals("1")) {
                 startActivity(new Intent(this, SectionRIActivity.class));
             } else {
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false).putExtra("checkToEnable", 1));
             }
         } else
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();

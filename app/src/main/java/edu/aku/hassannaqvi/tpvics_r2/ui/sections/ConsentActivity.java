@@ -93,7 +93,10 @@ public class ConsentActivity extends AppCompatActivity {
             if (form.getHh18().equals("1")) {
                 startActivity(new Intent(this, SectionRIActivity.class));
             } else {
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+                Intent endingActivityIntent = new Intent(this, EndingActivity.class);
+                endingActivityIntent.putExtra("complete", false);
+                endingActivityIntent.putExtra("checkToEnable", 4);
+                startActivity(endingActivityIntent);
             }
         } else
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();

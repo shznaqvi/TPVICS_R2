@@ -54,6 +54,7 @@ public class EndingActivity extends AppCompatActivity {
         bi.istatuse.setEnabled(check);
         bi.istatusf.setEnabled(check);
         bi.istatusg.setEnabled(check);
+        bi.istatus96.setEnabled(check);
 
         switch (checkToEnable) {
             case 1:
@@ -88,6 +89,8 @@ public class EndingActivity extends AppCompatActivity {
                 bi.istatuse.setEnabled(!check);
                 bi.istatusf.setEnabled(!check);
                 bi.istatusg.setEnabled(!check);
+                bi.istatus96.setEnabled(!check);
+
         }
 
     }

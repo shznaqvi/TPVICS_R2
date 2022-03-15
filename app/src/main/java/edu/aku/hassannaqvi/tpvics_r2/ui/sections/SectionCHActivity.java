@@ -27,6 +27,7 @@ public class SectionCHActivity extends AppCompatActivity {
     private static final String TAG = "SectionCHActivity";
     ActivitySectionChBinding bi;
     private DatabaseHelper db;
+    private String requestCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,9 @@ public class SectionCHActivity extends AppCompatActivity {
         db = MainApp.appInfo.dbHelper;
         bi.setChild(MainApp.child);
         MainApp.child.setEc13(String.valueOf(MainApp.childCount + 1));
+        Intent intent = getIntent();
+
+        requestCode = intent.getStringExtra("requestCode");
 
     }
 
@@ -92,7 +96,7 @@ public class SectionCHActivity extends AppCompatActivity {
             //   i = new Intent(this, SectionCBActivity.class).putExtra("complete", true);
             //  startActivity(i);
             Intent returnIntent = new Intent();
-            returnIntent.putExtra("requestCode", "2");
+            returnIntent.putExtra("requestCode", requestCode);
             setResult(RESULT_OK, returnIntent);
             finish();
         } else {
@@ -102,7 +106,7 @@ public class SectionCHActivity extends AppCompatActivity {
 
     public void btnEnd(View view) {
         Intent returnIntent = new Intent();
-        returnIntent.putExtra("requestCode", "2");
+        returnIntent.putExtra("requestCode", requestCode);
         setResult(RESULT_CANCELED, returnIntent);
         finish();
 

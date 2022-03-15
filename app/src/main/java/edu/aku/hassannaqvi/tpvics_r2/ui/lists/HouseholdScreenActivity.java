@@ -1,4 +1,6 @@
-package edu.aku.hassannaqvi.tpvics_r2.ui;
+package edu.aku.hassannaqvi.tpvics_r2.ui.lists;
+
+import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.selectedChild;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,7 +13,6 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
@@ -25,6 +26,7 @@ import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivityHouseholdScreenBinding;
 import edu.aku.hassannaqvi.tpvics_r2.models.Child;
+import edu.aku.hassannaqvi.tpvics_r2.ui.EndingActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionCHActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.sections.SectionSS_1Activity;
 
@@ -46,16 +48,25 @@ public class HouseholdScreenActivity extends AppCompatActivity {
                     if (result.getResultCode() == Activity.RESULT_OK && !MainApp.superuser) {
 
                         Intent data = result.getData();
-                        if (data.getStringExtra("requestCode").equals("1")) {
-                            Toast.makeText(HouseholdScreenActivity.this, "Household information entered.", Toast.LENGTH_SHORT).show();
-                            bi.addHousehold.setEnabled(false);
+                        if (data != null) {
+                            if (data.getStringExtra("requestCode").equals("1")) {
+                                Toast.makeText(HouseholdScreenActivity.this, "Child information entered.", Toast.LENGTH_SHORT).show();
+                                bi.addHousehold.setEnabled(false);
 
-                        } else {
+                            } else if (data.getStringExtra("requestCode").equals("2")) {
 
-                            MainApp.childList.add(MainApp.child);
+                                MainApp.childList.add(MainApp.child);
 
-                            MainApp.childCount++;
-                            childsAdapter.notifyItemInserted(MainApp.childList.size() - 1);
+                                MainApp.childCount++;
+                                childsAdapter.notifyItemInserted(MainApp.childList.size() - 1);
+                                Toast.makeText(HouseholdScreenActivity.this, "Child added.", Toast.LENGTH_SHORT).show();
+
+                            } else if (data.getStringExtra("requestCode").equals("3")) {
+
+                                MainApp.childList.set(selectedChild, MainApp.child);
+                                childsAdapter.notifyItemChanged(selectedChild);
+                                Toast.makeText(HouseholdScreenActivity.this, "Child updated.", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     }
 
@@ -92,7 +103,7 @@ public class HouseholdScreenActivity extends AppCompatActivity {
 
         MainApp.childCount = Math.round(MainApp.childList.size());
 
-        childsAdapter = new ChildAdapter(this, MainApp.childList);
+        childsAdapter = new ChildAdapter(this, MainApp.childList, MemberInfoLauncher);
        /* GridLayoutManager layoutManager =
                 new GridLayoutManager(this, 3, GridLayoutManager.HORIZONTAL, false);*/
         bi.rvChild.setAdapter(childsAdapter);
@@ -165,7 +176,7 @@ public class HouseholdScreenActivity extends AppCompatActivity {
 
     }
 
-    @Override
+   /* @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == RESULT_OK)
@@ -173,7 +184,7 @@ public class HouseholdScreenActivity extends AppCompatActivity {
             // A213 is line number
             childsAdapter.notifyItemInserted(Integer.parseInt(MainApp.child.getEc13()) - 1);
 
-    }
+    }*/
 
 
 }

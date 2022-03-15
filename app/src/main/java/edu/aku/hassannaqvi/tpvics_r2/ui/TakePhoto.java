@@ -81,7 +81,7 @@ public class TakePhoto extends Activity implements SurfaceHolder.Callback, Camer
         Intent intent = getIntent();
         picID = intent.getStringExtra("picID");
         picView = intent.getStringExtra("picView");
-        forInfo = intent.getStringExtra("forInfo");
+        forInfo = intent.getStringExtra("childName");
 
         picInfo = findViewById(R.id.picInfo);
         btnGrp = findViewById(R.id.btnGrp);
@@ -166,21 +166,23 @@ public class TakePhoto extends Activity implements SurfaceHolder.Callback, Camer
         camera = Camera.open();
         Camera.Parameters parameters = camera.getParameters();
         List<String> focusModes = parameters.getSupportedFocusModes();
-//        for (String p : focusModes) {
-//            Log.d("TAH", "surfaceCreated: " + p + "\r\n");
-//        }
-//
+        for (String p : focusModes) {
+            Log.d(TAG, "focusModes: " + p + "\r\n");
+        }
+
 
         List<Integer> picFormat = parameters.getSupportedPictureFormats();
         for (Integer p : picFormat) {
-            Log.d("picFormat", "surfaceCreated: " + p + "\r\n");
+            Log.d(TAG, "picFormat: " + p + "\r\n");
         }
-//
+
         List<String> colorEffects = parameters.getSupportedColorEffects();
-//        for (String effect : colorEffects) {
-//            Log.d("TAG", effect);
-//        }
-        parameters.setColorEffect(Camera.Parameters.WHITE_BALANCE_AUTO);
+        for (String effect : colorEffects) {
+            Log.d(TAG, "colorEffects: " + effect + "\r\n");
+        }
+        if (colorEffects.contains(Camera.Parameters.WHITE_BALANCE_AUTO)) {
+            parameters.setColorEffect(Camera.Parameters.WHITE_BALANCE_AUTO);
+        }
         //parameters.setPreviewSize(640, 480);
         //parameters.setPictureSize(640, 480);
         if (focusModes.contains(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE)) {
@@ -202,7 +204,7 @@ public class TakePhoto extends Activity implements SurfaceHolder.Callback, Camer
                 Log.v("TakePhoto", "Orientation = 0");
                 break;
         }
-        //camera.setDisplayOrientation(180);
+        // camera.setDisplayOrientation(180);
 
         List<Camera.Size> previewSize = parameters.getSupportedPreviewSizes();
         List<Camera.Size> picSize = parameters.getSupportedPictureSizes();

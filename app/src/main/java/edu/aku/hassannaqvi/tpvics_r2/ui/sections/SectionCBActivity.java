@@ -35,6 +35,9 @@ public class SectionCBActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cb);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
+
+        child.setEc13cline(child.getEc13());
+        child.setEc14cname(child.getEc14());
         bi.setChild(child);
     }
 

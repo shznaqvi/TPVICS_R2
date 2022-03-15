@@ -32,6 +32,7 @@ public class IdentificationActivity extends AppCompatActivity {
     private static final String TAG = "IdentificationActivity";
     ActivityIdentificationBinding bi;
     private DatabaseHelper db;
+    private int c, c1;
 
 
     @Override
@@ -53,30 +54,42 @@ public class IdentificationActivity extends AppCompatActivity {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 //  Log.d(TAG, "beforeTextChanged: charSequence-"+charSequence+" i-"+i+ " i1-"+i1 +" i2-"+i2);
+                c = charSequence.length();
+
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                c1 = charSequence.length();
+                String txt = charSequence.toString();
+                Log.d(TAG, "onTextChanged: c-" + c + " c1-" + c1 + "\t\t\tCHAR: " + charSequence);
                 Log.d(TAG, "onTextChanged: i-" + i + " i1-" + i1 + " i2-" + i2 + "\t\t\tCHAR: " + charSequence);
-
-                if (i == 0 && i1 == 0 && i2 == 1)
+         /*       if (c == 0 && c1 == 1)
                     bi.hh12.setText(bi.hh12.getText().toString() + "-"); // A-
-                if (i == 0 && i1 == 5 && i2 == 6)
+                if (c == 5 && c1 == 6)
                     bi.hh12.setText(bi.hh12.getText().toString() + "-"); // A-0001-
 
-                if (i == 0 && i1 == 8 && i2 == 7)
+                if (c == 8 && c1 == 7)
                     bi.hh12.setText(bi.hh12.getText().toString().substring(0, 6)); // A-0001
-                if (i == 2 && i1 == 3 && i2 == 2)
-                    bi.hh12.setText(bi.hh12.getText().toString().substring(0, 1)); // A
+                if (c == 3 && c1 == 2)
+                    bi.hh12.setText(bi.hh12.getText().toString().substring(0, 1)); // A*/
+
+                if (c1 > 6 && charSequence.charAt(6) != '-') {
+                    txt = txt.substring(0, 6) + "-" + txt.substring(6);
+                    bi.hh12.setText(txt);
+                }
+                if (c1 > 1 && charSequence.charAt(1) != '-') {
+                    txt = txt.charAt(0) + "-" + txt.substring(1);
+                    bi.hh12.setText(txt);
+                }
 
 
                 bi.hh12.setSelection(bi.hh12.getText().length());
-
-
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
+
 
             }
         });
@@ -97,7 +110,13 @@ public class IdentificationActivity extends AppCompatActivity {
     public void btnContinue(View view) {
 
         if (!formValidation()) return;
-        hhExists();
+        try {
+            hhExists();
+        } catch (JSONException e) {
+            Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
+            Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
+            return;
+        }
         if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
             Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
         } else {
@@ -116,16 +135,13 @@ public class IdentificationActivity extends AppCompatActivity {
     }
 
 
-    private boolean hhExists() {
+    private boolean hhExists() throws JSONException {
 
 
         MainApp.form = new Form();
-        try {
-            MainApp.form = db.getFormByhhid();
-        } catch (JSONException e) {
-            Log.d(TAG, getString(R.string.hh_exists_form) + e.getMessage());
-            Toast.makeText(this, getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
+
+        MainApp.form = db.getFormByhhid();
+
         return MainApp.form != null;
 
 
@@ -182,7 +198,6 @@ public class IdentificationActivity extends AppCompatActivity {
         if (selectedHousehold != null) {
             bi.hh16a.setText(selectedHousehold.getHhhead());    // Name of Head
             bi.headhh.setVisibility(View.VISIBLE);
-
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.colorAccent));
             bi.btnContinue.setEnabled(true);
         } else {

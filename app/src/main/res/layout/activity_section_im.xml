@@ -2348,7 +2348,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:checked="@{form.im14.equals(`1`)}"
-                                    android:onClick="@{()->form.setIm14(`1`)}"
+                                    android:onClick="@{()->form.setIm14(`1`) + }"
                                     android:text="@string/im141" />
 
                                 <RadioButton

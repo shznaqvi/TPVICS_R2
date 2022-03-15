@@ -1420,6 +1420,7 @@ public class Form extends BaseObservable implements Observable {
 
     public void setSs23(String ss23) {
         this.ss23 = ss23;
+        setSs23landx(ss23.equals("1") || ss23.equals("2") ? this.ss23landx : "");
         notifyPropertyChanged(BR.ss23);
     }
 

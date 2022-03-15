@@ -462,6 +462,20 @@
                             android:orientation="horizontal">
 
                             <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/cb04_yy"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:hint="@string/cb04yy"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:text="@={child.cb04yy}"
+                                app:maxValue="2"
+                                app:minValue="0"
+                                app:type="range" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/cb04_mm"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -475,19 +489,7 @@
                                 app:minValue="0"
                                 app:type="range" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/cb04_yy"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:hint="@string/cb04yy"
-                                android:inputType="number"
-                                android:maxLength="1"
-                                android:text="@={child.cb04yy}"
-                                app:maxValue="2"
-                                app:minValue="0"
-                                app:type="range" />
+
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

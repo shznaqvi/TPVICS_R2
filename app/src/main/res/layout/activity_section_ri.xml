@@ -205,9 +205,7 @@
                             android:inputType="number"
                             android:maxLength="11"
                             android:text="@={form.hh13a}"
-                            app:maxValue="9999999999"
-                            app:minValue="1000000000"
-                            app:type="range" />
+                            />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -352,9 +350,7 @@
                             android:inputType="number"
                             android:maxLength="11"
                             android:text="@={form.hh16b}"
-                            app:maxValue="9999999999"
-                            app:minValue="1000000000"
-                            app:type="range" />
+                            />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

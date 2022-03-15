@@ -208,6 +208,7 @@
     <item name="android:radius">2dp</item>
     <item name="android:drawablePadding">8dp</item>
 
+
     <item name="android:paddingStart">8dp</item>
 
     <item name="android:paddingEnd">8dp</item>

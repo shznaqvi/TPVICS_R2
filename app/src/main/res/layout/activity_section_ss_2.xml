@@ -1223,22 +1223,6 @@
                                 android:onClick="@{()->form.setSs23(`2`)}"
                                 android:text="@string/ss23b" />
 
-                            <RadioButton
-                                android:id="@+id/ss23c"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.ss23.equals(`98`)}"
-                                android:onClick="@{()->form.setSs23(`98`)}"
-                                android:text="@string/ss23c" />
-
-                            <RadioButton
-                                android:id="@+id/ss23land"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.ss23.equals(``)}"
-                                android:onClick="@{()->form.setSs23(``)}"
-                                android:text="@string/ss23land" />
-
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/ss23landx"
                                 android:layout_width="match_parent"
@@ -1248,11 +1232,29 @@
                                 android:maxLength="7"
                                 android:tag="ss23land"
                                 android:text="@={form.ss23landx}"
-                                android:visibility="@{form.ss23.equals(``) ? View.VISIBLE : View.GONE}"
+                                android:visibility="@{form.ss23.equals(`1`) || form.ss23.equals(`2`) ? View.VISIBLE : View.GONE}"
                                 app:mask="####.##"
                                 app:maxValue="9999.99"
                                 app:minValue="0001.00"
                                 app:type="range" />
+
+                            <RadioButton
+                                android:id="@+id/ss23c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss23.equals(`98`)}"
+                                android:onClick="@{()->form.setSs23(`98`)}"
+                                android:text="@string/ss23c" />
+
+                           <!-- <RadioButton
+                                android:id="@+id/ss23land"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss23.equals(`4`)}"
+                                android:onClick="@{()->form.setSs23(`4`)}"
+                                android:text="@string/ss23land" />-->
+
+
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

@@ -1537,6 +1537,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm11(String im11) {
         this.im11 = im11;
+        setIm12(im11.equals("1") ? this.im12 : "");
         notifyPropertyChanged(BR.im11);
     }
 
@@ -1579,6 +1580,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm14(String im14) {
         this.im14 = im14;
+        setIm15(im14.equals("1") ? this.im14 : "");
         notifyPropertyChanged(BR.im14);
     }
 
@@ -1599,6 +1601,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm16(String im16) {
         this.im16 = im16;
+        setIm17(im16.equals("1") ? this.im17 : "");
         notifyPropertyChanged(BR.im16);
     }
 
@@ -2206,8 +2209,9 @@ public class Child extends BaseObservable implements Observable {
 
                 setCb04yy(String.valueOf(tYear));
                 setCb04mm(String.valueOf(tMonth));
-                if (tYear < 0)
+                if (tYear < 0) {
                     setCb04yy("");
+                }
                 //setAge(String.valueOf(((tYear) * 12) + tMonth));
 
 

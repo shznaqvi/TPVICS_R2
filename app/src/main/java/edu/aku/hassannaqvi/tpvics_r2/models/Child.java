@@ -697,8 +697,8 @@ public class Child extends BaseObservable implements Observable {
 
     public void setCb04mm(String cb04mm) {
         this.cb04mm = cb04mm;
-        if (cb04mm != "")
-            setAgeInMonths((Integer.parseInt(cb04yy) * 12) + Integer.parseInt(cb04mm));
+        if (!cb04mm.equals("") && !this.cb04yy.equals(""))
+            setAgeInMonths((Integer.parseInt(cb04yy) * 12L) + Integer.parseInt(this.cb04mm));
         notifyPropertyChanged(BR.cb04mm);
     }
 
@@ -709,8 +709,8 @@ public class Child extends BaseObservable implements Observable {
 
     public void setCb04yy(String cb04yy) {
         this.cb04yy = cb04yy;
-        if (cb04mm != "")
-            setAgeInMonths((Integer.parseInt(cb04yy) * 12) + Integer.parseInt(cb04mm));
+        if (!cb04mm.equals("") && !this.cb04yy.equals(""))
+            setAgeInMonths((Integer.parseInt(this.cb04yy) * 12L) + Integer.parseInt(cb04mm));
         notifyPropertyChanged(BR.cb04yy);
     }
 

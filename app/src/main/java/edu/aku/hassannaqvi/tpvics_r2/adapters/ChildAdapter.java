@@ -69,7 +69,6 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
 
         MainApp.memberComplete = completeCount == MainApp.childCount;
 
-
         fName.setText(child.getEc14());
         fAge.setText(child.getAgeInMonths() + "m ");
         motherName.setText(null);

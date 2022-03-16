@@ -383,86 +383,100 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
+                        <TableLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <TextView
-                                style="@style/textView"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/im04dd" />
+                            <TableRow>
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/im04dd"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:enabled="@{!form.im0497.equals(`97`)}"
-                                android:gravity="center"
-                                android:hint="##"
-                                android:inputType="number"
-                                android:maxLength="2"
-                                android:text="@={form.im04dd}"
-                                app:maxValue="31"
-                                app:minValue="1"
-                                app:type="range" />
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/im04dd" />
 
-                            <TextView
-                                style="@style/textView"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/im04mm" />
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/im04mm" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/im04mm"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:enabled="@{!form.im0497.equals(`97`)}"
-                                android:gravity="center"
-                                android:hint="##"
-                                android:inputType="number"
-                                android:maxLength="2"
-                                android:text="@={form.im04mm}"
-                                app:maxValue="12"
-                                app:minValue="1"
-                                app:type="range" />
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/im04yy" />
+                            </TableRow>
 
-                            <TextView
-                                style="@style/textView"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:text="@string/im04yy" />
+                            <TableRow>
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/im04yy"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:enabled="@{!form.im0497.equals(`97`)}"
-                                android:gravity="center"
-                                android:hint="####"
-                                android:inputType="number"
-                                android:maxLength="4"
-                                android:text="@={form.im04yy}"
-                                app:maxValue="2022"
-                                app:minValue="2020"
-                                app:type="range" />
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/im04dd"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:enabled="@{!form.im0497.equals(`97`)}"
+                                    android:gravity="center"
+                                    android:hint="##"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:text="@={form.im04dd}"
+                                    app:maxValue="31"
+                                    app:minValue="1"
+                                    app:type="range" />
 
-                        </LinearLayout>
 
-                        <CheckBox
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.im0497.equals(`97`)}"
-                            android:onClick="@{()->form.setIm0497(form.im0497.equals(`97`)?``:`97`)}"
-                            android:tag="-1"
-                            android:text="@string/im0497" />
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/im04mm"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:enabled="@{!form.im0497.equals(`97`)}"
+                                    android:gravity="center"
+                                    android:hint="##"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:text="@={form.im04mm}"
+                                    app:maxValue="12"
+                                    app:minValue="1"
+                                    app:type="range" />
+
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/im04yy"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:enabled="@{!form.im0497.equals(`97`)}"
+                                    android:gravity="center"
+                                    android:hint="####"
+                                    android:inputType="number"
+                                    android:maxLength="4"
+                                    android:text="@={form.im04yy}"
+                                    app:maxValue="2022"
+                                    app:minValue="2020"
+                                    app:type="range" />
+                            </TableRow>
+
+                            <TableRow>
+
+                                <CheckBox
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im0497.equals(`97`)}"
+                                    android:onClick="@{()->form.setIm0497(form.im0497.equals(`97`)?``:`97`)}"
+                                    android:tag="-1"
+                                    android:text="@string/im0497" />
+                            </TableRow>
+
+
+                        </TableLayout>
+
 
                     </LinearLayout>
 
@@ -502,8 +516,7 @@
                                     android:layout_marginBottom="15dp"
                                     android:drawableStart="@drawable/ic_camera"
                                     android:onClick="takePhoto"
-                                    android:text="Take Front Photo"
-                                    android:textColor="@color/redDark" />
+                                    android:text="Take Front Photo" />
 
                                 <Button
                                     android:id="@+id/backPhoto"
@@ -517,8 +530,7 @@
                                     android:drawableStart="@drawable/ic_camera"
                                     android:onClick="takePhoto"
                                     android:src="@drawable/ic_camera"
-                                    android:text="Take Back Photo"
-                                    android:textColor="@color/redDark" />
+                                    android:text="Take Back Photo" />
 
                             </LinearLayout>
 
@@ -705,6 +717,7 @@
                                         android:onClick="@{()->form.setIm050198(form.im050198.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
                                         android:visibility="invisible"
+                                        android:background="@color/redOverlay"
                                         tool:visibility="visible" />
 
                                 </TableRow>
@@ -774,6 +787,7 @@
                                         android:checked="@{form.im050298.equals(`98`)}"
                                         android:onClick="@{()->form.setIm050298(form.im050298.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
+                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
 
                                 </TableRow>
@@ -856,6 +870,7 @@
                                         android:checked="@{form.im050398.equals(`98`)}"
                                         android:onClick="@{()->form.setIm050398(form.im050398.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
+                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
                                 </TableRow>
 
@@ -924,6 +939,7 @@
                                         android:checked="@{form.im050498.equals(`98`)}"
                                         android:onClick="@{()->form.setIm050498(form.im050498.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
+                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
 
                                 </TableRow>
@@ -993,6 +1009,7 @@
                                         android:checked="@{form.im050598.equals(`98`)}"
                                         android:onClick="@{()->form.setIm050598(form.im050598.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
+                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
                                 </TableRow>
 
@@ -1061,6 +1078,7 @@
                                         android:checked="@{form.im050698.equals(`98`)}"
                                         android:onClick="@{()->form.setIm050698(form.im050698.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
+                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
                                 </TableRow>
 
@@ -1142,6 +1160,7 @@
                                         android:checked="@{form.im050798.equals(`98`)}"
                                         android:onClick="@{()->form.setIm050798(form.im050798.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
+                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
 
                                 </TableRow>
@@ -1211,6 +1230,7 @@
                                         android:checked="@{form.im050898.equals(`98`)}"
                                         android:onClick="@{()->form.setIm050898(form.im050898.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
+                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
 
                                 </TableRow>
@@ -1280,6 +1300,7 @@
                                         android:checked="@{form.im050998.equals(`98`)}"
                                         android:onClick="@{()->form.setIm050998(form.im050998.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
+                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
                                 </TableRow>
 
@@ -1347,6 +1368,7 @@
                                         android:checked="@{form.im051098.equals(`98`)}"
                                         android:onClick="@{()->form.setIm051098(form.im051098.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
+                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
                                 </TableRow>
 
@@ -1415,6 +1437,7 @@
                                         android:checked="@{form.im0510a98.equals(`98`)}"
                                         android:onClick="@{()->form.setIm0510a98(form.im051098.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
+                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
                                 </TableRow>
 
@@ -1496,6 +1519,7 @@
                                         android:checked="@{form.im051198.equals(`98`)}"
                                         android:onClick="@{()->form.setIm051198(form.im051198.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
+                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
                                 </TableRow>
 
@@ -1563,6 +1587,7 @@
                                         android:checked="@{form.im051298.equals(`98`)}"
                                         android:onClick="@{()->form.setIm051298(form.im051298.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
+                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
                                 </TableRow>
 
@@ -1631,6 +1656,7 @@
                                         android:checked="@{form.im051398.equals(`98`)}"
                                         android:onClick="@{()->form.setIm051398(form.im051398.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
+                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
                                 </TableRow>
 

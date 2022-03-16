@@ -46,12 +46,10 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-
                 <!-- im08  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVim08"
-                    style="@style/cardView"
-                    android:visibility="@{form.im01.equals(`2`) || form.im02.equals(`3`) ? View.VISIBLE : View.GONE}">
+                    style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -98,7 +96,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{form.im08.equals(`2`)}"
-                                android:onClick="@{()->form.setIm08(`2`) + im09.clearCheck() + im10.clearCheck() + im11.clearCheck() + im14.clearCheck() + im16.clearCheck() + im18.clearCheck() + im20.clearCheck() + im21.clearCheck() + im23.clearCheck() + im23a.clearCheck()}"
+                                android:onClick="@{()->form.setIm08(`2`) + im09.clearCheck() + im10.clearCheck() + im11.clearCheck() + im14.clearCheck() + im16.clearCheck() + im18.clearCheck() + im20.clearCheck() + im21.clearCheck() + im22a.clearCheck() + im23.clearCheck() + im23a.clearCheck()}"
                                 android:text="@string/im082" />
 
                             <RadioButton
@@ -112,6 +110,9 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
+
+
 
 
                 <LinearLayout
@@ -1651,8 +1652,7 @@
                 <!-- im25  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVim25"
-                    style="@style/cardView"
-                    android:visibility="@{!form.im24a.equals(`1`)  ? View.VISIBLE : View.GONE}">
+                    style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"

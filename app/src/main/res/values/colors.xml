@@ -19,7 +19,7 @@
     <!-- Standard App Colors -->
     <color name="gray">#757575</color>
     <color name="grayDark">#424242</color>
-    <color name="grayLight">#EEEEEE</color>
+    <color name="grayLight">#d6d6d6</color>
     <color name="grayLightd6">#d6d6d6</color>
     <color name="greenLight">#d600ef00</color>
     <color name="fuchsia">#d6ef00ef</color>
@@ -27,8 +27,8 @@
     <color name="green">#009900</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="red_overlay">#7f990000</color>
-    <color name="green_overlay">#7f009900</color>
+    <color name="redOverlay">#7fef7f7f</color>
+    <color name="greenOverlay">#7f009900</color>
     <color name="blackOverlay">#7f000000</color>
     <color name="whiteOverlay">#7fffffff</color>
     <color name="redDark">#990000</color>

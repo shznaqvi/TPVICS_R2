@@ -1,5 +1,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
 
 
     <data>
@@ -494,6 +495,19 @@
 
 
                         </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/grayLight"
+                            android:gravity="end"
+                            android:includeFontPadding="true"
+                            android:paddingEnd="12dp"
+                            android:text="@{`Age in months: `+child.ageInMonths}"
+                            android:textColor="@color/gray"
+                            android:textSize="13sp"
+                            android:visibility="@{child.ageInMonths != -1 ?View.VISIBLE:View.GONE}"
+                            tool:text="Age in months: 99" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

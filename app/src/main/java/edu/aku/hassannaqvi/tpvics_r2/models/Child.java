@@ -203,7 +203,7 @@ public class Child extends BaseObservable implements Observable {
     private String im051698 = _EMPTY_;
     private String im051798 = _EMPTY_;
 
-    private long ageInMonths;
+    private long ageInMonths = -1;
 
 
     public void Child() {
@@ -697,6 +697,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setCb04mm(String cb04mm) {
         this.cb04mm = cb04mm;
+        setAgeInMonths((Integer.parseInt(cb04yy) * 12) + Integer.parseInt(cb04mm));
         notifyPropertyChanged(BR.cb04mm);
     }
 
@@ -707,7 +708,21 @@ public class Child extends BaseObservable implements Observable {
 
     public void setCb04yy(String cb04yy) {
         this.cb04yy = cb04yy;
+        if (cb04mm != "")
+            setAgeInMonths((Integer.parseInt(cb04yy) * 12) + Integer.parseInt(cb04mm));
         notifyPropertyChanged(BR.cb04yy);
+    }
+
+    @Bindable
+    public long getAgeInMonths() {
+        return ageInMonths;
+    }
+
+
+    public void setAgeInMonths(long ageInMonths) {
+        this.ageInMonths = ageInMonths;
+        notifyPropertyChanged(BR.ageInMonths);
+
     }
 
     @Bindable
@@ -2595,7 +2610,7 @@ public class Child extends BaseObservable implements Observable {
 
                 Log.d(TAG, "CaluculateAge: " + (mYear) + "-" + mMonth + "-" + mDay);
 */
-                this.ageInMonths = MILLISECONDS.toDays(millis) / 30;
+                //this.ageInMonths = MILLISECONDS.toDays(millis) / 30;
                 long tYear = MILLISECONDS.toDays(millis) / 365;
                 long tMonth = (MILLISECONDS.toDays(millis) - (tYear * 365)) / 30;
                 long tDay = MILLISECONDS.toDays(millis) - ((tYear * 365) + (tMonth * 30));
@@ -2609,7 +2624,7 @@ public class Child extends BaseObservable implements Observable {
                 if (tYear < 0) {
                     setCb04yy("");
                 }
-                //setAge(String.valueOf(((tYear) * 12) + tMonth));
+                //setAgeInMonths(String.valueOf(((tYear) * 12) + tMonth));
 
 
         /*        String.format("%d min, %d sec",
@@ -2627,12 +2642,5 @@ public class Child extends BaseObservable implements Observable {
     }
 
 
-    public long getAgeInMonths() {
-        return ageInMonths;
-    }
 
-
-    public void setAgeInMonths(long ageInMonths) {
-        this.ageInMonths = ageInMonths;
-    }
 }

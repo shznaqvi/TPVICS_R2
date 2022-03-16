@@ -38,9 +38,6 @@ public class SectionSS_2Activity extends AppCompatActivity {
         bi.setForm(form);
     }
 
-
-
-
     private boolean updateDB() {
         if (MainApp.superuser) return true;
 

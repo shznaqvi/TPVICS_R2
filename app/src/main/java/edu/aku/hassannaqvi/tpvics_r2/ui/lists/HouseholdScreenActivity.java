@@ -160,6 +160,9 @@ public class HouseholdScreenActivity extends AppCompatActivity {
         MainApp.child = new Child();
         //TODO: UNCOMMENT two line to launch the child info activity (CH)
         Intent intent = new Intent(this, SectionCHActivity.class);
+
+        intent.putExtra("requestCode", "2");
+
         MemberInfoLauncher.launch(intent);
     }
 

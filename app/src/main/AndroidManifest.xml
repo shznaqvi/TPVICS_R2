@@ -92,7 +92,7 @@
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.lists.HouseholdScreenActivity"
-            android:theme="@style/AppTheme"
+            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.IdentificationActivity"
@@ -103,6 +103,7 @@
         <activity
             android:name=".ui.sections.ConsentActivity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
         <activity
@@ -135,6 +136,13 @@
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
 
+
+        <activity
+            android:name=".ui.sections.SectionIM2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionRIActivity"
             android:screenOrientation="portrait"
@@ -156,7 +164,7 @@
         <activity
             android:name=".ui.WebViewActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
+            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
 
 

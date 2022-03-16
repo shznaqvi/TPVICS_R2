@@ -119,13 +119,12 @@
                             <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
                                 android:id="@+id/hh02"
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:focusable="false"
                                 android:gravity="center"
                                 android:hint="HH:mm"
                                 android:text="@={form.hh02}"
-                                android:timePickerMode="clock"
                                 app:theme="@style/DatePickerStyle"
                                 app:timeFormat="HH:mm" />
 

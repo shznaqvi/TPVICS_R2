@@ -29,7 +29,7 @@ import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionIm2Binding;
 public class SectionIM2Activity extends AppCompatActivity {
 
 
-    private static final String TAG = "SectionIM1Activity";
+    private static final String TAG = "SectionIM2Activity";
     ActivitySectionIm2Binding bi;
     String[] deff = {"44", "66", "88", "97"};
     private DatabaseHelper db;
@@ -37,7 +37,7 @@ public class SectionIM2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_im1);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_im2);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.setForm(child);

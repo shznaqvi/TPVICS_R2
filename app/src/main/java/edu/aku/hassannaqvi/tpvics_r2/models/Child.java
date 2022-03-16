@@ -183,6 +183,26 @@ public class Child extends BaseObservable implements Observable {
     private String im24d = _EMPTY_;
     private String im25 = _EMPTY_;
     private String im26 = _EMPTY_;
+
+    private String im050198 = _EMPTY_;
+    private String im050298 = _EMPTY_;
+    private String im050398 = _EMPTY_;
+    private String im050498 = _EMPTY_;
+    private String im050598 = _EMPTY_;
+    private String im050698 = _EMPTY_;
+    private String im050798 = _EMPTY_;
+    private String im050898 = _EMPTY_;
+    private String im050998 = _EMPTY_;
+    private String im051098 = _EMPTY_;
+    private String im0510a98 = _EMPTY_;
+    private String im051198 = _EMPTY_;
+    private String im051298 = _EMPTY_;
+    private String im051398 = _EMPTY_;
+    private String im051498 = _EMPTY_;
+    private String im051598 = _EMPTY_;
+    private String im051698 = _EMPTY_;
+    private String im051798 = _EMPTY_;
+
     private long ageInMonths;
 
 
@@ -1824,6 +1844,240 @@ public class Child extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.im26);
     }
 
+    @Bindable
+    public String getIm050198() {
+        return im050198;
+    }
+
+    public void setIm050198(String im050198) {
+        this.im050198 = im050198;
+        /*setIm0501dd(im050198.equals("98") ? "" : this.im0501dd);
+        setIm0501mm(im050198.equals("98") ? "" : this.im0501mm);
+        setIm0501yy(im050198.equals("98") ? "" : this.im0501yy);*/
+        notifyPropertyChanged(BR.im050198);
+    }
+
+    @Bindable
+    public String getIm050298() {
+        return im050298;
+    }
+
+    public void setIm050298(String im050298) {
+        this.im050298 = im050298;
+        /*setIm0502dd(im050298.equals("98") ? "" : this.im0502dd);
+        setIm0502mm(im050298.equals("98") ? "" : this.im0502mm);
+        setIm0502yy(im050298.equals("98") ? "" : this.im0502yy);*/
+        notifyPropertyChanged(BR.im050298);
+    }
+
+    @Bindable
+    public String getIm050398() {
+        return im050398;
+    }
+
+    public void setIm050398(String im050398) {
+        this.im050398 = im050398;
+        /*setIm0503dd(im050398.equals("98") ? "" : this.im0503dd);
+        setIm0503mm(im050398.equals("98") ? "" : this.im0503mm);
+        setIm0503yy(im050398.equals("98") ? "" : this.im0503yy);*/
+        notifyPropertyChanged(BR.im050398);
+    }
+
+    @Bindable
+    public String getIm050498() {
+        return im050498;
+    }
+
+    public void setIm050498(String im050498) {
+        this.im050498 = im050498;
+        /*setIm0504dd(im050498.equals("98") ? "" : this.im0504dd);
+        setIm0504mm(im050498.equals("98") ? "" : this.im0504mm);
+        setIm0504yy(im050498.equals("98") ? "" : this.im0504yy);*/
+        notifyPropertyChanged(BR.im050498);
+    }
+
+    @Bindable
+    public String getIm050598() {
+        return im050598;
+    }
+
+    public void setIm050598(String im050598) {
+        this.im050598 = im050598;
+        /*setIm0505dd(im050598.equals("98") ? "" : this.im0505dd);
+        setIm0505mm(im050598.equals("98") ? "" : this.im0505mm);
+        setIm0505yy(im050598.equals("98") ? "" : this.im0505yy);*/
+        notifyPropertyChanged(BR.im050598);
+    }
+
+    @Bindable
+    public String getIm050698() {
+        return im050698;
+    }
+
+    public void setIm050698(String im050698) {
+        this.im050698 = im050698;
+        /*setIm0506dd(im050698.equals("98") ? "" : this.im0506dd);
+        setIm0506mm(im050698.equals("98") ? "" : this.im0506mm);
+        setIm0506yy(im050698.equals("98") ? "" : this.im0506yy);*/
+        notifyPropertyChanged(BR.im050698);
+    }
+
+    @Bindable
+    public String getIm050798() {
+        return im050798;
+    }
+
+    public void setIm050798(String im050798) {
+        this.im050798 = im050798;
+        /*setIm0507dd(im050798.equals("98") ? "" : this.im0507dd);
+        setIm0507mm(im050798.equals("98") ? "" : this.im0507mm);
+        setIm0507yy(im050798.equals("98") ? "" : this.im0507yy);*/
+        notifyPropertyChanged(BR.im050798);
+    }
+
+    @Bindable
+    public String getIm050898() {
+        return im050898;
+    }
+
+    public void setIm050898(String im050898) {
+        this.im050898 = im050898;
+        /*setIm0508dd(im050898.equals("98") ? "" : this.im0508dd);
+        setIm0508mm(im050898.equals("98") ? "" : this.im0508mm);
+        setIm0508yy(im050898.equals("98") ? "" : this.im0508yy);*/
+        notifyPropertyChanged(BR.im050898);
+    }
+
+    @Bindable
+    public String getIm050998() {
+        return im050998;
+    }
+
+    public void setIm050998(String im050998) {
+        this.im050998 = im050998;
+        /*setIm0509dd(im050998.equals("98") ? "" : this.im0509dd);
+        setIm0509mm(im050998.equals("98") ? "" : this.im0509mm);
+        setIm0509yy(im050998.equals("98") ? "" : this.im0509yy);*/
+        notifyPropertyChanged(BR.im050998);
+    }
+
+    @Bindable
+    public String getIm051098() {
+        return im051098;
+    }
+
+    public void setIm051098(String im051098) {
+        this.im051098 = im051098;
+        /*setIm0510dd(im051098.equals("98") ? "" : this.im0510dd);
+        setIm0510mm(im051098.equals("98") ? "" : this.im0510mm);
+        setIm0510yy(im051098.equals("98") ? "" : this.im0510yy);*/
+        notifyPropertyChanged(BR.im051098);
+    }
+
+    @Bindable
+    public String getIm0510a98() {
+        return im0510a98;
+    }
+
+    public void setIm0510a98(String im0510a98) {
+        this.im0510a98 = im0510a98;
+        /*setIm0510add(im0510a98.equals("98") ? "" : this.im0510add);
+        setIm0510amm(im0510a98.equals("98") ? "" : this.im0510amm);
+        setIm0510ayy(im0510a98.equals("98") ? "" : this.im0510ayy);*/
+        notifyPropertyChanged(BR.im0510a98);
+    }
+
+    @Bindable
+    public String getIm051198() {
+        return im051198;
+    }
+
+    public void setIm051198(String im051198) {
+        this.im051198 = im051198;
+        /*setIm0511dd(im051198.equals("98") ? "" : this.im0511dd);
+        setIm0511mm(im051198.equals("98") ? "" : this.im0511mm);
+        setIm0511yy(im051198.equals("98") ? "" : this.im0511yy);*/
+        notifyPropertyChanged(BR.im051198);
+    }
+
+    @Bindable
+    public String getIm051298() {
+        return im051298;
+    }
+
+    public void setIm051298(String im051298) {
+        this.im051298 = im051298;
+        /*setIm0512dd(im051298.equals("98") ? "" : this.im0512dd);
+        setIm0512mm(im051298.equals("98") ? "" : this.im0512mm);
+        setIm0512yy(im051298.equals("98") ? "" : this.im0512yy);*/
+        notifyPropertyChanged(BR.im051298);
+    }
+
+    @Bindable
+    public String getIm051398() {
+        return im051398;
+    }
+
+    public void setIm051398(String im051398) {
+        this.im051398 = im051398;
+        /*setIm0513dd(im051398.equals("98") ? "" : this.im0513dd);
+        setIm0513mm(im051398.equals("98") ? "" : this.im0513mm);
+        setIm0513yy(im051398.equals("98") ? "" : this.im0513yy);*/
+        notifyPropertyChanged(BR.im051398);
+    }
+
+    @Bindable
+    public String getIm051498() {
+        return im051498;
+    }
+
+    public void setIm051498(String im051498) {
+        this.im051498 = im051498;
+        /*setIm0514dd(im051498.equals("98") ? "" : this.im0514dd);
+        setIm0514mm(im051498.equals("98") ? "" : this.im0514mm);
+        setIm0514yy(im051498.equals("98") ? "" : this.im0514yy);*/
+        notifyPropertyChanged(BR.im051498);
+    }
+
+    @Bindable
+    public String getIm051598() {
+        return im051598;
+    }
+
+    public void setIm051598(String im051598) {
+        this.im051598 = im051598;
+        /*setIm0515dd(im051598.equals("98") ? "" : this.im0515dd);
+        setIm0515mm(im051598.equals("98") ? "" : this.im0515mm);
+        setIm0515yy(im051598.equals("98") ? "" : this.im0515yy);*/
+        notifyPropertyChanged(BR.im051598);
+    }
+
+    @Bindable
+    public String getIm051698() {
+        return im051698;
+    }
+
+    public void setIm051698(String im051698) {
+        this.im051698 = im051698;
+        /*setIm0516dd(im051698.equals("98") ? "" : this.im0516dd);
+        setIm0516mm(im051698.equals("98") ? "" : this.im0516mm);
+        setIm0516yy(im051698.equals("98") ? "" : this.im0516yy);*/
+        notifyPropertyChanged(BR.im051698);
+    }
+
+    @Bindable
+    public String getIm051798() {
+        return im051798;
+    }
+
+    public void setIm051798(String im051798) {
+        this.im051798 = im051798;
+        /*setIm0517dd(im051798.equals("98") ? "" : this.im0517dd);
+        setIm0517mm(im051798.equals("98") ? "" : this.im0517mm);
+        setIm0517yy(im051798.equals("98") ? "" : this.im0517yy);*/
+        notifyPropertyChanged(BR.im051798);
+    }
+
 
     public Child Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_ID));
@@ -1873,6 +2127,7 @@ public class Child extends BaseObservable implements Observable {
 
     }
 
+
     public void sCBHydrate(String string) throws JSONException {
         Log.d(TAG, "sIMHydrate: " + string);
         if (string != null) {
@@ -1902,6 +2157,7 @@ public class Child extends BaseObservable implements Observable {
             this.cb02b = json.getString("cb02b");
         }
     }
+
 
     public void sIMHydrate(String string) throws JSONException {
         Log.d(TAG, "sIMHydrate: " + string);
@@ -2000,8 +2256,27 @@ public class Child extends BaseObservable implements Observable {
             this.im24d = json.getString("im24d");
             this.im25 = json.getString("im25");
             this.im26 = json.getString("im26");
+            this.im050198 = json.getString("im050198");
+            this.im050298 = json.getString("im050298");
+            this.im050398 = json.getString("im050398");
+            this.im050498 = json.getString("im050498");
+            this.im050598 = json.getString("im050598");
+            this.im050698 = json.getString("im050698");
+            this.im050798 = json.getString("im050798");
+            this.im050898 = json.getString("im050898");
+            this.im050998 = json.getString("im050998");
+            this.im051098 = json.getString("im051098");
+            this.im0510a98 = json.getString("im0510a98");
+            this.im051198 = json.getString("im051198");
+            this.im051298 = json.getString("im051298");
+            this.im051398 = json.getString("im051398");
+            this.im051498 = json.getString("im051498");
+            this.im051598 = json.getString("im051598");
+            this.im051698 = json.getString("im051698");
+            this.im051798 = json.getString("im051798");
         }
     }
+
 
     public String sCHtoString() throws JSONException {
         Log.d(TAG, "sIMtoString: ");
@@ -2021,6 +2296,7 @@ public class Child extends BaseObservable implements Observable {
 
 
     }
+
 
     public String sIMtoString() throws JSONException {
         Log.d(TAG, "sIMtoString: ");
@@ -2115,7 +2391,25 @@ public class Child extends BaseObservable implements Observable {
                 .put("im24c", im24c)
                 .put("im24d", im24d)
                 .put("im25", im25)
-                .put("im26", im26);
+                .put("im26", im26)
+                .put("im050198", im050198)
+                .put("im050298", im050298)
+                .put("im050398", im050398)
+                .put("im050498", im050498)
+                .put("im050598", im050598)
+                .put("im050698", im050698)
+                .put("im050798", im050798)
+                .put("im050898", im050898)
+                .put("im050998", im050998)
+                .put("im051098", im051098)
+                .put("im0510a98", im0510a98)
+                .put("im051198", im051198)
+                .put("im051298", im051298)
+                .put("im051398", im051398)
+                .put("im051498", im051498)
+                .put("im051598", im051598)
+                .put("im051698", im051698)
+                .put("im051798", im051798);
 
         return json.toString();
     }
@@ -2149,6 +2443,7 @@ public class Child extends BaseObservable implements Observable {
 
         return json.toString();
     }
+
 
     public JSONObject toJSONObject() throws JSONException {
         JSONObject json = new JSONObject();
@@ -2255,9 +2550,11 @@ public class Child extends BaseObservable implements Observable {
         }
     }
 
+
     public long getAgeInMonths() {
         return ageInMonths;
     }
+
 
     public void setAgeInMonths(long ageInMonths) {
         this.ageInMonths = ageInMonths;

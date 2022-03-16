@@ -32,21 +32,21 @@ import edu.aku.hassannaqvi.tpvics_r2.R;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
-import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionImBinding;
+import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionIm1Binding;
 import edu.aku.hassannaqvi.tpvics_r2.ui.TakePhoto;
 
-public class SectionIMActivity extends AppCompatActivity {
+public class SectionIM1Activity extends AppCompatActivity {
 
 
-    private static final String TAG = "SectionIMActivity";
-    ActivitySectionImBinding bi;
+    private static final String TAG = "SectionIM1Activity";
+    ActivitySectionIm1Binding bi;
     String[] deff = {"44", "66", "88", "97"};
     private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_im);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_im1);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.setForm(child);

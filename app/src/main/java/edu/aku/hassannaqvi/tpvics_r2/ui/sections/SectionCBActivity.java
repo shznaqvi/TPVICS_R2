@@ -66,7 +66,7 @@ public class SectionCBActivity extends AppCompatActivity {
         if (updateDB()) {
             finish();
             if (child.getEc21().equals("1")) {
-                startActivity(new Intent(this, SectionIMActivity.class));
+                startActivity(new Intent(this, SectionIM1Activity.class));
             } else {
                 startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
             }

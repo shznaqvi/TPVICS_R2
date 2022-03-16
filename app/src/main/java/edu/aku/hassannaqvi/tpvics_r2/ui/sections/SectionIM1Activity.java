@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.tpvics_r2.ui.sections;
 
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.child;
+import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.form;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -189,8 +190,8 @@ public class SectionIM1Activity extends AppCompatActivity {
         if (!formValidation()) return;
         if (updateDB()) {
             setResult(RESULT_OK);
-            Intent intent = new Intent(this, SectionIM2Activity.class).putExtra("complete", true).setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
-            startActivity(intent);
+                Intent intent = new Intent(this, SectionIM2Activity.class).putExtra("complete", true).setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+                startActivity(intent);
             finish();
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }

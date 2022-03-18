@@ -19,6 +19,7 @@
         <entry key="..\:/Android/TPVICS_R2/app/src/main/res/drawable/ic_children.xml" value="0.39166666666666666" />
         <entry key="..\:/Android/TPVICS_R2/app/src/main/res/drawable/ic_house.xml" value="0.39166666666666666" />
         <entry key="..\:/Android/TPVICS_R2/app/src/main/res/drawable/options_separator.xml" value="0.39166666666666666" />
+        <entry key="..\:/Android/TPVICS_R2/app/src/main/res/drawable/top_round_shape_transparent.xml" value="0.27395833333333336" />
         <entry key="..\:/Android/TPVICS_R2/app/src/main/res/layout/activity_camera.xml" value="0.19166666666666668" />
         <entry key="..\:/Android/TPVICS_R2/app/src/main/res/layout/activity_change_password.xml" value="0.21145833333333333" />
         <entry key="..\:/Android/TPVICS_R2/app/src/main/res/layout/activity_consent.xml" value="0.56328125" />
@@ -34,7 +35,7 @@
         <entry key="..\:/Android/TPVICS_R2/app/src/main/res/layout/activity_section_cs.xml" value="0.56328125" />
         <entry key="..\:/Android/TPVICS_R2/app/src/main/res/layout/activity_section_hh.xml" value="0.56328125" />
         <entry key="..\:/Android/TPVICS_R2/app/src/main/res/layout/activity_section_im.xml" value="0.53" />
-        <entry key="..\:/Android/TPVICS_R2/app/src/main/res/layout/activity_section_im1.xml" value="0.21734475374732334" />
+        <entry key="..\:/Android/TPVICS_R2/app/src/main/res/layout/activity_section_im1.xml" value="0.56328125" />
         <entry key="..\:/Android/TPVICS_R2/app/src/main/res/layout/activity_section_im2.xml" value="0.10065614965796454" />
         <entry key="..\:/Android/TPVICS_R2/app/src/main/res/layout/activity_section_is.xml" value="0.37552083333333336" />
         <entry key="..\:/Android/TPVICS_R2/app/src/main/res/layout/activity_section_ri.xml" value="0.56328125" />

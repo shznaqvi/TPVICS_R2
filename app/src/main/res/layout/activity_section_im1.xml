@@ -466,8 +466,8 @@
 
                                 <CheckBox
                                     android:layout_width="0dp"
-                                    android:layout_weight="1"
                                     android:layout_height="wrap_content"
+                                    android:layout_weight="1"
                                     android:checked="@{form.im0497.equals(`97`)}"
                                     android:onClick="@{()->form.setIm0497(form.im0497.equals(`97`)?``:`97`)}"
                                     android:tag="-1"
@@ -717,8 +717,30 @@
                                         android:onClick="@{()->form.setIm050198(form.im050198.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
                                         android:visibility="invisible"
-                                        android:background="@color/redOverlay"
                                         tool:visibility="visible" />
+
+                                </TableRow>
+
+                                <TableRow
+                                    style="@style/sub_labels"
+                                    android:gravity="end"
+                                    android:paddingTop="4dp"
+                                    android:paddingBottom="0dp">
+
+                                    <CheckBox
+                                        android:id="@+id/im050295"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="32dp"
+                                        android:layout_gravity="end"
+                                        android:background="@drawable/top_round_shape_transparent"
+                                        android:checked="@{form.im050198.equals(`98`)}"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:onClick="@{()->form.setIm050295(form.im050295.equals(`95`)?``:`95`)}"
+                                        android:padding="4dp"
+                                        android:tag="-1"
+                                        android:text="Same as above"
+                                        android:textColor="@color/redDark" />
+
 
                                 </TableRow>
 
@@ -784,10 +806,10 @@
                                         android:id="@+id/checkim0502"
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
+                                        android:background="@color/redOverlay"
                                         android:checked="@{form.im050298.equals(`98`)}"
                                         android:onClick="@{()->form.setIm050298(form.im050298.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
-                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
 
                                 </TableRow>
@@ -867,11 +889,34 @@
                                         android:id="@+id/checkim0503"
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
+                                        android:background="@color/redOverlay"
                                         android:checked="@{form.im050398.equals(`98`)}"
                                         android:onClick="@{()->form.setIm050398(form.im050398.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
-                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
+                                </TableRow>
+
+                                <TableRow
+                                    style="@style/sub_labels"
+                                    android:gravity="end"
+                                    android:paddingTop="4dp"
+                                    android:paddingBottom="0dp">
+
+                                    <CheckBox
+                                        android:id="@+id/im050495"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="32dp"
+                                        android:layout_gravity="end"
+                                        android:background="@drawable/top_round_shape_transparent"
+                                        android:checked="@{form.im050198.equals(`98`)}"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:onClick="@{()->form.setIm050495(form.im050495.equals(`95`)?``:`95`)}"
+                                        android:padding="4dp"
+                                        android:tag="-1"
+                                        android:text="Same as above"
+                                        android:textColor="@color/redDark" />
+
+
                                 </TableRow>
 
                                 <TableRow android:id="@+id/trIm0504">
@@ -936,10 +981,10 @@
                                         android:id="@+id/checkim0504"
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
+                                        android:background="@color/redOverlay"
                                         android:checked="@{form.im050498.equals(`98`)}"
                                         android:onClick="@{()->form.setIm050498(form.im050498.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
-                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
 
                                 </TableRow>
@@ -1006,10 +1051,10 @@
                                         android:id="@+id/checkim0505"
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
+                                        android:background="@color/redOverlay"
                                         android:checked="@{form.im050598.equals(`98`)}"
                                         android:onClick="@{()->form.setIm050598(form.im050598.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
-                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
                                 </TableRow>
 
@@ -1075,10 +1120,10 @@
                                         android:id="@+id/checkim0506"
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
+                                        android:background="@color/redOverlay"
                                         android:checked="@{form.im050698.equals(`98`)}"
                                         android:onClick="@{()->form.setIm050698(form.im050698.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
-                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
                                 </TableRow>
 
@@ -1157,10 +1202,10 @@
                                         android:id="@+id/checkim0507"
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
+                                        android:background="@color/redOverlay"
                                         android:checked="@{form.im050798.equals(`98`)}"
                                         android:onClick="@{()->form.setIm050798(form.im050798.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
-                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
 
                                 </TableRow>
@@ -1227,10 +1272,10 @@
                                         android:id="@+id/checkim0508"
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
+                                        android:background="@color/redOverlay"
                                         android:checked="@{form.im050898.equals(`98`)}"
                                         android:onClick="@{()->form.setIm050898(form.im050898.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
-                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
 
                                 </TableRow>
@@ -1297,10 +1342,10 @@
                                         android:id="@+id/checkim0509"
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
+                                        android:background="@color/redOverlay"
                                         android:checked="@{form.im050998.equals(`98`)}"
                                         android:onClick="@{()->form.setIm050998(form.im050998.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
-                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
                                 </TableRow>
 
@@ -1365,10 +1410,10 @@
                                         android:id="@+id/checkim0510"
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
+                                        android:background="@color/redOverlay"
                                         android:checked="@{form.im051098.equals(`98`)}"
                                         android:onClick="@{()->form.setIm051098(form.im051098.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
-                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
                                 </TableRow>
 
@@ -1434,10 +1479,10 @@
                                         android:id="@+id/checkim0510a"
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
-                                        android:checked="@{form.im0510a98.equals(`98`)}"
-                                        android:onClick="@{()->form.setIm0510a98(form.im051098.equals(`98`)?``:`98`)}"
-                                        android:tag="-1"
                                         android:background="@color/redOverlay"
+                                        android:checked="@{form.im0510a98.equals(`98`)}"
+                                        android:onClick="@{()->form.setIm0510a98(form.im0510a98.equals(`98`)?``:`98`)}"
+                                        android:tag="-1"
                                         android:visibility="invisible" />
                                 </TableRow>
 
@@ -1516,10 +1561,10 @@
                                         android:id="@+id/checkim0511"
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
+                                        android:background="@color/redOverlay"
                                         android:checked="@{form.im051198.equals(`98`)}"
                                         android:onClick="@{()->form.setIm051198(form.im051198.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
-                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
                                 </TableRow>
 
@@ -1584,10 +1629,10 @@
                                         android:id="@+id/checkim0512"
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
+                                        android:background="@color/redOverlay"
                                         android:checked="@{form.im051298.equals(`98`)}"
                                         android:onClick="@{()->form.setIm051298(form.im051298.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
-                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
                                 </TableRow>
 
@@ -1653,10 +1698,10 @@
                                         android:id="@+id/checkim0513"
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
+                                        android:background="@color/redOverlay"
                                         android:checked="@{form.im051398.equals(`98`)}"
                                         android:onClick="@{()->form.setIm051398(form.im051398.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
-                                        android:background="@color/redOverlay"
                                         android:visibility="invisible" />
                                 </TableRow>
 
@@ -1973,8 +2018,6 @@
                     </androidx.cardview.widget.CardView>
 
 
-
-
                     <!-- im07  Radio   -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVim07"
@@ -2032,10 +2075,6 @@
                     </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
-
-
-
-
 
 
                 <!--EndButton LinearLayout-->

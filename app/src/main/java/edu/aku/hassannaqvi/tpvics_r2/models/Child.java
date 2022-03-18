@@ -203,6 +203,10 @@ public class Child extends BaseObservable implements Observable {
     private String im051698 = _EMPTY_;
     private String im051798 = _EMPTY_;
 
+    private String im050295 = _EMPTY_;
+    private String im050495 = _EMPTY_;
+
+
     private long ageInMonths = -1;
 
 
@@ -2164,6 +2168,32 @@ public class Child extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.im051798);
     }
 
+
+    @Bindable
+    public String getIm050295() {
+        return im050295;
+    }
+
+    public void setIm050295(String im050295) {
+        this.im050295 = im050295;
+        setIm0502dd(im050295.equals("95") ? this.im0501dd : "");
+        setIm0502mm(im050295.equals("95") ? this.im0501mm : "");
+        setIm0502yy(im050295.equals("95") ? this.im0501yy : "");
+        notifyPropertyChanged(BR.im050295);
+    }
+
+    @Bindable
+    public String getIm050495() {
+        return im050495;
+    }
+
+    public void setIm050495(String im050495) {
+        this.im050495 = im050495;
+        setIm0504dd(im050495.equals("95") ? this.im0501dd : "");
+        setIm0504mm(im050495.equals("95") ? this.im0501mm : "");
+        setIm0504yy(im050495.equals("95") ? this.im0501yy : "");
+        notifyPropertyChanged(BR.im050495);
+    }
 
     public Child Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_ID));

@@ -733,8 +733,9 @@
                                         android:layout_height="32dp"
                                         android:layout_gravity="end"
                                         android:background="@drawable/top_round_shape_transparent"
-                                        android:checked="@{form.im050198.equals(`98`)}"
+                                        android:checked="@{form.im050295.equals(`95`)}"
                                         android:gravity="center_horizontal|center_vertical"
+                                        android:enabled="@{!form.im0501yy.equals(``)}"
                                         android:onClick="@{()->form.setIm050295(form.im050295.equals(`95`)?``:`95`)}"
                                         android:padding="4dp"
                                         android:tag="-1"
@@ -908,7 +909,8 @@
                                         android:layout_height="32dp"
                                         android:layout_gravity="end"
                                         android:background="@drawable/top_round_shape_transparent"
-                                        android:checked="@{form.im050198.equals(`98`)}"
+                                        android:checked="@{form.im050495.equals(`95`)}"
+                                        android:enabled="@{!form.im0503yy.equals(``)}"
                                         android:gravity="center_horizontal|center_vertical"
                                         android:onClick="@{()->form.setIm050495(form.im050495.equals(`95`)?``:`95`)}"
                                         android:padding="4dp"
@@ -989,6 +991,30 @@
 
                                 </TableRow>
 
+                                <TableRow
+                                    style="@style/sub_labels"
+                                    android:gravity="end"
+                                    android:paddingTop="4dp"
+                                    android:paddingBottom="0dp">
+
+                                    <CheckBox
+                                        android:id="@+id/im050595"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="32dp"
+                                        android:layout_gravity="end"
+                                        android:background="@drawable/top_round_shape_transparent"
+                                        android:checked="@{form.im050595.equals(`95`)}"
+                                        android:enabled="@{!form.im0504yy.equals(``)}"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:onClick="@{()->form.setIm050595(form.im050595.equals(`95`)?``:`95`)}"
+                                        android:padding="4dp"
+                                        android:tag="-1"
+                                        android:text="Same as above"
+                                        android:textColor="@color/redDark" />
+
+
+                                </TableRow>
+
                                 <TableRow android:id="@+id/trIm0505">
 
                                     <TextView
@@ -1056,6 +1082,30 @@
                                         android:onClick="@{()->form.setIm050598(form.im050598.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
                                         android:visibility="invisible" />
+                                </TableRow>
+
+                                <TableRow
+                                    style="@style/sub_labels"
+                                    android:gravity="end"
+                                    android:paddingTop="4dp"
+                                    android:paddingBottom="0dp">
+
+                                    <CheckBox
+                                        android:id="@+id/im050695"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="32dp"
+                                        android:layout_gravity="end"
+                                        android:background="@drawable/top_round_shape_transparent"
+                                        android:checked="@{form.im050695.equals(`95`)}"
+                                        android:enabled="@{!form.im0505yy.equals(``)}"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:onClick="@{()->form.setIm050695(form.im050695.equals(`95`)?``:`95`)}"
+                                        android:padding="4dp"
+                                        android:tag="-1"
+                                        android:text="Same as above"
+                                        android:textColor="@color/redDark" />
+
+
                                 </TableRow>
 
                                 <TableRow android:id="@+id/trIm0506">
@@ -1210,6 +1260,30 @@
 
                                 </TableRow>
 
+                                <TableRow
+                                    style="@style/sub_labels"
+                                    android:gravity="end"
+                                    android:paddingTop="4dp"
+                                    android:paddingBottom="0dp">
+
+                                    <CheckBox
+                                        android:id="@+id/im050895"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="32dp"
+                                        android:layout_gravity="end"
+                                        android:background="@drawable/top_round_shape_transparent"
+                                        android:checked="@{form.im050895.equals(`95`)}"
+                                        android:enabled="@{!form.im0507yy.equals(``)}"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:onClick="@{()->form.setIm050895(form.im050895.equals(`95`)?``:`95`)}"
+                                        android:padding="4dp"
+                                        android:tag="-1"
+                                        android:text="Same as above"
+                                        android:textColor="@color/redDark" />
+
+
+                                </TableRow>
+
                                 <TableRow android:id="@+id/trIm0508">
 
                                     <TextView
@@ -1277,6 +1351,30 @@
                                         android:onClick="@{()->form.setIm050898(form.im050898.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
                                         android:visibility="invisible" />
+
+                                </TableRow>
+
+                                <TableRow
+                                    style="@style/sub_labels"
+                                    android:gravity="end"
+                                    android:paddingTop="4dp"
+                                    android:paddingBottom="0dp">
+
+                                    <CheckBox
+                                        android:id="@+id/im050995"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="32dp"
+                                        android:layout_gravity="end"
+                                        android:background="@drawable/top_round_shape_transparent"
+                                        android:checked="@{form.im050995.equals(`95`)}"
+                                        android:enabled="@{!form.im0508yy.equals(``)}"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:onClick="@{()->form.setIm050995(form.im050995.equals(`95`)?``:`95`)}"
+                                        android:padding="4dp"
+                                        android:tag="-1"
+                                        android:text="Same as above"
+                                        android:textColor="@color/redDark" />
+
 
                                 </TableRow>
 
@@ -1349,6 +1447,30 @@
                                         android:visibility="invisible" />
                                 </TableRow>
 
+                                <TableRow
+                                    style="@style/sub_labels"
+                                    android:gravity="end"
+                                    android:paddingTop="4dp"
+                                    android:paddingBottom="0dp">
+
+                                    <CheckBox
+                                        android:id="@+id/im051095"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="32dp"
+                                        android:layout_gravity="end"
+                                        android:background="@drawable/top_round_shape_transparent"
+                                        android:checked="@{form.im051095.equals(`95`)}"
+                                        android:enabled="@{!form.im0509yy.equals(``)}"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:onClick="@{()->form.setIm051095(form.im051095.equals(`95`)?``:`95`)}"
+                                        android:padding="4dp"
+                                        android:tag="-1"
+                                        android:text="Same as above"
+                                        android:textColor="@color/redDark" />
+
+
+                                </TableRow>
+
                                 <TableRow android:id="@+id/trIm0510">
 
                                     <TextView
@@ -1415,6 +1537,30 @@
                                         android:onClick="@{()->form.setIm051098(form.im051098.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
                                         android:visibility="invisible" />
+                                </TableRow>
+
+                                <TableRow
+                                    style="@style/sub_labels"
+                                    android:gravity="end"
+                                    android:paddingTop="4dp"
+                                    android:paddingBottom="0dp">
+
+                                    <CheckBox
+                                        android:id="@+id/im0510a95"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="32dp"
+                                        android:layout_gravity="end"
+                                        android:background="@drawable/top_round_shape_transparent"
+                                        android:checked="@{form.im0510a95.equals(`95`)}"
+                                        android:enabled="@{!form.im0510yy.equals(``)}"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:onClick="@{()->form.setIm0510a95(form.im0510a95.equals(`95`)?``:`95`)}"
+                                        android:padding="4dp"
+                                        android:tag="-1"
+                                        android:text="Same as above"
+                                        android:textColor="@color/redDark" />
+
+
                                 </TableRow>
 
                                 <TableRow android:id="@+id/trIm0510a">
@@ -1568,6 +1714,30 @@
                                         android:visibility="invisible" />
                                 </TableRow>
 
+                                <TableRow
+                                    style="@style/sub_labels"
+                                    android:gravity="end"
+                                    android:paddingTop="4dp"
+                                    android:paddingBottom="0dp">
+
+                                    <CheckBox
+                                        android:id="@+id/im051295"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="32dp"
+                                        android:layout_gravity="end"
+                                        android:background="@drawable/top_round_shape_transparent"
+                                        android:checked="@{form.im051295.equals(`95`)}"
+                                        android:enabled="@{!form.im0511yy.equals(``)}"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:onClick="@{()->form.setIm051295(form.im051295.equals(`95`)?``:`95`)}"
+                                        android:padding="4dp"
+                                        android:tag="-1"
+                                        android:text="Same as above"
+                                        android:textColor="@color/redDark" />
+
+
+                                </TableRow>
+
                                 <TableRow android:id="@+id/trIm0512">
 
                                     <TextView
@@ -1634,6 +1804,30 @@
                                         android:onClick="@{()->form.setIm051298(form.im051298.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
                                         android:visibility="invisible" />
+                                </TableRow>
+
+                                <TableRow
+                                    style="@style/sub_labels"
+                                    android:gravity="end"
+                                    android:paddingTop="4dp"
+                                    android:paddingBottom="0dp">
+
+                                    <CheckBox
+                                        android:id="@+id/im051395"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="32dp"
+                                        android:layout_gravity="end"
+                                        android:background="@drawable/top_round_shape_transparent"
+                                        android:checked="@{form.im051395.equals(`95`)}"
+                                        android:enabled="@{!form.im0512yy.equals(``)}"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:onClick="@{()->form.setIm051395(form.im051395.equals(`95`)?``:`95`)}"
+                                        android:padding="4dp"
+                                        android:tag="-1"
+                                        android:text="Same as above"
+                                        android:textColor="@color/redDark" />
+
+
                                 </TableRow>
 
                                 <TableRow android:id="@+id/trIm0513">
@@ -1703,6 +1897,30 @@
                                         android:onClick="@{()->form.setIm051398(form.im051398.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
                                         android:visibility="invisible" />
+                                </TableRow>
+
+                                <TableRow
+                                    style="@style/sub_labels"
+                                    android:gravity="end"
+                                    android:paddingTop="4dp"
+                                    android:paddingBottom="0dp">
+
+                                    <CheckBox
+                                        android:id="@+id/im051495"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="32dp"
+                                        android:layout_gravity="end"
+                                        android:background="@drawable/top_round_shape_transparent"
+                                        android:checked="@{form.im051495.equals(`95`)}"
+                                        android:enabled="@{!form.im0513yy.equals(``)}"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:onClick="@{()->form.setIm051495(form.im051495.equals(`95`)?``:`95`)}"
+                                        android:padding="4dp"
+                                        android:tag="-1"
+                                        android:text="Same as above"
+                                        android:textColor="@color/redDark" />
+
+
                                 </TableRow>
 
                                 <TableRow android:id="@+id/trIm0514">
@@ -1852,6 +2070,30 @@
                                         android:onClick="@{()->form.setIm051598(form.im051598.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
                                         android:visibility="invisible" />
+
+                                </TableRow>
+
+                                <TableRow
+                                    style="@style/sub_labels"
+                                    android:gravity="end"
+                                    android:paddingTop="4dp"
+                                    android:paddingBottom="0dp">
+
+                                    <CheckBox
+                                        android:id="@+id/im051795"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="32dp"
+                                        android:layout_gravity="end"
+                                        android:background="@drawable/top_round_shape_transparent"
+                                        android:checked="@{form.im051795.equals(`95`)}"
+                                        android:enabled="@{!form.im0515yy.equals(``)}"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:onClick="@{()->form.setIm051795(form.im051795.equals(`95`)?``:`95`)}"
+                                        android:padding="4dp"
+                                        android:tag="-1"
+                                        android:text="Same as above"
+                                        android:textColor="@color/redDark" />
+
 
                                 </TableRow>
 

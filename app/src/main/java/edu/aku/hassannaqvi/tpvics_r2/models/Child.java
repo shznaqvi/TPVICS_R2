@@ -205,6 +205,16 @@ public class Child extends BaseObservable implements Observable {
 
     private String im050295 = _EMPTY_;
     private String im050495 = _EMPTY_;
+    private String im050595 = _EMPTY_;
+    private String im050695 = _EMPTY_;
+    private String im050895 = _EMPTY_;
+    private String im050995 = _EMPTY_;
+    private String im051095 = _EMPTY_;
+    private String im0510a95 = _EMPTY_;
+    private String im051295 = _EMPTY_;
+    private String im051395 = _EMPTY_;
+    private String im051495 = _EMPTY_;
+    private String im051795 = _EMPTY_;
 
 
     private long ageInMonths = -1;
@@ -2175,6 +2185,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm050295(String im050295) {
+        if (this.im050295.equals(im050295)) return; // for all checkboxes
         this.im050295 = im050295;
         setIm0502dd(im050295.equals("95") ? this.im0501dd : "");
         setIm0502mm(im050295.equals("95") ? this.im0501mm : "");
@@ -2188,12 +2199,168 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setIm050495(String im050495) {
+        if (this.im050495.equals(im050495)) return; // for all checkboxes
         this.im050495 = im050495;
-        setIm0504dd(im050495.equals("95") ? this.im0501dd : "");
-        setIm0504mm(im050495.equals("95") ? this.im0501mm : "");
-        setIm0504yy(im050495.equals("95") ? this.im0501yy : "");
+        setIm0504dd(im050495.equals("95") ? this.im0503dd : "");
+        setIm0504mm(im050495.equals("95") ? this.im0503mm : "");
+        setIm0504yy(im050495.equals("95") ? this.im0503yy : "");
+
+        setIm050595(im050495.equals("95") ? this.im050595 : "");
         notifyPropertyChanged(BR.im050495);
     }
+
+    @Bindable
+    public String getIm050595() {
+        return im050595;
+    }
+
+    public void setIm050595(String im050595) {
+        if (this.im050595.equals(im050595)) return; // for all checkboxes
+        this.im050595 = im050595;
+        setIm0505dd(im050595.equals("95") ? this.im0504dd : "");
+        setIm0505mm(im050595.equals("95") ? this.im0504mm : "");
+        setIm0505yy(im050595.equals("95") ? this.im0504yy : "");
+
+        setIm050695(im050595.equals("95") ? this.im050695 : "");
+        notifyPropertyChanged(BR.im050595);
+    }
+
+    @Bindable
+    public String getIm050695() {
+        return im050695;
+    }
+
+    public void setIm050695(String im050695) {
+        if (this.im050695.equals(im050695)) return; // for all checkboxes
+        this.im050695 = im050695;
+        setIm0506dd(im050695.equals("95") ? this.im0505dd : "");
+        setIm0506mm(im050695.equals("95") ? this.im0505mm : "");
+        setIm0506yy(im050695.equals("95") ? this.im0505yy : "");
+        notifyPropertyChanged(BR.im050695);
+    }
+
+    @Bindable
+    public String getIm050895() {
+        return im050895;
+    }
+
+    public void setIm050895(String im050895) {
+        if (this.im050895.equals(im050895)) return; // for all checkboxes
+        this.im050895 = im050895;
+        setIm0508dd(im050895.equals("95") ? this.im0507dd : "");
+        setIm0508mm(im050895.equals("95") ? this.im0507mm : "");
+        setIm0508yy(im050895.equals("95") ? this.im0507yy : "");
+
+        setIm050995(im050895.equals("95") ? this.im050995 : "");
+        notifyPropertyChanged(BR.im050895);
+    }
+
+    @Bindable
+    public String getIm050995() {
+        return im050995;
+    }
+
+    public void setIm050995(String im050995) {
+        if (this.im050995.equals(im050995)) return; // for all checkboxes
+        this.im050995 = im050995;
+        setIm0509dd(im050995.equals("95") ? this.im0508dd : "");
+        setIm0509mm(im050995.equals("95") ? this.im0508mm : "");
+        setIm0509yy(im050995.equals("95") ? this.im0508yy : "");
+
+        setIm051095(im050995.equals("95") ? this.im051095 : "");
+        notifyPropertyChanged(BR.im050995);
+    }
+
+    @Bindable
+    public String getIm051095() {
+        return im051095;
+    }
+
+    public void setIm051095(String im051095) {
+        if (this.im051095.equals(im051095)) return; // for all checkboxes
+        this.im051095 = im051095;
+        setIm0510dd(im051095.equals("95") ? this.im0509dd : "");
+        setIm0510mm(im051095.equals("95") ? this.im0509mm : "");
+        setIm0510yy(im051095.equals("95") ? this.im0509yy : "");
+
+        setIm0510a95(im051095.equals("95") ? this.im0510a95 : "");
+        notifyPropertyChanged(BR.im051095);
+    }
+
+    @Bindable
+    public String getIm0510a95() {
+        return im0510a95;
+    }
+
+    public void setIm0510a95(String im0510a95) {
+        if (this.im0510a95.equals(im0510a95)) return; // for all checkboxes
+        this.im0510a95 = im0510a95;
+        setIm0510add(im0510a95.equals("95") ? this.im0510dd : "");
+        setIm0510amm(im0510a95.equals("95") ? this.im0510mm : "");
+        setIm0510ayy(im0510a95.equals("95") ? this.im0510yy : "");
+        notifyPropertyChanged(BR.im0510a95);
+    }
+
+    @Bindable
+    public String getIm051295() {
+        return im051295;
+    }
+
+    public void setIm051295(String im051295) {
+        if (this.im051295.equals(im051295)) return; // for all checkboxes
+        this.im051295 = im051295;
+        setIm0512dd(im051295.equals("95") ? this.im0511dd : "");
+        setIm0512mm(im051295.equals("95") ? this.im0511mm : "");
+        setIm0512yy(im051295.equals("95") ? this.im0511yy : "");
+
+        setIm051395(im051295.equals("95") ? this.im051395 : "");
+        notifyPropertyChanged(BR.im051295);
+    }
+
+    @Bindable
+    public String getIm051395() {
+        return im051395;
+    }
+
+    public void setIm051395(String im051395) {
+        if (this.im051395.equals(im051395)) return; // for all checkboxes
+        this.im051395 = im051395;
+        setIm0513dd(im051395.equals("95") ? this.im0512dd : "");
+        setIm0513mm(im051395.equals("95") ? this.im0512mm : "");
+        setIm0513yy(im051395.equals("95") ? this.im0512yy : "");
+
+        setIm051495(im051395.equals("95") ? this.im051495 : "");
+        notifyPropertyChanged(BR.im051395);
+    }
+
+    @Bindable
+    public String getIm051495() {
+        return im051495;
+    }
+
+    public void setIm051495(String im051495) {
+        if (this.im051495.equals(im051495)) return; // for all checkboxes
+        this.im051495 = im051495;
+        setIm0514dd(im051495.equals("95") ? this.im0513dd : "");
+        setIm0514mm(im051495.equals("95") ? this.im0513mm : "");
+        setIm0514yy(im051495.equals("95") ? this.im0513yy : "");
+        notifyPropertyChanged(BR.im051495);
+    }
+
+    @Bindable
+    public String getIm051795() {
+        return im051795;
+    }
+
+    public void setIm051795(String im051795) {
+        if (this.im051795.equals(im051795)) return; // for all checkboxes
+        this.im051795 = im051795;
+        setIm0517dd(im051795.equals("95") ? this.im0515dd : "");
+        setIm0517mm(im051795.equals("95") ? this.im0515mm : "");
+        setIm0517yy(im051795.equals("95") ? this.im0515yy : "");
+        notifyPropertyChanged(BR.im051795);
+    }
+
 
     public Child Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_ID));
@@ -2393,6 +2560,18 @@ public class Child extends BaseObservable implements Observable {
             this.im051598 = json.getString("im051598");
             this.im051698 = json.getString("im051698");
             this.im051798 = json.getString("im051798");
+            this.im050295 = json.getString("im050295 ");
+            this.im050495 = json.getString("im050495 ");
+            this.im050595 = json.getString("im050595 ");
+            this.im050695 = json.getString("im050695 ");
+            this.im050895 = json.getString("im050895 ");
+            this.im050995 = json.getString("im050995 ");
+            this.im051095 = json.getString("im051095 ");
+            this.im0510a95 = json.getString("im0510a95");
+            this.im051295 = json.getString("im051295 ");
+            this.im051395 = json.getString("im051395 ");
+            this.im051495 = json.getString("im051495 ");
+            this.im051795 = json.getString("im051795 ");
         }
     }
 
@@ -2531,7 +2710,19 @@ public class Child extends BaseObservable implements Observable {
                 .put("im051498", im051498)
                 .put("im051598", im051598)
                 .put("im051698", im051698)
-                .put("im051798", im051798);
+                .put("im051798", im051798)
+                .put("im050295", im050295)
+                .put("im050495", im050495)
+                .put("im050595", im050595)
+                .put("im050695", im050695)
+                .put("im050895", im050895)
+                .put("im050995", im050995)
+                .put("im051095", im051095)
+                .put("im0510a95", im0510a95)
+                .put("im051295", im051295)
+                .put("im051395", im051395)
+                .put("im051495", im051495)
+                .put("im051795", im051795);
 
         return json.toString();
     }

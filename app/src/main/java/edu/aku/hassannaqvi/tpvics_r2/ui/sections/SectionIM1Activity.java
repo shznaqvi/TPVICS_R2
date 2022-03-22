@@ -123,6 +123,108 @@ public class SectionIM1Activity extends AppCompatActivity {
         setDefault(bi.im0515dd, bi.im0515mm, bi.im0515yy);
         setDefault(bi.im0516dd, bi.im0516mm, bi.im0516yy);
         setDefault(bi.im0517dd, bi.im0517mm, bi.im0517yy);
+
+        // at birth
+        setCheckNull(bi.im0501dd, bi.im0501mm, bi.im0501yy, bi.im050295, bi.im0502dd, bi.im0502mm, bi.im0502yy);
+        // at 6 weeks
+        setCheckNull(bi.im0503dd, bi.im0503mm, bi.im0503yy, bi.im050495, bi.im0504dd, bi.im0504mm, bi.im0504yy);
+        setCheckNull(bi.im0504dd, bi.im0504mm, bi.im0504yy, bi.im050595, bi.im0505dd, bi.im0505mm, bi.im0505yy);
+        setCheckNull(bi.im0505dd, bi.im0505mm, bi.im0505yy, bi.im050695, bi.im0506dd, bi.im0506mm, bi.im0506yy);
+        //at 10 weeks
+        setCheckNull(bi.im0507dd, bi.im0507mm, bi.im0507yy, bi.im050895, bi.im0508dd, bi.im0508mm, bi.im0508yy);
+        setCheckNull(bi.im0508dd, bi.im0508mm, bi.im0508yy, bi.im050995, bi.im0509dd, bi.im0509mm, bi.im0509yy);
+        setCheckNull(bi.im0509dd, bi.im0509mm, bi.im0509yy, bi.im051095, bi.im0510dd, bi.im0510mm, bi.im0510yy);
+        setCheckNull(bi.im0510dd, bi.im0510mm, bi.im0510yy, bi.im0510a95, bi.im0510add, bi.im0510amm, bi.im0510ayy);
+
+        // at 14 weeks
+
+        setCheckNull(bi.im0511dd, bi.im0511mm, bi.im0511yy, bi.im051295, bi.im0512dd, bi.im0512mm, bi.im0512yy);
+        setCheckNull(bi.im0512dd, bi.im0512mm, bi.im0512yy, bi.im051395, bi.im0513dd, bi.im0513mm, bi.im0513yy);
+        setCheckNull(bi.im0513dd, bi.im0513mm, bi.im0513yy, bi.im051495, bi.im0514dd, bi.im0514mm, bi.im0514yy);
+
+        // at 9 Months
+
+        setCheckNull(bi.im0515dd, bi.im0515mm, bi.im0515yy, bi.im051795, bi.im0516dd, bi.im0516mm, bi.im0516yy);
+
+    }
+
+    private void setCheckNull(EditTextPicker day, EditTextPicker month, EditTextPicker year, CheckBox checkBox, EditTextPicker dd, EditTextPicker mm, EditTextPicker yy)
+    {
+        day.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(day.getText().toString().isEmpty()) return;
+                month.setEnabled(true);
+                year.setEnabled(true);
+                checkBox.setChecked(false);
+                dd.setText(null);
+                mm.setText(null);
+                yy.setText(null);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        month.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(month.getText().toString().isEmpty()) return;
+                day.setEnabled(true);
+                year.setEnabled(true);
+                checkBox.setChecked(false);
+                dd.setText(null);
+                mm.setText(null);
+                yy.setText(null);
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        year.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(year.getText().toString().isEmpty()) return;
+                day.setEnabled(true);
+                month.setEnabled(true);
+                checkBox.setChecked(false);
+                dd.setText(null);
+                mm.setText(null);
+                yy.setText(null);
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
     }
 
 

@@ -151,7 +151,7 @@ public class HouseholdScreenActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Toast.makeText(this, "Activity Resumed!", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "Activity Resumed!", Toast.LENGTH_SHORT).show();
         if (MainApp.childList.size() > 0 && MainApp.householdChecked) {
             bi.btnContinue.setEnabled(childCount == MainApp.childCompleted.size());
             bi.btnContinue.setBackground(childCount == MainApp.childCompleted.size() ? getResources().getDrawable(R.drawable.button_shape_green) : getResources().getDrawable(R.drawable.button_shape_gray));

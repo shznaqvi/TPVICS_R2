@@ -48,10 +48,10 @@ public class SectionCHActivity extends AppCompatActivity {
         // Set min year for 23 - 6 months
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.MONTH, -6);
-        bi.cb03yy.setMinvalue(Calendar.YEAR);
+        bi.cb03yy.setMinvalue(cal.get(Calendar.YEAR));
         cal.add(Calendar.MONTH, +6);
         cal.add(Calendar.MONTH, -23);
-        bi.cb03yy.setMaxvalue(Calendar.YEAR);
+        bi.cb03yy.setMaxvalue(cal.get(Calendar.YEAR));
     }
 
     private boolean insertNewRecord() {

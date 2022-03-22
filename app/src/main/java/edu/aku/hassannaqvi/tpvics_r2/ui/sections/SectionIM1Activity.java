@@ -35,6 +35,7 @@ import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionIm1Binding;
+import edu.aku.hassannaqvi.tpvics_r2.ui.EndingActivity;
 import edu.aku.hassannaqvi.tpvics_r2.ui.TakePhoto;
 
 public class SectionIM1Activity extends AppCompatActivity {
@@ -44,12 +45,17 @@ public class SectionIM1Activity extends AppCompatActivity {
     ActivitySectionIm1Binding bi;
     String[] deff = {"44", "66", "88", "97"};
     private DatabaseHelper db;
+    private String requestCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_im1);
         setSupportActionBar(bi.toolbar);
+
+        Intent intent = getIntent();
+        requestCode = intent.getStringExtra("requestCode");
+
         db = MainApp.appInfo.dbHelper;
         bi.setForm(child);
         setupSkips();
@@ -190,14 +196,24 @@ public class SectionIM1Activity extends AppCompatActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
         if (updateDB()) {
-            startActivity(new Intent(this, SectionIM2Activity.class).setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT));
+            Intent forwardIntent = new Intent(this, EndingActivity.class);
+            forwardIntent.putExtra("requestCode", requestCode);
+            forwardIntent.putExtra("complete", true);
+            forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+            setResult(RESULT_OK, forwardIntent);
+
+            startActivity(forwardIntent);
             finish();
+
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
 
     public void btnEnd(View view) {
-        setResult(RESULT_CANCELED);
+        Intent returnIntent = new Intent();
+        returnIntent.putExtra("requestCode", requestCode);
+        setResult(RESULT_CANCELED, returnIntent);
+        //startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
         finish();
     }
 

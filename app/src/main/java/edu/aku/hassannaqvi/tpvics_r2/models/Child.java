@@ -18,6 +18,8 @@ import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Calendar;
 import java.util.Locale;
 
@@ -528,7 +530,7 @@ public class Child extends BaseObservable implements Observable {
         setCb01b(ec21.equals("1") ? this.cb01b : "");
         setCb02a(ec21.equals("1") ? this.cb02a : "");
         setCb02b(ec21.equals("1") ? this.cb02b : "");
-        setEc22(ec21.equals("2") ? this.ec22 : "");
+
 
         notifyPropertyChanged(BR.ec21);
     }
@@ -2785,7 +2787,8 @@ public class Child extends BaseObservable implements Observable {
 
     private void CaluculateAge() {
         Log.d(TAG, "CaluculateAge: " + this.cb03yy + "-" + this.cb03mm + "-" + this.cb03dd);
-
+        setCb04mm("");
+        setCb04yy("");
         if (!this.cb03yy.equals("") && !this.cb03yy.equals("9998") && !this.cb03mm.equals("") && !this.cb03dd.equals("")) {
 
             if ((Integer.parseInt(this.cb03mm) > 12 && !this.cb03mm.equals("98"))
@@ -2840,6 +2843,17 @@ public class Child extends BaseObservable implements Observable {
                 Log.d(TAG, "CaluculateAge: Y-" + tYear + " M-" + tMonth + " D-" + tDay);
                /* setH231d(String.valueOf(tDay));
                 setH231m(String.valueOf(tMonth));*/
+
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                    LocalDate localCur = LocalDate.of(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH);
+                    LocalDate localCal = LocalDate.of(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH);
+
+                    Period period = Period.between(localCal, localCur);
+                    tYear = period.getYears();
+                    tMonth = period.getMonths();
+                    tDay = period.getDays();
+
+                }
 
                 setCb04yy(String.valueOf(tYear));
                 setCb04mm(String.valueOf(tMonth));

@@ -2,6 +2,7 @@ package edu.aku.hassannaqvi.tpvics_r2.ui.sections;
 
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.child;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -33,11 +34,16 @@ public class SectionIM2Activity extends AppCompatActivity {
     ActivitySectionIm2Binding bi;
     String[] deff = {"44", "66", "88", "97"};
     private DatabaseHelper db;
+    private String requestCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_im2);
+
+        Intent intent = getIntent();
+        requestCode = intent.getStringExtra("requestCode");
+
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.setForm(child);
@@ -115,7 +121,12 @@ public class SectionIM2Activity extends AppCompatActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
         if (updateDB()) {
-            setResult(RESULT_OK);
+            Intent forwardIntent = new Intent(this, SectionIM2Activity.class);
+            forwardIntent.putExtra("requestCode", requestCode);
+            forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+            setResult(RESULT_OK, forwardIntent);
+
+            startActivity(forwardIntent);
             finish();
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }

@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,6 +52,11 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int pos) {
         int position = viewHolder.getAdapterPosition();
+
+        Animation animation = AnimationUtils.loadAnimation(mContext,
+                R.anim.fade_in_drop);
+        viewHolder.itemView.startAnimation(animation);
+
         Log.d(TAG, "Element " + position + " set.");
         Child child = this.member.get(position);        // Get element from your dataset at this position and replace the contents of the view
         // with that element
@@ -67,7 +74,7 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
 
         //String pregStatus = familyMember.getRb07().equals("1") ? "Pregnant" : "Not Pregnant";
 
-        MainApp.memberComplete = completeCount == MainApp.childCount;
+        //MainApp.memberComplete = completeCount == MainApp.childCount;
 
         fName.setText(child.getEc14());
         fAge.setText(child.getAgeInMonths() + "m ");
@@ -176,7 +183,7 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
                 Intent intent = new Intent(mContext, SectionCBActivity.class);
 
                 intent.putExtra("position", position);
-                intent.putExtra("requestCode", "2");
+                intent.putExtra("requestCode", "4");
 
                 MainApp.selectedChild = position;
 

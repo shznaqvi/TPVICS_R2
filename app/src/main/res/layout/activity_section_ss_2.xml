@@ -1358,7 +1358,7 @@
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="@string/ss25a" />
@@ -1385,7 +1385,7 @@
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="@string/ss25b" />
@@ -1412,7 +1412,7 @@
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="@string/ss25c" />
@@ -1439,7 +1439,7 @@
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="@string/ss25d" />
@@ -1466,7 +1466,7 @@
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="@string/ss25e" />
@@ -1493,7 +1493,7 @@
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="@string/ss25f" />
@@ -1520,7 +1520,7 @@
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:text="@string/ss25g" />
@@ -1638,12 +1638,15 @@
                                 android:text="@string/Qss27" />
 
                             <TextView
+                                style="@style/sub_labels"
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:layout_height="match_parent"
                                 android:text="@string/ss27" />
 
                             <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+
+                                style="@style/textInput"
                                 android:id="@+id/ss27"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
@@ -1692,7 +1695,9 @@
                             android:id="@+id/ss28"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. @#%()_-+=?"
+                            android:gravity="start|top"
+                            android:lines="5"
                             android:hint="@string/ss28"
                             android:text="@={form.ss28}" />
 

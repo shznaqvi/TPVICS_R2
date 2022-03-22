@@ -15,6 +15,8 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
+import java.util.Calendar;
+
 import edu.aku.hassannaqvi.tpvics_r2.R;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
@@ -37,11 +39,19 @@ public class SectionCHActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.setChild(MainApp.child);
-        MainApp.child.setEc13(String.valueOf(MainApp.childCount + 1));
+        if (child.getEc13().equals(""))
+            MainApp.child.setEc13(String.valueOf(MainApp.childCount + 1));
         Intent intent = getIntent();
 
         requestCode = intent.getStringExtra("requestCode");
 
+        // Set min year for 23 - 6 months
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.MONTH, -6);
+        bi.cb03yy.setMinvalue(Calendar.YEAR);
+        cal.add(Calendar.MONTH, +6);
+        cal.add(Calendar.MONTH, -23);
+        bi.cb03yy.setMaxvalue(Calendar.YEAR);
     }
 
     private boolean insertNewRecord() {

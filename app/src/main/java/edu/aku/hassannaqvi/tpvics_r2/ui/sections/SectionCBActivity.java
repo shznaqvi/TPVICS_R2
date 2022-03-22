@@ -20,7 +20,6 @@ import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionCbBinding;
-import edu.aku.hassannaqvi.tpvics_r2.ui.EndingActivity;
 
 public class SectionCBActivity extends AppCompatActivity {
 
@@ -28,6 +27,7 @@ public class SectionCBActivity extends AppCompatActivity {
     private static final String TAG = "SectionCBActivity";
     ActivitySectionCbBinding bi;
     private DatabaseHelper db;
+    private String requestCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,9 @@ public class SectionCBActivity extends AppCompatActivity {
         child.setEc13cline(child.getEc13());
         child.setEc14cname(child.getEc14());
         bi.setChild(child);
+
+        Intent intent = getIntent();
+        requestCode = intent.getStringExtra("requestCode");
     }
 
     private boolean updateDB() {
@@ -64,20 +67,32 @@ public class SectionCBActivity extends AppCompatActivity {
         if (!formValidation()) return;
         // saveDraft();
         if (updateDB()) {
+            Intent forwardIntent = new Intent(this, SectionIM1Activity.class);
+            forwardIntent.putExtra("requestCode", requestCode);
+            forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+            setResult(RESULT_OK, forwardIntent);
+
+            startActivity(forwardIntent);
             finish();
-            if (child.getEc21().equals("1")) {
+
+
+         /*   if (child.getEc21().equals("1")) {
                 startActivity(new Intent(this, SectionIM1Activity.class));
             } else {
                 startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
-            }
+            }*/
         } else
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
 
     public void btnEnd(View view) {
+
+        Intent returnIntent = new Intent();
+        returnIntent.putExtra("requestCode", requestCode);
+        setResult(RESULT_CANCELED, returnIntent);
+        //startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
         finish();
-        startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
     private boolean formValidation() {
@@ -87,8 +102,11 @@ public class SectionCBActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-        setResult(RESULT_CANCELED); finish();
+        //Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
+        Intent returnIntent = new Intent();
+        returnIntent.putExtra("requestCode", requestCode);
+        setResult(RESULT_CANCELED, returnIntent);
+        finish();
     }
 
 

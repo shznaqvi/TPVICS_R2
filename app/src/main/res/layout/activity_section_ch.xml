@@ -114,7 +114,8 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="2"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:inputType="textPersonName|textCapWords"
                             android:hint="@string/ec14"
                             android:text="@={child.ec14}" />
 
@@ -211,7 +212,8 @@
                             android:id="@+id/ec16"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
+                            android:inputType="textPersonName|textCapWords"
                             android:hint="@string/ec16"
                             android:text="@={child.ec16}" />
                     </LinearLayout>
@@ -403,6 +405,9 @@
                             android:checked="@{child.cb03dk.equals(`98`)}"
                             android:onClick="@{()->child.setCb03dk(child.cb03dk.equals(`98`)?``:`98`)}"
                             android:tag="-1"
+                            android:backgroundTint="@color/redOverlay"
+                            android:paddingStart="0dp"
+                            android:textColor="@color/redDark"
                             android:text="@string/cb03dk" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -474,6 +479,7 @@
                                 android:hint="@string/cb04mm"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                android:enabled="@{cb03dk.checked}"
                                 android:text="@={child.cb04mm}"
                                 app:maxValue="11"
                                 app:minValue="0"
@@ -488,6 +494,7 @@
                                 android:hint="@string/cb04yy"
                                 android:inputType="number"
                                 android:maxLength="1"
+                                android:enabled="@{cb03dk.checked}"
                                 android:text="@={child.cb04yy}"
                                 app:maxValue="2"
                                 app:minValue="0"

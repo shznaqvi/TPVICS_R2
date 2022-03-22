@@ -1,14 +1,14 @@
 package edu.aku.hassannaqvi.tpvics_r2.ui.sections;
 
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.child;
-import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.form;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
@@ -28,6 +28,7 @@ public class ChildEndingActivity extends AppCompatActivity {
     ActivityChildEndingBinding bi;
     int checkToEnable;
     private DatabaseHelper db;
+    private String requestCode;
 
 
     @Override
@@ -36,7 +37,8 @@ public class ChildEndingActivity extends AppCompatActivity {
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_child_ending);
         bi.setChild(MainApp.child);
-
+        Intent intent = getIntent();
+        requestCode = intent.getStringExtra("requestCode");
         setSupportActionBar(bi.toolbar);
         //setTitle(R.string.section1mainheading);
         if (MainApp.superuser)
@@ -103,8 +105,12 @@ public class ChildEndingActivity extends AppCompatActivity {
         if (UpdateDB()) {
 
             recordEntry();
+            Intent forwardIntent = new Intent();
+            forwardIntent.putExtra("requestCode", requestCode);
+            //forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+            setResult(RESULT_OK, forwardIntent);
+            //startActivity(forwardIntent);
             finish();
-            setResult(RESULT_OK);
            /* Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
            */

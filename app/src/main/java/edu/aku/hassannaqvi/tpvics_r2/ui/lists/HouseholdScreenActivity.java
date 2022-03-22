@@ -112,13 +112,13 @@ public class HouseholdScreenActivity extends AppCompatActivity {
                     MainApp.childCompleted.add(Integer.parseInt(child.getEc13()) - 1);
                 }
             }
-            childsAdapter = new ChildAdapter(this, MainApp.childList, MemberInfoLauncher);
-            bi.rvChild.setAdapter(childsAdapter);
+
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(Child): " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
-
+        childsAdapter = new ChildAdapter(this, MainApp.childList, MemberInfoLauncher);
+        bi.rvChild.setAdapter(childsAdapter);
 
         bi.addChild.setOnClickListener(new View.OnClickListener() {
             @Override

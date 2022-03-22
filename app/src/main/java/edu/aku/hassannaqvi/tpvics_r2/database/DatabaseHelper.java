@@ -623,7 +623,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //update SyncedTables
-    public void updateSyncedFormHH(String id) {
+    public void updateSyncedForms(String id) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 
 // New value for one column
@@ -643,7 +643,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public void updateSyncedChild(String id) {
+    public void updateSyncedChildren(String id) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(ChildTable.COLUMN_SYNCED, true);
@@ -657,7 +657,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    public void updateSyncedEntryLog(String id) {
+    public void updateSyncedEntryLogs(String id) {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         ContentValues values = new ContentValues();
         values.put(EntryLogTable.COLUMN_SYNCED, true);

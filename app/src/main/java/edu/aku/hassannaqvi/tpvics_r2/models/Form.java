@@ -1695,6 +1695,7 @@ public class Form extends BaseObservable implements Observable {
             json = new JSONObject(string);
 
             this.hh01 = json.getString("hh01");
+            this.hh02 = json.getString("hh02");
             this.hh03 = json.getString("hh03");
             this.hh03a = json.getString("hh03a");
             this.hh04 = json.getString("hh04");
@@ -1824,6 +1825,7 @@ public class Form extends BaseObservable implements Observable {
         Log.d(TAG, "sAtoString: ");
         JSONObject json = new JSONObject();
         json.put("hh01", hh01)
+                .put("hh02", hh02)
                 .put("hh03", hh03)
                 .put("hh03a", hh03a)
                 .put("hh04", hh04)

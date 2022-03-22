@@ -18,8 +18,6 @@ import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.Period;
 import java.util.Calendar;
 import java.util.Locale;
 
@@ -101,6 +99,8 @@ public class Child extends BaseObservable implements Observable {
     private String im04mm = _EMPTY_;
     private String im04yy = _EMPTY_;
     private String im0497 = _EMPTY_;
+    private String backfilename = _EMPTY_;
+    private String frontfilename = _EMPTY_;
     private String im0501dd = _EMPTY_;
     private String im0501mm = _EMPTY_;
     private String im0501yy = _EMPTY_;
@@ -1019,6 +1019,30 @@ public class Child extends BaseObservable implements Observable {
         setIm04mm(im0497.equals("97") ? "" : this.im04mm);
         setIm04yy(im0497.equals("97") ? "" : this.im04yy);
         notifyPropertyChanged(BR.im0497);
+    }
+
+    @Bindable
+    public String getBackfilename() {
+        return backfilename;
+    }
+
+    public void setBackfilename(String backfilename) {
+        if (this.backfilename.equals(backfilename)) return;
+        this.backfilename = backfilename;
+
+        notifyPropertyChanged(BR.backfilename);
+    }
+
+    @Bindable
+    public String getFrontfilename() {
+        return frontfilename;
+    }
+
+    public void setFrontfilename(String frontfilename) {
+        if (this.frontfilename.equals(frontfilename)) return;
+        this.frontfilename = frontfilename;
+
+        notifyPropertyChanged(BR.frontfilename);
     }
 
     @Bindable
@@ -2386,7 +2410,7 @@ public class Child extends BaseObservable implements Observable {
         sCHHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SCH)));
         sCBHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SCB)));
         sIMHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SIM)));
-        CaluculateAge();
+        //CaluculateAge();
 
         return this;
     }
@@ -2419,6 +2443,8 @@ public class Child extends BaseObservable implements Observable {
             JSONObject json = null;
             json = new JSONObject(string);
 
+            this.ec01 = json.getString("ec01");
+            this.ec02 = json.getString("ec02");
             this.ec03 = json.getString("ec03");
             this.ec04 = json.getString("ec04");
             this.ec04a = json.getString("ec04a");
@@ -2460,6 +2486,8 @@ public class Child extends BaseObservable implements Observable {
             this.im04mm = json.getString("im04mm");
             this.im04yy = json.getString("im04yy");
             this.im0497 = json.getString("im0497");
+            this.backfilename = json.getString("backfilename");
+            this.frontfilename = json.getString("frontfilename");
             this.im0501dd = json.getString("im0501dd");
             this.im0501mm = json.getString("im0501mm");
             this.im0501yy = json.getString("im0501yy");
@@ -2562,18 +2590,18 @@ public class Child extends BaseObservable implements Observable {
             this.im051598 = json.getString("im051598");
             this.im051698 = json.getString("im051698");
             this.im051798 = json.getString("im051798");
-            this.im050295 = json.getString("im050295 ");
-            this.im050495 = json.getString("im050495 ");
-            this.im050595 = json.getString("im050595 ");
-            this.im050695 = json.getString("im050695 ");
-            this.im050895 = json.getString("im050895 ");
-            this.im050995 = json.getString("im050995 ");
-            this.im051095 = json.getString("im051095 ");
+            this.im050295 = json.getString("im050295");
+            this.im050495 = json.getString("im050495");
+            this.im050595 = json.getString("im050595");
+            this.im050695 = json.getString("im050695");
+            this.im050895 = json.getString("im050895");
+            this.im050995 = json.getString("im050995");
+            this.im051095 = json.getString("im051095");
             this.im0510a95 = json.getString("im0510a95");
-            this.im051295 = json.getString("im051295 ");
-            this.im051395 = json.getString("im051395 ");
-            this.im051495 = json.getString("im051495 ");
-            this.im051795 = json.getString("im051795 ");
+            this.im051295 = json.getString("im051295");
+            this.im051395 = json.getString("im051395");
+            this.im051495 = json.getString("im051495");
+            this.im051795 = json.getString("im051795");
         }
     }
 
@@ -2611,6 +2639,8 @@ public class Child extends BaseObservable implements Observable {
                 .put("im04mm", im04mm)
                 .put("im04yy", im04yy)
                 .put("im0497", im0497)
+                .put("backfilename", backfilename)
+                .put("frontfilename", frontfilename)
                 .put("im0501dd", im0501dd)
                 .put("im0501mm", im0501mm)
                 .put("im0501yy", im0501yy)
@@ -2733,7 +2763,9 @@ public class Child extends BaseObservable implements Observable {
     public String sCBtoString() throws JSONException {
         Log.d(TAG, "sCBtoString: ");
         JSONObject json = new JSONObject();
-        json.put("ec03", ec03)
+        json.put("ec01", ec01)
+                .put("ec02", ec02)
+                .put("ec03", ec03)
                 .put("ec04", ec04)
                 .put("ec04a", ec04a)
                 .put("ec05", ec05)
@@ -2844,7 +2876,7 @@ public class Child extends BaseObservable implements Observable {
                /* setH231d(String.valueOf(tDay));
                 setH231m(String.valueOf(tMonth));*/
 
-               if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
                    /* LocalDate localCur = LocalDate.of(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH);
                     LocalDate localCal = LocalDate.of(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH);
 
@@ -2855,9 +2887,9 @@ public class Child extends BaseObservable implements Observable {
 
 
 */
-                   tYear = MILLISECONDS.toDays(millis) / 365;
-                   tMonth = (MILLISECONDS.toDays(millis) - (tYear * 365)) / 30;
-                   tDay = MILLISECONDS.toDays(millis) - ((tYear * 365) + (tMonth * 30));
+                    tYear = MILLISECONDS.toDays(millis) / 365;
+                    tMonth = (MILLISECONDS.toDays(millis) - (tYear * 365)) / 30;
+                    tDay = MILLISECONDS.toDays(millis) - ((tYear * 365) + (tMonth * 30));
                 }
 
                 setCb04yy(String.valueOf(tYear));
@@ -2881,7 +2913,6 @@ public class Child extends BaseObservable implements Observable {
             }
         }
     }
-
 
 
 }

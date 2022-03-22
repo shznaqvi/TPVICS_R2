@@ -6,6 +6,7 @@
     <data>
 
         <import type="android.view.View" />
+        <import type="edu.aku.hassannaqvi.tpvics_r2.R" />
 
         <variable
             name="child"
@@ -400,7 +401,9 @@
 
                         <CheckBox
                             android:id="@+id/cb03dk"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="end"
+                            android:gravity="center_vertical|center_horizontal"
                             android:layout_height="wrap_content"
                             android:checked="@{child.cb03dk.equals(`98`)}"
                             android:onClick="@{()->child.setCb03dk(child.cb03dk.equals(`98`)?``:`98`)}"
@@ -506,12 +509,12 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@color/grayLight"
+                            android:background="@{child.ageInMonths > 23 || child.ageInMonths &lt; 6 ?  context.getResources().getColor(R.color.redOverlay) : context.getResources().getColor(R.color.grayLight)}"
                             android:gravity="end"
                             android:includeFontPadding="true"
                             android:paddingEnd="12dp"
                             android:text="@{`Age in months: `+child.ageInMonths}"
-                            android:textColor="@color/gray"
+                            android:textColor="@{child.ageInMonths > 23 || child.ageInMonths &lt; 6 ?  context.getResources().getColor(R.color.redDark) : context.getResources().getColor(R.color.gray)}"
                             android:textSize="13sp"
                             android:visibility="@{child.ageInMonths != -1 ?View.VISIBLE:View.GONE}"
                             tool:text="Age in months: 99" />

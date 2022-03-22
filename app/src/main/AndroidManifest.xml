@@ -74,11 +74,7 @@
             android:name=".ui.lists.FormsReportDate"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
-        <activity
-            android:name=".ui.lists.FamilyMembersListActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.TakePhoto"
             android:hardwareAccelerated="true"
@@ -102,11 +98,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
-            android:name=".ui.sections.SectionA1Activity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionCBActivity"
             android:screenOrientation="portrait"
@@ -117,11 +109,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".ui.sections.SectionHHActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".ui.sections.SectionIM1Activity"
             android:screenOrientation="portrait"

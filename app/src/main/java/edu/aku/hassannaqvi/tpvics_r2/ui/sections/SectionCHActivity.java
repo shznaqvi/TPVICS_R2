@@ -51,7 +51,7 @@ public class SectionCHActivity extends AppCompatActivity {
         bi.cb03yy.setMinvalue(cal.get(Calendar.YEAR));
         cal.add(Calendar.MONTH, +6);
         cal.add(Calendar.MONTH, -23);
-        bi.cb03yy.setMaxvalue(cal.get(Calendar.YEAR));
+        bi.cb03yy.setMinvalue(cal.get(Calendar.YEAR));
     }
 
     private boolean insertNewRecord() {
@@ -108,6 +108,7 @@ public class SectionCHActivity extends AppCompatActivity {
             Intent returnIntent = new Intent();
             returnIntent.putExtra("requestCode", requestCode);
             setResult(RESULT_OK, returnIntent);
+
             finish();
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();

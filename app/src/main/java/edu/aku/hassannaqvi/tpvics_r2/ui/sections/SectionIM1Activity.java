@@ -196,7 +196,7 @@ public class SectionIM1Activity extends AppCompatActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
         if (updateDB()) {
-            Intent forwardIntent = new Intent(this, EndingActivity.class);
+            Intent forwardIntent = new Intent(this, SectionIM2Activity.class);
             forwardIntent.putExtra("requestCode", requestCode);
             forwardIntent.putExtra("complete", true);
             forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);

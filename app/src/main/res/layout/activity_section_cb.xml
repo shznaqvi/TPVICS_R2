@@ -402,7 +402,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{child.ec21.equals(`1`)}"
-                                android:onClick="@{()->child.setEc21(`1`) + ec22.clearCheck()}"
+                                android:onClick="@{()->child.setEc21(`1`)}"
                                 android:text="@string/ec21a" />
 
                             <RadioButton
@@ -590,7 +590,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- ec22  Radio   -->
+                <!--&lt;!&ndash; ec22  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVec22"
                     style="@style/cardView">
@@ -711,7 +711,7 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
+-->
                 <!--EndButton LinearLayout-->
                 <LinearLayout
                     android:layout_width="match_parent"

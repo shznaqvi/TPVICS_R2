@@ -238,6 +238,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+
+
+
     public int updateEnding() {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
 

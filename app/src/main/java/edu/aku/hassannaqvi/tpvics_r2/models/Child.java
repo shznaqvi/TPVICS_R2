@@ -2844,8 +2844,8 @@ public class Child extends BaseObservable implements Observable {
                /* setH231d(String.valueOf(tDay));
                 setH231m(String.valueOf(tMonth));*/
 
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                    LocalDate localCur = LocalDate.of(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH);
+               if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                   /* LocalDate localCur = LocalDate.of(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH);
                     LocalDate localCal = LocalDate.of(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH);
 
                     Period period = Period.between(localCal, localCur);
@@ -2853,6 +2853,11 @@ public class Child extends BaseObservable implements Observable {
                     tMonth = period.getMonths();
                     tDay = period.getDays();
 
+
+*/
+                   tYear = MILLISECONDS.toDays(millis) / 365;
+                   tMonth = (MILLISECONDS.toDays(millis) - (tYear * 365)) / 30;
+                   tDay = MILLISECONDS.toDays(millis) - ((tYear * 365) + (tMonth * 30));
                 }
 
                 setCb04yy(String.valueOf(tYear));

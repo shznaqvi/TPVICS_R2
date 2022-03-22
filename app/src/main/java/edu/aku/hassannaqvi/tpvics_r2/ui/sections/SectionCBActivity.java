@@ -67,13 +67,22 @@ public class SectionCBActivity extends AppCompatActivity {
         if (!formValidation()) return;
         // saveDraft();
         if (updateDB()) {
-            Intent forwardIntent = new Intent(this, SectionIM1Activity.class);
-            forwardIntent.putExtra("requestCode", requestCode);
-            forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
-            setResult(RESULT_OK, forwardIntent);
-
-            startActivity(forwardIntent);
-            finish();
+            if(child.getEc21().equals("1")) {
+                Intent forwardIntent = new Intent(this, SectionIM1Activity.class).putExtra("complete", true);
+                forwardIntent.putExtra("requestCode", requestCode);
+                forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+                setResult(RESULT_OK, forwardIntent);
+                startActivity(forwardIntent);
+                finish();
+            }else{
+                Intent forwardIntent = new Intent(this, ChildEndingActivity.class).putExtra("complete", false);
+                forwardIntent.putExtra("requestCode", requestCode);
+                forwardIntent.putExtra("checkToEnable", 3);
+                forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+                setResult(RESULT_OK, forwardIntent);
+                startActivity(forwardIntent);
+                finish();
+            }
 
 
          /*   if (child.getEc21().equals("1")) {

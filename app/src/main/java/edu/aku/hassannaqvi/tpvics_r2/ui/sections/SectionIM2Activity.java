@@ -26,6 +26,7 @@ import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivitySectionIm2Binding;
+import edu.aku.hassannaqvi.tpvics_r2.ui.EndingActivity;
 
 public class SectionIM2Activity extends AppCompatActivity {
 
@@ -121,7 +122,7 @@ public class SectionIM2Activity extends AppCompatActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
         if (updateDB()) {
-            Intent forwardIntent = new Intent(this, SectionIM2Activity.class);
+            Intent forwardIntent = new Intent(this, ChildEndingActivity.class);
             forwardIntent.putExtra("requestCode", requestCode);
             forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
             setResult(RESULT_OK, forwardIntent);

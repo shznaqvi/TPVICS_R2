@@ -1055,6 +1055,7 @@ public class Child extends BaseObservable implements Observable {
         boolean b = im0501dd.length() > 0 && Integer.parseInt(im0501dd) > 31;
         setIm0501mm(b ? "" : this.im0501mm);
         setIm0501yy(b ? "" : this.im0501yy);
+        setIm050295(b ? "" : this.im050295);
         notifyPropertyChanged(BR.im0501dd);
     }
 
@@ -1065,6 +1066,8 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm0501mm(String im0501mm) {
         this.im0501mm = im0501mm;
+        boolean b = im0501mm.length() > 0 && Integer.parseInt(im0501mm) > 12;
+        setIm050295(b ? "" : this.im050295);
         notifyPropertyChanged(BR.im0501mm);
     }
 
@@ -1075,6 +1078,8 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm0501yy(String im0501yy) {
         this.im0501yy = im0501yy;
+        boolean b = im0501yy.length() > 0;
+        setIm050295(b ? "" : this.im050295);
         notifyPropertyChanged(BR.im0501yy);
     }
 
@@ -1121,6 +1126,7 @@ public class Child extends BaseObservable implements Observable {
         boolean b = im0503dd.length() > 0 && Integer.parseInt(im0503dd) > 31;
         setIm0503mm(b ? "" : this.im0503mm);
         setIm0503yy(b ? "" : this.im0503yy);
+        setIm050495(b ? "" : this.im050495);
         notifyPropertyChanged(BR.im0503dd);
     }
 

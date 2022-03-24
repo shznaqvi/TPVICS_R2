@@ -516,7 +516,7 @@
                             android:text="@{`Age in months: `+child.ageInMonths}"
                             android:textColor="@{child.ageInMonths > 23 || child.ageInMonths &lt; 6 ?  context.getResources().getColor(R.color.redDark) : context.getResources().getColor(R.color.gray)}"
                             android:textSize="13sp"
-                            android:visibility="@{child.ageInMonths != -1 ?View.VISIBLE:View.GONE}"
+                            android:visibility="@{child.ageInMonths != -1 ? View.VISIBLE : View.GONE}"
                             tool:text="Age in months: 99" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

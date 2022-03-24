@@ -155,10 +155,11 @@ public class Child extends BaseObservable implements Observable {
     private String im0517dd = _EMPTY_;
     private String im0517mm = _EMPTY_;
     private String im0517yy = _EMPTY_;
-    private String im07 = _EMPTY_;
+    //private String im07 = _EMPTY_;
     private String im08 = _EMPTY_;
     private String im09 = _EMPTY_;
     private String im10 = _EMPTY_;
+    private String im10a = _EMPTY_;
     private String im11 = _EMPTY_;
     private String im12 = _EMPTY_;
     private String im12a = _EMPTY_;
@@ -830,7 +831,7 @@ public class Child extends BaseObservable implements Observable {
         setIm0517yy(im01.equals("1") ? this.im0517yy : "");
 
 
-        setIm07(im01.equals("1") ? this.im07 : "");
+        //setIm07(im01.equals("1") ? this.im07 : "");
 
 
         notifyPropertyChanged(BR.im01);
@@ -921,8 +922,29 @@ public class Child extends BaseObservable implements Observable {
         setIm0517mm(im02.equals("1") ? this.im0517mm : "");
         setIm0517yy(im02.equals("1") ? this.im0517yy : "");
 
+        setIm08(im02.equals("1") ? "" : this.im08);
+        setIm09(im02.equals("1") ? "" : this.im09);
+        setIm10(im02.equals("1") ? "" : this.im10);
+        setIm10a(im02.equals("1") ? "" : this.im10a);
+        setIm11(im02.equals("1") ? "" : this.im11);
+        setIm12(im02.equals("1") ? "" : this.im12);
+        setIm12a(im02.equals("1") ? "" : this.im12a);
+        setIm14(im02.equals("1") ? "" : this.im14);
+        setIm15(im02.equals("1") ? "" : this.im15);
+        setIm16(im02.equals("1") ? "" : this.im16);
+        setIm17(im02.equals("1") ? "" : this.im17);
+        setIm18(im02.equals("1") ? "" : this.im18);
+        setIm19(im02.equals("1") ? "" : this.im19);
+        setIm20(im02.equals("1") ? "" : this.im20);
+        setIm21(im02.equals("1") ? "" : this.im21);
+        setIm22(im02.equals("1") ? "" : this.im22);
+        setIm22a(im02.equals("1") ? "" : this.im22a);
+        setIm23(im02.equals("1") ? "" : this.im23);
+        setIm23a(im02.equals("1") ? "" : this.im23a);
+        setIm24(im02.equals("1") ? "" : this.im24);
 
-        setIm07(im02.equals("1") ? this.im07 : "");
+
+        //setIm07(im02.equals("1") ? this.im07 : "");
 
         notifyPropertyChanged(BR.im02);
     }
@@ -1645,7 +1667,7 @@ public class Child extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.im0517yy);
     }
 
-    @Bindable
+    /*@Bindable
     public String getIm07() {
         return im07;
     }
@@ -1653,7 +1675,7 @@ public class Child extends BaseObservable implements Observable {
     public void setIm07(String im07) {
         this.im07 = im07;
         notifyPropertyChanged(BR.im07);
-    }
+    }*/
 
     @Bindable
     public String getIm08() {
@@ -1665,6 +1687,7 @@ public class Child extends BaseObservable implements Observable {
 
         setIm09(im08.equals("1") ? this.im09 : "");
         setIm10(im08.equals("1") ? this.im10 : "");
+        setIm10a(im08.equals("1") ? this.im10a : "");
         setIm11(im08.equals("1") ? this.im11 : "");
         setIm12(im08.equals("1") ? this.im12 : "");
         setIm12a(im08.equals("1") ? this.im12a : "");
@@ -1701,7 +1724,21 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm10(String im10) {
         this.im10 = im10;
+        setIm10a(im10.equals("1") ? this.im10a : "");
+        setIm11(im10.equals("1") ? this.im11 : "");
+        setIm12(im10.equals("1") ? this.im12 : "");
+        setIm14(im10.equals("1") ? this.im14 : "");
         notifyPropertyChanged(BR.im10);
+    }
+
+    @Bindable
+    public String getIm10a() {
+        return im10a;
+    }
+
+    public void setIm10a(String im10a) {
+        this.im10a = im10a;
+        notifyPropertyChanged(BR.im10a);
     }
 
     @Bindable
@@ -1755,6 +1792,7 @@ public class Child extends BaseObservable implements Observable {
     public void setIm14(String im14) {
         this.im14 = im14;
         setIm15(im14.equals("1") ? this.im15 : "");
+        setIm16(im14.equals("1") ? "" : this.im16);
         notifyPropertyChanged(BR.im14);
     }
 
@@ -1776,6 +1814,7 @@ public class Child extends BaseObservable implements Observable {
     public void setIm16(String im16) {
         this.im16 = im16;
         setIm17(im16.equals("1") ? this.im17 : "");
+        setIm18(im16.equals("1") ? "" : this.im18);
         notifyPropertyChanged(BR.im16);
     }
 
@@ -1797,6 +1836,7 @@ public class Child extends BaseObservable implements Observable {
     public void setIm18(String im18) {
         this.im18 = im18;
         setIm19(im18.equals("1") ? this.im19 : "");
+        setIm20(im18.equals("1") ? "" : this.im20);
         notifyPropertyChanged(BR.im18);
     }
 
@@ -1817,6 +1857,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm20(String im20) {
         this.im20 = im20;
+
         notifyPropertyChanged(BR.im20);
     }
 
@@ -1827,6 +1868,8 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm21(String im21) {
         this.im21 = im21;
+        setIm22(im21.equals("1") ? this.im22 : "");
+        setIm22a(im21.equals("1") ? "" : this.im22a);
         notifyPropertyChanged(BR.im21);
     }
 
@@ -2327,9 +2370,9 @@ public class Child extends BaseObservable implements Observable {
     public void setIm0510a95(String im0510a95) {
         if (this.im0510a95.equals(im0510a95)) return; // for all checkboxes
         this.im0510a95 = im0510a95;
-        setIm0510add(im0510a95.equals("95") ? this.im0510dd : "");
-        setIm0510amm(im0510a95.equals("95") ? this.im0510mm : "");
-        setIm0510ayy(im0510a95.equals("95") ? this.im0510yy : "");
+        setIm0510add(im0510a95.equals("95") ? this.im0501dd : "");
+        setIm0510amm(im0510a95.equals("95") ? this.im0501mm : "");
+        setIm0510ayy(im0510a95.equals("95") ? this.im0501yy : "");
         notifyPropertyChanged(BR.im0510a95);
     }
 
@@ -2438,6 +2481,7 @@ public class Child extends BaseObservable implements Observable {
             this.cb03yy = json.getString("cb03yy");
             this.cb04mm = json.getString("cb04mm");
             this.cb04yy = json.getString("cb04yy");
+
         }
 
     }
@@ -2548,10 +2592,11 @@ public class Child extends BaseObservable implements Observable {
             this.im0517dd = json.getString("im0517dd");
             this.im0517mm = json.getString("im0517mm");
             this.im0517yy = json.getString("im0517yy");
-            this.im07 = json.getString("im07");
+            //this.im07 = json.getString("im07");
             this.im08 = json.getString("im08");
             this.im09 = json.getString("im09");
             this.im10 = json.getString("im10");
+            this.im10a = json.getString("im10a");
             this.im11 = json.getString("im11");
             this.im12 = json.getString("im12");
             this.im12a = json.getString("im12a");
@@ -2701,10 +2746,11 @@ public class Child extends BaseObservable implements Observable {
                 .put("im0517dd", im0517dd)
                 .put("im0517mm", im0517mm)
                 .put("im0517yy", im0517yy)
-                .put("im07", im07)
+                //.put("im07", im07)
                 .put("im08", im08)
                 .put("im09", im09)
                 .put("im10", im10)
+                .put("im10a", im10a)
                 .put("im11", im11)
                 .put("im12", im12)
                 .put("im12a", im12a)

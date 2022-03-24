@@ -497,10 +497,11 @@
                                 android:imeOptions="actionNext"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                android:enabled="@{child.cb01a.equals(`77`)}"
                                 android:text="@={child.cb01b}"
-                                app:defaultValue="88"
-                                app:maxValue="20"
-                                app:minValue="1"
+                                app:defaultValue="77"
+                                app:maxValue="77"
+                                app:minValue="77"
                                 app:type="range" />
                         </LinearLayout>
                     </LinearLayout>
@@ -556,6 +557,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:hint="##"
+
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={child.cb02a}"
@@ -581,10 +583,11 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
+                                android:enabled="@{child.cb02a.equals(`77`)}"
                                 android:text="@={child.cb02b}"
-                                app:defaultValue="88"
-                                app:maxValue="20"
-                                app:minValue="1"
+                                app:defaultValue="77"
+                                app:maxValue="77"
+                                app:minValue="77"
                                 app:type="range" />
                         </LinearLayout>
                     </LinearLayout>

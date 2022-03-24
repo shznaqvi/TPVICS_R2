@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">TPVICS_R2</string>
     <string name="btnDownload" translatable="false">Download Data</string>
     <string name="btnUpload">Upload Data</string>
@@ -624,7 +625,7 @@
     <string name="im04yy">Year</string>
     <string name="im0497">Date not Visible on Card</string>
     <string name="im05title1"> Immunization Status</string>
-    <string name="im05title2">IM5.COPY DATES FOR EACH VACCINATION FROM THE VACCINATION CARD  \n NOTE: WRITE ‘44’ IN DAY COLUMN IF CARD SHOWS THAT VACCINATION WAS GIVEN BUT NO DATE RECORDED. OR IF THE CARD SHOWS A DATE BUT YOU CANNOT READ IT CLEARLY. IF THE PARTICULAR VACCINE HAS NO ANY RECORD, WRITE ‘97’ IN DAY, MONTH AND YEAR COLUMN</string>
+    <string name="im05title2">IM5.COPY DATES FOR EACH VACCINATION FROM THE VACCINATION CARD<br><br></br></br> NOTE: WRITE <b> ‘44’ </b> IN DAY COLUMN IF CARD SHOWS THAT VACCINATION WAS GIVEN BUT NO DATE RECORDED. OR IF THE CARD SHOWS A DATE BUT YOU CANNOT READ IT CLEARLY. <br> <br> </br></br> IF THE PARTICULAR VACCINE HAS NO ANY RECORD, WRITE <b>‘97’ </b> IN DAY, MONTH AND YEAR COLUMN</string>
     <string name="im05">Vaccine Names</string>
     <string name="im05t1"> Vaccinations At Birth </string>
     <string name="im05t2"> Vaccinations At 6 Weeks </string>
@@ -701,6 +702,9 @@
     <string name="im0516mm">Month</string>
     <string name="im0515yy">Year</string>
     <string name="im0516yy">Year</string>
+    <string name="im0517dd">Day</string>
+    <string name="im0517mm">Month</string>
+    <string name="im0517yy">Year</string>
     <string name="im07">Check IM4: Are all vaccines (BCG to Measles-2) recorded?</string>
     <string name="im0701">Yes</string>
     <string name="im0702">No</string>
@@ -716,6 +720,14 @@
     <string name="im101">Yes </string>
     <string name="im102">No </string>
     <string name="im103">Dont know</string>
+    <string name="im10a">Has (name) ever received a Hepatitis B vaccination – that is, an injection to prevent (him/her) from getting Hepatitis B disease, given at birth۔</string>
+    <string name="im10_1">Yes </string>
+    <string name="im10a1">Yes </string>
+    <string name="im10_2">No </string>
+    <string name="im10a2">No </string>
+    <string name="im10_3">Dont know</string>
+    <string name="im10a98">Dont know</string>
+
     <string name="im11">Were the first polio drops received in the first two weeks after birth?</string>
     <string name="im111">Yes</string>
     <string name="im112">No  </string>
@@ -757,6 +769,7 @@
     <string name="im23a2">Within District/ city </string>
     <string name="im23a3">Out of District/city </string>
     <string name="im23a96">Other Specify</string>
+    <string name="im2396">Other Specify </string>
     <string name="im231">Govt. Health facility </string>
     <string name="im24">Why (name) is not vaccinated?   If the child has not received all their vaccinations, ask the mother/caretaker   Record all the reasons mentioned but do not prompt by asking specific. Encourage the mother to provide all reasons. </string>
     <string name="im241">Place of immunization too far</string>
@@ -780,7 +793,7 @@
     <string name="im232">Private health facility </string>
     <string name="im233">Government outreach service </string>
     <string name="im236">Other (specify) </string>
-    <string name="im24a">How many times has the child received Polio vaccine drops during national polio campaign?</string>
+    <string name="im24a">Has the child ever received polio drops during a national polo campaign?</string>
     <string name="im24a1">Yes</string>
     <string name="im24a2">No</string>
     <string name="im24a98">Dont Know</string>
@@ -901,6 +914,7 @@
     <string name='Qim08'>im08</string>
     <string name='Qim09'>im09</string>
     <string name='Qim10'>im10</string>
+    <string name='Qim10a'>im10a</string>
     <string name='Qim11'>im11</string>
     <string name='Qim12'>im12</string>
     <string name='Qim12a'>im12a</string>

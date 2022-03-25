@@ -85,12 +85,6 @@
     <string name="specify"> Please explain </string>
     <string name="year"> Year </string>
     <string name="month"> Month </string>
-    <string name="week"> Week </string>
-    <string name="day"> Day </string>
-    <string name="hour"> Hour </string>
-    <string name="minute"> Minute </string>
-    <string name="years"> Year(s) </string>
-    <string name="months"> Month(s) </string>
     <string name="weeks"> Week(s) </string>
     <string name="days"> Day(s) </string>
     <string name="hours"> Hour(s) </string>
@@ -152,68 +146,12 @@
     <string name="btnResetPassword">Reset Password</string>
 
 
-    <!--TODO: REMOVE THESE STRINGS FROM FINAL APP-->
-
-    <string name="a104">Name of Province</string>
-    <string name="a105">Name of District</string>
-    <string name="a106">Name of Tehsil/Taluka</string>
-    <string name="a107">Name of Union Council</string>
-    <string name="atitle">Module A: Household Level </string>
-    <string name="as1">Section 1: Household Information</string>
-    <string name="a101">Cluster Number </string>
-    <string name="a113">Household Number</string>
-
-
-    <string name="as1q01"> Country </string>
-    <string name="as1q01p"> Pakistan </string>
-    <string name="as1q01a"> Afghanistan </string>
-    <string name="as1q01t"> Tajikistan </string>
-    <string name="as1q01k"> Kyrgyztan </string>
     <string name="householdidentificationmainheading">Household Identification: </string>
-    <string name="sectiondhouseholdmemberinformationmainheading">Section D: Household Member Information: </string>
-    <string name="householdinformationmainheading">Household Information: </string>
-    <string name="reproductivehealthmainheading">Reproductive Health: </string>
-    <string name="e2maternalmortalitystatusmainheading">E2: Maternal Mortality Status: </string>
-    <string name="sectionfantenatalcaremainheading">Section F: Antenatal Care: </string>
-    <string name="sectiongdeliverypreparednessandexperiencemainheading">Section G: Delivery Preparedness and Experience: </string>
-    <string name="sectionh1newbornhealthmainheading">Section H1: Newborn Health: </string>
-    <string name="sectionh2postnatalcaremainheading">Section H2: Postnatal Care: </string>
-    <string name="sectionkfamilyplanningmainheading">Section K: Family Planning: </string>
-    <string name="sectionlwomenempowermentmainheading">Section L: Women Empowerment: </string>
-    <string name="sectioni1diarrheainformationmainheading">Section I1: Diarrhea Information: </string>
-    <string name="sectioni2acuterespiratoryinfectionarimainheading">Section I2: Acute Respiratory Infection (ARI): </string>
-    <string name="sectionimimmunizationinformationmainheading">Section IM: Immunization Information: </string>
     <string name="respondentinfomainheading">Respondent Info: Enter the respondents information and write down the exact number of people in the household and eligible children</string>
 
     <string name="splashText2">  </string>
 
-    <string name="a1title">Complete Address</string>
 
-    <string name="a102">Cluster Type</string>
-    <string name="a10201">LHW Covered</string>
-    <string name="a10202">LHW Uncovered</string>
-    <string name="a108">Location</string>
-    <string name="a10801">Urban</string>
-    <string name="a10802">Rural</string>
-    <string name="a103">Randomization Serial Number</string>
-    <string name="a109">Village</string>
-    <string name="a110">Block/ Mohalla</string>
-    <string name="a111">Street </string>
-    <string name="a112"> House / Khandan Number in LHW Covered Area </string>
-    <string name="a11201"> Khandan number in LHW covered area </string>
-    <string name="a11297"> Not Applicable </string>
-    <string name='Qa101'>a101</string>
-    <string name='Qa102'>a102</string>
-    <string name='Qa103'>a103</string>
-    <string name='Qa104'>a104</string>
-    <string name='Qa105'>a105</string>
-    <string name='Qa106'>a106</string>
-    <string name='Qa107'>a107</string>
-    <string name='Qa108'>a108</string>
-    <string name='Qa109'>a109</string>
-    <string name='Qa110'>a110</string>
-    <string name='Qa111'>a111</string>
-    <string name='Qa112'>a112</string>
 
 
     <string name="sectionhhhouseholdinformationhhmainheading">SECTION HH: HOUSEHOLD INFORMATION  (HH): Household Information</string>

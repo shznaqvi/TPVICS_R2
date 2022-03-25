@@ -1,5 +1,24 @@
 <resources>
 
+    <string name="title_activity_change_password">ChangePasswordActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="btnResetPassword">Reset Password</string>
+    <string name="im05">Vaccine Names</string>
+    <string name="im05t1"> Vaccinations At Birth </string>
+    <string name="im05t2"> Vaccinations At 6 Weeks </string>
+    <string name="im05t3"> Vaccinations At 10 Weeks </string>
+    <string name="im05t4"> Vaccinations At 14 Weeks </string>
+    <string name="im05t5"> Vaccinations At 9 Months </string>
+    <string name="im05t6"> Vaccinations At 15 Months </string>
+
+
     <string name="cbmainheading">سی بی: اہل بچے کا  پس منظر </string>
     <string name="immainheading">آئی ایم: حفاظتی ٹیکے</string>
     <string name="householdidentificationmainheading">گھرانے کی شناخت: رینڈمائزیشن شیٹ سے گھر کے درست نمبر کا اندراج کریں</string>
@@ -7,7 +26,7 @@
     <string name="respondentinfomainheading">جواب دہندہ کی معلومات: جواب دہندہ کی معلومات کا اندراج کریں اور گھر میں موجود افراد اور اہل بچوں کی درست تعداد لکھیں</string>
     <string name="sectionsssocioeconomicstatusssmainheading">سماجی اقتصادی صورتحال: یہ سیکشن گھر کے سربراہ سے یا گھر میں کم سے کم 14 سال یا اس سے زائد عمر کے کسی سمجھدار شخص سے پوچھا جائیگا</string>
     <string name="sectionchlistofchildren0623monthsoldmainheading">بچوں کی فہرست: بارہ سے تیئس ماہ کی عمر کے بچوں کی فہرست</string>
-    <string name="istatus">انٹرویوکا نتیجہ: انٹرویوکے درست نتیجے کا دیئے گئے آپشنز کے مطابق تعین کریں</string>
+    <!--    <string name="istatus">انٹرویوکا نتیجہ: انٹرویوکے درست نتیجے کا دیئے گئے آپشنز کے مطابق تعین کریں</string>-->
     <string name="app_name"> TPVICS_R2 - Urdu </string>
     <string name="btnSync">Download Data</string>
     <string name="btnUpload">Upload Data</string>
@@ -609,15 +628,17 @@
     <string name="cb04">عمر مکمل سالوں اور مہینوں میں ریکارڈ کریں.اگرعمر 1 سال سے کم ہے تو سال میں 0  ریکارڈ کریں۔عمر مکمل سالوں اور مہینوں میں ریکارڈ کریں۔اگرعمر 1 سال سے کم ہے تو 0 ریکارڈ کریں۔کے جوابات مطابقت نہیں رکھتے یا ان میں تضادہے، تو مزیدتحقیق کریں،اوران کودرست کریں CB4 اور CB3اگر سوال </string>
     <string name="cb04mm">عمر(مکمل  مہینوں میں)</string>
     <string name="cb04yy">عمر(مکمل سالوں میں)</string>
-    <string name="hh21">گھرانے کے انٹرویوکا نتیجہ نامکمل انٹرویو کے کسی بھی نتیجہ کی صورت میں سپروائزر سے رابطہ کریں</string>
-    <string name="hh21a">مکمل</string>
-    <string name="hh21b">گھرانے کا کوئی فرد یا سمجھدار جواب دہندہ گھر پر موجود نہیں </string>
-    <string name="hh21c">گھرانے کے تمام افراد لمبے عرصے کے لیے گھر سے غیر حاضر تھے</string>
-    <string name="hh21d">انکار کردیا</string>
-    <string name="hh21e">خالی گھر/غیر رہائشی</string>
-    <string name="hh21f">گھر نہیں ملا</string>
-    <string name="hh21g">اس گھر میں 06سے23 مہینے کی عمر کا بچہ موجود نہیں ہے  </string>
-    <string name="hh21x">دیگر وضاحت کریں </string>
+
+    <string name="istatusi"> نامکمل انٹرویو کے کسی بھی نتیجہ کی صورت میں سپروائزر سے رابطہ کریں </string>
+    <string name="istatus">گھرانے کے انٹرویوکا نتیجہ</string>
+    <string name="istatus01">مکمل</string>
+    <string name="istatus02">گھرانے کا کوئی فرد یا سمجھدار جواب دہندہ گھر پر موجود نہیں </string>
+    <string name="istatus03">گھرانے کے تمام افراد لمبے عرصے کے لیے گھر سے غیر حاضر تھے</string>
+    <string name="istatus04">انکار کردیا</string>
+    <string name="istatus05">خالی گھر/غیر رہائشی</string>
+    <string name="istatus06">گھر نہیں ملا</string>
+    <string name="istatus07">اس گھر میں 06سے23 مہینے کی عمر کا بچہ موجود نہیں ہے  </string>
+    <string name="istatus96">دیگر وضاحت کریں </string>
 
 
     <string name='Qcb0title'>cb0title</string>

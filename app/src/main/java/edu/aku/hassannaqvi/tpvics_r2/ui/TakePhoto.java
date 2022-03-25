@@ -110,11 +110,13 @@ public class TakePhoto extends Activity implements SurfaceHolder.Callback, Camer
         surfaceView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (previewFlag == false) {
+                if (!previewFlag) {
                     Camera.Parameters parameters = camera.getParameters();
                     //parameters.setJpegQuality(88);
                     parameters.setAutoWhiteBalanceLock(true);
-                    parameters.setFlashMode(Camera.Parameters.WHITE_BALANCE_AUTO);
+                    if(parameters.getFlashMode() !=null) {
+                        parameters.setFlashMode(Camera.Parameters.WHITE_BALANCE_AUTO);
+                    }
                     parameters.set("rotation", 90);
                     parameters.set("iso", "auto");
                     //parameters.setPreviewSize(640, 480);

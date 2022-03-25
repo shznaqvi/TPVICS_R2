@@ -2481,6 +2481,7 @@ public class Child extends BaseObservable implements Observable {
             this.cb03yy = json.getString("cb03yy");
             this.cb04mm = json.getString("cb04mm");
             this.cb04yy = json.getString("cb04yy");
+            this.ageInMonths = json.getLong("ageInMonths");
 
         }
 
@@ -2669,7 +2670,9 @@ public class Child extends BaseObservable implements Observable {
                 .put("cb03mm", cb03mm)
                 .put("cb03yy", cb03yy)
                 .put("cb04mm", cb04mm)
-                .put("cb04yy", cb04yy);
+                .put("cb04yy", cb04yy)
+                .put("ageInMonths", ageInMonths);
+        ;
 
         return json.toString();
 

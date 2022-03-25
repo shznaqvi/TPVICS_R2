@@ -27,8 +27,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 import edu.aku.hassannaqvi.tpvics_r2.R;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
@@ -130,7 +132,7 @@ public class SectionIM1Activity extends AppCompatActivity {
         setDefault(bi.im0515dd, bi.im0515mm, bi.im0515yy);
         setDefault(bi.im0516dd, bi.im0516mm, bi.im0516yy);
         setDefault(bi.im0517dd, bi.im0517mm, bi.im0517yy);
-    }
+   }
 
 
     private void setDefault(EditTextPicker day, EditTextPicker mon, EditTextPicker year) {
@@ -284,6 +286,30 @@ public class SectionIM1Activity extends AppCompatActivity {
                 }
             }
 
+            // IM0510a
+
+            if (!bi.checkim0510a.isChecked()) {
+                // IM510a
+                String im0510adate = MainApp.child.getIm0510ayy()
+                        + "-" + MainApp.child.getIm0510amm()
+                        + "-" + MainApp.child.getIm0510add();
+
+                vaccDates.add(im0510adate);
+
+                if (!validateDatesBCG(dobDate, im0510adate)) {
+                    displayInvalidDateDialog(bi.checkim0510a, R.string.im0510ahp, bi.trIm0510a);
+                    return Validator.emptyCustomTextBox(this, bi.im0510ayy, "Incorrect Date.");
+                } else {
+                    bi.checkim0510a.setVisibility(View.VISIBLE);
+                }
+
+                // validate default values; initialize im105 for im0510a
+                im05 = Integer.parseInt(MainApp.child.getIm0510add());
+                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                    return Validator.emptyCustomTextBox(this, bi.im0510add, "Incorrect value for Day.");
+                }
+            }
+
 
             /*firstVaccine*/
 
@@ -302,7 +328,7 @@ public class SectionIM1Activity extends AppCompatActivity {
                         + "-" + MainApp.child.getIm0503dd();
                 vaccDates.add(im0503date);
 
-                if (!validateDates(firstVaccine, im0503date)) {
+                if (!validateDatesBCG(firstVaccine, im0503date)) {
                     displayInvalidDateDialog(bi.checkim0503, R.string.im0503opv1, bi.trIm0503);
                     return Validator.emptyCustomTextBox(this, bi.im0503yy, "Incorrect Date.");
                 } else {
@@ -474,27 +500,7 @@ public class SectionIM1Activity extends AppCompatActivity {
                 }
             }
 
-            if (!bi.checkim0510a.isChecked()) {
-                // IM510a
-                String im0510adate = MainApp.child.getIm0510ayy()
-                        + "-" + MainApp.child.getIm0510amm()
-                        + "-" + MainApp.child.getIm0510add();
 
-                vaccDates.add(im0510adate);
-
-                if (!validateDates(secondVaccine, im0510adate)) {
-                    displayInvalidDateDialog(bi.checkim0510a, R.string.im0510ahp, bi.trIm0510a);
-                    return Validator.emptyCustomTextBox(this, bi.im0510ayy, "Incorrect Date.");
-                } else {
-                    bi.checkim0510a.setVisibility(View.VISIBLE);
-                }
-
-                // validate default values; initialize im105 for im0510a
-                im05 = Integer.parseInt(MainApp.child.getIm0510add());
-                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                    return Validator.emptyCustomTextBox(this, bi.im0510add, "Incorrect value for Day.");
-                }
-            }
 
 
             /*thirdVaccine*/
@@ -685,20 +691,24 @@ public class SectionIM1Activity extends AppCompatActivity {
     private String getLatestDate(List<String> vaccDates) {
 
         String latestDate = "1970-01-01";
+        long maxMillis = 0;
         // String latestDate = "";
-
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
 
         for (String strDate : vaccDates) {
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+
 
             // set current Date
-            Calendar cal = Calendar.getInstance();
-            Calendar cur = Calendar.getInstance();
+            /*Calendar cal = Calendar.getInstance();
+            Calendar cur = Calendar.getInstance();*/
             try {
-                cal.setTime(sdf.parse(latestDate));// all done
-                cur.setTime(sdf.parse(strDate));// all done
-                if (cur.after(latestDate)) {
+                //cal.setTime(Objects.requireNonNull(sdf.parse(latestDate)));// all done
+                //cur.setTime(Objects.requireNonNull(sdf.parse(strDate)));// all done
+                Date d = sdf.parse(strDate);
+                long millis = d.getTime();
+                if (millis > maxMillis) {
                     latestDate = strDate;
+                    maxMillis = millis;
                 }
             } catch (ParseException e) {
                 e.printStackTrace();
@@ -721,7 +731,7 @@ public class SectionIM1Activity extends AppCompatActivity {
 
     /*IMMUNIZATION DATES DIFFERENCE*/
     private boolean validateDatesBCG(String baseDate, String forwardDate) {
-        if (baseDate.length() < 8 || forwardDate.length() < 8)
+        if (baseDate.length() < 10 || forwardDate.length() < 10)
             return true;
         try {
             Calendar baseCal = Calendar.getInstance();
@@ -742,7 +752,7 @@ public class SectionIM1Activity extends AppCompatActivity {
 
 
     private boolean validateDates(String baseDate, String forwardDate) {
-        if (baseDate.length() < 8 || forwardDate.length() < 8)
+        if (baseDate.length() < 10 || forwardDate.length() < 10)
             return true;
 
         try {

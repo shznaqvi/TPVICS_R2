@@ -30,7 +30,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 
 import edu.aku.hassannaqvi.tpvics_r2.R;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
@@ -114,7 +113,7 @@ public class SectionIM1Activity extends AppCompatActivity {
         });
 
 
-        setDefault(bi.im0501dd, bi.im0501mm, bi.im0501yy);
+    /*    setDefault(bi.im0501dd, bi.im0501mm, bi.im0501yy);
         setDefault(bi.im0502dd, bi.im0502mm, bi.im0502yy);
         setDefault(bi.im0503dd, bi.im0503mm, bi.im0503yy);
         setDefault(bi.im0504dd, bi.im0504mm, bi.im0504yy);
@@ -131,7 +130,7 @@ public class SectionIM1Activity extends AppCompatActivity {
         setDefault(bi.im0514dd, bi.im0514mm, bi.im0514yy);
         setDefault(bi.im0515dd, bi.im0515mm, bi.im0515yy);
         setDefault(bi.im0516dd, bi.im0516mm, bi.im0516yy);
-        setDefault(bi.im0517dd, bi.im0517mm, bi.im0517yy);
+        setDefault(bi.im0517dd, bi.im0517mm, bi.im0517yy);*/
    }
 
 
@@ -248,6 +247,7 @@ public class SectionIM1Activity extends AppCompatActivity {
                 String im0501date = MainApp.child.getIm0501yy()
                         + "-" + MainApp.child.getIm0501mm()
                         + "-" + MainApp.child.getIm0501dd();
+
                 vaccDates.add(im0501date);
 
                 if (!validateDatesBCG(dobDate, im0501date)) {
@@ -500,9 +500,6 @@ public class SectionIM1Activity extends AppCompatActivity {
                 }
             }
 
-
-
-
             /*thirdVaccine*/
 
             String thirdVaccine = getLatestDate(vaccDates);
@@ -526,7 +523,6 @@ public class SectionIM1Activity extends AppCompatActivity {
                 } else {
                     bi.checkim0511.setVisibility(View.VISIBLE);
                 }
-
 
                 // validate default values; initialize im105 for im0511
                 im05 = Integer.parseInt(MainApp.child.getIm0511dd());
@@ -766,7 +762,6 @@ public class SectionIM1Activity extends AppCompatActivity {
             // return baseCal.compareTo(forwardCal) > 0 ; // > basedate
             return forwardCal.getTimeInMillis() > baseCal.getTimeInMillis();
 
-
         } catch (ParseException e) {
             e.printStackTrace();
             Toast.makeText(this, "ParseException(setDateRanges()): " + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -781,12 +776,10 @@ public class SectionIM1Activity extends AppCompatActivity {
 
         intent.putExtra("picID", MainApp.form.getEbCode() + "_" + MainApp.form.getHhid() + "_" + MainApp.child.getSno() + "_");
         intent.putExtra("childName", MainApp.child.getEc14());
-
 /*
         intent.putExtra("picID", "901001" + "_" + "A-0001-001" + "_" + "1" + "_");
         intent.putExtra("childName", "Hassan");
 */
-
         if (view.getId() == R.id.frontPhoto) {
             intent.putExtra("picView", "front".toUpperCase());
             startActivityForResult(intent, 1); // Activity is started with requestCode 1 = Front

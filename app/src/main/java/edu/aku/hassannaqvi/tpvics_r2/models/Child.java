@@ -221,6 +221,8 @@ public class Child extends BaseObservable implements Observable {
 
 
     private long ageInMonths = -1;
+    private long trueAgeInMonths = -1;
+    private boolean ageCheck;
 
 
     public void Child() {
@@ -668,7 +670,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setCb03dd(String cb03dd) {
         this.cb03dd = cb03dd;
-        CaluculateAge();
+        CaluculateAge(this.cb03dd, this.cb03mm, this.cb03yy, false);
         notifyPropertyChanged(BR.cb03dd);
     }
 
@@ -679,7 +681,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setCb03mm(String cb03mm) {
         this.cb03mm = cb03mm;
-        CaluculateAge();
+        CaluculateAge(this.cb03dd, this.cb03mm, this.cb03yy, false);
         notifyPropertyChanged(BR.cb03mm);
     }
 
@@ -690,7 +692,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setCb03yy(String cb03yy) {
         this.cb03yy = cb03yy;
-        CaluculateAge();
+        CaluculateAge(this.cb03dd, this.cb03mm, this.cb03yy, false);
         notifyPropertyChanged(BR.cb03yy);
     }
 
@@ -739,7 +741,31 @@ public class Child extends BaseObservable implements Observable {
 
     public void setAgeInMonths(long ageInMonths) {
         this.ageInMonths = ageInMonths;
+        setAgeCheck(ageInMonths > 6 && ageInMonths < 23);
         notifyPropertyChanged(BR.ageInMonths);
+
+    }
+
+    @Bindable
+    public long getTrueAgeInMonths() {
+        return trueAgeInMonths;
+    }
+
+
+    public void setTrueAgeInMonths(long trueAgeInMonths) {
+        this.trueAgeInMonths = trueAgeInMonths;
+        setAgeCheck(trueAgeInMonths > 6 && trueAgeInMonths < 23);
+        notifyPropertyChanged(BR.trueAgeInMonths);
+    }
+
+    @Bindable
+    public boolean getAgeCheck() {
+        return ageCheck;
+    }
+
+    private void setAgeCheck(boolean ageCheck) {
+        this.ageCheck = ageCheck;
+        notifyPropertyChanged(BR.ageCheck);
 
     }
 
@@ -1006,6 +1032,8 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm04dd(String im04dd) {
         this.im04dd = im04dd;
+        CaluculateAge(this.im04dd, this.im04mm, this.im04yy, true);
+
         notifyPropertyChanged(BR.im04dd);
     }
 
@@ -1016,6 +1044,8 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm04mm(String im04mm) {
         this.im04mm = im04mm;
+        CaluculateAge(this.im04dd, this.im04mm, this.im04yy, true);
+
         notifyPropertyChanged(BR.im04mm);
     }
 
@@ -1026,6 +1056,8 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm04yy(String im04yy) {
         this.im04yy = im04yy;
+        CaluculateAge(this.im04dd, this.im04mm, this.im04yy, true);
+
         notifyPropertyChanged(BR.im04yy);
     }
 
@@ -1037,6 +1069,7 @@ public class Child extends BaseObservable implements Observable {
     public void setIm0497(String im0497) {
         if (this.im0497.equals(im0497)) return;
         this.im0497 = im0497;
+        setTrueAgeInMonths(im0497.equals("97") ? this.ageInMonths : -1);
         setIm04dd(im0497.equals("97") ? "" : this.im04dd);
         setIm04mm(im0497.equals("97") ? "" : this.im04mm);
         setIm04yy(im0497.equals("97") ? "" : this.im04yy);
@@ -2672,7 +2705,6 @@ public class Child extends BaseObservable implements Observable {
                 .put("cb04mm", cb04mm)
                 .put("cb04yy", cb04yy)
                 .put("ageInMonths", ageInMonths);
-        ;
 
         return json.toString();
 
@@ -2872,18 +2904,28 @@ public class Child extends BaseObservable implements Observable {
     }
 
 
-    private void CaluculateAge() {
-        Log.d(TAG, "CaluculateAge: " + this.cb03yy + "-" + this.cb03mm + "-" + this.cb03dd);
-        setCb04mm("");
-        setCb04yy("");
-        if (!this.cb03yy.equals("") && !this.cb03yy.equals("9998") && !this.cb03mm.equals("") && !this.cb03dd.equals("")) {
+    private void CaluculateAge(String dd, String mm, String yy, boolean trueAge) {
+        setAgeCheck(false);
+        Log.d(TAG, "CaluculateAge: " + yy + "-" + mm + "-" + dd);
 
-            if ((Integer.parseInt(this.cb03mm) > 12 && !this.cb03mm.equals("98"))
-                    || (Integer.parseInt(this.cb03dd) > 31 && !this.cb03dd.equals("98"))
-                    || Integer.parseInt(this.cb03yy) < 1920) {
-                setCb04yy("");
-                setCb04mm("");
-                this.ageInMonths = 0;
+        if (!trueAge) {
+            setCb04mm("");
+            setCb04yy("");
+        }
+        if (!yy.equals("") && !yy.equals("9998") && !mm.equals("") && !dd.equals("")) {
+
+            if ((Integer.parseInt(mm) > 12 && !mm.equals("98"))
+                    || (Integer.parseInt(dd) > 31 && !dd.equals("98"))
+                    || Integer.parseInt(yy) < 1920) {
+                if (!trueAge) {
+                    setCb04yy("");
+                    setCb04mm("");
+                    this.ageInMonths = 0;
+                } else {
+                    setTrueAgeInMonths(0);
+
+
+                }
                 return;
             }
             try {
@@ -2896,9 +2938,9 @@ public class Child extends BaseObservable implements Observable {
 
 
                 // set Date of birth
-                int day = !this.cb03dd.equals("98") ? Integer.parseInt(this.cb03dd) : 15;
-                int month = !this.cb03mm.equals("98") ? Integer.parseInt(this.cb03mm) : 6;
-                int year = Integer.parseInt(this.cb03yy);
+                int day = !dd.equals("98") ? Integer.parseInt(dd) : 15;
+                int month = !mm.equals("98") ? Integer.parseInt(mm) : 6;
+                int year = Integer.parseInt(yy);
                 Calendar cal = Calendar.getInstance();
                 cal.setTime(df.parse(year + " " + month + " " + day));
 
@@ -2946,11 +2988,16 @@ public class Child extends BaseObservable implements Observable {
                     tMonth = (MILLISECONDS.toDays(millis) - (tYear * 365)) / 30;
                     tDay = MILLISECONDS.toDays(millis) - ((tYear * 365) + (tMonth * 30));
                 }
+                if (!trueAge) {
 
-                setCb04yy(String.valueOf(tYear));
-                setCb04mm(String.valueOf(tMonth));
-                if (tYear < 0) {
-                    setCb04yy("");
+                    setCb04yy(String.valueOf(tYear));
+                    setCb04mm(String.valueOf(tMonth));
+                    if (tYear < 0) {
+                        setCb04yy("");
+                    }
+                } else {
+                    setTrueAgeInMonths((Integer.parseInt(String.valueOf(tYear)) * 12L) + Integer.parseInt(String.valueOf(tMonth)));
+
                 }
                 //setAgeInMonths(String.valueOf(((tYear) * 12) + tMonth));
 

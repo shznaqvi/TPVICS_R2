@@ -29,7 +29,7 @@ public class TableContracts {
     }
 
     public static abstract class EntryLogTable implements BaseColumns {
-        public static final String TABLE_NAME = "EntryLogs";
+        public static final String TABLE_NAME = "EntryLog";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectName";
         public static final String COLUMN_ID = "_id";

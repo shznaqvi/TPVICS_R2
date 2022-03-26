@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name">TPVICS_R2</string>
+    <string name="app_name">TPVICS (Round 2)</string>
     <string name="btnDownload" translatable="false">Download Data</string>
     <string name="btnUpload">Upload Data</string>
     <string name="promptemail">Email</string>
@@ -147,21 +147,25 @@
 
 
     <string name="householdidentificationmainheading">Household Identification: </string>
-    <string name="respondentinfomainheading">Respondent Info: Enter the respondents information and write down the exact number of people in the household and eligible children</string>
+    <string name="respondentinfomainheading">Respondent Info:</string>
+    <string name="respondentinfosubheading">Enter the respondents information and write down the exact number of people in the household and eligible children</string>
 
     <string name="splashText2">  </string>
 
 
-
-
-    <string name="sectionhhhouseholdinformationhhmainheading">SECTION HH: HOUSEHOLD INFORMATION  (HH): Household Information</string>
+    <string name="sectionhhhouseholdinformationhhmainheading">SECTION HH: HOUSEHOLD INFORMATION</string>
+    <string name="sectionhhhouseholdinformationhhsubheading">Household Information</string>
     <string name="cbmainheading">CB: ELIGIBLE CHILD’S BACKGROUND</string>
-    <string name="sectionsssocioeconomicstatusssmainheading">SECTION SS: SOCIO-ECONOMIC STATUS (SS) : Instructions: This section will be filled by the Head of the household (HH) or knowledgeable member atleast 18 years old</string>
+    <string name="cbsubheading">Information of Eligible Children of 6-23 Months Old</string>
+    <string name="sectionsssocioeconomicstatusssmainheading">SECTION SS: SOCIO-ECONOMIC STATUS (SS) </string>
+    <string name="sectionsssocioeconomicstatussssubheading">Instructions: This section will be filled by the Head of the household (HH) or knowledgeable member atleast 18 years old</string>
     <string name="immainheading">IM: IMMUNIZATION</string>
-    <string name="sectionchlistofchildren0623monthsoldmainheading">SECTION CH: List of Children 06-23 months old: List of Children 0623 months old</string>
+    <string name="sectionchlistofchildren0623monthsoldmainheading">SECTION CH:</string>
+    <string name="sectionchlistofchildren0623monthsoldsubheading">List of Children 06-23 months old: List of Children 0623 months old</string>
     <string name="no"> No </string>
 
-    <string name="consentmainheading">Consent: Introduce yourself to the respondent and explain the reason for your visit and ask for permission</string>
+    <string name="consentmainheading">Consent:</string>
+    <string name="consentsubheading">Introduce yourself to the respondent and explain the reason for your visit and ask for permission</string>
 
 
     <string name="contactnum">Contact Number </string>
@@ -194,7 +198,8 @@
     <string name="hh16a">Head of Households</string>
     <string name="hh15b">No</string>
     <string name="hh16b">Head of Households Contact No </string>
-    <string name="hh19">How many members are living in this household (NUMBER OF PERSONS) (If 95 or more, record ‘95’) Note for enumorators: Persons who live in this dwelling/ compound and usually share a meal together </string>
+    <string name="hh19">How many members are living in this household? (NUMBER OF PERSONS) (If 95 or more, record ‘95’) Note for enumorators: Persons who live in this dwelling/ compound and usually share a meal together </string>
+    <string name="hh19info"> (NUMBER OF PERSONS) (If 95 or more, record ‘95’) Note for enumerators: Persons who live in this dwelling/ compound and usually share a meal together </string>
     <string name="hh20"> Does this HH have children 06-23 months years of age? (i.e., children who have reached their first birthday, but not their second birthday)</string>
     <string name="hh201">Yes</string>
     <string name="hh202">No</string>
@@ -232,7 +237,8 @@
     <string name="ec1896">Other Specify</string>
     <string name="ec19">Check if this respondent is interviewed for household or children questionnaire in this household?</string>
     <string name="ec20">Now I would like to talk to you about (child’s name)’s vaccination record in more detail. This interview will take about 30 minutes. Again, all the information we obtain will remain strictly confidential and anonymous. If you wish not to answer a question or wish to stop the interview, please let me know. May I start now?</string>
-    <string name="ec21">Now I would like to talk to you about (Childs name) vaccination record in detail. May I start now</string>
+    <string name="ec21info">Now I would like to talk to you about (Childs name) vaccination record in detail.</string>
+    <string name="ec21">May I start now?</string>
     <string name="ec19a">Yes, interviewed already</string>
     <string name="ec21a">Yes, permission is granted  </string>
     <string name="ec19b">No, first interview </string>
@@ -245,10 +251,12 @@
     <string name="ec2205">Child not eligible/Not 06-23 Months Age </string>
     <string name="ec2206">Incapacitated(Specify)</string>
     <string name="ec2296">Other specify</string>
-    <string name="cb01">What is your highest grade of completed education?  As for Education Grade passed for mother/caregiver (Write 77 if un educated and for Religious Education , write 20)</string>
+    <string name="cb01info"> As for Education Grade passed for mother/caregiver \n (Write 77 if un educated and for Religious Education , write 20)</string>
+    <string name="cb01">What is your highest grade of completed education?</string>
     <string name="cb01a">Grade</string>
     <string name="cb01b">Religious Education</string>
-    <string name="cb02">What is highest grade of completed education of (names) father?As for Education Grade passed for mother/caregiver (Write 77 if un educated and for Religious education write 20)</string>
+    <string name="cb02">What is highest grade of completed education of (names) father?</string>
+    <string name="cb02info">As for Education Grade passed for mother/caregiver (Write 77 if un educated and for Religious education write 20)</string>
     <string name="cb02a">Grade</string>
     <string name="cb02b">Religious Education</string>
     <string name="ss01">What is the mother tongue of the head of household?</string>
@@ -344,7 +352,7 @@
     <string name="ss01m">Wakhi</string>
     <string name="ss01n">DOMKI</string>
     <string name="ss12"> How many households in total use this toilet facility, including your own household? </string>
-    <string name="ss12a">NUMBER OF HOUSEHOLDS (IF LESS THAN 10) </string>
+    <string name="ss12a">LESS THAN 10 </string>
     <string name="ss12b">TEN OR MORE HOUSEHOLDS </string>
     <string name="ss12c">Dont Know</string>
     <string name="ss13">What is done to dispose the stools of the youngest child?</string>
@@ -415,7 +423,7 @@
     <string name="ss14qb">No	</string>
     <string name="ss14rb">No	</string>
     <string name="ss14sb">No	</string>
-    <string name="ss15">Does any member of this household own:  Ask/probe for each [Multiple responses]  </string>
+    <string name="ss15">Does any member of this household own: </string>
     <string name="ss15a">Watch</string>
     <string name="ss15b">Mobile Phone</string>
     <string name="ss15c">Bicycle </string>
@@ -456,7 +464,8 @@
     <string name="ss17j">Animal Dung</string>
     <string name="ss17k">No food cooked in household</string>
     <string name="ss17x">Other (specify) </string>
-    <string name="ss18">Main material of the dwelling FLOOR  Record observation.  If observation is not possible, ask the respondent toDetermine the material of the dwelling floor.</string>
+    <string name="ss18">Main material of the dwelling FLOOR  Record observation.  </string>
+    <string name="ss18info">If observation is not possible, ask the respondent toDetermine the material of the dwelling floor.</string>
     <string name="ss18atitle">Natural Floor</string>
     <string name="ss18a">Mud/Clay/Earth/Sand</string>
     <string name="ss18b">Dung</string>
@@ -759,12 +768,14 @@
     <string name="ec16">Mother’s/Caregiver’s name </string>
     <string name="ec17">Age of  Mother/Care giver in complete years </string>
     <string name="cb0title">Could you please bring (name)’s Birth Certificate, Immunization Card, and any other immunization record from a public or private health provider available in home? We will need to refer to those documents.</string>
-    <string name="cb03">On what day, month and year was (name) born? Probe: What is (his/her) birthday? If the mother/caretaker knows the exact date of birth, also record the day; otherwise, circle ‘98’ for day. Month and year must be recorded</string>
+    <string name="cb03info">Probe: What is (his/her) birthday? If the mother/caretaker knows the exact date of birth, also record the day; otherwise, circle ‘98’ for day. Month and year must be recorded</string>
+    <string name="cb03">On what day, month and year was (name) born? </string>
     <string name="cb03dd">Day of Birth</string>
     <string name="cb03mm">Month of Birth</string>
     <string name="cb03yy">Year of Birth</string>
     <string name="cb03dk">Don’t know</string>
-    <string name="cb04">How old is (name)?  Record age in completed years and months. Record ‘0’ if less than 1 year.If  Responses to CB3 and CB4 are inconsistent, probe further and correct. </string>
+    <string name="cb04">How old is (name)? </string>
+    <string name="cb04info">Record age in completed years and months. Record ‘0’ if less than 1 year.If  Responses to CB3 and CB4 are inconsistent, probe further and correct. </string>
     <string name="cb04mm">Age (in completed Months)</string>
     <string name="cb04yy">Age (in completed Years)</string>
 

@@ -32,9 +32,9 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/sectionchlistofchildren0623monthsoldmainheading"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:title="@string/sectionchlistofchildren0623monthsoldmainheading"
+            app:subtitle="@string/sectionchlistofchildren0623monthsoldmainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 
@@ -316,6 +316,12 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/cb03info" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -445,6 +451,12 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/cb04info" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -507,6 +519,7 @@
                         </LinearLayout>
 
                         <TextView
+                            style="@null"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@{child.ageInMonths > 23 || child.ageInMonths &lt; 6 ?  context.getResources().getColor(R.color.redOverlay) : context.getResources().getColor(R.color.grayLight)}"

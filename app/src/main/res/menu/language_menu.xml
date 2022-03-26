@@ -13,10 +13,7 @@
             <item
                 android:id="@+id/UR"
                 android:title="Urdu" />
-            <item
-                android:visible="false"
-                android:id="@+id/SD"
-                android:title="Sindhi" />
+
             <item
                 android:id="@+id/EN"
                 android:title="English" />

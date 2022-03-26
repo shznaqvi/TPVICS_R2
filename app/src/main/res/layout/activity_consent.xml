@@ -12,7 +12,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@drawable/app_bg_gray"
         android:orientation="vertical">
 
@@ -27,19 +27,20 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/sectionhhhouseholdinformationhhmainheading"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/sectionhhhouseholdinformationhhmainheading"
+            app:subtitle="@string/consentsubheading"
+            app:title="@string/consentmainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:fillViewport="true">
 
             <LinearLayout
                 android:id="@+id/GrpName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <!-- hh01  Date   -->
@@ -138,6 +139,8 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVhh03"
                     style="@style/cardView"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     android:visibility="gone">
 
                     <LinearLayout
@@ -577,25 +580,29 @@
                 <!-- hh18t  Title   --> <!-- hh18  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVhh18"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
                     style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:orientation="vertical">
 
                         <TextView
                             style="@null"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
                             android:background="#fefede"
                             android:lineHeight="24dp"
+                            android:gravity="center_vertical"
                             android:padding="24dp"
                             android:paddingStart="24dp"
                             android:paddingEnd="24dp"
                             android:text="@string/hh18t"
                             android:textColor="@color/gray"
-                            android:textSize="14sp"
+                            android:textSize="22sp"
                             android:textStyle="normal" />
 
                         <LinearLayout

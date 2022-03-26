@@ -33,6 +33,7 @@
                 app:popupTheme="@style/CustomPopupTheme"
                 app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
                 app:title="@string/respondentinfomainheading"
+                app:subtitle="@string/respondentinfosubheading"
                 app:titleTextAppearance="@style/Toolbar.TitleText" />
 
             <LinearLayout
@@ -383,6 +384,12 @@
                                 android:text="@string/hh19" />
 
                         </LinearLayout>
+
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/hh19info" />
 
                         <LinearLayout
                             android:layout_width="match_parent"

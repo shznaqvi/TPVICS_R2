@@ -19,6 +19,7 @@
         android:orientation="vertical">
 
         <!-- CUSTOM TOOLBAR -->
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -29,7 +30,7 @@
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:subtitleTextColor="@color/colorPrimaryLight"
             app:title="@string/app_name"
-            app:titleTextColor="@color/colorPrimaryLight" />
+            app:titleTextColor="@color/colorPrimary" />
 
         <TextView
             android:id="@+id/message"

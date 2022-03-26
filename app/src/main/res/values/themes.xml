@@ -13,6 +13,8 @@
     <item name="android:windowFullscreen">true</item>
     <item name="windowNoTitle">true</item>
     <item name="windowActionBar">false</item>
+
+
     <!-- Status bar color. -->
     <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
     <!-- Customize your theme here. -->
@@ -30,7 +32,7 @@
     <item name="android:spinnerStyle">@style/spinner</item>
     <item name="spinnerStyle">@style/spinner</item>
     <item name="android:actionBarStyle">@style/ToolbarTheme</item>
-    <item name="android:toolbarStyle">@style/CustomToolbarTheme</item>
+    <item name="android:toolbarStyle">@style/ToolbarTheme</item>
     <item name="android:textViewStyle">@style/labels</item>
     <item name="editTextStyle">@style/textInput</item>
     <item name="radioButtonStyle">@style/radiobutton</item>
@@ -45,6 +47,7 @@
     <item name="android:enterFadeDuration">600</item>
     <item name="android:exitFadeDuration">200</item>
     <item name="android:layoutDirection">ltr</item>
+    <item name="android:textDirection">ltr</item>
     <item name="android:animateLayoutChanges">false</item>
     <item name="android:datePickerStyle">@style/DatePickerStyle</item>
     <item name="android:timePickerStyle">@style/DatePickerStyle</item>
@@ -62,7 +65,7 @@
     <item name="android:spinnerStyle">@style/spinner</item>
     <item name="spinnerStyle">@style/spinner</item>
     <item name="android:actionBarStyle">@style/ToolbarTheme</item>
-    <item name="android:toolbarStyle">@style/CustomToolbarTheme</item>
+    <item name="android:toolbarStyle">@style/ToolbarTheme</item>
     <item name="android:textViewStyle">@style/labels</item>
     <item name="editTextStyle">@style/textInput</item>
     <item name="radioButtonStyle">@style/radiobutton</item>
@@ -76,6 +79,7 @@
     <item name="android:enterFadeDuration">600</item>
     <item name="android:exitFadeDuration">200</item>
     <item name="android:layoutDirection">rtl</item>
+    <item name="android:textDirection">rtl</item>
     <item name="android:animateLayoutChanges">false</item>
     <item name="android:datePickerStyle">@style/DatePickerStyle</item>
     <item name="android:timePickerStyle">@style/DatePickerStyle</item>
@@ -92,7 +96,7 @@
     <item name="android:spinnerStyle">@style/spinner</item>
     <item name="spinnerStyle">@style/spinner</item>
     <item name="android:actionBarStyle">@style/ToolbarTheme</item>
-    <item name="android:toolbarStyle">@style/CustomToolbarTheme</item>
+    <item name="android:toolbarStyle">@style/ToolbarTheme</item>
     <item name="android:textViewStyle">@style/labels</item>
     <item name="editTextStyle">@style/textInput</item>
     <item name="radioButtonStyle">@style/radiobutton</item>
@@ -117,12 +121,13 @@
 
 
 <!-- Base application theme. -->
-<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-    <item name="android:windowFullscreen">true</item>
-
-    <item name="fontFamily">@font/roboto</item>
-    <item name="android:actionBarStyle">@style/topBarStyle</item>
-</style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:actionBarStyle">@style/topBarStyle</item>
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:layoutDirection">ltr</item>
+        <item name="android:toolbarStyle">@style/topBarStyle</item>
+    </style>
 
     <style name="BackgroundStyle" parent="android:Widget.ScrollView">
         <item name="android:background">@drawable/app_bg_gray</item>
@@ -135,14 +140,16 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">16sp</item>
         <item name="android:layout_marginTop">8dp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:minHeight">48dp</item>
         <item name="android:fontFamily">@font/roboto</item>
-        <item name="android:background">@color/grayLightd6</item>
-        <item name="android:gravity">bottom|start</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:gravity">center|start</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="android:paddingStart">4dp</item>
-        <item name="android:paddingEnd">4dp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
     </style>
 <style name="labelsHead" parent="@android:style/TextAppearance.Widget.TextView">
@@ -151,7 +158,6 @@
     <item name="android:textStyle">bold</item>
     <item name="android:layout_marginTop">24dp</item>
     <item name="android:textColor">@color/whiteOverlay</item>
-    <item name="android:fontFamily">@font/roboto</item>
     <item name="android:textSize">20sp</item>
     <item name="android:gravity">center</item>
     <item name="android:paddingStart">15dp</item>
@@ -181,6 +187,9 @@
     <item name="android:paddingTop">6dp</item>
     <item name="android:paddingBottom">6dp</item>
     <item name="android:minHeight">48dp</item>
+    <item name="fontFamily">@font/roboto</item>
+    <item name="android:textDirection">ltr</item>
+
     <item name="android:imeOptions">actionDone</item>
     <item name="android:focusable">true</item>
     <item name="android:clickable">true</item>
@@ -284,7 +293,8 @@
     </style>
 
     <style name="quesNum">
-        <item name="android:textColor">@color/gray</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@color/colorAccent</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:paddingTop">8dp</item>
         <item name="android:textSize">13sp</item>
@@ -408,7 +418,6 @@
     <!-- Applied to framework control highlights (i.e ripples or list selectors) -->
     <item name="colorControlHighlight">@color/colorAccent</item>
     <item name="android:textColorSecondary">@color/white</item>
-    <item name="android:background">@color/colorPrimary</item>
     <item name="android:typeface">sans</item>
     <item name="android:fontFamily">@font/jameel_noori_nastaleeq</item>
     <item name="android:maxHeight">@dimen/abc_action_bar_default_height_material</item>
@@ -542,4 +551,6 @@
     <style name="AppTheme.Alert.Button.Neutral" parent="Widget.AppCompat.Button.Borderless.Colored">
         <item name="android:textColor">@color/grayDark</item>
     </style>
+
+
 </resources>

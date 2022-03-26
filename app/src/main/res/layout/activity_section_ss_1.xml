@@ -342,7 +342,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
                                 android:text="@string/ss03atitle" />
-
                             <TableLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
@@ -396,21 +395,14 @@
                                         android:checked="@{form.ss03.equals(`21`)}"
                                         android:onClick="@{()->form.setSs03(`21`)}"
                                         android:text="@string/ss03e" />
-
-
                                 </TableRow>
-                            </TableLayout>
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="@string/ss03ftitle" />
-
-                            <TableLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="12dp"
+                                    android:text="@string/ss03ftitle" />
 
                                 <TableRow>
 
@@ -431,20 +423,14 @@
                                         android:checked="@{form.ss03.equals(`32`)}"
                                         android:onClick="@{()->form.setSs03(`32`)}"
                                         android:text="@string/ss03g" />
-
                                 </TableRow>
-                            </TableLayout>
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
-                                android:text="@string/ss03htitle" />
-
-                            <TableLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="12dp"
+                                    android:text="@string/ss03htitle" />
 
                                 <TableRow>
 
@@ -495,23 +481,16 @@
                                         android:checked="@{form.ss03.equals(`71`)}"
                                         android:onClick="@{()->form.setSs03(`71`)}"
                                         android:text="@string/ss03l" />
-
-
-                                </TableRow>
-
-                                <TableRow>
-
-
-                                    <RadioButton
-                                        android:id="@+id/ss03m"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss03.equals(`81`)}"
-                                        android:onClick="@{()->form.setSs03(`81`)}"
-                                        android:text="@string/ss03m" />
                                 </TableRow>
                             </TableLayout>
+
+                            <RadioButton
+                                android:id="@+id/ss03m"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss03.equals(`81`)}"
+                                android:onClick="@{()->form.setSs03(`81`)}"
+                                android:text="@string/ss03m" />
 
                             <TextView
                                 style="@style/sub_labels"
@@ -519,6 +498,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
                                 android:text="@string/ss03ntitle" />
+
 
                             <RadioButton
                                 android:id="@+id/ss03n"
@@ -536,18 +516,16 @@
                                 android:onClick="@{()->form.setSs03(`96`)}"
                                 android:text="@string/ss03x" />
 
+                            <EditText
+                                android:id="@+id/ss03xx"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:hint="@string/ss03x"
+                                android:tag="ss03x"
+                                android:text="@={form.ss03xx}"
+                                android:visibility="@{form.ss03.equals(`96`) ? View.VISIBLE : View.GONE}" />
                         </RadioGroup>
-
-                        <EditText
-                            android:id="@+id/ss03xx"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                            android:hint="@string/ss03x"
-                            android:tag="ss03x"
-                            android:text="@={form.ss03xx}"
-                            android:visibility="@{form.ss03.equals(`96`) ? View.VISIBLE : View.GONE}" />
-
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

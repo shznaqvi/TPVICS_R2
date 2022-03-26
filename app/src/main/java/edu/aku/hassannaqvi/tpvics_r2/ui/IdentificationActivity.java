@@ -2,7 +2,6 @@ package edu.aku.hassannaqvi.tpvics_r2.ui;
 
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.selectedCluster;
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.selectedHousehold;
-import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -39,7 +38,7 @@ public class IdentificationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(sharedPref.getString("lang", "0").equals("2") ? R.style.AppThemeSindhi : sharedPref.getString("lang", "0").equals("1") ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
+        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_identification);
         db = MainApp.appInfo.dbHelper;
         //   populateSpinner();

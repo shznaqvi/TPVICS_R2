@@ -29,9 +29,8 @@
         android:usesCleartextTraffic="false"
         tools:replace="android:allowBackup">
         <activity
-            android:name=".ui.sections.ChildEndingActivity"
+            android:name=".ui.ChildEndingActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize|stateHidden"  />
         <activity
             android:name=".ui.LoginActivity"

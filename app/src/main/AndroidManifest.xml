@@ -47,7 +47,6 @@
         </activity>
         <activity
             android:name=".ui.ChangePasswordActivity"
-            android:theme="@style/AppTheme"
             android:exported="true" />
         <activity
             android:name=".ui.EndingActivity"

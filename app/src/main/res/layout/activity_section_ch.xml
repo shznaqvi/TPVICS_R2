@@ -317,7 +317,7 @@
                         </LinearLayout>
 
                         <TextView
-                            style="@style/sub_labels"
+                            style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="@string/cb03info" />
@@ -452,7 +452,7 @@
                         </LinearLayout>
 
                         <TextView
-                            style="@style/sub_labels"
+                            style="@style/info"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="@string/cb04info" />

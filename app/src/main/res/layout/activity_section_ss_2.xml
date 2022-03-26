@@ -414,124 +414,93 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
-                            <TableLayout
+                            <RadioButton
+                                android:id="@+id/ss17a"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss17.equals(`1`)}"
+                                android:onClick="@{()->form.setSs17(`1`)}"
+                                android:text="@string/ss17a" />
 
-                                <TableRow>
+                            <RadioButton
+                                android:id="@+id/ss17b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss17.equals(`2`)}"
+                                android:onClick="@{()->form.setSs17(`2`)}"
+                                android:text="@string/ss17b" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss17a"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss17.equals(`1`)}"
-                                        android:onClick="@{()->form.setSs17(`1`)}"
-                                        android:text="@string/ss17a" />
+                            <RadioButton
+                                android:id="@+id/ss17c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss17.equals(`3`)}"
+                                android:onClick="@{()->form.setSs17(`3`)}"
+                                android:text="@string/ss17c" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss17b"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss17.equals(`2`)}"
-                                        android:onClick="@{()->form.setSs17(`2`)}"
-                                        android:text="@string/ss17b" />
+                            <RadioButton
+                                android:id="@+id/ss17d"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss17.equals(`4`)}"
+                                android:onClick="@{()->form.setSs17(`4`)}"
+                                android:text="@string/ss17d" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss17c"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss17.equals(`3`)}"
-                                        android:onClick="@{()->form.setSs17(`3`)}"
-                                        android:text="@string/ss17c" />
+                            <RadioButton
+                                android:id="@+id/ss17e"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss17.equals(`5`)}"
+                                android:onClick="@{()->form.setSs17(`5`)}"
+                                android:text="@string/ss17e" />
 
-                                </TableRow>
+                            <RadioButton
+                                android:id="@+id/ss17f"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss17.equals(`6`)}"
+                                android:onClick="@{()->form.setSs17(`6`)}"
+                                android:text="@string/ss17f" />
 
-                                <TableRow>
+                            <RadioButton
+                                android:id="@+id/ss17g"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss17.equals(`7`)}"
+                                android:onClick="@{()->form.setSs17(`7`)}"
+                                android:text="@string/ss17g" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss17d"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss17.equals(`4`)}"
-                                        android:onClick="@{()->form.setSs17(`4`)}"
-                                        android:text="@string/ss17d" />
+                            <RadioButton
+                                android:id="@+id/ss17h"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss17.equals(`8`)}"
+                                android:onClick="@{()->form.setSs17(`8`)}"
+                                android:text="@string/ss17h" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss17e"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss17.equals(`5`)}"
-                                        android:onClick="@{()->form.setSs17(`5`)}"
-                                        android:text="@string/ss17e" />
+                            <RadioButton
+                                android:id="@+id/ss17i"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss17.equals(`9`)}"
+                                android:onClick="@{()->form.setSs17(`9`)}"
+                                android:text="@string/ss17i" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss17f"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss17.equals(`6`)}"
-                                        android:onClick="@{()->form.setSs17(`6`)}"
-                                        android:text="@string/ss17f" />
-                                </TableRow>
+                            <RadioButton
+                                android:id="@+id/ss17j"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss17.equals(`10`)}"
+                                android:onClick="@{()->form.setSs17(`10`)}"
+                                android:text="@string/ss17j" />
 
-                                <TableRow>
-
-                                    <RadioButton
-                                        android:id="@+id/ss17g"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss17.equals(`7`)}"
-                                        android:onClick="@{()->form.setSs17(`7`)}"
-                                        android:text="@string/ss17g" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss17h"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss17.equals(`8`)}"
-                                        android:onClick="@{()->form.setSs17(`8`)}"
-                                        android:text="@string/ss17h" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss17i"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss17.equals(`9`)}"
-                                        android:onClick="@{()->form.setSs17(`9`)}"
-                                        android:text="@string/ss17i" />
-                                </TableRow>
-
-                                <TableRow>
-
-                                    <RadioButton
-                                        android:id="@+id/ss17j"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss17.equals(`10`)}"
-                                        android:onClick="@{()->form.setSs17(`10`)}"
-                                        android:text="@string/ss17j" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss17k"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="2"
-                                        android:checked="@{form.ss17.equals(`11`)}"
-                                        android:onClick="@{()->form.setSs17(`11`)}"
-                                        android:text="@string/ss17k" />
-
-
-                                </TableRow>
-                            </TableLayout>
+                            <RadioButton
+                                android:id="@+id/ss17k"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss17.equals(`11`)}"
+                                android:onClick="@{()->form.setSs17(`11`)}"
+                                android:text="@string/ss17k" />
 
                             <RadioButton
                                 android:id="@+id/ss17x"
@@ -603,32 +572,21 @@
                                 android:layout_marginTop="12dp"
                                 android:text="@string/ss18atitle" />
 
-                            <TableLayout
+                            <RadioButton
+                                android:id="@+id/ss18a"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss18.equals(`11`)}"
+                                android:onClick="@{()->form.setSs18(`11`)}"
+                                android:text="@string/ss18a" />
 
-                                <TableRow>
-
-                                    <RadioButton
-                                        android:id="@+id/ss18a"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss18.equals(`11`)}"
-                                        android:onClick="@{()->form.setSs18(`11`)}"
-                                        android:text="@string/ss18a" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss18b"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss18.equals(`12`)}"
-                                        android:onClick="@{()->form.setSs18(`12`)}"
-                                        android:text="@string/ss18b" />
-
-                                </TableRow>
-                            </TableLayout>
+                            <RadioButton
+                                android:id="@+id/ss18b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss18.equals(`12`)}"
+                                android:onClick="@{()->form.setSs18(`12`)}"
+                                android:text="@string/ss18b" />
 
                             <TextView
                                 style="@style/sub_labels"
@@ -637,31 +595,21 @@
                                 android:layout_marginTop="12dp"
                                 android:text="@string/ss18ctitle" />
 
-                            <TableLayout
+                            <RadioButton
+                                android:id="@+id/ss18e"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss18.equals(`21`)}"
+                                android:onClick="@{()->form.setSs18(`21`)}"
+                                android:text="@string/ss18e" />
 
-                                <TableRow>
-
-                                    <RadioButton
-                                        android:id="@+id/ss18e"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss18.equals(`21`)}"
-                                        android:onClick="@{()->form.setSs18(`21`)}"
-                                        android:text="@string/ss18e" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss18f"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss18.equals(`22`)}"
-                                        android:onClick="@{()->form.setSs18(`22`)}"
-                                        android:text="@string/ss18f" />
-                                </TableRow>
-                            </TableLayout>
+                            <RadioButton
+                                android:id="@+id/ss18f"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss18.equals(`22`)}"
+                                android:onClick="@{()->form.setSs18(`22`)}"
+                                android:text="@string/ss18f" />
 
                             <TextView
                                 style="@style/sub_labels"
@@ -670,79 +618,61 @@
                                 android:layout_marginTop="12dp"
                                 android:text="@string/ss18gtitle" />
 
-                            <TableLayout
+                            <RadioButton
+                                android:id="@+id/ss18g"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss18.equals(`31`)}"
+                                android:onClick="@{()->form.setSs18(`31`)}"
+                                android:text="@string/ss18g" />
 
-                                <TableRow>
+                            <RadioButton
+                                android:id="@+id/ss18h"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss18.equals(`32`)}"
+                                android:onClick="@{()->form.setSs18(`32`)}"
+                                android:text="@string/ss18h" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss18g"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss18.equals(`31`)}"
-                                        android:onClick="@{()->form.setSs18(`31`)}"
-                                        android:text="@string/ss18g" />
+                            <RadioButton
+                                android:id="@+id/ss18i"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss18.equals(`33`)}"
+                                android:onClick="@{()->form.setSs18(`33`)}"
+                                android:text="@string/ss18i" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss18h"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss18.equals(`32`)}"
-                                        android:onClick="@{()->form.setSs18(`32`)}"
-                                        android:text="@string/ss18h" />
+                            <RadioButton
+                                android:id="@+id/ss18j"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss18.equals(`34`)}"
+                                android:onClick="@{()->form.setSs18(`34`)}"
+                                android:text="@string/ss18j" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss18i"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss18.equals(`33`)}"
-                                        android:onClick="@{()->form.setSs18(`33`)}"
-                                        android:text="@string/ss18i" />
-                                </TableRow>
+                            <RadioButton
+                                android:id="@+id/ss18k"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss18.equals(`35`)}"
+                                android:onClick="@{()->form.setSs18(`35`)}"
+                                android:text="@string/ss18k" />
 
-                                <TableRow>
+                            <RadioButton
+                                android:id="@+id/ss18l"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss18.equals(`36`)}"
+                                android:onClick="@{()->form.setSs18(`36`)}"
+                                android:text="@string/ss18l" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss18j"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss18.equals(`34`)}"
-                                        android:onClick="@{()->form.setSs18(`34`)}"
-                                        android:text="@string/ss18j" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss18k"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss18.equals(`35`)}"
-                                        android:onClick="@{()->form.setSs18(`35`)}"
-                                        android:text="@string/ss18k" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss18l"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss18.equals(`36`)}"
-                                        android:onClick="@{()->form.setSs18(`36`)}"
-                                        android:text="@string/ss18l" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss18m"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss18.equals(`37`)}"
-                                        android:onClick="@{()->form.setSs18(`37`)}"
-                                        android:text="@string/ss18m" />
-                                </TableRow>
-                            </TableLayout>
+                            <RadioButton
+                                android:id="@+id/ss18m"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss18.equals(`37`)}"
+                                android:onClick="@{()->form.setSs18(`37`)}"
+                                android:text="@string/ss18m" />
 
                             <RadioButton
                                 android:id="@+id/ss18x"
@@ -806,40 +736,29 @@
                                 android:layout_marginTop="12dp"
                                 android:text="@string/ss19atitle" />
 
-                            <TableLayout
+                            <RadioButton
+                                android:id="@+id/ss19a"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss19.equals(`11`)}"
+                                android:onClick="@{()->form.setSs19(`11`)}"
+                                android:text="@string/ss19a" />
 
-                                <TableRow>
+                            <RadioButton
+                                android:id="@+id/ss19b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss19.equals(`12`)}"
+                                android:onClick="@{()->form.setSs19(`12`)}"
+                                android:text="@string/ss19b" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss19a"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss19.equals(`11`)}"
-                                        android:onClick="@{()->form.setSs19(`11`)}"
-                                        android:text="@string/ss19a" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss19b"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss19.equals(`12`)}"
-                                        android:onClick="@{()->form.setSs19(`12`)}"
-                                        android:text="@string/ss19b" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss19c"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss19.equals(`13`)}"
-                                        android:onClick="@{()->form.setSs19(`13`)}"
-                                        android:text="@string/ss19c" />
-                                </TableRow>
-                            </TableLayout>
+                            <RadioButton
+                                android:id="@+id/ss19c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss19.equals(`13`)}"
+                                android:onClick="@{()->form.setSs19(`13`)}"
+                                android:text="@string/ss19c" />
 
                             <TextView
                                 style="@style/sub_labels"
@@ -848,49 +767,37 @@
                                 android:layout_marginTop="12dp"
                                 android:text="@string/ss19dtitle" />
 
-                            <TableLayout
+                            <RadioButton
+                                android:id="@+id/ss19d"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss19.equals(`21`)}"
+                                android:onClick="@{()->form.setSs19(`21`)}"
+                                android:text="@string/ss19d" />
 
-                                <TableRow>
+                            <RadioButton
+                                android:id="@+id/ss19e"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss19.equals(`22`)}"
+                                android:onClick="@{()->form.setSs19(`22`)}"
+                                android:text="@string/ss19e" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss19d"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss19.equals(`21`)}"
-                                        android:onClick="@{()->form.setSs19(`21`)}"
-                                        android:text="@string/ss19d" />
+                            <RadioButton
+                                android:id="@+id/ss19f"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss19.equals(`23`)}"
+                                android:onClick="@{()->form.setSs19(`23`)}"
+                                android:text="@string/ss19f" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss19e"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss19.equals(`22`)}"
-                                        android:onClick="@{()->form.setSs19(`22`)}"
-                                        android:text="@string/ss19e" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss19f"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss19.equals(`23`)}"
-                                        android:onClick="@{()->form.setSs19(`23`)}"
-                                        android:text="@string/ss19f" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss19g"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss19.equals(`24`)}"
-                                        android:onClick="@{()->form.setSs19(`24`)}"
-                                        android:text="@string/ss19g" />
-                                </TableRow>
-                            </TableLayout>
+                            <RadioButton
+                                android:id="@+id/ss19g"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss19.equals(`24`)}"
+                                android:onClick="@{()->form.setSs19(`24`)}"
+                                android:text="@string/ss19g" />
 
                             <TextView
                                 style="@style/sub_labels"
@@ -899,79 +806,61 @@
                                 android:layout_marginTop="12dp"
                                 android:text="@string/ss19htitle" />
 
-                            <TableLayout
+                            <RadioButton
+                                android:id="@+id/ss19h"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss19.equals(`31`)}"
+                                android:onClick="@{()->form.setSs19(`31`)}"
+                                android:text="@string/ss19h" />
 
-                                <TableRow>
+                            <RadioButton
+                                android:id="@+id/ss19i"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss19.equals(`32`)}"
+                                android:onClick="@{()->form.setSs19(`32`)}"
+                                android:text="@string/ss19i" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss19h"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss19.equals(`31`)}"
-                                        android:onClick="@{()->form.setSs19(`31`)}"
-                                        android:text="@string/ss19h" />
+                            <RadioButton
+                                android:id="@+id/ss19j"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss19.equals(`33`)}"
+                                android:onClick="@{()->form.setSs19(`33`)}"
+                                android:text="@string/ss19j" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss19i"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss19.equals(`32`)}"
-                                        android:onClick="@{()->form.setSs19(`32`)}"
-                                        android:text="@string/ss19i" />
+                            <RadioButton
+                                android:id="@+id/ss19k"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss19.equals(`34`)}"
+                                android:onClick="@{()->form.setSs19(`34`)}"
+                                android:text="@string/ss19k" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss19j"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss19.equals(`33`)}"
-                                        android:onClick="@{()->form.setSs19(`33`)}"
-                                        android:text="@string/ss19j" />
-                                </TableRow>
+                            <RadioButton
+                                android:id="@+id/ss19l"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss19.equals(`35`)}"
+                                android:onClick="@{()->form.setSs19(`35`)}"
+                                android:text="@string/ss19l" />
 
-                                <TableRow>
+                            <RadioButton
+                                android:id="@+id/ss19m"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss19.equals(`36`)}"
+                                android:onClick="@{()->form.setSs19(`36`)}"
+                                android:text="@string/ss19m" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss19k"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss19.equals(`34`)}"
-                                        android:onClick="@{()->form.setSs19(`34`)}"
-                                        android:text="@string/ss19k" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss19l"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss19.equals(`35`)}"
-                                        android:onClick="@{()->form.setSs19(`35`)}"
-                                        android:text="@string/ss19l" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss19m"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss19.equals(`36`)}"
-                                        android:onClick="@{()->form.setSs19(`36`)}"
-                                        android:text="@string/ss19m" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss19n"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss19.equals(`37`)}"
-                                        android:onClick="@{()->form.setSs19(`37`)}"
-                                        android:text="@string/ss19n" />
-                                </TableRow>
-                            </TableLayout>
+                            <RadioButton
+                                android:id="@+id/ss19n"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss19.equals(`37`)}"
+                                android:onClick="@{()->form.setSs19(`37`)}"
+                                android:text="@string/ss19n" />
 
                             <RadioButton
                                 android:id="@+id/ss19x"
@@ -1036,130 +925,101 @@
                                 android:layout_marginTop="12dp"
                                 android:text="@string/ss20atitle" />
 
-                            <TableLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <TableRow>
-
                                     <RadioButton
                                         android:id="@+id/ss20a"
-                                        android:layout_width="0dp"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
                                         android:checked="@{form.ss20.equals(`11`)}"
                                         android:onClick="@{()->form.setSs20(`11`)}"
                                         android:text="@string/ss20a" />
 
                                     <RadioButton
                                         android:id="@+id/ss20b"
-                                        android:layout_width="0dp"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
                                         android:checked="@{form.ss20.equals(`12`)}"
                                         android:onClick="@{()->form.setSs20(`12`)}"
                                         android:text="@string/ss20b" />
 
                                     <RadioButton
                                         android:id="@+id/ss20c"
-                                        android:layout_width="0dp"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
                                         android:checked="@{form.ss20.equals(`13`)}"
                                         android:onClick="@{()->form.setSs20(`13`)}"
                                         android:text="@string/ss20c" />
-                                </TableRow>
-
-                                <TableRow>
 
                                     <RadioButton
                                         android:id="@+id/ss20d"
-                                        android:layout_width="0dp"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
                                         android:checked="@{form.ss20.equals(`21`)}"
                                         android:onClick="@{()->form.setSs20(`21`)}"
                                         android:text="@string/ss20d" />
 
                                     <RadioButton
                                         android:id="@+id/ss20dtitle"
-                                        android:layout_width="0dp"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
                                         android:checked="@{form.ss20.equals(`0`)}"
                                         android:onClick="@{()->form.setSs20(`0`)}"
                                         android:text="@string/ss20dtitle" />
 
                                     <RadioButton
                                         android:id="@+id/ss20e"
-                                        android:layout_width="0dp"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
                                         android:checked="@{form.ss20.equals(`22`)}"
                                         android:onClick="@{()->form.setSs20(`22`)}"
                                         android:text="@string/ss20e" />
-                                </TableRow>
-
-                                <TableRow>
 
                                     <RadioButton
                                         android:id="@+id/ss20f"
-                                        android:layout_width="0dp"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
                                         android:checked="@{form.ss20.equals(`23`)}"
                                         android:onClick="@{()->form.setSs20(`23`)}"
                                         android:text="@string/ss20f" />
 
                                     <RadioButton
                                         android:id="@+id/ss20g"
-                                        android:layout_width="0dp"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
                                         android:checked="@{form.ss20.equals(`24`)}"
                                         android:onClick="@{()->form.setSs20(`24`)}"
                                         android:text="@string/ss20g" />
 
                                     <RadioButton
                                         android:id="@+id/ss20h"
-                                        android:layout_width="0dp"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
                                         android:checked="@{form.ss20.equals(`25`)}"
                                         android:onClick="@{()->form.setSs20(`25`)}"
                                         android:text="@string/ss20h" />
-                                </TableRow>
-
-                                <TableRow>
 
                                     <RadioButton
                                         android:id="@+id/ss20i"
-                                        android:layout_width="0dp"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
                                         android:checked="@{form.ss20.equals(`26`)}"
                                         android:onClick="@{()->form.setSs20(`26`)}"
                                         android:text="@string/ss20i" />
 
                                     <RadioButton
                                         android:id="@+id/ss20j"
-                                        android:layout_width="0dp"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
                                         android:checked="@{form.ss20.equals(`27`)}"
                                         android:onClick="@{()->form.setSs20(`27`)}"
                                         android:text="@string/ss20j" />
 
                                     <RadioButton
                                         android:id="@+id/ss20k"
-                                        android:layout_width="0dp"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
                                         android:checked="@{form.ss20.equals(`31`)}"
                                         android:onClick="@{()->form.setSs20(`31`)}"
                                         android:text="@string/ss20k" />
-                                </TableRow>
-                            </TableLayout>
 
                             <TextView
                                 style="@style/sub_labels"
@@ -1168,61 +1028,45 @@
                                 android:layout_marginTop="12dp"
                                 android:text="@string/ss20ktitle" />
 
-                            <TableLayout
+                            <RadioButton
+                                android:id="@+id/ss20l"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss20.equals(`32`)}"
+                                android:onClick="@{()->form.setSs20(`32`)}"
+                                android:text="@string/ss20l" />
 
-                                <TableRow>
+                            <RadioButton
+                                android:id="@+id/ss20m"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss20.equals(`33`)}"
+                                android:onClick="@{()->form.setSs20(`33`)}"
+                                android:text="@string/ss20m" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss20l"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss20.equals(`32`)}"
-                                        android:onClick="@{()->form.setSs20(`32`)}"
-                                        android:text="@string/ss20l" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss20m"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss20.equals(`33`)}"
-                                        android:onClick="@{()->form.setSs20(`33`)}"
-                                        android:text="@string/ss20m" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss20n"
-                                        android:layout_width="0dp"
-                                        android:layout_height="match_parent"
-                                        android:layout_weight="1"
-                                        android:checked="@{form.ss20.equals(`34`)}"
-                                        android:onClick="@{()->form.setSs20(`34`)}"
-                                        android:text="@string/ss20n" />
-                                </TableRow>
-
-                                <TableRow>
+                            <RadioButton
+                                android:id="@+id/ss20n"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss20.equals(`34`)}"
+                                android:onClick="@{()->form.setSs20(`34`)}"
+                                android:text="@string/ss20n" />
 
                                     <RadioButton
                                         android:id="@+id/ss20o"
-                                        android:layout_width="0dp"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
                                         android:checked="@{form.ss20.equals(`35`)}"
                                         android:onClick="@{()->form.setSs20(`35`)}"
                                         android:text="@string/ss20o" />
 
                                     <RadioButton
                                         android:id="@+id/ss20p"
-                                        android:layout_width="0dp"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
                                         android:checked="@{form.ss20.equals(`36`)}"
                                         android:onClick="@{()->form.setSs20(`36`)}"
                                         android:text="@string/ss20p" />
-                                </TableRow>
-                            </TableLayout>
 
                             <RadioButton
                                 android:id="@+id/ss20x"

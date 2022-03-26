@@ -247,7 +247,6 @@
                  </androidx.cardview.widget.CardView>-->
 
 
-
                 <LinearLayout
                     android:id="@+id/adminView"
                     android:layout_width="match_parent"
@@ -272,7 +271,6 @@
                         android:layout_marginTop="8dp"
                         android:gravity="center_horizontal"
                         android:orientation="horizontal">
-
 
 
                         <TextView

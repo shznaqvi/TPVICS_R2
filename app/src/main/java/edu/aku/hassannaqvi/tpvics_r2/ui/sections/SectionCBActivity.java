@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.tpvics_r2.ui.sections;
 
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.child;
+import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,6 +33,7 @@ public class SectionCBActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(sharedPref.getString("lang", "0").equals("2") ? R.style.AppThemeSindhi : sharedPref.getString("lang", "0").equals("1") ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cb);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;

@@ -108,7 +108,25 @@ public class SectionCBActivity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(this, bi.GrpName);
+
+        if (!Validator.emptyCheckingContainer(this, bi.GrpName)) {
+            return false;
+        }
+
+        if (child.getCb01a().equals("77")){
+            if (!child.getCb01b().equals("77") && !child.getCb01b().equals("88")) {
+                return Validator.emptyCustomTextBox(this, bi.cb01b, "Incorrect value, Only 77 or 88 is allowed.");
+            }
+        }
+        if (child.getCb02a().equals("77")){
+            if (!child.getCb02b().equals("77") && !child.getCb02b().equals("88")) {
+                return Validator.emptyCustomTextBox(this, bi.cb02b, "Incorrect value, Only 77 or 88 is allowed.");
+            }
+        }
+
+
+        return true;
+
     }
 
 

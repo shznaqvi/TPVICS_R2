@@ -237,7 +237,7 @@ public class SectionIM1Activity extends AppCompatActivity {
         }
 
         //if (IMdates is valid date(not, 97, 66, 88, 44)){
-        if (MainApp.child.getIm02().equals("1")) {
+        if (MainApp.child.getIm02().equals("1") && (child.getTrueAgeInMonths() > 6 && child.getTrueAgeInMonths() < 24)) {
             // Only set once
             // IM04 - DOB
             String dobDate = MainApp.child.getIm04yy()
@@ -260,10 +260,17 @@ public class SectionIM1Activity extends AppCompatActivity {
                 }
 
                 // validate default values; initialize im105 for im0501
-                im05 = Integer.parseInt(MainApp.child.getIm0501dd());
-                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                    return Validator.emptyCustomTextBox(this, bi.im0501dd, "Incorrect value for Day.");
+
+                try {
+                    im05 = Integer.parseInt(MainApp.child.getIm0501dd());
+
+                    if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                        return Validator.emptyCustomTextBox(this, bi.im0501dd, "Incorrect value for Day.");
+                    }
+                }catch (NumberFormatException e){
+                    e.printStackTrace();
                 }
+
             }
 
             // IM0502

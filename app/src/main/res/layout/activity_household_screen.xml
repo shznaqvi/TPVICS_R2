@@ -497,7 +497,9 @@
                         android:text="Save"
                         android:textColor="@color/white"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+
+                        />
 
                 </LinearLayout>
                 <!--EndButton LinearLayout-->

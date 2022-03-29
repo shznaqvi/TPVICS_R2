@@ -171,6 +171,8 @@ public class Child extends BaseObservable implements Observable {
     private String im18 = _EMPTY_;
     private String im19 = _EMPTY_;
     private String im20 = _EMPTY_;
+    private String im20a = _EMPTY_;
+
     private String im21 = _EMPTY_;
     private String im22 = _EMPTY_;
     private String im22a = _EMPTY_;
@@ -962,6 +964,8 @@ public class Child extends BaseObservable implements Observable {
         setIm18(im02.equals("1") ? "" : this.im18);
         setIm19(im02.equals("1") ? "" : this.im19);
         setIm20(im02.equals("1") ? "" : this.im20);
+        //setIm20a(im02.equals("1") ? "" : this.im20a);
+
         setIm21(im02.equals("1") ? "" : this.im21);
         setIm22(im02.equals("1") ? "" : this.im22);
         setIm22a(im02.equals("1") ? "" : this.im22a);
@@ -1731,6 +1735,8 @@ public class Child extends BaseObservable implements Observable {
         setIm18(im08.equals("1") ? this.im18 : "");
         setIm19(im08.equals("1") ? this.im19 : "");
         setIm20(im08.equals("1") ? this.im20 : "");
+        //setIm20a(im08.equals("1") ? this.im20a : "");
+
         setIm21(im08.equals("1") ? this.im21 : "");
         setIm22(im08.equals("1") ? this.im22 : "");
         setIm22a(im08.equals("1") ? this.im22a : "");
@@ -1890,8 +1896,18 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm20(String im20) {
         this.im20 = im20;
-
+        setIm20a(im20.equals("1") ? this.im20 : "");
         notifyPropertyChanged(BR.im20);
+    }
+
+    @Bindable
+    public String getIm20a() {
+        return im20a;
+    }
+
+    public void setIm20a(String im20a) {
+        this.im20a = im20a;
+        notifyPropertyChanged(BR.im20a);
     }
 
     @Bindable
@@ -2642,6 +2658,7 @@ public class Child extends BaseObservable implements Observable {
             this.im18 = json.getString("im18");
             this.im19 = json.getString("im19");
             this.im20 = json.getString("im20");
+            this.im20a = json.getString("im20a");
             this.im21 = json.getString("im21");
             this.im22 = json.getString("im22");
             this.im22a = json.getString("im22a");
@@ -2797,6 +2814,7 @@ public class Child extends BaseObservable implements Observable {
                 .put("im18", im18)
                 .put("im19", im19)
                 .put("im20", im20)
+                .put("im20a", im20a)
                 .put("im21", im21)
                 .put("im22", im22)
                 .put("im22a", im22a)

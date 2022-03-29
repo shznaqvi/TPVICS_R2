@@ -514,7 +514,7 @@
                                 android:enabled="@{child.cb01a.equals(`77`)}"
                                 android:text="@={child.cb01b}"
                                 app:defaultValue="77"
-                                app:maxValue="77"
+                                app:maxValue="88"
                                 app:minValue="77"
                                 app:type="range" />
                         </LinearLayout>
@@ -606,7 +606,7 @@
                                 android:enabled="@{child.cb02a.equals(`77`)}"
                                 android:text="@={child.cb02b}"
                                 app:defaultValue="77"
-                                app:maxValue="77"
+                                app:maxValue="88"
                                 app:minValue="77"
                                 app:type="range" />
                         </LinearLayout>

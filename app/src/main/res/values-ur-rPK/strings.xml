@@ -29,9 +29,6 @@
     <string name="im07">Check IM4: Are all vaccines (BCG to Measles-2) recorded?</string>
     <string name="im0701">Yes</string>
     <string name="im0702">No</string>
-    <string name="im101">Yes </string>
-    <string name="im102">No </string>
-    <string name="im103">Dont know</string>
     <string name="im12a">How many times was Polio vaccine received during a large campaign? </string>
     <string name="im236">Other (specify) </string>
 
@@ -254,6 +251,10 @@
     <string name="im10_3">معلوم نہیں</string>
     <string name="im10a98">معلوم نہیں</string>
     <string name="im11">(OPV0)کیاپہلی بار پلائے گئے پولیو کے قطرے پیدائش کےبعد  پہلے دو ہفتوں میں دیئےگئے تھے؟</string>
+    <string name="im101"> ہاں</string>
+    <string name="im102"> نہیں</string>
+    <string name="im103"> معلوم نہیں</string>
+
     <string name="im111"> ہاں</string>
     <string name="im112"> نہیں</string>
     <string name="im113"> معلوم نہیں</string>
@@ -278,6 +279,7 @@
     <string name="im201">ہاں</string>
     <string name="im202">نہیں</string>
     <string name="im203">معلوم نہیں</string>
+    <string name="im20a">آئی پی وی پولیو کا انجکشن کتنی بار لگا تھا؟ تعداد</string>
     <string name="im21">کیا بچےکوکبھی خسرہ کا ٹیکہ لگا ہے، جو ایک انجکشن 9مہینےیا اس سے زیادہ عمر میں بازو  میں لگایا جاتا ہے جس سے (بچہ/بچی) خسرہ   کی بیماری سے محفوظ رہتا ہے؟</string>
     <string name="im211">ہاں</string>
     <string name="im22">کتنی بار خسرہ کا ٹیکہ لگاتھا؟ تعداد</string>
@@ -787,6 +789,8 @@
     <string name='Qim18'>im18</string>
     <string name='Qim19'>im19</string>
     <string name='Qim20'>im20</string>
+    <string name='Qim20a'>im20a</string>
+
     <string name='Qim21'>im21</string>
     <string name='Qim22'>im22</string>
     <string name='Qim22a'>im22a</string>

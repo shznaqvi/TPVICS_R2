@@ -37,6 +37,9 @@ public class ConsentActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.setForm(form);
+
+        String consentText = getString(R.string.hh18t, MainApp.user.getFullname());
+        bi.consentTextView.setText(consentText);
     }
 
 

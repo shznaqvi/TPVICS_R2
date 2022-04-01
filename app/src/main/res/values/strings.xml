@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name">TPVICS (Round 2)</string>
+    <string name="app_name">TPVICS (Round 2) Household Survey App</string>
     <string name="btnDownload" translatable="false">Download Data</string>
     <string name="btnUpload">Upload Data</string>
     <string name="promptemail">Email</string>
@@ -186,7 +186,7 @@
     <string name="hh11">Cluster</string>
     <string name="hh12">Household number: </string>
     <string name="hh13">Name of the Respondent</string>
-    <string name="hh18t">Asalum-o-Alaikum, my name is (your name). \n\nWe are from National Ministry of Health Services, Regulation and Coordination, Government of Pakistan. We are conducting a survey about the situation of the children health in Pakistan. \n\nI would like to talk to you about (child’s name)’s vaccination history. This interview will take about 30 minutes. All the information we obtain will remain strictly confidential and anonymous. \n\nIf you wish not to answer a question or wish to stop the interview, please let me know.</string>
+    <string name="hh18t">Asalum-o-Alaikum, my name is %1$s. \n\nWe are from National Ministry of Health Services, Regulation and Coordination, Government of Pakistan. We are conducting a survey about the situation of the children health in Pakistan. \n\nI would like to talk to you about (child’s name)’s vaccination history. This interview will take about 30 minutes. All the information we obtain will remain strictly confidential and anonymous. \n\nIf you wish not to answer a question or wish to stop the interview, please let me know.</string>
     <string name="hh18">May I start the interview now?</string>
     <string name="hh13a">Respondents Contact Number</string>
     <string name="hh18a">Yes, Permission is Given</string>

@@ -236,6 +236,17 @@ public class SectionIM1Activity extends AppCompatActivity {
             return false;
         }
 
+        // validate default values; initialize im105 for im0501
+
+        try {
+            im05 = Integer.parseInt(MainApp.child.getIm0501dd());
+
+            if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                return Validator.emptyCustomTextBox(this, bi.im0501dd, "Incorrect value for Day.");
+            }
+        }catch (NumberFormatException e){
+            e.printStackTrace();
+        }
         //if (IMdates is valid date(not, 97, 66, 88, 44)){
         if (MainApp.child.getIm02().equals("1") && (child.getTrueAgeInMonths() > 6 && child.getTrueAgeInMonths() < 24)) {
             // Only set once
@@ -259,22 +270,18 @@ public class SectionIM1Activity extends AppCompatActivity {
                     bi.checkim0501.setVisibility(View.VISIBLE);
                 }
 
-                // validate default values; initialize im105 for im0501
 
-                try {
-                    im05 = Integer.parseInt(MainApp.child.getIm0501dd());
-
-                    if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                        return Validator.emptyCustomTextBox(this, bi.im0501dd, "Incorrect value for Day.");
-                    }
-                }catch (NumberFormatException e){
-                    e.printStackTrace();
-                }
 
             }
 
             // IM0502
             if (!bi.checkim0502.isChecked()) {
+
+                // validate default values; initialize im105 for im0502
+                im05 = Integer.parseInt(MainApp.child.getIm0502dd());
+                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                    return Validator.emptyCustomTextBox(this, bi.im0502dd, "Incorrect value for Day.");
+                }
 
                 String im0502date = MainApp.child.getIm0502yy()
                         + "-" + MainApp.child.getIm0502mm()
@@ -288,16 +295,18 @@ public class SectionIM1Activity extends AppCompatActivity {
                     bi.checkim0502.setVisibility(View.VISIBLE);
                 }
 
-                // validate default values; initialize im105 for im0502
-                im05 = Integer.parseInt(MainApp.child.getIm0502dd());
-                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                    return Validator.emptyCustomTextBox(this, bi.im0502dd, "Incorrect value for Day.");
-                }
+
             }
 
             // IM0510a
 
             if (!bi.checkim0510a.isChecked()) {
+
+                // validate default values; initialize im105 for im0510a
+                im05 = Integer.parseInt(MainApp.child.getIm0510add());
+                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                    return Validator.emptyCustomTextBox(this, bi.im0510add, "Incorrect value for Day.");
+                }
                 // IM510a
                 String im0510adate = MainApp.child.getIm0510ayy()
                         + "-" + MainApp.child.getIm0510amm()
@@ -312,11 +321,7 @@ public class SectionIM1Activity extends AppCompatActivity {
                     bi.checkim0510a.setVisibility(View.VISIBLE);
                 }
 
-                // validate default values; initialize im105 for im0510a
-                im05 = Integer.parseInt(MainApp.child.getIm0510add());
-                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                    return Validator.emptyCustomTextBox(this, bi.im0510add, "Incorrect value for Day.");
-                }
+
             }
 
 
@@ -331,6 +336,12 @@ public class SectionIM1Activity extends AppCompatActivity {
                     + "-" + MainApp.child.getIm0501dd();*/
             if (!bi.checkim0503.isChecked()) {
 
+                // validate default values; initialize im105 for im0503
+                im05 = Integer.parseInt(MainApp.child.getIm0503dd());
+                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                    return Validator.emptyCustomTextBox(this, bi.im0503dd, "Incorrect value for Day.");
+                }
+
                 // IM0503
                 String im0503date = MainApp.child.getIm0503yy()
                         + "-" + MainApp.child.getIm0503mm()
@@ -344,14 +355,16 @@ public class SectionIM1Activity extends AppCompatActivity {
                     bi.checkim0503.setVisibility(View.VISIBLE);
                 }
 
-                // validate default values; initialize im105 for im0503
-                im05 = Integer.parseInt(MainApp.child.getIm0503dd());
-                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                    return Validator.emptyCustomTextBox(this, bi.im0503dd, "Incorrect value for Day.");
-                }
+
 
             }
             if (!bi.checkim0504.isChecked()) {
+
+                // validate default values; initialize im105 for im0504
+                im05 = Integer.parseInt(MainApp.child.getIm0501dd());
+                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                    return Validator.emptyCustomTextBox(this, bi.im0501dd, "Incorrect value for Day.");
+                }
 
                 // IM0504
                 String im0504date = MainApp.child.getIm0504yy()
@@ -365,13 +378,15 @@ public class SectionIM1Activity extends AppCompatActivity {
                 } else {
                     bi.checkim0504.setVisibility(View.VISIBLE);
                 }
-                // validate default values; initialize im105 for im0504
-                im05 = Integer.parseInt(MainApp.child.getIm0501dd());
-                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                    return Validator.emptyCustomTextBox(this, bi.im0501dd, "Incorrect value for Day.");
-                }
+
             }
             if (!bi.checkim0505.isChecked()) {
+
+                // validate default values; initialize im105 for im0505
+                im05 = Integer.parseInt(MainApp.child.getIm0505dd());
+                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                    return Validator.emptyCustomTextBox(this, bi.im0505dd, "Incorrect value for Day.");
+                }
                 // IM0505
                 String im0505date = MainApp.child.getIm0505yy()
                         + "-" + MainApp.child.getIm0505mm()
@@ -385,14 +400,16 @@ public class SectionIM1Activity extends AppCompatActivity {
                     bi.checkim0505.setVisibility(View.VISIBLE);
                 }
 
-                // validate default values; initialize im105 for im0505
-                im05 = Integer.parseInt(MainApp.child.getIm0505dd());
-                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                    return Validator.emptyCustomTextBox(this, bi.im0505dd, "Incorrect value for Day.");
-                }
+
 
             }
             if (!bi.checkim0506.isChecked()) {
+
+                // validate default values; initialize im105 for im0506
+                im05 = Integer.parseInt(MainApp.child.getIm0506dd());
+                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                    return Validator.emptyCustomTextBox(this, bi.im0506dd, "Incorrect value for Day.");
+                }
 
                 // IM0506
                 String im0506date = MainApp.child.getIm0506yy()
@@ -407,11 +424,7 @@ public class SectionIM1Activity extends AppCompatActivity {
                     bi.checkim0506.setVisibility(View.VISIBLE);
                 }
 
-                // validate default values; initialize im105 for im0506
-                im05 = Integer.parseInt(MainApp.child.getIm0506dd());
-                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                    return Validator.emptyCustomTextBox(this, bi.im0506dd, "Incorrect value for Day.");
-                }
+
             }
 
 
@@ -426,6 +439,12 @@ public class SectionIM1Activity extends AppCompatActivity {
 
 
             if (!bi.checkim0507.isChecked()) {
+
+                // validate default values; initialize im105 for im0507
+                im05 = Integer.parseInt(MainApp.child.getIm0507dd());
+                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                    return Validator.emptyCustomTextBox(this, bi.im0507dd, "Incorrect value for Day.");
+                }
                 // IM0507
                 String im0507date = MainApp.child.getIm0507yy()
                         + "-" + MainApp.child.getIm0507mm()
@@ -439,14 +458,17 @@ public class SectionIM1Activity extends AppCompatActivity {
                 } else {
                     bi.checkim0507.setVisibility(View.VISIBLE);
                 }
-                // validate default values; initialize im105 for im0507
-                im05 = Integer.parseInt(MainApp.child.getIm0507dd());
-                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                    return Validator.emptyCustomTextBox(this, bi.im0507dd, "Incorrect value for Day.");
-                }
+
 
             }
             if (!bi.checkim0508.isChecked()) {
+
+                // validate default values; initialize im105 for im0508
+                im05 = Integer.parseInt(MainApp.child.getIm0508dd());
+                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                    return Validator.emptyCustomTextBox(this, bi.im0508dd, "Incorrect value for Day.");
+                }
+
                 // IM0508
                 String im0508date = MainApp.child.getIm0508yy()
                         + "-" + MainApp.child.getIm0508mm()
@@ -460,14 +482,16 @@ public class SectionIM1Activity extends AppCompatActivity {
                 } else {
                     bi.checkim0508.setVisibility(View.VISIBLE);
                 }
-                // validate default values; initialize im105 for im0508
-                im05 = Integer.parseInt(MainApp.child.getIm0508dd());
-                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                    return Validator.emptyCustomTextBox(this, bi.im0508dd, "Incorrect value for Day.");
-                }
+
 
             }
             if (!bi.checkim0509.isChecked()) {
+
+                // validate default values; initialize im105 for im0509
+                im05 = Integer.parseInt(MainApp.child.getIm0509dd());
+                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                    return Validator.emptyCustomTextBox(this, bi.im0509dd, "Incorrect value for Day.");
+                }
                 // IM0509
                 String im0509date = MainApp.child.getIm0509yy()
                         + "-" + MainApp.child.getIm0509mm()
@@ -481,14 +505,16 @@ public class SectionIM1Activity extends AppCompatActivity {
                 } else {
                     bi.checkim0509.setVisibility(View.VISIBLE);
                 }
-                // validate default values; initialize im105 for im0509
-                im05 = Integer.parseInt(MainApp.child.getIm0509dd());
-                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                    return Validator.emptyCustomTextBox(this, bi.im0509dd, "Incorrect value for Day.");
-                }
+
             }
 
             if (!bi.checkim0510.isChecked()) {
+
+                // validate default values; initialize im105 for im0510
+                im05 = Integer.parseInt(MainApp.child.getIm0510dd());
+                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                    return Validator.emptyCustomTextBox(this, bi.im0510dd, "Incorrect value for Day.");
+                }
                 // IM510
                 String im0510date = MainApp.child.getIm0510yy()
                         + "-" + MainApp.child.getIm0510mm()
@@ -502,11 +528,7 @@ public class SectionIM1Activity extends AppCompatActivity {
                 } else {
                     bi.checkim0510.setVisibility(View.VISIBLE);
                 }
-                // validate default values; initialize im105 for im0510
-                im05 = Integer.parseInt(MainApp.child.getIm0510dd());
-                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                    return Validator.emptyCustomTextBox(this, bi.im0510dd, "Incorrect value for Day.");
-                }
+
             }
 
             /*thirdVaccine*/
@@ -519,6 +541,12 @@ public class SectionIM1Activity extends AppCompatActivity {
                     + "-" + MainApp.child.getIm0510mm()
                     + "-" + MainApp.child.getIm0510dd();*/
             if (!bi.checkim0511.isChecked()) {
+
+                // validate default values; initialize im105 for im0511
+                im05 = Integer.parseInt(MainApp.child.getIm0511dd());
+                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                    return Validator.emptyCustomTextBox(this, bi.im0511dd, "Incorrect value for Day.");
+                }
                 // IM05011
                 String im0511date = MainApp.child.getIm0511yy()
                         + "-" + MainApp.child.getIm0511mm()
@@ -533,13 +561,15 @@ public class SectionIM1Activity extends AppCompatActivity {
                     bi.checkim0511.setVisibility(View.VISIBLE);
                 }
 
-                // validate default values; initialize im105 for im0511
-                im05 = Integer.parseInt(MainApp.child.getIm0511dd());
-                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                    return Validator.emptyCustomTextBox(this, bi.im0511dd, "Incorrect value for Day.");
-                }
+
             }
             if (!bi.checkim0512.isChecked()) {
+
+                // validate default values; initialize im105 for im0512
+                im05 = Integer.parseInt(MainApp.child.getIm0512dd());
+                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                    return Validator.emptyCustomTextBox(this, bi.im0512dd, "Incorrect value for Day.");
+                }
                 // IM0512
                 String im0512date = MainApp.child.getIm0512yy()
                         + "-" + MainApp.child.getIm0512mm()
@@ -554,13 +584,15 @@ public class SectionIM1Activity extends AppCompatActivity {
                     bi.checkim0512.setVisibility(View.VISIBLE);
                 }
 
-                // validate default values; initialize im105 for im0512
-                im05 = Integer.parseInt(MainApp.child.getIm0512dd());
-                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                    return Validator.emptyCustomTextBox(this, bi.im0512dd, "Incorrect value for Day.");
-                }
+
             }
             if (!bi.checkim0513.isChecked()) {
+
+                // validate default values; initialize im105 for im0501
+                im05 = Integer.parseInt(MainApp.child.getIm0513dd());
+                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                    return Validator.emptyCustomTextBox(this, bi.im0513dd, "Incorrect value for Day.");
+                }
                 // IM0513
                 String im0513date = MainApp.child.getIm0513yy()
                         + "-" + MainApp.child.getIm0513mm()
@@ -575,13 +607,15 @@ public class SectionIM1Activity extends AppCompatActivity {
                     bi.checkim0513.setVisibility(View.VISIBLE);
                 }
 
-                // validate default values; initialize im105 for im0501
-                im05 = Integer.parseInt(MainApp.child.getIm0513dd());
-                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                    return Validator.emptyCustomTextBox(this, bi.im0513dd, "Incorrect value for Day.");
-                }
+
             }
             if (!bi.checkim0514.isChecked()) {
+
+                // validate default values; initialize im105 for im0514
+                im05 = Integer.parseInt(MainApp.child.getIm0514dd());
+                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                    return Validator.emptyCustomTextBox(this, bi.im0514dd, "Incorrect value for Day.");
+                }
                 // IM0514
                 String im0514date = MainApp.child.getIm0514yy()
                         + "-" + MainApp.child.getIm0514mm()
@@ -595,11 +629,7 @@ public class SectionIM1Activity extends AppCompatActivity {
                 } else {
                     bi.checkim0514.setVisibility(View.VISIBLE);
                 }
-                // validate default values; initialize im105 for im0514
-                im05 = Integer.parseInt(MainApp.child.getIm0514dd());
-                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                    return Validator.emptyCustomTextBox(this, bi.im0514dd, "Incorrect value for Day.");
-                }
+
             }
 
             /*forthVaccine*/
@@ -615,6 +645,12 @@ public class SectionIM1Activity extends AppCompatActivity {
 
                 if (!bi.checkim0515.isChecked()) {
 
+                    // validate default values; initialize im105 for im0515
+                    im05 = Integer.parseInt(MainApp.child.getIm0515dd());
+                    if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                        return Validator.emptyCustomTextBox(this, bi.im0515dd, "Incorrect value for Day.");
+                    }
+
                     // IM0515
                     String im0515date = MainApp.child.getIm0515yy()
                             + "-" + MainApp.child.getIm0515mm()
@@ -628,13 +664,15 @@ public class SectionIM1Activity extends AppCompatActivity {
                     } else {
                         bi.checkim0515.setVisibility(View.VISIBLE);
                     }
-                    // validate default values; initialize im105 for im0515
-                    im05 = Integer.parseInt(MainApp.child.getIm0515dd());
-                    if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                        return Validator.emptyCustomTextBox(this, bi.im0515dd, "Incorrect value for Day.");
-                    }
+
                 }
                 if (!bi.checkim0517.isChecked()) {
+
+                    // validate default values; initialize im105 for im0517
+                    im05 = Integer.parseInt(MainApp.child.getIm0517dd());
+                    if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                        return Validator.emptyCustomTextBox(this, bi.im0517dd, "Incorrect value for Day.");
+                    }
                     // IM0517
                     String im0517date = MainApp.child.getIm0517yy()
                             + "-" + MainApp.child.getIm0517mm()
@@ -649,11 +687,7 @@ public class SectionIM1Activity extends AppCompatActivity {
                         bi.checkim0517.setVisibility(View.VISIBLE);
                     }
 
-                    // validate default values; initialize im105 for im0517
-                    im05 = Integer.parseInt(MainApp.child.getIm0517dd());
-                    if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                        return Validator.emptyCustomTextBox(this, bi.im0517dd, "Incorrect value for Day.");
-                    }
+
 
                 }
 
@@ -668,6 +702,12 @@ public class SectionIM1Activity extends AppCompatActivity {
                         + "-" + MainApp.child.getIm0515dd();*/
 
                 if (!bi.checkim0516.isChecked()) {
+
+                    // validate default values; initialize im105 for im0516
+                    im05 = Integer.parseInt(MainApp.child.getIm0516dd());
+                    if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                        return Validator.emptyCustomTextBox(this, bi.im0516dd, "Incorrect value for Day.");
+                    }
                     // IM0516
                     String im0516date = MainApp.child.getIm0516yy()
                             + "-" + MainApp.child.getIm0516mm()
@@ -681,11 +721,7 @@ public class SectionIM1Activity extends AppCompatActivity {
                     } else {
                         bi.checkim0516.setVisibility(View.VISIBLE);
                     }
-                    // validate default values; initialize im105 for im0516
-                    im05 = Integer.parseInt(MainApp.child.getIm0516dd());
-                    if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                        return Validator.emptyCustomTextBox(this, bi.im0516dd, "Incorrect value for Day.");
-                    }
+
                 }
             }
 

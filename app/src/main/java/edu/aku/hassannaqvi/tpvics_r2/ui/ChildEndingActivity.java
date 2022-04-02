@@ -121,7 +121,7 @@ public class ChildEndingActivity extends AppCompatActivity {
         }
     }
 
-    private void recordEntry() {
+    private void   recordEntry() {
 
         EntryLog entryLog = new EntryLog();
         entryLog.populateMeta();

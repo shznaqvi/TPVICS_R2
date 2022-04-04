@@ -44,7 +44,7 @@
                 android:background="@drawable/capsule"
                 android:backgroundTint="@color/colorAccentLightOverlay"
                 android:text="Chidren 1 of 1 completed."
-                android:textColor="@color/white"
+                android:textColor="@color/boy_blue"
                 android:visibility="gone" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -490,10 +490,11 @@
                     <Button
                         android:id="@+id/btn_Continue"
                         android:layout_width="0dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="37dp"
                         android:layout_weight="1"
                         android:background="@drawable/capsule"
                         android:onClick="btnContinue"
+                        android:enabled="false"
                         android:text="Save"
                         android:textColor="@color/white"
                         android:textSize="18sp"

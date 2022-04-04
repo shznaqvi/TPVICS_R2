@@ -785,6 +785,7 @@
                                         android:textDirection="ltr"
                                         app:maxValue="2022"
                                         app:minValue="2020"
+                                        app:pattern="^[0-9]{4,4}$"
                                         app:type="range" />
 
                                     <CheckBox
@@ -881,6 +882,7 @@
                                         android:text="@={form.im0502yy}"
                                         app:maxValue="2022"
                                         app:minValue="2020"
+                                        app:pattern="^[0-9]{4,4}$"
                                         app:type="range" />
 
                                     <CheckBox
@@ -973,6 +975,7 @@
                                         android:enabled="@{!checkim0510a.checked &amp;&amp; !form.im0510add.equals(`44`)  &amp;&amp; !form.im0510add.equals(`66`)  &amp;&amp; !form.im0510add.equals(`97`)  &amp;&amp; !form.im0510add.equals(`88`)}"
                                         android:gravity="center"
                                         android:hint="####"
+                                        app:pattern="^[0-9]{4,4}$"
                                         android:inputType="number"
                                         android:maxLength="4"
                                         android:text="@={form.im0510ayy}"
@@ -1057,6 +1060,7 @@
                                         android:enabled="@{!checkim0503.checked &amp;&amp; !form.im0503dd.equals(`44`)  &amp;&amp; !form.im0503dd.equals(`66`)  &amp;&amp; !form.im0503dd.equals(`97`)  &amp;&amp; !form.im0503dd.equals(`88`)}"
                                         android:gravity="center"
                                         android:hint="####"
+                                        app:pattern="^[0-9]{4,4}$"
                                         android:inputType="number"
                                         android:maxLength="4"
                                         android:text="@={form.im0503yy}"
@@ -1152,6 +1156,7 @@
                                         android:enabled="@{!checkim0504.checked &amp;&amp; !form.im0504dd.equals(`44`)  &amp;&amp; !form.im0504dd.equals(`66`)  &amp;&amp; !form.im0504dd.equals(`97`)  &amp;&amp; !form.im0504dd.equals(`88`)}"
                                         android:gravity="center"
                                         android:hint="####"
+                                        app:pattern="^[0-9]{4,4}$"
                                         android:inputType="number"
                                         android:maxLength="4"
                                         android:text="@={form.im0504yy}"
@@ -1253,6 +1258,7 @@
                                         android:text="@={form.im0505yy}"
                                         app:maxValue="2022"
                                         app:minValue="2020"
+                                        app:pattern="^[0-9]{4,4}$"
                                         app:type="range" />
 
                                     <CheckBox
@@ -1348,6 +1354,7 @@
                                         android:text="@={form.im0506yy}"
                                         app:maxValue="2022"
                                         app:minValue="2020"
+                                        app:pattern="^[0-9]{4,4}$"
                                         app:type="range" />
 
                                     <CheckBox
@@ -1429,6 +1436,7 @@
                                         android:hint="####"
                                         android:inputType="number"
                                         android:maxLength="4"
+                                        app:pattern="^[0-9]{4,4}$"
                                         android:text="@={form.im0507yy}"
                                         app:maxValue="2022"
                                         app:minValue="2020"
@@ -1523,6 +1531,7 @@
                                         android:enabled="@{!checkim0508.checked &amp;&amp; !form.im0508dd.equals(`44`)  &amp;&amp; !form.im0508dd.equals(`66`)  &amp;&amp; !form.im0508dd.equals(`97`)  &amp;&amp; !form.im0508dd.equals(`88`)}"
                                         android:gravity="center"
                                         android:hint="####"
+                                        app:pattern="^[0-9]{4,4}$"
                                         android:inputType="number"
                                         android:maxLength="4"
                                         android:text="@={form.im0508yy}"
@@ -1619,6 +1628,7 @@
                                         android:enabled="@{!checkim0509.checked &amp;&amp; !form.im0509dd.equals(`44`)  &amp;&amp; !form.im0509dd.equals(`66`)  &amp;&amp; !form.im0509dd.equals(`97`)  &amp;&amp; !form.im0509dd.equals(`88`)}"
                                         android:gravity="center"
                                         android:hint="####"
+                                        app:pattern="^[0-9]{4,4}$"
                                         android:inputType="number"
                                         android:maxLength="4"
                                         android:text="@={form.im0509yy}"
@@ -1713,6 +1723,7 @@
                                         android:enabled="@{!checkim0510.checked &amp;&amp; !form.im0510dd.equals(`44`)  &amp;&amp; !form.im0510dd.equals(`66`)  &amp;&amp; !form.im0510dd.equals(`97`)  &amp;&amp; !form.im0510dd.equals(`88`)}"
                                         android:gravity="center"
                                         android:hint="####"
+                                        app:pattern="^[0-9]{4,4}$"
                                         android:inputType="number"
                                         android:maxLength="4"
                                         android:text="@={form.im0510yy}"
@@ -1798,6 +1809,7 @@
                                         android:enabled="@{!checkim0511.checked &amp;&amp; !form.im0511dd.equals(`44`)  &amp;&amp; !form.im0511dd.equals(`66`)  &amp;&amp; !form.im0511dd.equals(`97`)  &amp;&amp; !form.im0511dd.equals(`88`)}"
                                         android:gravity="center"
                                         android:hint="####"
+                                        app:pattern="^[0-9]{4,4}$"
                                         android:inputType="number"
                                         android:maxLength="4"
                                         android:text="@={form.im0511yy}"
@@ -1894,6 +1906,7 @@
                                         android:hint="####"
                                         android:inputType="number"
                                         android:maxLength="4"
+                                        app:pattern="^[0-9]{4,4}$"
                                         android:text="@={form.im0512yy}"
                                         app:maxValue="2022"
                                         app:minValue="2020"
@@ -1989,6 +2002,7 @@
                                         android:hint="####"
                                         android:inputType="number"
                                         android:maxLength="4"
+                                        app:pattern="^[0-9]{4,4}$"
                                         android:text="@={form.im0513yy}"
                                         app:maxValue="2022"
                                         app:minValue="2020"
@@ -2082,6 +2096,7 @@
                                         android:enabled="@{!checkim0514.checked &amp;&amp; !form.im0514dd.equals(`44`)  &amp;&amp; !form.im0514dd.equals(`66`)  &amp;&amp; !form.im0514dd.equals(`97`)  &amp;&amp; !form.im0514dd.equals(`88`)}"
                                         android:gravity="center"
                                         android:hint="####"
+                                        app:pattern="^[0-9]{4,4}$"
                                         android:inputType="number"
                                         android:maxLength="4"
                                         android:text="@={form.im0514yy}"
@@ -2167,6 +2182,7 @@
                                         android:hint="####"
                                         android:inputType="number"
                                         android:maxLength="4"
+                                        app:pattern="^[0-9]{4,4}$"
                                         android:text="@={form.im0515yy}"
                                         app:maxValue="2022"
                                         app:minValue="2020"
@@ -2260,6 +2276,7 @@
                                         android:enabled="@{!checkim0517.checked &amp;&amp; !form.im0517dd.equals(`44`)  &amp;&amp; !form.im0517dd.equals(`66`)  &amp;&amp; !form.im0517dd.equals(`97`)  &amp;&amp; !form.im0517dd.equals(`88`)}"
                                         android:gravity="center"
                                         android:hint="####"
+                                        app:pattern="^[0-9]{4,4}$"
                                         android:inputType="number"
                                         android:maxLength="4"
                                         android:text="@={form.im0517yy}"
@@ -2347,6 +2364,7 @@
                                         android:maxLength="4"
                                         android:text="@={form.im0516yy}"
                                         app:maxValue="2022"
+                                        app:pattern="^[0-9]{4,4}$"
                                         app:minValue="2020"
                                         app:type="range" />
 

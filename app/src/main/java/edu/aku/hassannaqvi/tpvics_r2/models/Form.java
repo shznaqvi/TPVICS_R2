@@ -1722,6 +1722,7 @@ public class Form extends BaseObservable implements Observable {
             this.hh20a = json.getString("hh20a");
             this.hh21 = json.getString("hh21");
             this.hh21xx = json.getString("hh21xx");
+            this.iStatus = json.getString("iStatus");
             this.iStatus96x = json.has("iStatus96x") ? json.getString("iStatus96x") : "";
 
 /*            this.ec13 = json.getString("ec13");
@@ -1852,6 +1853,7 @@ public class Form extends BaseObservable implements Observable {
                 .put("hh20a", hh20a)
                 .put("hh21", hh21)
                 .put("hh21xx", hh21xx)
+                .put("iStatus", iStatus)
                 .put("iStatus96x", iStatus96x);
 
 
@@ -1974,7 +1976,6 @@ public class Form extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);
         json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);
         json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
         json.put(FormsTable.COLUMN_SYNCED, this.synced);
 
         json.put(FormsTable.COLUMN_SHH, new JSONObject(sHHtoString()));

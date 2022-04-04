@@ -29,7 +29,7 @@
     <string name="im0701">Yes</string>
     <string name="im0702">No</string>
     <string name="im12a">How many times was Polio vaccine received during a large campaign? </string>
-    <string name="im236">Other (specify) </string>
+    <string name="im236">دیگر(وضاحت کریں) </string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
@@ -187,7 +187,7 @@
     <string name="im0506dd">دن</string>
     <string name="im0506mm">مہینہ</string>
     <string name="im0506yy">سال</string>
-    <string name="im0507opv2">پولیو کے قطرے  OPV2(دس ہفتوں پر )                             </string>
+    <string name="im0507opv2">پولیو کے قطرے  OPV2(دس ہفتوں پر ) </string>
     <string name="im0507dd">دن</string>
     <string name="im0507mm">مہینہ</string>
     <string name="im0507yy">سال</string>
@@ -244,7 +244,7 @@
     <string name="im092">نہیں</string>
     <string name="im093">معلوم نہیں</string>
     <string name="im10">(OPV)کیا بچےکوکبھی منہ کے ذ ریعے دیئے جانے والے  پولیو کی بیماری سے بچاؤکے قطرےپلوائے گئے ہیں؟   نشاندہی کرتے ہوئے  اس بات کی تحقیق کریں کہ بعض اوقات پولیو کے قطروں کی پہلی خوراک پیدائش کے وقت  اور  دیگر بیماریوں سے بچاؤکے انجکشن لگاتے وقت ایک ساتھ ہی دے دی جاتی ہے</string>
-    <string name="im10a">کیا (نام) نے کبھی ہیپاٹائٹس بی کی ویکسینیشن لی ہے - یعنی (اسے) ہیپاٹائٹس بی کی بیماری سے بچنے کے لیے ایک انجکشن، پیدائش کے وقت لگایا جاتا ہے</string>
+    <string name="im10a">کیا (نام) نے کبھی ہیپاٹائٹس بی کی ویکسینیشن لی ہے یہ ایک انجکشن ہے جو پیدائش کے وقت بازو کے اوپر والے حصے میں  لگایا جاتا ہے ہیپا  ٹا ئٹس بی ویکسین ایک مخصوص  وائرل انفیکشن سے بچاتی ہے جو جگر کی سوزش اور  اسے نقصان پہنچانے کا سبب ہوتی ہے</string>
     <string name="im10_1">ہاں</string>
     <string name="im10a1">ہاں</string>
     <string name="im10_2"> نہیں</string>
@@ -261,12 +261,12 @@
     <string name="im113"> معلوم نہیں</string>
     <string name="im12">سرکاری /پرائیویٹ مرکزصحت یا  سرکاری آؤٹ ریچ سروس سے پولیو کے قطرےکتنی بار پلائے گئے تھے؟  </string>
     <string name="im12d">معلوم نہیں</string>
-    <string name="im14"> کاانجیکشن لگا ہے یہ ایک انجکشن  ہےجو ران  میں لگایا جاتا ہے جوبچہ/بچی کو تشنج،کالی کھانسی،خناق،ہیپاٹاٹس  کی بیماری اور ہیمو فائلس انفلوئنزا بی سے محفوظ رکھتا ہے؟  Pentavalentکیا بچہ/بچی کوکبھی</string>
+    <string name="im14">کیا بچہ/بچی کوکبھی Pentavalent کاانجیکشن لگا ہے یہ ایک انجکشن  ہےجو ران  میں لگایا جاتا ہے جوبچہ/بچی کو تشنج،کالی کھانسی،خناق،ہیپاٹاٹس  کی بیماری اور ہیمو فائلس انفلوئنزا بی سے محفوظ رکھتا ہے ؟  </string>
     <string name="im141">ہاں</string>
     <string name="im142"> نہیں</string>
     <string name="im143">معلوم نہیں</string>
     <string name="im15">پینٹا ویلینٹ ویکسین کتنی بار لگی تھی؟ تعداد                                     </string>
-    <string name="im16">کی ویکسین لگی ہےجو ایک انجیکشن ران میں لگایا جاتا ہے جس سے وہ بچہ /بچی نمونیہ کان کا انفیکشن اور گردن توڑ بخار کی بیماریوں سے محفوظ رہتا ہے؟(Pneumococcal PCV)کیا(نام)کو کبھی نمونیہ</string>
+    <string name="im16">کیا(نام)کو کبھی (Pneumococcal PCV) نمونیہ کی ویکسین لگی ہےجو ایک انجیکشن ران میں لگایا جاتا ہے جس سے وہ بچہ /بچی نمونیہ کان کا انفیکشن اور گردن توڑ بخار کی بیماریوں سے محفوظ رہتا ہے؟</string>
     <string name="im161">ہاں</string>
     <string name="im162">نہیں</string>
     <string name="im163">معلوم نہیں</string>
@@ -669,7 +669,7 @@
     <string name="cb03dd">پیدائش کا دن</string>
     <string name="cb03mm">پیدائش کا مہینہ</string>
     <string name="cb03yy">پیدائش کا سال</string>
-    <string name="cb03dk">دن معلوم نہیں </string>
+    <string name="cb03dk">تاریخ پیدائش یاد نہیں</string>
     <string name="cb04"> (نام) کی عمر کیا ہے؟ </string>
     <string name="cb04info">عمر مکمل سالوں اور مہینوں میں ریکارڈ کریں.اگرعمر 1 سال سے کم ہے تو سال میں 0  ریکارڈ کریں۔عمر مکمل سالوں اور مہینوں میں ریکارڈ کریں۔اگرعمر 1 سال سے کم ہے تو 0 ریکارڈ کریں۔کے جوابات مطابقت نہیں رکھتے یا ان میں تضادہے، تو مزیدتحقیق کریں،اوران کودرست کریں CB4 اور CB3اگر سوال </string>
     <string name="cb04mm">عمر(مکمل  مہینوں میں)</string>

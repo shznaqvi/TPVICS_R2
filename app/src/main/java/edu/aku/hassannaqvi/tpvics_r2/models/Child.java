@@ -1980,7 +1980,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm20(String im20) {
         this.im20 = im20;
-        setIm20a(im20.equals("1") ? this.im20 : "");
+        setIm20a(im20.equals("1") ? this.im20a : "");
         notifyPropertyChanged(BR.im20);
     }
 

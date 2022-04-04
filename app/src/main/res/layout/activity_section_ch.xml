@@ -383,7 +383,6 @@
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={child.cb03mm}"
-                                app:defaultValue="98"
                                 app:maxValue="12"
                                 app:minValue="1"
                                 app:type="range" />

@@ -785,78 +785,121 @@ public class Child extends BaseObservable implements Observable {
         setIm04mm(im01.equals("1") ? this.im04mm : "");
         setIm04yy(im01.equals("1") ? this.im04yy : "");
 
+
+        // At birth
         setIm0501dd(im01.equals("1") ? this.im0501dd : "");
         setIm0501mm(im01.equals("1") ? this.im0501mm : "");
         setIm0501yy(im01.equals("1") ? this.im0501yy : "");
+        setIm050198(im01.equals("1") ? this.im050198 : "");
+        setIm050295(im01.equals("1") ? this.im050295 : "");
+
 
         setIm0502dd(im01.equals("1") ? this.im0502dd : "");
         setIm0502mm(im01.equals("1") ? this.im0502mm : "");
         setIm0502yy(im01.equals("1") ? this.im0502yy : "");
-
-        setIm0503dd(im01.equals("1") ? this.im0503dd : "");
-        setIm0503mm(im01.equals("1") ? this.im0503mm : "");
-        setIm0503yy(im01.equals("1") ? this.im0503yy : "");
-
-        setIm0504dd(im01.equals("1") ? this.im0504dd : "");
-        setIm0504mm(im01.equals("1") ? this.im0504mm : "");
-        setIm0504yy(im01.equals("1") ? this.im0504yy : "");
-
-        setIm0505dd(im01.equals("1") ? this.im0505dd : "");
-        setIm0505mm(im01.equals("1") ? this.im0505mm : "");
-        setIm0505yy(im01.equals("1") ? this.im0505yy : "");
-
-        setIm0506dd(im01.equals("1") ? this.im0506dd : "");
-        setIm0506mm(im01.equals("1") ? this.im0506mm : "");
-        setIm0506yy(im01.equals("1") ? this.im0506yy : "");
-
-        setIm0507dd(im01.equals("1") ? this.im0507dd : "");
-        setIm0507mm(im01.equals("1") ? this.im0507mm : "");
-        setIm0507yy(im01.equals("1") ? this.im0507yy : "");
-
-        setIm0508dd(im01.equals("1") ? this.im0508dd : "");
-        setIm0508mm(im01.equals("1") ? this.im0508mm : "");
-        setIm0508yy(im01.equals("1") ? this.im0508yy : "");
-
-        setIm0509dd(im01.equals("1") ? this.im0509dd : "");
-        setIm0509mm(im01.equals("1") ? this.im0509mm : "");
-        setIm0509yy(im01.equals("1") ? this.im0509yy : "");
-
-        setIm0510dd(im01.equals("1") ? this.im0510dd : "");
-        setIm0510mm(im01.equals("1") ? this.im0510mm : "");
-        setIm0510yy(im01.equals("1") ? this.im0510yy : "");
+        setIm050298(im01.equals("1") ? this.im050298 : "");
+        setIm0510a95(im01.equals("1") ? this.im0510a95 : "");
 
         setIm0510add(im01.equals("1") ? this.im0510add : "");
         setIm0510amm(im01.equals("1") ? this.im0510amm : "");
         setIm0510ayy(im01.equals("1") ? this.im0510ayy : "");
+        setIm0510a98(im01.equals("1") ?  this.im0510a98 : "");
 
+
+        // At six weeks
+        setIm0503dd(im01.equals("1") ? this.im0503dd : "");
+        setIm0503mm(im01.equals("1") ? this.im0503mm : "");
+        setIm0503yy(im01.equals("1") ? this.im0503yy : "");
+        setIm050398(im01.equals("1") ?  this.im050398 : "");
+        setIm050495(im01.equals("1") ? this.im050495 : "");
+
+        setIm0504dd(im01.equals("1") ? this.im0504dd : "");
+        setIm0504mm(im01.equals("1") ? this.im0504mm : "");
+        setIm0504yy(im01.equals("1") ? this.im0504yy : "");
+        setIm050498(im01.equals("1") ?  this.im050498 : "");
+        setIm050595(im01.equals("1") ? this.im050595 : "");
+
+        setIm0505dd(im01.equals("1") ? this.im0505dd : "");
+        setIm0505mm(im01.equals("1") ? this.im0505mm : "");
+        setIm0505yy(im01.equals("1") ? this.im0505yy : "");
+        setIm050598(im01.equals("1") ?  this.im050598 : "");
+        setIm050695(im01.equals("1") ? this.im050695 : "");
+
+        setIm0506dd(im01.equals("1") ? this.im0506dd : "");
+        setIm0506mm(im01.equals("1") ? this.im0506mm : "");
+        setIm0506yy(im01.equals("1") ? this.im0506yy : "");
+        setIm050698(im01.equals("1") ?  this.im050698 : "");
+
+
+        // at 10 weeks
+        setIm0507dd(im01.equals("1") ? this.im0507dd : "");
+        setIm0507mm(im01.equals("1") ? this.im0507mm : "");
+        setIm0507yy(im01.equals("1") ? this.im0507yy : "");
+        setIm050798(im01.equals("1") ?  this.im050798 : "");
+        setIm050895(im01.equals("1") ? this.im050895 : "");
+
+        setIm0508dd(im01.equals("1") ? this.im0508dd : "");
+        setIm0508mm(im01.equals("1") ? this.im0508mm : "");
+        setIm0508yy(im01.equals("1") ? this.im0508yy : "");
+        setIm050898(im01.equals("1") ?  this.im050898 : "");
+        setIm050995(im01.equals("1") ? this.im050995 : "");
+
+        setIm0509dd(im01.equals("1") ? this.im0509dd : "");
+        setIm0509mm(im01.equals("1") ? this.im0509mm : "");
+        setIm0509yy(im01.equals("1") ? this.im0509yy : "");
+        setIm050998(im01.equals("1") ?  this.im050998 : "");
+        setIm051095(im01.equals("1") ? this.im051095 : "");
+
+        setIm0510dd(im01.equals("1") ? this.im0510dd : "");
+        setIm0510mm(im01.equals("1") ? this.im0510mm : "");
+        setIm0510yy(im01.equals("1") ? this.im0510yy : "");
+        setIm051098(im01.equals("1") ?  this.im051098 : "");
+
+
+
+        // at 14 weeks
         setIm0511dd(im01.equals("1") ? this.im0511dd : "");
         setIm0511mm(im01.equals("1") ? this.im0511mm : "");
         setIm0511yy(im01.equals("1") ? this.im0511yy : "");
+        setIm051198(im01.equals("1") ?  this.im051198 : "");
+        setIm051295(im01.equals("1") ? this.im051295 : "");
 
         setIm0512dd(im01.equals("1") ? this.im0512dd : "");
         setIm0512mm(im01.equals("1") ? this.im0512mm : "");
         setIm0512yy(im01.equals("1") ? this.im0512yy : "");
+        setIm051298(im01.equals("1") ?  this.im051298 : "");
+        setIm051395(im01.equals("1") ? this.im051395 : "");
 
         setIm0513dd(im01.equals("1") ? this.im0513dd : "");
         setIm0513mm(im01.equals("1") ? this.im0513mm : "");
         setIm0513yy(im01.equals("1") ? this.im0513yy : "");
+        setIm051398(im01.equals("1") ?  this.im051398 : "");
+        setIm051495(im01.equals("1") ? this.im051495 : "");
 
         setIm0514dd(im01.equals("1") ? this.im0514dd : "");
         setIm0514mm(im01.equals("1") ? this.im0514mm : "");
         setIm0514yy(im01.equals("1") ? this.im0514yy : "");
+        setIm051498(im01.equals("1") ?  this.im051498 : "");
 
 
+        // at 9 months
         setIm0515dd(im01.equals("1") ? this.im0515dd : "");
         setIm0515mm(im01.equals("1") ? this.im0515mm : "");
         setIm0515yy(im01.equals("1") ? this.im0515yy : "");
+        setIm051598(im01.equals("1") ?  this.im051598 : "");
+        setIm051795(im01.equals("1") ? this.im051795 : "");
 
         setIm0516dd(im01.equals("1") ? this.im0516dd : "");
         setIm0516mm(im01.equals("1") ? this.im0516mm : "");
         setIm0516yy(im01.equals("1") ? this.im0516yy : "");
+        setIm051698(im01.equals("1") ?  this.im051698 : "");
 
+
+        // at 15 months
         setIm0517dd(im01.equals("1") ? this.im0517dd : "");
         setIm0517mm(im01.equals("1") ? this.im0517mm : "");
         setIm0517yy(im01.equals("1") ? this.im0517yy : "");
+        setIm051798(im01.equals("1") ?  this.im051798 : "");
 
 
         //setIm07(im01.equals("1") ? this.im07 : "");
@@ -877,78 +920,119 @@ public class Child extends BaseObservable implements Observable {
         setIm04mm(im02.equals("1") ? this.im04mm : "");
         setIm04yy(im02.equals("1") ? this.im04yy : "");
 
+
+        // at birth
         setIm0501dd(im02.equals("1") ? this.im0501dd : "");
         setIm0501mm(im02.equals("1") ? this.im0501mm : "");
         setIm0501yy(im02.equals("1") ? this.im0501yy : "");
+        setIm050198(im02.equals("1") ? this.im050198 : "");
+        setIm050295(im02.equals("1") ? this.im050295 : "");
 
         setIm0502dd(im02.equals("1") ? this.im0502dd : "");
         setIm0502mm(im02.equals("1") ? this.im0502mm : "");
         setIm0502yy(im02.equals("1") ? this.im0502yy : "");
-
-        setIm0503dd(im02.equals("1") ? this.im0503dd : "");
-        setIm0503mm(im02.equals("1") ? this.im0503mm : "");
-        setIm0503yy(im02.equals("1") ? this.im0503yy : "");
-
-        setIm0504dd(im02.equals("1") ? this.im0504dd : "");
-        setIm0504mm(im02.equals("1") ? this.im0504mm : "");
-        setIm0504yy(im02.equals("1") ? this.im0504yy : "");
-
-        setIm0505dd(im02.equals("1") ? this.im0505dd : "");
-        setIm0505mm(im02.equals("1") ? this.im0505mm : "");
-        setIm0505yy(im02.equals("1") ? this.im0505yy : "");
-
-        setIm0506dd(im02.equals("1") ? this.im0506dd : "");
-        setIm0506mm(im02.equals("1") ? this.im0506mm : "");
-        setIm0506yy(im02.equals("1") ? this.im0506yy : "");
-
-        setIm0507dd(im02.equals("1") ? this.im0507dd : "");
-        setIm0507mm(im02.equals("1") ? this.im0507mm : "");
-        setIm0507yy(im02.equals("1") ? this.im0507yy : "");
-
-        setIm0508dd(im02.equals("1") ? this.im0508dd : "");
-        setIm0508mm(im02.equals("1") ? this.im0508mm : "");
-        setIm0508yy(im02.equals("1") ? this.im0508yy : "");
-
-        setIm0509dd(im02.equals("1") ? this.im0509dd : "");
-        setIm0509mm(im02.equals("1") ? this.im0509mm : "");
-        setIm0509yy(im02.equals("1") ? this.im0509yy : "");
-
-        setIm0510dd(im02.equals("1") ? this.im0510dd : "");
-        setIm0510mm(im02.equals("1") ? this.im0510mm : "");
-        setIm0510yy(im02.equals("1") ? this.im0510yy : "");
+        setIm050298(im02.equals("1") ? this.im050298 : "");
+        setIm0510a95(im02.equals("1") ? this.im0510a95 : "");
 
         setIm0510add(im02.equals("1") ? this.im0510add : "");
         setIm0510amm(im02.equals("1") ? this.im0510amm : "");
         setIm0510ayy(im02.equals("1") ? this.im0510ayy : "");
+        setIm0510a98(im02.equals("1") ?  this.im0510a98 : "");
 
+
+        // at 6 weeks
+        setIm0503dd(im02.equals("1") ? this.im0503dd : "");
+        setIm0503mm(im02.equals("1") ? this.im0503mm : "");
+        setIm0503yy(im02.equals("1") ? this.im0503yy : "");
+        setIm050398(im02.equals("1") ?  this.im050398 : "");
+        setIm050495(im02.equals("1") ? this.im050495 : "");
+
+        setIm0504dd(im02.equals("1") ? this.im0504dd : "");
+        setIm0504mm(im02.equals("1") ? this.im0504mm : "");
+        setIm0504yy(im02.equals("1") ? this.im0504yy : "");
+        setIm050498(im02.equals("1") ?  this.im050498 : "");
+        setIm050595(im02.equals("1") ? this.im050595 : "");
+
+        setIm0505dd(im02.equals("1") ? this.im0505dd : "");
+        setIm0505mm(im02.equals("1") ? this.im0505mm : "");
+        setIm0505yy(im02.equals("1") ? this.im0505yy : "");
+        setIm050598(im02.equals("1") ?  this.im050598 : "");
+        setIm050695(im02.equals("1") ? this.im050695 : "");
+
+        setIm0506dd(im02.equals("1") ? this.im0506dd : "");
+        setIm0506mm(im02.equals("1") ? this.im0506mm : "");
+        setIm0506yy(im02.equals("1") ? this.im0506yy : "");
+        setIm050698(im02.equals("1") ?  this.im050698 : "");
+
+
+        // at 10 weeks
+        setIm0507dd(im02.equals("1") ? this.im0507dd : "");
+        setIm0507mm(im02.equals("1") ? this.im0507mm : "");
+        setIm0507yy(im02.equals("1") ? this.im0507yy : "");
+        setIm050798(im02.equals("1") ?  this.im050798 : "");
+        setIm050895(im02.equals("1") ? this.im050895 : "");
+
+        setIm0508dd(im02.equals("1") ? this.im0508dd : "");
+        setIm0508mm(im02.equals("1") ? this.im0508mm : "");
+        setIm0508yy(im02.equals("1") ? this.im0508yy : "");
+        setIm050898(im02.equals("1") ?  this.im050898 : "");
+        setIm050995(im02.equals("1") ? this.im050995 : "");
+
+        setIm0509dd(im02.equals("1") ? this.im0509dd : "");
+        setIm0509mm(im02.equals("1") ? this.im0509mm : "");
+        setIm0509yy(im02.equals("1") ? this.im0509yy : "");
+        setIm050998(im02.equals("1") ?  this.im050998 : "");
+        setIm051095(im02.equals("1") ? this.im051095 : "");
+
+        setIm0510dd(im02.equals("1") ? this.im0510dd : "");
+        setIm0510mm(im02.equals("1") ? this.im0510mm : "");
+        setIm0510yy(im02.equals("1") ? this.im0510yy : "");
+        setIm051098(im02.equals("1") ?  this.im051098 : "");
+
+
+
+        // at 14 weeks
         setIm0511dd(im02.equals("1") ? this.im0511dd : "");
         setIm0511mm(im02.equals("1") ? this.im0511mm : "");
         setIm0511yy(im02.equals("1") ? this.im0511yy : "");
+        setIm051198(im02.equals("1") ?  this.im051198 : "");
+        setIm051295(im02.equals("1") ? this.im051295 : "");
 
         setIm0512dd(im02.equals("1") ? this.im0512dd : "");
         setIm0512mm(im02.equals("1") ? this.im0512mm : "");
         setIm0512yy(im02.equals("1") ? this.im0512yy : "");
+        setIm051298(im02.equals("1") ?  this.im051298 : "");
+        setIm051395(im02.equals("1") ? this.im051395 : "");
 
         setIm0513dd(im02.equals("1") ? this.im0513dd : "");
         setIm0513mm(im02.equals("1") ? this.im0513mm : "");
         setIm0513yy(im02.equals("1") ? this.im0513yy : "");
+        setIm051398(im02.equals("1") ?  this.im051398 : "");
+        setIm051495(im02.equals("1") ? this.im051495 : "");
 
         setIm0514dd(im02.equals("1") ? this.im0514dd : "");
         setIm0514mm(im02.equals("1") ? this.im0514mm : "");
         setIm0514yy(im02.equals("1") ? this.im0514yy : "");
+        setIm051498(im02.equals("1") ?  this.im051498 : "");
 
 
+        // at 9 months
         setIm0515dd(im02.equals("1") ? this.im0515dd : "");
         setIm0515mm(im02.equals("1") ? this.im0515mm : "");
         setIm0515yy(im02.equals("1") ? this.im0515yy : "");
+        setIm051598(im02.equals("1") ?  this.im051598 : "");
+        setIm051795(im02.equals("1") ? this.im051795 : "");
 
         setIm0516dd(im02.equals("1") ? this.im0516dd : "");
         setIm0516mm(im02.equals("1") ? this.im0516mm : "");
         setIm0516yy(im02.equals("1") ? this.im0516yy : "");
+        setIm051698(im02.equals("1") ?  this.im051698 : "");
 
+        // at 15 months
         setIm0517dd(im02.equals("1") ? this.im0517dd : "");
         setIm0517mm(im02.equals("1") ? this.im0517mm : "");
         setIm0517yy(im02.equals("1") ? this.im0517yy : "");
+        setIm051798(im02.equals("1") ?  this.im051798 : "");
 
         setIm08(im02.equals("1") ? "" : this.im08);
         setIm09(im02.equals("1") ? "" : this.im09);

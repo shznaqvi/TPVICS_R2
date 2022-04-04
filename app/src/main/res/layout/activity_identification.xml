@@ -127,7 +127,7 @@
                                     android:id="@+id/checkHh06"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Confirm?" />
+                                    android:text="@string/confirm" />
 
                             </LinearLayout>
 
@@ -157,7 +157,7 @@
                                 android:id="@+id/checkHh07"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Confirm?" />
+                                android:text="@string/confirm" />
 
                         </LinearLayout>
 
@@ -187,7 +187,7 @@
                                 android:id="@+id/checkHh08"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Confirm?" />
+                                android:text="@string/confirm" />
 
                         </LinearLayout>
 
@@ -217,7 +217,7 @@
                                     android:id="@+id/checkHh09"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Confirm?" />
+                                    android:text="@string/confirm" />
 
                             </LinearLayout>
 
@@ -302,7 +302,7 @@
                                 android:layout_width="wrap_content"
                                 android:gravity="center_horizontal|center_vertical"
                                 android:layout_height="match_parent"
-                                android:text="Confirm?" />
+                                android:text="@string/confirm" />
 
                         </LinearLayout>
 

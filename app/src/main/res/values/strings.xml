@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name">TPVICS (Round 2) Household Survey App</string>
+    <string name="app_name">TPVICS (Round 2) Household Survey App - English</string>
     <string name="btnDownload" translatable="false">Download Data</string>
     <string name="btnUpload">Upload Data</string>
     <string name="promptemail">Email</string>
@@ -65,6 +65,7 @@
     <string name="bckbtn" translatable="false">You Cant go back</string>
     <string name="processing" translatable="false">Processing</string>
     <string name="confirmation" translatable="false">Confirmation!</string>
+    <string name="confirm" translatable="false">Confirm?</string>
     <string name="cntbtn" translatable="false">Are you sure, you want to continue - interview</string>
     <string name="failedUpdateDb" translatable="false">SORRY! Failed to update DB</string>
     <string name="invalidDate" translatable="false">Invalid date!</string>
@@ -251,7 +252,7 @@
     <string name="ec2205">Child not eligible/Not 06-23 Months Age </string>
     <string name="ec2206">Incapacitated(Specify)</string>
     <string name="ec2296">Other specify</string>
-    <string name="cb01info"> As for Education Grade passed for mother/caregiver \n (Write 77 if un educated and for Religious Education , write 20)</string>
+    <string name="cb01info">As for Education Grade passed for mother/caregiver \n (Write 77 if un educated and for Religious Education , write 20)</string>
     <string name="cb01">What is your highest grade of completed education?</string>
     <string name="cb01a">Grade</string>
     <string name="cb01b">Religious Education</string>
@@ -572,7 +573,7 @@
     <string name="im04yy">Year</string>
     <string name="im0497">Date not Visible on Card</string>
     <string name="im05title1"> Immunization Status</string>
-    <string name="im05title2">IM5.COPY DATES FOR EACH VACCINATION FROM THE VACCINATION CARD\n\nNOTE: \nWRITE <b> ‘44’ </b> IN DAY COLUMN IF CARD SHOWS THAT VACCINATION WAS GIVEN BUT NO DATE RECORDED. OR IF THE CARD SHOWS A DATE BUT YOU CANNOT READ IT CLEARLY. \n\nIF THE PARTICULAR VACCINE HAS NO ANY RECORD, WRITE <b>‘97’ </b> IN DAY, MONTH AND YEAR COLUMN</string>
+    <string name="im05title2">INSTRUCTIONS: Please record the date of immunization for each antigen from the card \n\n1.If the date is recorded but not readable, record 44 in day column \n\n2.	If the date is not recorded but a tick () mark is present, record 88 in day column \n\n3.	If the neither date is recorded nor a tick () mark is present, prompt the mother for each such antigen and record 66 if she confirms the receipt of respective antigen by recall otherwise record 97.</string>
     <string name="im05">Vaccine Names</string>
     <string name="im05t1"> Vaccinations At Birth </string>
     <string name="im05t2"> Vaccinations At 6 Weeks </string>

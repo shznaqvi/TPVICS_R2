@@ -1276,7 +1276,7 @@
                             android:visibility="@{form.ss23.equals(`1`) || form.ss23.equals(`2`) ? View.VISIBLE : View.GONE}"
                             app:mask="####.##"
                             app:maxValue="9999.99"
-                            app:minValue="0001.00"
+                            app:minValue="0000.10"
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

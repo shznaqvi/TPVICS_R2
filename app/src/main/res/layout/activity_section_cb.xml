@@ -327,7 +327,9 @@
                             android:id="@+id/ec19"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+
+                            >
 
                             <RadioButton
                                 android:id="@+id/ec19a"
@@ -336,7 +338,9 @@
                                 android:layout_weight="1"
                                 android:checked="@{child.ec19.equals(`1`)}"
                                 android:onClick="@{()->child.setEc19(`1`)}"
-                                android:text="@string/ec19a" />
+                                android:text="@string/ec19a"
+                                android:enabled="false"
+                                />
 
                             <RadioButton
                                 android:id="@+id/ec19b"
@@ -345,6 +349,7 @@
                                 android:layout_weight="1"
                                 android:checked="@{child.ec19.equals(`2`)}"
                                 android:onClick="@{()->child.setEc19(`2`)}"
+                                android:enabled="false"
                                 android:text="@string/ec19b" />
                         </RadioGroup>
                     </LinearLayout>

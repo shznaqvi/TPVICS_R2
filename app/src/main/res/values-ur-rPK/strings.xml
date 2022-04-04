@@ -8,7 +8,6 @@
     <string name="previous">Previous</string>
     <string name="country">Language (Click to change)</string>
     <string name="sectionhhhouseholdinformationhhmainheading">SECTION HH: HOUSEHOLD INFORMATION  (HH): Household Information</string>
-    <string name="hh02">Time of interview: </string>
     <string name="hh03">Interviews Code</string>
     <string name="hh03a">Interviewer’s name</string>
     <string name="hh04">Supervisors Code</string>
@@ -77,6 +76,8 @@
     <string name="errorinvalidpassword">This password is too short</string>
     <string name="errorfieldrequired">This field is required</string>
     <string name="errorincorrectpassword">This password is incorrect</string>
+    <string name="confirm" translatable="false">تصدیق؟</string>
+
     <string name="no"> نہیں </string>
     <string name="dkn"> معلوم نہیں </string>
     <string name="none"> کوئی نہیں </string>
@@ -116,7 +117,7 @@
     <string name="ec19"> چیک کریں کہ کیا آیااس گھر میں جواب دہندہ کا انٹرویو گھریلو یا بچوں کے سوالنامہ کے لئےکر لیا گیا ہے؟</string>
     <string name="ec20">اب میں آپ سے آپ کے (بچے کا نام) کی حفاظتی ٹیکوں کی گزشتہ معلومات  کے بارے میں مزید تفصیل سے  بات کرنا چاہتا/چاہتی ہوں۔اس انٹرویو میں تقریباً 30منٹس لگیں گے۔میں پھر کہتا /کہتی ہوں کہ، آپ سے حاصل کردہ تمام معلومات  مکمل طور پر خفیہ اور  رہیں گی اور آپکا نام ظاہرنہیں  کیا جائے گا۔ اگر آپ کسی سوال کا جواب نہیں دینا چاہتے یا اس انٹرویوکو روکنا چاہتے  ہیں ، تو براہ کرم مجھے بتائیں۔ کیا میں اب انٹرویو شروع کر سکتی/سکتا ہوں؟</string>
     <string name="ec21info">اب میں آپ سے (بچے کا نام) کے ویکسینیشن ریکارڈ کے بارے میں تفصیل سے بات کرنا چاہتا ہوں</string>
-    <string name="ec21"> کیا میں ابھی شروع کر سکتا ہوں؟</string>
+    <string name="ec21"> کیا میں ابھی  انٹرویو شروع کر سکتا ہوں؟</string>
     <string name="ec19a">ہاں ،  پہلے ہی انٹرہو چکاہے</string>
     <string name="ec21a">ہاں، اجازت مل گئی ہے</string>
     <string name="ec19b">نہیں ، پہلا انٹرویو</string>
@@ -161,7 +162,7 @@
     <string name="im04yy"> سال</string>
     <string name="im0497">کارڈ پر لکھی ہوئی تاریخ واضح نہیں ہے</string>
     <string name="im05title1">حفاظتی ٹیکوں کی تفصیلات </string>
-    <string name="im05title2">ہدایات: حفاظتی ٹیکوں کے کارڈ سے ہرحفاظتی ٹیکے کی تاریخ لکھیں۔ 1-اگر کارڈ میں لکھی ہوئی تاریخ واضح طور پر پڑھی نہیں جارہی ہے تو دن کے کالم میں </string>
+    <string name="im05title2">ہدایات : -   حفاظتی ٹیکوں کے کارڈ سے ہرحفاظتی ٹیکے کی تاریخ لکھیں۔\n\n 1- اگر کارڈ میں لکھی ہوئی تاریخ واضح طور پر پڑھی نہیں جارہی ہے تو دن کے کالم میں &quot;44&quot; لکھیں۔\n\n 2- اگر تاریخ کے بجائے صرف  کا نشان ہے تو 88درج کریں۔\n\n 3-  اگر کارڈ پر تاریخ درج نہیں اور نہ ہی کا نشان ہے تو اس صورت میں ماں سے بچے کو اس مخصوص ویکسین کے دیئے  جانے کے بارے میں  پوچھیں اگر ماں ویکسین دیئے جانے کی تصدیق کرتی ہے تو 66 درج کریں اور نہیں کی صورت میں 97 درج کریں۔</string>
     <string name="im0501bcg">(بی سی جی) ٹی بی کی بیماری سے بچائو کا ٹیکہ </string>
     <string name="im0501dd">دن</string>
     <string name="im0501mm">مہینہ</string>
@@ -345,6 +346,7 @@
     <string name="hh09">شہر/گاؤں</string>
     <string name="hh12">گھرانہ نمبر </string>
     <string name="hh01">انٹرویو کی تاریخ  </string>
+    <string name="hh02">انٹرویو کا وقت:</string>
     <string name="hh18t">اسلام وعلیکم، میرا نام %1$s ہے۔\n\n ہمارا تعلق قومی ادارہ صحت، حکومت پاکستان سے ہے۔ہم پاکستان میں بچوں کی صحت کے حوالے سے ایک سروے کا انعقاد کررہے ہیں۔میں آپ سے آپ کے (بچے کا نام) کی حفاظتی ٹیکوں کی گزشتہ معلومات کے بارے میں بات کرنا چاہتا/چاہتی ہوں۔اس انٹرویو میں تقریباً 30منٹس لگیں گے۔ آپ سے حاصل کردہ تمام معلومات مکمل طور پر خفیہ رہیں گی اور آپ کا نام ظاہرنہیں کیا جائے گا۔  اگر آپ کسی سوال کا جواب نہیں دینا چاہتے/چاہتی ہیں یا اس انٹرویوکو روکنا چاہتے ہیں ، تو براہ کرم مجھے بتائیں۔ </string>
     <string name="hh18">کیا میں اب انٹرویو شروع کر سکتی/سکتا ہوں؟</string>
     <string name="hh18a"> ہاں، اجازت مل گئی ہے</string>

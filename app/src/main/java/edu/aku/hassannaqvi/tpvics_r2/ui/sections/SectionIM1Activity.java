@@ -277,8 +277,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                 String im0501date = MainApp.child.getIm0501yy()
                         + "-" + MainApp.child.getIm0501mm()
                         + "-" + MainApp.child.getIm0501dd();
-
-                vaccDates.add(im0501date);
+if (!im0501date.contains("--"))
+    vaccDates.add(im0501date);
 
                 if (!validateDatesBCG(dobDate, im0501date)) {
                     displayInvalidDateDialog(bi.checkim0501, R.string.im0501bcg, bi.trIm0501);
@@ -297,7 +297,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                 String im0502date = MainApp.child.getIm0502yy()
                         + "-" + MainApp.child.getIm0502mm()
                         + "-" + MainApp.child.getIm0502dd();
-                vaccDates.add(im0502date);
+                if (!im0502date.contains("--"))
+                    vaccDates.add(im0502date);
 
                 if (!validateDatesBCG(dobDate, im0502date)) {
                     displayInvalidDateDialog(bi.checkim0502, R.string.im0502opv0, bi.trIm0502);
@@ -324,7 +325,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                         + "-" + MainApp.child.getIm0510amm()
                         + "-" + MainApp.child.getIm0510add();
 
-                vaccDates.add(im0510adate);
+                if (!im0510adate.contains("--"))
+                    vaccDates.add(im0510adate);
 
                 if (!validateDatesBCG(dobDate, im0510adate)) {
                     displayInvalidDateDialog(bi.checkim0510a, R.string.im0510ahp, bi.trIm0510a);
@@ -357,7 +359,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                 String im0503date = MainApp.child.getIm0503yy()
                         + "-" + MainApp.child.getIm0503mm()
                         + "-" + MainApp.child.getIm0503dd();
-                vaccDates.add(im0503date);
+                if (!im0503date.contains("--"))
+                    vaccDates.add(im0503date);
 
                 if (!validateDates(firstVaccine, im0503date)) {
                     displayInvalidDateDialog(bi.checkim0503, R.string.im0503opv1, bi.trIm0503);
@@ -380,7 +383,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                 String im0504date = MainApp.child.getIm0504yy()
                         + "-" + MainApp.child.getIm0504mm()
                         + "-" + MainApp.child.getIm0504dd();
-                vaccDates.add(im0504date);
+                if (!im0504date.contains("--"))
+                    vaccDates.add(im0504date);
 
                 if (!validateDates(firstVaccine, im0504date)) {
                     displayInvalidDateDialog(bi.checkim0504, R.string.im0504penta1, bi.trIm0504);
@@ -403,7 +407,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                 String im0505date = MainApp.child.getIm0505yy()
                         + "-" + MainApp.child.getIm0505mm()
                         + "-" + MainApp.child.getIm0505dd();
-                vaccDates.add(im0505date);
+                if (!im0505date.contains("--"))
+                    vaccDates.add(im0505date);
 
                 if (!validateDates(firstVaccine, im0505date)) {
                     displayInvalidDateDialog(bi.checkim0505, R.string.im0505pcv1, bi.trIm0505);
@@ -426,7 +431,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                 String im0506date = MainApp.child.getIm0506yy()
                         + "-" + MainApp.child.getIm0506mm()
                         + "-" + MainApp.child.getIm0506dd();
-                vaccDates.add(im0506date);
+                if (!im0506date.contains("--"))
+                    vaccDates.add(im0506date);
 
                 if (!validateDates(firstVaccine, im0506date)) {
                     displayInvalidDateDialog(bi.checkim0506, R.string.im0506rv1, bi.trIm0506);
@@ -461,7 +467,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                         + "-" + MainApp.child.getIm0507mm()
                         + "-" + MainApp.child.getIm0507dd();
 
-                vaccDates.add(im0507date);
+                if (!im0507date.contains("--"))
+                    vaccDates.add(im0507date);
 
                 if (!validateDates(secondVaccine, im0507date)) {
                     displayInvalidDateDialog(bi.checkim0507, R.string.im0507opv2, bi.trIm0507);
@@ -485,7 +492,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                         + "-" + MainApp.child.getIm0508mm()
                         + "-" + MainApp.child.getIm0508dd();
 
-                vaccDates.add(im0508date);
+                if (!im0508date.contains("--"))
+                    vaccDates.add(im0508date);
 
                 if (!validateDates(secondVaccine, im0508date)) {
                     displayInvalidDateDialog(bi.checkim0508, R.string.im0508penta2, bi.trIm0508);
@@ -509,7 +517,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                         + "-" + MainApp.child.getIm0509mm()
                         + "-" + MainApp.child.getIm0509dd();
 
-                vaccDates.add(im0509date);
+                if (!im0509date.contains("--"))
+                    vaccDates.add(im0509date);
 
                 if (!validateDates(secondVaccine, im0509date)) {
                     displayInvalidDateDialog(bi.checkim0509, R.string.im0509pcv2, bi.trIm0509);
@@ -532,7 +541,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                         + "-" + MainApp.child.getIm0510mm()
                         + "-" + MainApp.child.getIm0510dd();
 
-                vaccDates.add(im0510date);
+                if (!im0510date.contains("--"))
+                    vaccDates.add(im0510date);
 
                 if (!validateDates(secondVaccine, im0510date)) {
                     displayInvalidDateDialog(bi.checkim0510, R.string.im0510rv2, bi.trIm0510);
@@ -564,7 +574,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                         + "-" + MainApp.child.getIm0511mm()
                         + "-" + MainApp.child.getIm0511dd();
 
-                vaccDates.add(im0511date);
+                if (!im0511date.contains("--"))
+                    vaccDates.add(im0511date);
 
                 if (!validateDates(thirdVaccine, im0511date)) {
                     displayInvalidDateDialog(bi.checkim0511, R.string.im0511opv3, bi.trIm0511);
@@ -589,7 +600,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                         + "-" + MainApp.child.getIm0512mm()
                         + "-" + MainApp.child.getIm0512dd();
 
-                vaccDates.add(im0512date);
+                if (!im0512date.contains("--"))
+                    vaccDates.add(im0512date);
 
                 if (!validateDates(thirdVaccine, im0512date)) {
                     displayInvalidDateDialog(bi.checkim0512, R.string.im0512penta3, bi.trIm0512);
@@ -614,7 +626,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                         + "-" + MainApp.child.getIm0513mm()
                         + "-" + MainApp.child.getIm0513dd();
 
-                vaccDates.add(im0513date);
+                if (!im0513date.contains("--"))
+                    vaccDates.add(im0513date);
 
                 if (!validateDates(thirdVaccine, im0513date)) {
                     displayInvalidDateDialog(bi.checkim0513, R.string.im0513pcv3, bi.trIm0513);
@@ -639,8 +652,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                 String im0514date = MainApp.child.getIm0514yy()
                         + "-" + MainApp.child.getIm0514mm()
                         + "-" + MainApp.child.getIm0514dd();
-
-                vaccDates.add(im0514date);
+                if (!im0514date.contains("--"))
+                    vaccDates.add(im0514date);
 
                 if (!validateDates(thirdVaccine, im0514date)) {
                     displayInvalidDateDialog(bi.checkim0514, R.string.im0514ipv, bi.trIm0514);
@@ -676,7 +689,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                             + "-" + MainApp.child.getIm0515mm()
                             + "-" + MainApp.child.getIm0515dd();
 
-                    vaccDates.add(im0515date);
+                    if (!im0515date.contains("--"))
+                        vaccDates.add(im0515date);
 
                     if (!validateDates(forthVaccine, im0515date)) {
                         displayInvalidDateDialog(bi.checkim0515, R.string.im0515measles1, bi.trIm0515);
@@ -701,7 +715,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                             + "-" + MainApp.child.getIm0517mm()
                             + "-" + MainApp.child.getIm0517dd();
 
-                    vaccDates.add(im0517date);
+                    if (!im0517date.contains("--"))
+                        vaccDates.add(im0517date);
 
                     if (!validateDates(forthVaccine, im0517date)) {
                         displayInvalidDateDialog(bi.checkim0517, R.string.im0517typh, bi.trIm0517);

@@ -113,8 +113,11 @@
                                 android:checked="@{form.im08.equals(`98`)}"
                                 android:onClick="@{()->form.setIm08(`98`)}"
                                 android:text="@string/im083" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -1145,20 +1148,20 @@
                 </LinearLayout>
 
                 <!-- im23  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVim23"
-                    style="@style/cardView"
-                    android:visibility="@{form.im08.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVim23"
+                        style="@style/cardView"
+                        android:visibility="@{form.im02.equals(`1`) || form.im08.equals(`1`) ? View.VISIBLE : View.GONE}">
 
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                             android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
@@ -1175,22 +1178,20 @@
 
                         </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/im23"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-
-                            >
-
-                            <RadioButton
-                                android:id="@+id/im231"
+                            <RadioGroup
+                                android:id="@+id/im23"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.im23.equals(`1`)}"
-                                android:onClick="@{()->form.setIm23(`1`)}"
-                                android:text="@string/im231" />
+                                android:layout_height="wrap_content">
 
-                            <RadioButton
+                                <RadioButton
+                                    android:id="@+id/im231"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im23.equals(`1`)}"
+                                    android:onClick="@{()->form.setIm23(`1`)}"
+                                    android:text="@string/im231" />
+
+                                <RadioButton
                                 android:id="@+id/im232"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -1223,26 +1224,29 @@
                                 android:tag="im236"
                                 android:text="@={form.im236x}"
                                 android:visibility="@{form.im23.equals(`6`) ? View.VISIBLE : View.GONE}" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
 
 
                 <!-- im23a  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVim23a"
-                    style="@style/cardView"
-                    android:visibility="@{form.im08.equals(`1`) ? View.VISIBLE : View.GONE}">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVim23a"
+                        style="@style/cardView"
+                        android:visibility="@{form.im02.equals(`1`) || form.im08.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
                             <TextView

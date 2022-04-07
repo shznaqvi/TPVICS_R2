@@ -42,7 +42,6 @@ public class SectionIM2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_im2);
-        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
 
         Intent intent = getIntent();
         requestCode = intent.getStringExtra("requestCode");

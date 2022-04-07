@@ -52,8 +52,6 @@ public class SectionIM1Activity extends AppCompatActivity {
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_im1);
         setSupportActionBar(bi.toolbar);
-        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
-
         Intent intent = getIntent();
         requestCode = intent.getStringExtra("requestCode");
 

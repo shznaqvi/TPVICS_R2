@@ -1063,8 +1063,8 @@ public class Child extends BaseObservable implements Observable {
         setIm21(im02.equals("1") ? "" : this.im21);
         setIm22(im02.equals("1") ? "" : this.im22);
         setIm22a(im02.equals("1") ? "" : this.im22a);
-        setIm23(im02.equals("1") ? "" : this.im23);
-        setIm23a(im02.equals("1") ? "" : this.im23a);
+        setIm23(im02.equals("1") || this.im08.equals("1") ? this.im23 : "");
+        setIm23a(im02.equals("1") || this.im08.equals("1") ? this.im23a : "");
         setIm24(im02.equals("1") ? "" : this.im24);
 
 
@@ -1834,8 +1834,8 @@ public class Child extends BaseObservable implements Observable {
         setIm21(im08.equals("1") ? this.im21 : "");
         setIm22(im08.equals("1") ? this.im22 : "");
         setIm22a(im08.equals("1") ? this.im22a : "");
-        setIm23(im08.equals("1") ? this.im23 : "");
-        setIm23a(im08.equals("1") ? this.im23a : "");
+        setIm23(im08.equals("1") || this.im02.equals("1") ? this.im23 : "");
+        setIm23a(im08.equals("1") || this.im02.equals("1") ? this.im23a : "");
 
         notifyPropertyChanged(BR.im08);
     }

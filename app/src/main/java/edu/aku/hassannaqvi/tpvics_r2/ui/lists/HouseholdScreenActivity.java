@@ -67,7 +67,17 @@ public class HouseholdScreenActivity extends AppCompatActivity {
 
                             } else if (data.getStringExtra("requestCode").equals("3")) {        // Long Press to edit age/gender
 
-                                MainApp.childList.set(selectedChild, MainApp.child);
+
+                                // MainApp.childList.set(selectedChild, MainApp.child);
+                                long postAgeInMonths = MainApp.childList.get(selectedChild).getAgeInMonths();
+
+                                if ((MainApp.preAgeInMonths < 6 || MainApp.preAgeInMonths > 23) && postAgeInMonths >= 6 && postAgeInMonths <= 23) {
+                                    childCount++;
+                                }
+                                if (MainApp.preAgeInMonths >= 6 && MainApp.preAgeInMonths <= 23 && (postAgeInMonths < 6 || postAgeInMonths > 23)) {
+                                    childCount--;
+                                }
+
                                 childsAdapter.notifyItemChanged(selectedChild);
                                 Toast.makeText(HouseholdScreenActivity.this, "Child updated.", Toast.LENGTH_SHORT).show();
                             } else if (data.getStringExtra("requestCode").equals("4")) {          // Added IM information

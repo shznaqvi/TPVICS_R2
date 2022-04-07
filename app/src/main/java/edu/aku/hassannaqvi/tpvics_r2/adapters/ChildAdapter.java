@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.tpvics_r2.adapters;
 
+import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.selectedChild;
+
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -64,6 +66,7 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
         TextView fName = viewHolder.fName;
         TextView fAge = viewHolder.fAge;
         TextView motherName = viewHolder.motherName;
+        TextView childcheck = viewHolder.childcheck;
         // LinearLayout subItem = viewHolder.subItem;
         ImageView fmRow = viewHolder.fmRow;
         ImageView mainIcon = viewHolder.mainIcon;
@@ -171,7 +174,7 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
             indexedBar.setVisibility(child.getIndexed().equals("") ? View.GONE : View.VISIBLE);
         }
 */
-
+        childcheck.setVisibility(child.getCStatus().equals("") ? View.INVISIBLE : View.VISIBLE);
 
         //fMaritalStatus.setText("Children: " + familyMember.getH226m() + " boy(s), " + familyMember.getH226f() + " girl(s)");
         viewHolder.itemView.setOnClickListener(v -> {
@@ -208,6 +211,7 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
                     intent.putExtra("requestCode", "3");
 
                     MainApp.selectedChild = position;
+                    MainApp.preAgeInMonths = MainApp.childList.get(selectedChild).getAgeInMonths();
 
                     intent.putExtra("position", position);
                     childInfoLauncher.launch(intent);
@@ -242,6 +246,7 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
         private final TextView fName;
         private final TextView fAge;
         private final TextView motherName;
+        private final TextView childcheck;
         //private final TextView addSec;
         //private final LinearLayout subItem;
         private final ImageView fmRow;
@@ -255,6 +260,7 @@ public class ChildAdapter extends RecyclerView.Adapter<ChildAdapter.ViewHolder> 
             fName = v.findViewById(R.id.chh02);
             fAge = v.findViewById(R.id.chh05);
             motherName = v.findViewById(R.id.chh08);
+            childcheck = v.findViewById(R.id.childcheck);
             //  addSec = v.findViewById(R.id.cadd_section);
             //  subItem = v.findViewById(R.id.csubitem);
             fmRow = v.findViewById(R.id.cfmRow);

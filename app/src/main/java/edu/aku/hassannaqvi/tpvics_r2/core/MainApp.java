@@ -97,6 +97,7 @@ public class MainApp extends Application {
     public static Clusters selectedCluster;
     public static List<Integer> childCompleted;
     public static boolean householdChecked = false;
+    public static long preAgeInMonths;
 
 
     public static void hideSystemUI(View decorView) {

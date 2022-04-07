@@ -24,7 +24,7 @@
             android:layout_height="?attr/actionBarSize"
             android:textAlignment="center"
             app:layout_scrollFlags="scroll|enterAlways"
-            app:menu="@menu/item_menu"
+            app:menu="@menu/language_menu"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:subtitleTextColor="@color/colorPrimaryLight"
             app:title="@string/app_name"

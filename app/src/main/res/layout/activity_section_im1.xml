@@ -388,9 +388,10 @@
                         <TableLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+
                             android:orientation="horizontal">
 
-                            <TableRow>
+                            <TableRow android:layoutDirection="ltr">
 
                                 <TextView
                                     style="@style/sub_labels"
@@ -414,7 +415,7 @@
                                     android:text="@string/im04yy" />
                             </TableRow>
 
-                            <TableRow>
+                            <TableRow android:layoutDirection="ltr">
 
                                 <com.edittextpicker.aliazaz.EditTextPicker
                                     android:id="@+id/im04dd"
@@ -561,7 +562,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:visibility="@{form.im02.equals(`1`)  &amp;&amp; form.trueAgeInMonths > 6  &amp;&amp; form.trueAgeInMonths &lt; 23  ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.im02.equals(`1`)  &amp;&amp; form.trueAgeInMonths >= 6  &amp;&amp; form.trueAgeInMonths &lt;= 23  ? View.VISIBLE : View.GONE}">
 
                     <!-- Take Photo   -->
                     <androidx.cardview.widget.CardView
@@ -577,6 +578,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_horizontal"
+                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <Button
@@ -612,9 +614,11 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_horizontal"
+                                android:layoutDirection="ltr"
                                 android:orientation="horizontal">
 
                                 <TextView
+                                    android:background="@null"
                                     android:id="@+id/frontFileName"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
@@ -626,6 +630,7 @@
                                     android:textSize="14sp" />
 
                                 <TextView
+                                    android:background="@null"
                                     android:id="@+id/backFileName"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
@@ -779,6 +784,7 @@
                                         android:gravity="center"
                                         android:hint="####"
                                         android:inputType="number"
+                                        android:textColor="@drawable/edit_text_selector"
                                         android:maxLength="4"
                                         android:text="@={form.im0501yy}"
                                         android:textDirection="ltr"
@@ -793,6 +799,7 @@
                                         android:layout_height="match_parent"
                                         android:checked="@{form.im050198.equals(`98`)}"
                                         android:onClick="@{()->form.setIm050198(form.im050198.equals(`98`)?``:`98`)}"
+                                        android:background="@color/redOverlay"
                                         android:tag="-1"
                                         android:visibility="invisible"
                                         tool:visibility="visible" />

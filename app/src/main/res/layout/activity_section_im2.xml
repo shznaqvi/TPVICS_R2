@@ -1698,8 +1698,9 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+<!--
 
-                <!-- im24d  Radio   -->
+                &lt;!&ndash; im24d  Radio   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVim24d"
                     style="@style/cardView"
@@ -1765,6 +1766,7 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+-->
 
                 <!-- im25  Radio   -->
                 <androidx.cardview.widget.CardView

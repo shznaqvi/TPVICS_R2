@@ -19,6 +19,7 @@
         android:orientation="vertical">
 
         <!-- CUSTOM TOOLBAR -->
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -29,7 +30,8 @@
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:subtitleTextColor="@color/colorPrimaryLight"
             app:title="@string/app_name"
-            app:titleTextColor="@color/colorPrimaryLight" />
+            android:layoutDirection="ltr"
+            app:titleTextColor="@color/colorPrimary" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,7 +46,8 @@
                 android:background="@drawable/capsule"
                 android:backgroundTint="@color/colorAccentLightOverlay"
                 android:text="Chidren 1 of 1 completed."
-                android:textColor="@color/boy_blue"
+                android:textColor="@color/colorPrimary"
+                tools:visibility="visible"
                 android:visibility="gone" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -484,7 +487,7 @@
                         android:onClick="btnEnd"
                         android:text="Cancel"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <Button
@@ -493,11 +496,11 @@
                         android:layout_height="37dp"
                         android:layout_weight="1"
                         android:background="@drawable/capsule"
-                        android:onClick="btnContinue"
                         android:enabled="false"
+                        android:onClick="btnContinue"
                         android:text="Save"
                         android:textColor="@color/white"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
 
                         />

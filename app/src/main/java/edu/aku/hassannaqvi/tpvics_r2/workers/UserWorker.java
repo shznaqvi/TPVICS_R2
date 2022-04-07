@@ -349,42 +349,7 @@ public class UserWorker extends Worker {
         }
         try {
             result = new StringBuilder(CipherSecure.decrypt(result.toString()));
-        } catch (NoSuchPaddingException e) {
-            e.printStackTrace();
-            data = new Data.Builder()
-                    .putString("error", e.getClass().getSimpleName() + ": " + e.getMessage())
-                    .build();
-
-            return Result.failure(data);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            data = new Data.Builder()
-                    .putString("error", e.getClass().getSimpleName() + ": " + e.getMessage())
-                    .build();
-
-            return Result.failure(data);
-        } catch (BadPaddingException e) {
-            e.printStackTrace();
-            data = new Data.Builder()
-                    .putString("error", e.getClass().getSimpleName() + ": " + e.getMessage())
-                    .build();
-
-            return Result.failure(data);
-        } catch (IllegalBlockSizeException e) {
-            e.printStackTrace();
-            data = new Data.Builder()
-                    .putString("error", e.getClass().getSimpleName() + ": " + e.getMessage())
-                    .build();
-
-            return Result.failure(data);
-        } catch (InvalidAlgorithmParameterException e) {
-            e.printStackTrace();
-            data = new Data.Builder()
-                    .putString("error", e.getClass().getSimpleName() + ": " + e.getMessage())
-                    .build();
-
-            return Result.failure(data);
-        } catch (InvalidKeyException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             data = new Data.Builder()
                     .putString("error", e.getClass().getSimpleName() + ": " + e.getMessage())

@@ -4,10 +4,9 @@ import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.form;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,12 +39,28 @@ public class SectionRIActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.setForm(form);
-        //setupListener();
+        setupListener();
     }
 
     private void setupListener() {
 
-        bi.hh14.addTextChangedListener(new TextWatcher() {
+        bi.hh201.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    try {
+                        float totalFamily = Integer.parseInt(form.getHh19a()) + Integer.parseInt(form.getHh19b());
+
+                        bi.hh20a.setMaxvalue(totalFamily - 1f);
+                    } catch (NumberFormatException e) {
+                        bi.hh20a.setMaxvalue(0f);
+                        bi.hh20a.setMinvalue(0f);
+                    }
+                }
+            }
+        });
+
+      /*  bi.hh14.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -66,7 +81,7 @@ public class SectionRIActivity extends AppCompatActivity {
                     }
                 }
             }
-        });
+        });*/
     }
 
 

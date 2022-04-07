@@ -138,6 +138,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildTable.COLUMN_SNO, child.getSno());
         values.put(ChildTable.COLUMN_USERNAME, child.getUserName());
         values.put(ChildTable.COLUMN_SYSDATE, child.getSysDate());
+        values.put(ChildTable.COLUMN_CSTATUS, child.getCStatus());
 
         values.put(ChildTable.COLUMN_SCH, child.sCHtoString());
 

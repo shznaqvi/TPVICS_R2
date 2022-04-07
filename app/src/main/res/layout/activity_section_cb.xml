@@ -79,7 +79,7 @@
                                 android:hint="YYYY-MM-DD"
                                 android:text="@={child.ec01}"
                                 app:dateFormat="yyyy-MM-dd"
-                                app:theme="@style/DatePickerStyle"
+                                app:theme="@style/DatePickerEditTextDialogTheme"
                                 app:maxDate="CR_DATE" />
 
 
@@ -116,6 +116,7 @@
                                 android:layout_weight="1"
                                 android:text="@string/ec02" />
 
+
                             <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
                                 android:id="@+id/ec02"
                                 android:layout_width="0dp"
@@ -123,9 +124,11 @@
                                 android:layout_weight="1"
                                 android:focusable="false"
                                 android:gravity="center"
-                                android:text="@={child.ec02}"
                                 android:hint="HH:mm"
-                                app:theme="@style/DatePickerStyle" />
+                                android:text="@={child.ec02}"
+                                app:is24HourView="true"
+                                app:theme="@style/DatePickerEditTextDialogTheme"
+                                app:timeFormat="HH:mm" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -297,7 +300,8 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVec19"
                     style="@style/cardView"
-                    android:visibility="@{child.ec18.equals(`4`) || child.ec18.equals(`96`) ? View.GONE : View.VISIBLE}">
+
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:layout_width="match_parent"

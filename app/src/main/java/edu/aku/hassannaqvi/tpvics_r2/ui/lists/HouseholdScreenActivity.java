@@ -4,6 +4,7 @@ import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.childCount;
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.selectedChild;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +15,7 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
@@ -71,10 +73,11 @@ public class HouseholdScreenActivity extends AppCompatActivity {
                             } else if (data.getStringExtra("requestCode").equals("4")) {          // Added IM information
 
                                 MainApp.childList.set(selectedChild, MainApp.child);
-                                if (!MainApp.child.getEc21().equals("") && !MainApp.childCompleted.contains(selectedChild)) {
-                                    MainApp.childCompleted.add(selectedChild);
+                                if (!MainApp.child.getCStatus().equals("")) {
+                                    if (!MainApp.child.getEc22().equals("") && !MainApp.childCompleted.contains(selectedChild)) {
+                                        MainApp.childCompleted.add(selectedChild);
+                                    }
                                 }
-
                                 childsAdapter.notifyItemChanged(selectedChild);
                                 Toast.makeText(HouseholdScreenActivity.this, "Child information added.", Toast.LENGTH_SHORT).show();
                             }
@@ -110,8 +113,11 @@ public class HouseholdScreenActivity extends AppCompatActivity {
             for (Child child : MainApp.childList) {
                 if (child.getAgeInMonths() >= 6 && child.getAgeInMonths() <= 23)
                     childCount++;
-                if (!child.getEc21().equals("")) {
-                    MainApp.childCompleted.add(Integer.parseInt(child.getEc13()) - 1);
+                if (child.getTrueAgeInMonths() >= 6 && child.getTrueAgeInMonths() <= 23) {
+
+                    if (!child.getEc22().equals("")) {
+                        MainApp.childCompleted.add(Integer.parseInt(child.getEc13()) - 1);
+                    }
                 }
             }
 
@@ -154,7 +160,7 @@ public class HouseholdScreenActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
        // Toast.makeText(this, "Activity Resumed!", Toast.LENGTH_SHORT).show();
-        if (MainApp.childList.size() > 0 && MainApp.householdChecked) {
+        if (childCount >= Integer.parseInt(MainApp.form.getHh20a()) && MainApp.householdChecked) {
             bi.btnContinue.setEnabled(childCount == MainApp.childCompleted.size());
             bi.btnContinue.setBackground(childCount == MainApp.childCompleted.size() ? getResources().getDrawable(R.drawable.button_shape_green) : getResources().getDrawable(R.drawable.button_shape_gray));
             bi.childCompleteStatus.setVisibility(View.VISIBLE);
@@ -165,18 +171,81 @@ public class HouseholdScreenActivity extends AppCompatActivity {
 
 
     public void btnContinue(View view) {
+        if (childCount < Integer.parseInt(MainApp.form.getHh20a())) {
+            displayProceedDialog();
+        } else {
+            proceedSelect();
 
+        }
+
+
+    }
+
+    private void displayProceedDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.title_child_dialog)
+                .setMessage(String.format(getString(R.string.message_child_dialog_proceeed), MainApp.childList.size() + "", MainApp.form.getHh20a()))
+
+                // Specifying a listener allows you to take an action before dismissing the dialog.
+                // The dialog is automatically dismissed when a dialog button is clicked.
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Continue with delete operation
+                        proceedSelect();
+                    }
+                })
+
+                // A null listener allows the button to dismiss the dialog and take no further action.
+                .setNegativeButton(R.string.no, null)
+                .setIcon(R.drawable.ic_alert_24)
+                .show();
+
+    }
+
+    private void proceedSelect() {
         finish();
         startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
-
     }
 
 
     private void addChild() {
-        MainApp.child = new Child();
-        //TODO: UNCOMMENT two line to launch the child info activity (CH)
-        Intent intent = new Intent(this, SectionCHActivity.class);
 
+
+        if (childCount >= Integer.parseInt(MainApp.form.getHh20a())) {
+            displayAddMoreDialog();
+        } else {
+            addMoreMWRA();
+
+        }
+
+
+    }
+
+    private void displayAddMoreDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.title_child_dialog)
+                .setMessage(String.format(getString(R.string.message_child_dialog_addmore), MainApp.form.getHh20a()))
+
+                // Specifying a listener allows you to take an action before dismissing the dialog.
+                // The dialog is automatically dismissed when a dialog button is clicked.
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Continue with delete operation
+                        addMoreMWRA();
+                    }
+                })
+
+                // A null listener allows the button to dismiss the dialog and take no further action.
+                .setNegativeButton(R.string.no, null)
+                .setIcon(R.drawable.ic_alert_24)
+                .show();
+
+    }
+
+    private void addMoreMWRA() {
+        MainApp.child = new Child();
+        // TODO: UNCOMMENT two line to launch the child info activity (CH)
+        Intent intent = new Intent(this, SectionCHActivity.class);
         intent.putExtra("requestCode", "2");
 
 

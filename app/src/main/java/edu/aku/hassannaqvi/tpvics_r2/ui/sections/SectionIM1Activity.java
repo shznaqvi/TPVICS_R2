@@ -15,9 +15,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.databinding.DataBindingUtil;
 
-import com.edittextpicker.aliazaz.EditTextPicker;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -25,7 +25,6 @@ import org.json.JSONException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -82,7 +81,8 @@ public class SectionIM1Activity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (bi.im04yy.getText().toString().isEmpty()) return;
+                if (bi.im04yy.getText().toString().isEmpty() || bi.im04mm.getText().toString().isEmpty() || bi.im04dd.getText().toString().isEmpty())
+                    return;
                 bi.im04mm.setMaxvalue(Integer.parseInt(bi.im04yy.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR) ?
                         Calendar.getInstance().get(Calendar.MONTH) + 1 : 12f);
                 bi.im04dd.setMaxvalue(Integer.parseInt(bi.im04yy.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR)
@@ -102,7 +102,7 @@ public class SectionIM1Activity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (bi.im04yy.getText().toString().isEmpty() || bi.im04mm.getText().toString().isEmpty())
+                if (bi.im04yy.getText().toString().isEmpty() || bi.im04mm.getText().toString().isEmpty() || bi.im04dd.getText().toString().isEmpty())
                     return;
                 bi.im04dd.setMaxvalue(Integer.parseInt(bi.im04yy.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR)
                         && Integer.parseInt(bi.im04mm.getText().toString()) == Calendar.getInstance().get(Calendar.MONTH) + 1 ?
@@ -114,8 +114,26 @@ public class SectionIM1Activity extends AppCompatActivity {
             }
         });
 
+        bi.im04dd.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
-    /*    setDefault(bi.im0501dd, bi.im0501mm, bi.im0501yy);
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (bi.im04yy.getText().toString().isEmpty() || bi.im04mm.getText().toString().isEmpty() || bi.im04dd.getText().toString().isEmpty())
+                    return;
+                bi.im04dd.setMaxvalue(Integer.parseInt(bi.im04yy.getText().toString()) == Calendar.getInstance().get(Calendar.YEAR)
+                        && Integer.parseInt(bi.im04dd.getText().toString()) == Calendar.getInstance().get(Calendar.MONTH) + 1 ?
+                        Calendar.getInstance().get(Calendar.DAY_OF_MONTH) : 31f);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+/*        setDefault(bi.im0501dd, bi.im0501mm, bi.im0501yy);
         setDefault(bi.im0502dd, bi.im0502mm, bi.im0502yy);
         setDefault(bi.im0503dd, bi.im0503mm, bi.im0503yy);
         setDefault(bi.im0504dd, bi.im0504mm, bi.im0504yy);
@@ -133,10 +151,10 @@ public class SectionIM1Activity extends AppCompatActivity {
         setDefault(bi.im0515dd, bi.im0515mm, bi.im0515yy);
         setDefault(bi.im0516dd, bi.im0516mm, bi.im0516yy);
         setDefault(bi.im0517dd, bi.im0517mm, bi.im0517yy);*/
-   }
+    }
 
-
-    private void setDefault(EditTextPicker day, EditTextPicker mon, EditTextPicker year) {
+// TODO: DO NOT REMOVE COMMENTS
+  /*  private void setDefault(EditTextPicker day, EditTextPicker mon, EditTextPicker year) {
         day.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -180,7 +198,7 @@ public class SectionIM1Activity extends AppCompatActivity {
         });
 
 
-    }
+    }*/
 
 
     private boolean updateDB() {
@@ -211,9 +229,8 @@ public class SectionIM1Activity extends AppCompatActivity {
             forwardIntent.putExtra("complete", true);
             forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
             setResult(RESULT_OK, forwardIntent);
-
-            startActivity(forwardIntent);
             finish();
+            startActivity(forwardIntent);
 
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
@@ -267,7 +284,7 @@ public class SectionIM1Activity extends AppCompatActivity {
                     displayInvalidDateDialog(bi.checkim0501, R.string.im0501bcg, bi.trIm0501);
                     return Validator.emptyCustomTextBox(this, bi.im0501yy, "Incorrect Date.");
                 } else {
-                    bi.checkim0501.setVisibility(View.VISIBLE);
+                    bi.checkim0501.setVisibility(View.INVISIBLE);
                 }
 
 
@@ -286,7 +303,7 @@ public class SectionIM1Activity extends AppCompatActivity {
                     displayInvalidDateDialog(bi.checkim0502, R.string.im0502opv0, bi.trIm0502);
                     return Validator.emptyCustomTextBox(this, bi.im0502yy, "Incorrect Date.");
                 } else {
-                    bi.checkim0502.setVisibility(View.VISIBLE);
+                    bi.checkim0502.setVisibility(View.INVISIBLE);
                 }
 
                 // validate default values; initialize im105 for im0502
@@ -313,7 +330,7 @@ public class SectionIM1Activity extends AppCompatActivity {
                     displayInvalidDateDialog(bi.checkim0510a, R.string.im0510ahp, bi.trIm0510a);
                     return Validator.emptyCustomTextBox(this, bi.im0510ayy, "Incorrect Date.");
                 } else {
-                    bi.checkim0510a.setVisibility(View.VISIBLE);
+                    bi.checkim0510a.setVisibility(View.INVISIBLE);
                 }
 
                 // validate default values; initialize im105 for im0510a
@@ -342,11 +359,12 @@ public class SectionIM1Activity extends AppCompatActivity {
                         + "-" + MainApp.child.getIm0503dd();
                 vaccDates.add(im0503date);
 
-                if (!validateDatesBCG(firstVaccine, im0503date)) {
+                if (!validateDates(firstVaccine, im0503date)) {
                     displayInvalidDateDialog(bi.checkim0503, R.string.im0503opv1, bi.trIm0503);
                     return Validator.emptyCustomTextBox(this, bi.im0503yy, "Incorrect Date.");
                 } else {
-                    bi.checkim0503.setVisibility(View.VISIBLE);
+                    bi.checkim0503.setVisibility(View.INVISIBLE);
+                    bi.im0503yy.setError(null);
                 }
 
                 // validate default values; initialize im105 for im0503
@@ -368,7 +386,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                     displayInvalidDateDialog(bi.checkim0504, R.string.im0504penta1, bi.trIm0504);
                     return Validator.emptyCustomTextBox(this, bi.im0504yy, "Incorrect Date.");
                 } else {
-                    bi.checkim0504.setVisibility(View.VISIBLE);
+                    bi.checkim0504.setVisibility(View.INVISIBLE);
+                    bi.im0504yy.setError(null);
                 }
 
                 // validate default values; initialize im105 for im0504
@@ -390,7 +409,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                     displayInvalidDateDialog(bi.checkim0505, R.string.im0505pcv1, bi.trIm0505);
                     return Validator.emptyCustomTextBox(this, bi.im0505yy, "Incorrect Date.");
                 } else {
-                    bi.checkim0505.setVisibility(View.VISIBLE);
+                    bi.checkim0505.setVisibility(View.INVISIBLE);
+                    bi.im0505yy.setError(null);
                 }
 
                 // validate default values; initialize im105 for im0505
@@ -412,7 +432,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                     displayInvalidDateDialog(bi.checkim0506, R.string.im0506rv1, bi.trIm0506);
                     return Validator.emptyCustomTextBox(this, bi.im0506yy, "Incorrect Date.");
                 } else {
-                    bi.checkim0506.setVisibility(View.VISIBLE);
+                    bi.checkim0506.setVisibility(View.INVISIBLE);
+                    bi.im0506yy.setError(null);
                 }
 
                 // validate default values; initialize im105 for im0506
@@ -446,7 +467,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                     displayInvalidDateDialog(bi.checkim0507, R.string.im0507opv2, bi.trIm0507);
                     return Validator.emptyCustomTextBox(this, bi.im0507yy, "Incorrect Date.");
                 } else {
-                    bi.checkim0507.setVisibility(View.VISIBLE);
+                    bi.checkim0507.setVisibility(View.INVISIBLE);
+                    bi.im0507yy.setError(null);
                 }
 
                 // validate default values; initialize im105 for im0507
@@ -469,7 +491,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                     displayInvalidDateDialog(bi.checkim0508, R.string.im0508penta2, bi.trIm0508);
                     return Validator.emptyCustomTextBox(this, bi.im0508yy, "Incorrect Date.");
                 } else {
-                    bi.checkim0508.setVisibility(View.VISIBLE);
+                    bi.checkim0508.setVisibility(View.INVISIBLE);
+                    bi.im0508yy.setError(null);
                 }
 
                 // validate default values; initialize im105 for im0508
@@ -492,7 +515,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                     displayInvalidDateDialog(bi.checkim0509, R.string.im0509pcv2, bi.trIm0509);
                     return Validator.emptyCustomTextBox(this, bi.im0509yy, "Incorrect Date.");
                 } else {
-                    bi.checkim0509.setVisibility(View.VISIBLE);
+                    bi.checkim0509.setVisibility(View.INVISIBLE);
+                    bi.im0509yy.setError(null);
                 }
                 // validate default values; initialize im105 for im0509
                 im05 = Integer.parseInt(MainApp.child.getIm0509dd());
@@ -514,7 +538,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                     displayInvalidDateDialog(bi.checkim0510, R.string.im0510rv2, bi.trIm0510);
                     return Validator.emptyCustomTextBox(this, bi.im0510yy, "Incorrect Date.");
                 } else {
-                    bi.checkim0510.setVisibility(View.VISIBLE);
+                    bi.checkim0510.setVisibility(View.INVISIBLE);
+                    bi.im0510yy.setError(null);
                 }
                 // validate default values; initialize im105 for im0510
                 im05 = Integer.parseInt(MainApp.child.getIm0510dd());
@@ -545,7 +570,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                     displayInvalidDateDialog(bi.checkim0511, R.string.im0511opv3, bi.trIm0511);
                     return Validator.emptyCustomTextBox(this, bi.im0511yy, "Incorrect Date.");
                 } else {
-                    bi.checkim0511.setVisibility(View.VISIBLE);
+                    bi.checkim0511.setVisibility(View.INVISIBLE);
+                    bi.im0511yy.setError(null);
                 }
 
                 // validate default values; initialize im105 for im0511
@@ -569,7 +595,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                     displayInvalidDateDialog(bi.checkim0512, R.string.im0512penta3, bi.trIm0512);
                     return Validator.emptyCustomTextBox(this, bi.im0512yy, "Incorrect Date.");
                 } else {
-                    bi.checkim0512.setVisibility(View.VISIBLE);
+                    bi.checkim0512.setVisibility(View.INVISIBLE);
+                    bi.im0512yy.setError(null);
                 }
 
                 // validate default values; initialize im105 for im0512
@@ -593,7 +620,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                     displayInvalidDateDialog(bi.checkim0513, R.string.im0513pcv3, bi.trIm0513);
                     return Validator.emptyCustomTextBox(this, bi.im0513yy, "Incorrect Date.");
                 } else {
-                    bi.checkim0513.setVisibility(View.VISIBLE);
+                    bi.checkim0513.setVisibility(View.INVISIBLE);
+                    bi.im0513yy.setError(null);
                 }
 
                 // validate default values; initialize im105 for im0501
@@ -618,7 +646,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                     displayInvalidDateDialog(bi.checkim0514, R.string.im0514ipv, bi.trIm0514);
                     return Validator.emptyCustomTextBox(this, bi.im0514yy, "Incorrect Date.");
                 } else {
-                    bi.checkim0514.setVisibility(View.VISIBLE);
+                    bi.checkim0514.setVisibility(View.INVISIBLE);
+                    bi.im0514yy.setError(null);
                 }
 
                 // validate default values; initialize im105 for im0514
@@ -653,7 +682,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                         displayInvalidDateDialog(bi.checkim0515, R.string.im0515measles1, bi.trIm0515);
                         return Validator.emptyCustomTextBox(this, bi.im0515yy, "Incorrect Date.");
                     } else {
-                        bi.checkim0515.setVisibility(View.VISIBLE);
+                        bi.checkim0515.setVisibility(View.INVISIBLE);
+                        bi.im0515yy.setError(null);
                     }
 
                     // validate default values; initialize im105 for im0515
@@ -677,7 +707,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                         displayInvalidDateDialog(bi.checkim0517, R.string.im0517typh, bi.trIm0517);
                         return Validator.emptyCustomTextBox(this, bi.im0517yy, "Incorrect Date.");
                     } else {
-                        bi.checkim0517.setVisibility(View.VISIBLE);
+                        bi.checkim0517.setVisibility(View.INVISIBLE);
+                        bi.im0517yy.setError(null);
                     }
 
                     // validate default values; initialize im105 for im0517
@@ -711,7 +742,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                         displayInvalidDateDialog(bi.checkim0516, R.string.im0516measles2, bi.trIm0516);
                         return Validator.emptyCustomTextBox(this, bi.im0516yy, "Incorrect Date.");
                     } else {
-                        bi.checkim0516.setVisibility(View.VISIBLE);
+                        bi.checkim0516.setVisibility(View.INVISIBLE);
+                        bi.im0516yy.setError(null);
                     }
 
                     // validate default values; initialize im105 for im0516
@@ -879,11 +911,11 @@ public class SectionIM1Activity extends AppCompatActivity {
 
 
     private void displayInvalidDateDialog(CheckBox checkBox, int vaccLabel, TableRow tableRow) {
-        new AlertDialog.Builder(this)
+        checkBox.setVisibility(View.VISIBLE);
+        new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.DatePickerDialog))
                 .setTitle("Invalid Date: " + getResources().getString(vaccLabel))
                 .setMessage("Please recheck date on vaccination card.")
-
-                .setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         // Continue with delete operation
                /*         for (int i = 0; i < tableRow.getChildCount(); i++) {
@@ -897,7 +929,6 @@ public class SectionIM1Activity extends AppCompatActivity {
                 })
 
                 // A null listener allows the button to dismiss the dialog and take no further action.
-                .setNegativeButton(R.string.no, null)
                 .setIcon(R.drawable.ic_alert_24)
                 .show();
 

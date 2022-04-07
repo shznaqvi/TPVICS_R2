@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.tpvics_r2.models;
 
-import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp._EMPTY_;
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.form;
@@ -37,6 +36,7 @@ public class Child extends BaseObservable implements Observable {
     private String uuid = _EMPTY_;
     private String userName = _EMPTY_;
     private String sysDate = _EMPTY_;
+    private String cstatus = _EMPTY_;
     private String ebCode = _EMPTY_;
     private String hhid = _EMPTY_;
     private String sno = _EMPTY_;
@@ -294,6 +294,14 @@ public class Child extends BaseObservable implements Observable {
         this.sysDate = sysDate;
     }
 
+    public String getCStatus() {
+        return cstatus;
+    }
+
+    public void setCStatus(String cStatus) {
+        this.cstatus = cStatus;
+    }
+
 
     public String getHhid() {
         return hhid;
@@ -549,6 +557,7 @@ public class Child extends BaseObservable implements Observable {
         this.ec22 = ec22;
         setEc2206x(ec22.equals("6") ? this.ec2206x : ""); // for all skips, mention all skipped questions
         setEc2296x(ec22.equals("96") ? this.ec2296x : ""); // for all skips, mention all skipped questions
+        setCStatus(ec22);
         notifyPropertyChanged(BR.ec22);
     }
 
@@ -915,6 +924,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm02(String im02) {
         this.im02 = im02;
+        setTrueAgeInMonths(this.ageInMonths);
         setIm02a(im02.equals("3") ? this.im02a : "");
         setIm04dd(im02.equals("1") ? this.im04dd : "");
         setIm04mm(im02.equals("1") ? this.im04mm : "");
@@ -2503,9 +2513,9 @@ public class Child extends BaseObservable implements Observable {
     public void setIm0510a95(String im0510a95) {
         if (this.im0510a95.equals(im0510a95)) return; // for all checkboxes
         this.im0510a95 = im0510a95;
-        setIm0510add(im0510a95.equals("95") ? this.im0501dd : "");
-        setIm0510amm(im0510a95.equals("95") ? this.im0501mm : "");
-        setIm0510ayy(im0510a95.equals("95") ? this.im0501yy : "");
+        setIm0510add(im0510a95.equals("95") ? this.im0502dd : "");
+        setIm0510amm(im0510a95.equals("95") ? this.im0502mm : "");
+        setIm0510ayy(im0510a95.equals("95") ? this.im0502yy : "");
         notifyPropertyChanged(BR.im0510a95);
     }
 
@@ -2583,6 +2593,7 @@ public class Child extends BaseObservable implements Observable {
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SNO));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SYSDATE));
+        this.cstatus = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_CSTATUS));
         this.deviceId = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_DEVICEID));
         this.deviceTag = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_DEVICETAGID));
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_APPVERSION));
@@ -2667,6 +2678,7 @@ public class Child extends BaseObservable implements Observable {
             this.im03 = json.getString("im03");
             this.im0396x = json.getString("im0396x");
             this.im04dd = json.getString("im04dd");
+            this.trueAgeInMonths = json.has("trueAgeInMonths") ? Long.parseLong(json.getString("trueAgeInMonths")) : 0;
             this.im04mm = json.getString("im04mm");
             this.im04yy = json.getString("im04yy");
             this.im0497 = json.getString("im0497");
@@ -2823,6 +2835,7 @@ public class Child extends BaseObservable implements Observable {
                 .put("im03", im03)
                 .put("im0396x", im0396x)
                 .put("im04dd", im04dd)
+                .put("trueAgeInMonths", trueAgeInMonths)
                 .put("im04mm", im04mm)
                 .put("im04yy", im04yy)
                 .put("im0497", im0497)
@@ -2993,6 +3006,7 @@ public class Child extends BaseObservable implements Observable {
         json.put(TableContracts.ChildTable.COLUMN_SNO, this.sno);
         json.put(TableContracts.ChildTable.COLUMN_USERNAME, this.userName);
         json.put(TableContracts.ChildTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(TableContracts.ChildTable.COLUMN_CSTATUS, this.cstatus);
         json.put(TableContracts.ChildTable.COLUMN_DEVICEID, this.deviceId);
         json.put(TableContracts.ChildTable.COLUMN_DEVICETAGID, this.deviceTag);
         json.put(TableContracts.ChildTable.COLUMN_SYNCED, this.synced);
@@ -3067,29 +3081,25 @@ public class Child extends BaseObservable implements Observable {
                 Log.d(TAG, "CaluculateAge: " + (mYear) + "-" + mMonth + "-" + mDay);
 */
                 //this.ageInMonths = MILLISECONDS.toDays(millis) / 30;
-                long tYear = MILLISECONDS.toDays(millis) / 365;
+                // OLD METHOD
+              /*  long tYear = MILLISECONDS.toDays(millis) / 365;
                 long tMonth = (MILLISECONDS.toDays(millis) - (tYear * 365)) / 30;
                 long tDay = MILLISECONDS.toDays(millis) - ((tYear * 365) + (tMonth * 30));
+                Log.d(TAG, "CaluculateAge: Y-" + tYear + " M-" + tMonth + " D-" + tDay);*/
+
+                Calendar c = Calendar.getInstance();
+
+                c.setTimeInMillis(millis);
+                int tYear = c.get(Calendar.YEAR) - 1970;
+                int tMonth = c.get(Calendar.MONTH);
+                int tDay = c.get(Calendar.DAY_OF_MONTH);
+
 
                 Log.d(TAG, "CaluculateAge: Y-" + tYear + " M-" + tMonth + " D-" + tDay);
                /* setH231d(String.valueOf(tDay));
                 setH231m(String.valueOf(tMonth));*/
 
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                   /* LocalDate localCur = LocalDate.of(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH);
-                    LocalDate localCal = LocalDate.of(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH);
 
-                    Period period = Period.between(localCal, localCur);
-                    tYear = period.getYears();
-                    tMonth = period.getMonths();
-                    tDay = period.getDays();
-
-
-*/
-                    tYear = MILLISECONDS.toDays(millis) / 365;
-                    tMonth = (MILLISECONDS.toDays(millis) - (tYear * 365)) / 30;
-                    tDay = MILLISECONDS.toDays(millis) - ((tYear * 365) + (tMonth * 30));
-                }
                 if (!trueAge) {
 
                     setCb04yy(String.valueOf(tYear));

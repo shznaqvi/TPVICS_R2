@@ -218,6 +218,7 @@
 
     <item name="android:paddingStart">8dp</item>
     <item name="android:textColor">@color/gray</item>
+    <item name="android:buttonTint">@color/colorPrimary</item>
 
     <item name="android:paddingEnd">8dp</item>
     <item name="android:paddingTop">4dp</item>
@@ -233,6 +234,7 @@
     <item name="android:paddingEnd">8dp</item>
     <item name="android:paddingTop">4dp</item>
     <item name="android:paddingBottom">4dp</item>
+    <item name="android:buttonTint">@color/colorPrimary</item>
     <item name="android:minHeight">52dp</item>
     <item name="android:clickable">true</item>
     <item name="android:background">@drawable/options_separator</item>
@@ -338,36 +340,40 @@
     <item name="android:shadowRadius">0</item>
 </style>
 
-<style name="textView">
-    <item name="android:gravity">center</item>
-    <item name="android:background">@color/white</item>
-    <item name="android:padding">10dp</item>
-    <item name="android:layout_margin">7dp</item>
-    <item name="android:minHeight">16dp</item>
-    <item name="android:textColor">@color/colorPrimaryDark</item>
-</style>
-
-    <style name="DatePickerStyle" parent="Theme.AppCompat.Light.Dialog">
-        <item name="android:layout_gravity">center_horizontal|center_vertical</item>
+    <style name="textView">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_margin">7dp</item>
+        <item name="android:minHeight">16dp</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
-        <item name="android:selectableItemBackgroundBorderless">@color/grayLight</item>
-        <item name="colorControlHighlight">@color/colorAccentLight</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="colorControlActivated">@color/colorPrimaryLight</item>
-        <item name="android:buttonBarPositiveButtonStyle">@style/AppTheme.Alert.Button.Positive
-        </item>
-        <item name="android:buttonBarNegativeButtonStyle">@style/AppTheme.Alert.Button.Negative
-        </item>
-        <item name="android:buttonBarNeutralButtonStyle">@style/AppTheme.Alert.Button.Neutral</item>
     </style>
 
-<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="DatePickerEditTextDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <!-- this is new -->
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:datePickerStyle">@style/DatePickerEditTextStyle</item>
+        <item name="android:colorAccent">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="DatePickerEditTextStyle" parent="@android:style/Widget.Material.Light.DatePicker">
+        <item name="android:headerBackground">@color/colorPrimary</item>
+        <item name="android:calendarTextColor">@color/colorPrimaryDark</item>
+        <item name="android:dayOfWeekBackground">@color/colorPrimaryDark</item>
+        <item name="android:yearListSelectorColor">@color/colorAccent</item>
+        <item name="android:firstDayOfWeek">2</item>
+        <item name="android:datePickerMode">calendar</item>
+
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
 
-<style name="AppTheme.NoActionBar">
-    <item name="windowActionBar">false</item>
-    <item name="windowNoTitle">true</item>
-</style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 
 <style name="ProgressBarStyle">
     <item name="colorAccent">@color/colorPrimary</item>
@@ -436,7 +442,7 @@
 <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
     <item name="android:textSize">20sp</item>
     <item name="android:letterSpacing">0.15</item>
-    <item name="android:textStyle">bold|italic</item>
+    <item name="android:textStyle">bold</item>
     <item name="android:background">@null</item>
 </style>
 

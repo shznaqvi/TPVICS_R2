@@ -1669,17 +1669,17 @@
                                 android:text="@string/ss27" />
 
                             <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
-
                                 android:id="@+id/ss27"
-                                style="@style/textInput"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:focusable="false"
                                 android:gravity="center"
                                 android:hint="HH:mm"
+                                app:is24HourView="true"
                                 android:text="@={form.ss27}"
-                                app:theme="@style/DatePickerStyle" />
+                                app:theme="@style/DatePickerEditTextDialogTheme"
+                                app:timeFormat="HH:mm" />
 
                         </LinearLayout>
 

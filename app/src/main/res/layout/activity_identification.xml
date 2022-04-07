@@ -87,7 +87,8 @@
                                 android:hint="@string/hh05" />
 
                             <ImageButton
-                                android:layout_width="wrap_content"
+                                android:layout_width="48dp"
+                                android:backgroundTint="@color/colorAccent"
                                 android:layout_height="match_parent"
                                 android:onClick="checkEBNumber"
                                 android:src="@drawable/search" />
@@ -116,12 +117,13 @@
                                     android:text="@string/hh06" />
 
                                 <TextView
+                                    android:background="@null"
+                                    android:textColor="@color/colorPrimary"
                                     android:id="@+id/hh06"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:gravity="center_horizontal|center_vertical"
-                                    android:layout_weight="1"
-                                    android:hint="@string/hh06" />
+                                    android:layout_weight="1" />
 
                                 <CheckBox
                                     android:id="@+id/checkHh06"
@@ -146,12 +148,13 @@
                                 android:text="@string/hh07" />
 
                             <TextView
+                                android:background="@null"
+                                android:textColor="@color/colorPrimary"
                                 android:id="@+id/hh07"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:gravity="center_horizontal|center_vertical"
-                                android:layout_weight="1"
-                                android:hint="@string/hh07" />
+                                android:layout_weight="1" />
 
                             <CheckBox
                                 android:id="@+id/checkHh07"
@@ -181,7 +184,8 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center_horizontal|center_vertical"
                                 android:layout_weight="1"
-                                android:hint="@string/hh08" />
+                                android:background="@null"
+                                android:textColor="@color/colorPrimary" />
 
                             <CheckBox
                                 android:id="@+id/checkHh08"
@@ -211,7 +215,8 @@
                                     android:layout_height="match_parent"
                                     android:gravity="center_horizontal|center_vertical"
                                     android:layout_weight="1"
-                                    android:hint="@string/hh09" />
+                                    android:background="@null"
+                                    android:textColor="@color/colorPrimary" />
 
                                 <CheckBox
                                     android:id="@+id/checkHh09"
@@ -268,7 +273,8 @@
                                 android:maxLength="10" />
 
                             <ImageButton
-                                android:layout_width="wrap_content"
+                                android:layout_width="48dp"
+                                android:backgroundTint="@color/colorAccent"
                                 android:layout_height="match_parent"
                                 android:onClick="checkHH"
                                 android:src="@drawable/search" />
@@ -295,6 +301,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:gravity="center_vertical"
+                                android:background="@null"
+                                android:textColor="@color/colorPrimary"
                                 android:layout_weight="1" />
 
                             <CheckBox

@@ -152,7 +152,7 @@ public class ChildEndingActivity extends AppCompatActivity {
             e.printStackTrace();
             Toast.makeText(this, "JSONException(Forms): ", Toast.LENGTH_SHORT).show();
         }
-
+        updcount = db.updatesChildColumn(TableContracts.ChildTable.COLUMN_CSTATUS, child.getCStatus());
         return updcount > 0;
     }
 

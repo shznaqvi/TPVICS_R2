@@ -10,6 +10,8 @@
                 android:startColor="@color/colorPrimaryDark" />
         </shape>
     </item>
+    <item android:drawable="@drawable/drawable_floral_design" />
+
     <item
         android:bottom="2dp"
         android:left="2dp"

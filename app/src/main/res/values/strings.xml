@@ -107,6 +107,9 @@
     <string name="backPress" translatable="false"> Back Press Not Allowed </string>
     <string name="invalid_response" translatable="false"> Invalid Response </string>
     <string name="agecal" translatable="false">ageCal:\t</string>
+    <string name="title_child_dialog" translatable="false">Child Count</string>
+    <string name="message_child_dialog_proceeed" translatable="false">You have entered only %1$s of %2$s Children in the household. \nAre you sure you want to continue now?</string>
+    <string name="message_child_dialog_addmore" translatable="false">You have already entered %1$s Children. \nAre you sure you want to add more Child?</string>
     <string name="network_conn_error" translatable="false"> Network connection not available ! </string>
     <string name="no_mother_selected_child_list" translatable="false"> No Mother has been selected. Please select a mother before opening Child List </string>
     <string name="onitemselected" translatable="false"> onItemSelected(Samples):\t </string>
@@ -164,6 +167,7 @@
     <string name="sectionchlistofchildren0623monthsoldmainheading">SECTION CH:</string>
     <string name="sectionchlistofchildren0623monthsoldsubheading">List of Children 06-23 months old: List of Children 0623 months old</string>
     <string name="no"> No </string>
+    <string name="yes"> Yes </string>
 
     <string name="consentmainheading">Consent:</string>
     <string name="consentsubheading">Introduce yourself to the respondent and explain the reason for your visit and ask for permission</string>

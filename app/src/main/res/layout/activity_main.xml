@@ -30,6 +30,7 @@
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:subtitleTextColor="@color/colorPrimaryLight"
             app:title="@string/app_name"
+            android:layoutDirection="ltr"
             app:titleTextColor="@color/colorPrimary" />
 
         <TextView

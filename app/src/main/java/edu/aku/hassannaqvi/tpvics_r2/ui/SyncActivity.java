@@ -211,7 +211,7 @@ public class SyncActivity extends AppCompatActivity {
                 } else {
 
                     select = " * ";
-                    filter = " colflag != '1' AND dist_id = '" + MainApp.user.getDist_id() + "' ";
+                    filter = " (colflag != '1' or colflag is null) AND dist_id = '" + MainApp.user.getDist_id() + "' ";
                     downloadTables.add(new SyncModel(ClusterTable.TABLE_NAME, select, filter));
                     downloadTables.add(new SyncModel(RandomHHTable.TABLE_NAME, select, filter));
                 }

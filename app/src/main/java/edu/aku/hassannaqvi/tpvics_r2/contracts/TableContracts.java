@@ -138,6 +138,7 @@ public class TableContracts {
         public static final String COLUMN_EB_CODE = "ebCode";
         public static final String COLUMN_HHID = "hhid";
         public static final String COLUMN_USERNAME = "username";
+        public static final String COLUMN_CSTATUS = "cstatus";
         public static final String COLUMN_SYSDATE = "sysdate";
         public static final String COLUMN_SNO = "sno";
         public static final String COLUMN_SCH = "sch";

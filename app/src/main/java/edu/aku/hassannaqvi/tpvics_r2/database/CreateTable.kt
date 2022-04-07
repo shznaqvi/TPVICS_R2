@@ -67,6 +67,7 @@ object CreateTable {
             + ChildTable.COLUMN_SNO + " TEXT, "
             + ChildTable.COLUMN_USERNAME + " TEXT, "
             + ChildTable.COLUMN_SYSDATE + " TEXT, "
+            + ChildTable.COLUMN_CSTATUS + " TEXT, "
             + ChildTable.COLUMN_DEVICEID + " TEXT, "
             + ChildTable.COLUMN_DEVICETAGID + " TEXT, "
             + ChildTable.COLUMN_SYNCED + " TEXT, "

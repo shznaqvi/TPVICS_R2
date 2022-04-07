@@ -81,10 +81,10 @@
                                 android:gravity="center"
                                 android:hint="YYYY-DD-MM"
                                 android:text="@={form.hh01}"
-                                android:timePickerMode="clock"
                                 app:dateFormat="yyyy-MM-dd"
                                 app:maxDate="CR_DATE"
-                                app:theme="@style/DatePickerStyle" />
+                                app:theme="@style/DatePickerEditTextDialogTheme" />
+
 
                         </LinearLayout>
                     </LinearLayout>
@@ -127,8 +127,9 @@
                                 android:focusable="false"
                                 android:gravity="center"
                                 android:hint="HH:mm"
+                                app:is24HourView="true"
                                 android:text="@={form.hh02}"
-                                app:theme="@style/TimePickerDialog"
+                                app:theme="@style/DatePickerEditTextDialogTheme"
                                 app:timeFormat="HH:mm" />
 
                         </LinearLayout>

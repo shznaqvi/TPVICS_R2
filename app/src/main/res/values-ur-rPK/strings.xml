@@ -76,9 +76,10 @@
     <string name="errorinvalidpassword">This password is too short</string>
     <string name="errorfieldrequired">This field is required</string>
     <string name="errorincorrectpassword">This password is incorrect</string>
-    <string name="confirm" translatable="false">تصدیق؟</string>
+    <string name="confirm" translatable="false">تصدیق کریں؟</string>
 
     <string name="no"> نہیں </string>
+    <string name="yes"> ہاں </string>
     <string name="dkn"> معلوم نہیں </string>
     <string name="none"> کوئی نہیں </string>
     <string name="never"> کبھی نہیں </string>

@@ -65,7 +65,7 @@
     <string name="bckbtn" translatable="false">You Cant go back</string>
     <string name="processing" translatable="false">Processing</string>
     <string name="confirmation" translatable="false">Confirmation!</string>
-    <string name="confirm" translatable="false">Confirm?</string>
+    <string name="confirm">Confirm?</string>
     <string name="cntbtn" translatable="false">Are you sure, you want to continue - interview</string>
     <string name="failedUpdateDb" translatable="false">SORRY! Failed to update DB</string>
     <string name="invalidDate" translatable="false">Invalid date!</string>

@@ -949,31 +949,31 @@
                                         android:onClick="@{()->form.setSs20(`13`)}"
                                         android:text="@string/ss20c" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss20d"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{form.ss20.equals(`21`)}"
-                                        android:onClick="@{()->form.setSs20(`21`)}"
-                                        android:text="@string/ss20d" />
+                            <RadioButton
+                                android:id="@+id/ss20d"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss20.equals(`21`)}"
+                                android:onClick="@{()->form.setSs20(`21`)}"
+                                android:text="@string/ss20d" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss20dtitle"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{form.ss20.equals(`0`)}"
-                                        android:onClick="@{()->form.setSs20(`0`)}"
-                                        android:text="@string/ss20dtitle" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss20e"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{form.ss20.equals(`22`)}"
-                                        android:onClick="@{()->form.setSs20(`22`)}"
-                                        android:text="@string/ss20e" />
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="@string/ss20dtitle" />
 
-                                    <RadioButton
+                            <RadioButton
+                                android:id="@+id/ss20e"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss20.equals(`22`)}"
+                                android:onClick="@{()->form.setSs20(`22`)}"
+                                android:text="@string/ss20e" />
+
+                            <RadioButton
                                         android:id="@+id/ss20f"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"

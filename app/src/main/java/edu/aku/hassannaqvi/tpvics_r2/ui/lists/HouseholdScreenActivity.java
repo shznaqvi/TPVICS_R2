@@ -83,11 +83,10 @@ public class HouseholdScreenActivity extends AppCompatActivity {
                             } else if (data.getStringExtra("requestCode").equals("4")) {          // Added IM information
 
                                 MainApp.childList.set(selectedChild, MainApp.child);
-                                if (!MainApp.child.getCStatus().equals("")) {
-                                    if (!MainApp.child.getEc22().equals("") && !MainApp.childCompleted.contains(selectedChild)) {
-                                        MainApp.childCompleted.add(selectedChild);
-                                    }
+                                if (!MainApp.child.getEc22().equals("") && !MainApp.childCompleted.contains(selectedChild)) {
+                                    MainApp.childCompleted.add(selectedChild);
                                 }
+
                                 childsAdapter.notifyItemChanged(selectedChild);
                                 Toast.makeText(HouseholdScreenActivity.this, "Child information added.", Toast.LENGTH_SHORT).show();
                             }
@@ -123,12 +122,11 @@ public class HouseholdScreenActivity extends AppCompatActivity {
             for (Child child : MainApp.childList) {
                 if (child.getAgeInMonths() >= 6 && child.getAgeInMonths() <= 23)
                     childCount++;
-                if (child.getTrueAgeInMonths() >= 6 && child.getTrueAgeInMonths() <= 23) {
 
-                    if (!child.getEc22().equals("")) {
-                        MainApp.childCompleted.add(Integer.parseInt(child.getEc13()) - 1);
-                    }
+                if (!child.getEc22().equals("")) {
+                    MainApp.childCompleted.add(Integer.parseInt(child.getEc13()) - 1);
                 }
+
             }
 
         } catch (JSONException e) {
@@ -169,7 +167,7 @@ public class HouseholdScreenActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-       // Toast.makeText(this, "Activity Resumed!", Toast.LENGTH_SHORT).show();
+        // Toast.makeText(this, "Activity Resumed!", Toast.LENGTH_SHORT).show();
         if (childCount >= Integer.parseInt(MainApp.form.getHh20a()) && MainApp.householdChecked) {
             bi.btnContinue.setEnabled(childCount == MainApp.childCompleted.size());
             bi.btnContinue.setBackground(childCount == MainApp.childCompleted.size() ? getResources().getDrawable(R.drawable.button_shape_green) : getResources().getDrawable(R.drawable.button_shape_gray));

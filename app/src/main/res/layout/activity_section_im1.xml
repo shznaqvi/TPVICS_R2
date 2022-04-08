@@ -1,6 +1,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tool="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools">
 
 
     <data>
@@ -100,7 +100,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.im01.equals(`2`)}"
-                                android:onClick="@{()->form.setIm01(`2`) + im02.clearCheck() + im02a.clearCheck()}"
+                                android:onClick="@{()->form.setIm01(`2`) + im02.clearCheck()}"
                                 android:text="@string/im012" />
 
                         </RadioGroup>
@@ -526,6 +526,7 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    tools:background="@color/grayLight"
                                     android:background="@{form.trueAgeInMonths > 23 || form.trueAgeInMonths &lt; 6 ?  context.getResources().getColor(R.color.redOverlay) : context.getResources().getColor(R.color.grayLight)}"
                                     android:gravity="end"
                                     android:includeFontPadding="true"
@@ -534,7 +535,7 @@
                                     android:textColor="@{form.trueAgeInMonths > 23 || form.trueAgeInMonths &lt; 6 ?  context.getResources().getColor(R.color.redDark) : context.getResources().getColor(R.color.gray)}"
                                     android:textSize="13sp"
                                     android:visibility="@{form.trueAgeInMonths != -1 ? View.VISIBLE : View.GONE}"
-                                    tool:text="Age in months: 99" />
+                                    tools:text="Age in months: 99" />
                             </TableRow>
 
                             <TableRow>
@@ -562,7 +563,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:visibility="@{form.im02.equals(`1`)  &amp;&amp; form.trueAgeInMonths >= 6  &amp;&amp; form.trueAgeInMonths &lt;= 23  ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{ form.trueAgeInMonths >= 6  &amp;&amp; form.trueAgeInMonths &lt;= 23  ? View.VISIBLE : View.GONE}">
 
                     <!-- Take Photo   -->
                     <androidx.cardview.widget.CardView
@@ -582,6 +583,8 @@
                                 android:orientation="horizontal">
 
                                 <Button
+                                    android:background="@drawable/button_shape_gray"
+
                                     android:id="@+id/frontPhoto"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -589,12 +592,16 @@
                                     android:layout_marginStart="8dp"
                                     android:layout_marginTop="15dp"
                                     android:layout_marginEnd="8dp"
+                                    android:backgroundTint="@color/colorAccent"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp"
                                     android:layout_marginBottom="15dp"
                                     android:drawableStart="@drawable/ic_camera"
                                     android:onClick="takePhoto"
                                     android:text="Take Front Photo" />
 
                                 <Button
+                                    android:background="@drawable/button_shape_gray"
                                     android:id="@+id/backPhoto"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
@@ -602,10 +609,12 @@
                                     android:layout_marginStart="8dp"
                                     android:layout_marginTop="15dp"
                                     android:layout_marginEnd="8dp"
+                                    android:backgroundTint="@color/colorAccent"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp"
                                     android:layout_marginBottom="15dp"
                                     android:drawableStart="@drawable/ic_camera"
                                     android:onClick="takePhoto"
-                                    android:src="@drawable/ic_camera"
                                     android:text="Take Back Photo" />
 
                             </LinearLayout>
@@ -625,7 +634,7 @@
                                     android:layout_weight="1"
                                     android:enabled="false"
                                     android:minHeight="48dp"
-                                    android:text="@{form.frontfilename}"
+                                    android:text="@={form.frontfilename}"
                                     android:textColor="#7f7f7f7f"
                                     android:textSize="14sp" />
 
@@ -637,7 +646,7 @@
                                     android:layout_weight="1"
                                     android:enabled="false"
                                     android:minHeight="48dp"
-                                    android:text="@{form.backfilename}"
+                                    android:text="@={form.backfilename}"
                                     android:textColor="#7f7f7f7f"
                                     android:textSize="14sp" />
 
@@ -802,7 +811,7 @@
                                         android:background="@color/redOverlay"
                                         android:tag="-1"
                                         android:visibility="invisible"
-                                        tool:visibility="visible" />
+                                        tools:visibility="visible" />
 
                                 </TableRow>
 

@@ -647,6 +647,10 @@
     <string name="im0514mm">Month</string>
     <string name="im0514yy">Year</string>
     <string name="im0515measles1">Measles-1                                                           </string>
+    <string name="im0515bipv2">IPV2 (at 9 months)</string>
+    <string name="im0515bdd">Day</string>
+    <string name="im0515bmm">Month</string>
+    <string name="im0515byy">Year</string>
     <string name="im0516measles2">Measles-2                                                     </string>
     <string name="im0515dd">Day</string>
     <string name="im0516dd">Day</string>

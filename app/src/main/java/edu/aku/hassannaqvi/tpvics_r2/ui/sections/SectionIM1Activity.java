@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.tpvics_r2.ui.sections;
 
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.child;
+import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.form;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -259,11 +260,24 @@ public class SectionIM1Activity extends AppCompatActivity {
             if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
                 return Validator.emptyCustomTextBox(this, bi.im0501dd, "Incorrect value for Day.");
             }
-        }catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             e.printStackTrace();
         }
         //if (IMdates is valid date(not, 97, 66, 88, 44)){
         if (MainApp.child.getIm02().equals("1") && (child.getTrueAgeInMonths() > 6 && child.getTrueAgeInMonths() < 24)) {
+
+            // Check front photo taken
+            if (MainApp.child.getFrontfilename().equals("")) {
+                return Validator.emptyCustomTextBox(this, bi.frontFileName, "Please take front photo of Vaccination Card.");
+
+            }
+
+            // Check back photo taken
+            if (MainApp.child.getBackfilename().equals("")) {
+                return Validator.emptyCustomTextBox(this, bi.backFileName, "Please take back photo of Vaccination Card.");
+
+            }
+
             // Only set once
             // IM04 - DOB
             String dobDate = MainApp.child.getIm04yy()
@@ -275,8 +289,8 @@ public class SectionIM1Activity extends AppCompatActivity {
                 String im0501date = MainApp.child.getIm0501yy()
                         + "-" + MainApp.child.getIm0501mm()
                         + "-" + MainApp.child.getIm0501dd();
-if (!im0501date.contains("--"))
-    vaccDates.add(im0501date);
+                if (!im0501date.contains("--"))
+                    vaccDates.add(im0501date);
 
                 if (!validateDatesBCG(dobDate, im0501date)) {
                     displayInvalidDateDialog(bi.checkim0501, R.string.im0501bcg, bi.trIm0501);
@@ -284,7 +298,6 @@ if (!im0501date.contains("--"))
                 } else {
                     bi.checkim0501.setVisibility(View.INVISIBLE);
                 }
-
 
 
             }
@@ -310,7 +323,6 @@ if (!im0501date.contains("--"))
                 if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
                     return Validator.emptyCustomTextBox(this, bi.im0502dd, "Incorrect value for Day.");
                 }
-
 
 
             }
@@ -375,6 +387,7 @@ if (!im0501date.contains("--"))
                 }
 
             }
+
             if (!bi.checkim0504.isChecked()) {
 
                 // IM0504
@@ -680,90 +693,116 @@ if (!im0501date.contains("--"))
 
             //if (!bi.checkim0504.isChecked()) {
 
-                if (!bi.checkim0515.isChecked()) {
+            if (!bi.checkim0515.isChecked()) {
 
-                    // IM0515
-                    String im0515date = MainApp.child.getIm0515yy()
-                            + "-" + MainApp.child.getIm0515mm()
-                            + "-" + MainApp.child.getIm0515dd();
+                // IM0515
+                String im0515date = MainApp.child.getIm0515yy()
+                        + "-" + MainApp.child.getIm0515mm()
+                        + "-" + MainApp.child.getIm0515dd();
 
-                    if (!im0515date.contains("--"))
-                        vaccDates.add(im0515date);
+                if (!im0515date.contains("--"))
+                    vaccDates.add(im0515date);
 
-                    if (!validateDates(forthVaccine, im0515date)) {
-                        displayInvalidDateDialog(bi.checkim0515, R.string.im0515measles1, bi.trIm0515);
-                        return Validator.emptyCustomTextBox(this, bi.im0515yy, "Incorrect Date.");
-                    } else {
-                        bi.checkim0515.setVisibility(View.INVISIBLE);
-                        bi.im0515yy.setError(null);
-                    }
-
-                    // validate default values; initialize im105 for im0515
-                    im05 = Integer.parseInt(MainApp.child.getIm0515dd());
-                    if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                        return Validator.emptyCustomTextBox(this, bi.im0515dd, "Incorrect value for Day.");
-                    }
-
-
-                }
-                if (!bi.checkim0517.isChecked()) {
-
-                    // IM0517
-                    String im0517date = MainApp.child.getIm0517yy()
-                            + "-" + MainApp.child.getIm0517mm()
-                            + "-" + MainApp.child.getIm0517dd();
-
-                    if (!im0517date.contains("--"))
-                        vaccDates.add(im0517date);
-
-                    if (!validateDates(forthVaccine, im0517date)) {
-                        displayInvalidDateDialog(bi.checkim0517, R.string.im0517typh, bi.trIm0517);
-                        return Validator.emptyCustomTextBox(this, bi.im0517yy, "Incorrect Date.");
-                    } else {
-                        bi.checkim0517.setVisibility(View.INVISIBLE);
-                        bi.im0517yy.setError(null);
-                    }
-
-                    // validate default values; initialize im105 for im0517
-                    im05 = Integer.parseInt(MainApp.child.getIm0517dd());
-                    if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                        return Validator.emptyCustomTextBox(this, bi.im0517dd, "Incorrect value for Day.");
-                    }
-
+                if (!validateDates(forthVaccine, im0515date)) {
+                    displayInvalidDateDialog(bi.checkim0515, R.string.im0515measles1, bi.trIm0515);
+                    return Validator.emptyCustomTextBox(this, bi.im0515yy, "Incorrect Date.");
+                } else {
+                    bi.checkim0515.setVisibility(View.INVISIBLE);
+                    bi.im0515yy.setError(null);
                 }
 
-                /*fifthVaccine*/
-                if (getLatestDate(vaccDates).equals("*")) return false;
+                // validate default values; initialize im105 for im0515
+                im05 = Integer.parseInt(MainApp.child.getIm0515dd());
+                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                    return Validator.emptyCustomTextBox(this, bi.im0515dd, "Incorrect value for Day.");
+                }
 
-                String fifthVaccine = getLatestDate(vaccDates);
-                vaccDates = new ArrayList<>();
+
+            }
+            if (!bi.checkim0515b.isChecked()) {
+
+                // IM0515b
+                String im0515bdate = MainApp.child.getIm0515byy()
+                        + "-" + MainApp.child.getIm0515bmm()
+                        + "-" + MainApp.child.getIm0515bdd();
+
+                if (!im0515bdate.contains("--"))
+                    vaccDates.add(im0515bdate);
+
+                if (!validateDates(forthVaccine, im0515bdate)) {
+                    displayInvalidDateDialog(bi.checkim0515b, R.string.im0515bipv2, bi.trIm0515b);
+                    return Validator.emptyCustomTextBox(this, bi.im0515byy, "Incorrect Date.");
+                } else {
+                    bi.checkim0515b.setVisibility(View.INVISIBLE);
+                    bi.im0515byy.setError(null);
+                }
+
+                // validate default values; initialize im105 for im0515b
+                im05 = Integer.parseInt(MainApp.child.getIm0515bdd());
+                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                    return Validator.emptyCustomTextBox(this, bi.im0515bdd, "Incorrect value for Day.");
+                }
+
+
+            }
+            if (!bi.checkim0517.isChecked()) {
+
+                // IM0517
+                String im0517date = MainApp.child.getIm0517yy()
+                        + "-" + MainApp.child.getIm0517mm()
+                        + "-" + MainApp.child.getIm0517dd();
+
+                if (!im0517date.contains("--"))
+                    vaccDates.add(im0517date);
+
+                if (!validateDates(forthVaccine, im0517date)) {
+                    displayInvalidDateDialog(bi.checkim0517, R.string.im0517typh, bi.trIm0517);
+                    return Validator.emptyCustomTextBox(this, bi.im0517yy, "Incorrect Date.");
+                } else {
+                    bi.checkim0517.setVisibility(View.INVISIBLE);
+                    bi.im0517yy.setError(null);
+                }
+
+                // validate default values; initialize im105 for im0517
+                im05 = Integer.parseInt(MainApp.child.getIm0517dd());
+                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                    return Validator.emptyCustomTextBox(this, bi.im0517dd, "Incorrect value for Day.");
+                }
+
+            }
+
+            /*fifthVaccine*/
+            if (getLatestDate(vaccDates).equals("*")) return false;
+
+            String fifthVaccine = getLatestDate(vaccDates);
+            vaccDates = new ArrayList<>();
 
                 /*String fifthVaccine = MainApp.child.getIm0515yy()
                         + "-" + MainApp.child.getIm0515mm()
                         + "-" + MainApp.child.getIm0515dd();*/
 
-                if (!bi.checkim0516.isChecked()) {
+            if (!bi.checkim0516.isChecked()) {
 
-                    // IM0516
-                    String im0516date = MainApp.child.getIm0516yy()
-                            + "-" + MainApp.child.getIm0516mm()
-                            + "-" + MainApp.child.getIm0516dd();
+                // IM0516
+                String im0516date = MainApp.child.getIm0516yy()
+                        + "-" + MainApp.child.getIm0516mm()
+                        + "-" + MainApp.child.getIm0516dd();
 
-                     //vaccDates.add(im0516date);
+                //vaccDates.add(im0516date);
 
-                    if (!validateDates(fifthVaccine, im0516date)) {
-                        displayInvalidDateDialog(bi.checkim0516, R.string.im0516measles2, bi.trIm0516);
-                        return Validator.emptyCustomTextBox(this, bi.im0516yy, "Incorrect Date.");
-                    } else {
-                        bi.checkim0516.setVisibility(View.INVISIBLE);
-                        bi.im0516yy.setError(null);
-                    }
+                if (!validateDates(fifthVaccine, im0516date)) {
+                    displayInvalidDateDialog(bi.checkim0516, R.string.im0516measles2, bi.trIm0516);
+                    return Validator.emptyCustomTextBox(this, bi.im0516yy, "Incorrect Date.");
+                } else {
+                    bi.checkim0516.setVisibility(View.INVISIBLE);
+                    bi.im0516yy.setError(null);
+                }
 
-                    // validate default values; initialize im105 for im0516
-                    im05 = Integer.parseInt(MainApp.child.getIm0516dd());
-                    if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
-                        return Validator.emptyCustomTextBox(this, bi.im0516dd, "Incorrect value for Day.");
-                    }
+                // validate default values; initialize im105 for im0516
+                im05 = Integer.parseInt(MainApp.child.getIm0516dd());
+                if (im05 > 31 && (im05 != 44 && im05 != 66 && im05 != 88 && im05 != 97)) {
+                    return Validator.emptyCustomTextBox(this, bi.im0516dd, "Incorrect value for Day.");
+                }
 
             }
 
@@ -861,7 +900,7 @@ if (!im0501date.contains("--"))
 
         Intent intent = new Intent(this, TakePhoto.class);
 
-        intent.putExtra("picID", MainApp.form.getEbCode() + "_" + MainApp.form.getHhid() + "_" + MainApp.child.getSno() + "_");
+        intent.putExtra("picID", form.getEbCode() + "_" + form.getHhid() + "_" + MainApp.child.getSno() + "_");
         intent.putExtra("childName", MainApp.child.getEc14());
 /*
         intent.putExtra("picID", "901001" + "_" + "A-0001-001" + "_" + "1" + "_");

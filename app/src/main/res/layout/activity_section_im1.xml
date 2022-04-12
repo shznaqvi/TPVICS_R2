@@ -2221,6 +2221,101 @@
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
+                                        android:id="@+id/im0515b95"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="32dp"
+                                        android:layout_gravity="end"
+                                        android:background="@drawable/top_round_shape_transparent"
+                                        android:checked="@{form.im0515b95.equals(`95`)}"
+                                        android:enabled="@{!form.im0515yy.equals(``)}"
+                                        android:gravity="center_horizontal|center_vertical"
+                                        android:onClick="@{()->form.setIm0515b95(form.im0515b95.equals(`95`)?``:`95`)}"
+                                        android:padding="4dp"
+                                        android:tag="-1"
+                                        android:text="Same as above"
+                                        android:textColor="@color/redDark" />
+
+
+                                </TableRow>
+
+                                <TableRow android:id="@+id/trIm0515b">
+
+                                    <TextView
+                                        style="@style/sub_labels"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="3"
+                                        android:minHeight="52dp"
+                                        android:text="@string/im0515bipv2" />
+
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/im0515bdd"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:enabled="@{!checkim0515b.checked}"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.im0515bdd}"
+                                        android:textDirection="ltr"
+                                        app:maxValue="99"
+                                        app:minValue="1"
+                                        app:pattern="^[0-9]{2,2}$"
+                                        app:type="range" />
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/im0515bmm"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:enabled="@{!checkim0515b.checked &amp;&amp; !form.im0515bdd.equals(`44`)  &amp;&amp; !form.im0515bdd.equals(`66`)  &amp;&amp; !form.im0515bdd.equals(`97`)  &amp;&amp; !form.im0515bdd.equals(`88`)}"
+                                        android:gravity="center"
+                                        android:hint="##"
+                                        android:inputType="number"
+                                        android:maxLength="2"
+                                        android:text="@={form.im0515bmm}"
+                                        android:textDirection="ltr"
+                                        app:maxValue="12"
+                                        app:minValue="1"
+                                        app:pattern="^[0-9]{2,2}$"
+                                        app:type="range" />
+
+                                    <com.edittextpicker.aliazaz.EditTextPicker
+                                        android:id="@+id/im0515byy"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:enabled="@{!checkim0515b.checked &amp;&amp; !form.im0515bdd.equals(`44`)  &amp;&amp; !form.im0515bdd.equals(`66`)  &amp;&amp; !form.im0515bdd.equals(`97`)  &amp;&amp; !form.im0515bdd.equals(`88`)}"
+                                        android:gravity="center"
+                                        android:hint="####"
+                                        android:inputType="number"
+                                        android:maxLength="4"
+                                        android:text="@={form.im0515byy}"
+                                        app:maxValue="2022"
+                                        app:minValue="2020"
+                                        app:pattern="^[0-9]{4,4}$"
+                                        app:type="range" />
+
+                                    <CheckBox
+                                        android:id="@+id/checkim0515b"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:checked="@{form.im0515b98.equals(`98`)}"
+                                        android:onClick="@{()->form.setIm0515b98(form.im0515b98.equals(`98`)?``:`98`)}"
+                                        android:tag="-1"
+                                        android:visibility="invisible" />
+                                </TableRow>
+
+                                <TableRow
+                                    style="@style/sub_labels"
+                                    android:gravity="end"
+                                    android:paddingTop="4dp"
+                                    android:paddingBottom="0dp">
+
+                                    <CheckBox
                                         android:id="@+id/im051795"
                                         android:layout_width="wrap_content"
                                         android:layout_height="32dp"

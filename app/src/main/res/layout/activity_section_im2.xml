@@ -1572,70 +1572,70 @@
                 </androidx.cardview.widget.CardView>
 
 
-<!--                &lt;!&ndash; im24b  Input-Numeric   &ndash;&gt;-->
-<!--                <androidx.cardview.widget.CardView-->
-<!--                    android:id="@+id/fldGrpCVim24b"-->
-<!--                    style="@style/cardView"-->
-<!--                    android:visibility="@{form.im24a.equals(`1`)  ? View.VISIBLE : View.GONE}">-->
+                <!-- im24b  Input-Numeric   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVim24b"
+                    style="@style/cardView"
+                    android:visibility="@{form.im24a.equals(`1`)  ? View.VISIBLE : View.GONE}">
 
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:orientation="vertical">-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:background="@drawable/bottom"-->
-<!--                            android:orientation="horizontal">-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
 
-<!--                            <TextView-->
-<!--                                style="@style/quesNum"-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="match_parent"-->
-<!--                                android:text="@string/Qim24b" />-->
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Qim24b" />
 
-<!--                            <TextView-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="match_parent"-->
-<!--                                android:text="@string/im24b" />-->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/im24b" />
 
-<!--                        </LinearLayout>-->
+                        </LinearLayout>
 
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:orientation="horizontal">-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-<!--                            <com.edittextpicker.aliazaz.EditTextPicker-->
-<!--                                android:id="@+id/im24b"-->
-<!--                                android:layout_width="0dp"-->
-<!--                                android:layout_height="match_parent"-->
-<!--                                android:layout_weight="1"-->
-<!--                                android:enabled="@{!form.im24b98.equals(`98`)}"-->
-<!--                                android:gravity="center"-->
-<!--                                android:hint="##"-->
-<!--                                android:inputType="number"-->
-<!--                                android:maxLength="2"-->
-<!--                                android:text="@={form.im24b}"-->
-<!--                                app:maxValue="30"-->
-<!--                                app:minValue="1"-->
-<!--                                app:type="range" />-->
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/im24b"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:enabled="@{!form.im24b98.equals(`98`)}"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.im24b}"
+                                app:maxValue="30"
+                                app:minValue="1"
+                                app:type="range" />
 
-<!--                            <CheckBox-->
-<!--                                android:id="@+id/im24b98"-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="match_parent"-->
-<!--                                android:checked="@{form.im24b98.equals(`98`)}"-->
-<!--                                android:onClick="@{()->form.setIm24b98(form.im24b98.equals(`98`)?``:`98`)}"-->
-<!--                                android:tag="-1"-->
-<!--                                android:text="@string/im24b98" />-->
+                            <CheckBox
+                                android:id="@+id/im24b98"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.im24b98.equals(`98`)}"
+                                android:onClick="@{()->form.setIm24b98(form.im24b98.equals(`98`)?``:`98`)}"
+                                android:tag="-1"
+                                android:text="@string/im24b98" />
 
-<!--                        </LinearLayout>-->
+                        </LinearLayout>
 
-<!--                    </LinearLayout>-->
+                    </LinearLayout>
 
-<!--                </androidx.cardview.widget.CardView>-->
+                </androidx.cardview.widget.CardView>
 
 
                 <!-- im24c  Radio   -->

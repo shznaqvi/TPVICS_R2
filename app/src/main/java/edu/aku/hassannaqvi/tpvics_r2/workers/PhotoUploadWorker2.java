@@ -240,10 +240,10 @@ public class PhotoUploadWorker2 extends Worker {
         } catch (JSONException e) {
             e.printStackTrace();
             //syncStatus.setText(syncStatus.getText() + "\r\n" + syncClass + " Sync Failed");
-            displayNotification(fileZero.toString(), "Error: " + e.getMessage(), 100, 0);
+            displayNotification(fileZero.toString(), "Error: " + result, 100, 0);
 
             data = new Data.Builder()
-                    .putString("error", "2 " + e.getMessage()).build();
+                    .putString("error", "2 " + result).build();
             errMsg = true;
         }
     }
@@ -318,6 +318,7 @@ public class PhotoUploadWorker2 extends Worker {
             urlConnection.setRequestProperty("Connection", "Keep-Alive");
             urlConnection.setRequestProperty("User-Agent", "Android Multipart HTTP Client 1.0");
             urlConnection.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
+            urlConnection.connect();
 
             Certificate[] certs = urlConnection.getServerCertificates();
 

@@ -35,6 +35,7 @@ import javax.crypto.NoSuchPaddingException;
 import edu.aku.hassannaqvi.tpvics_r2.R;
 import edu.aku.hassannaqvi.tpvics_r2.core.CipherSecure;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
+import edu.aku.hassannaqvi.tpvics_r2.core.UserAuth;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivityChangePasswordBinding;
 import edu.aku.hassannaqvi.tpvics_r2.workers.UserWorker;
@@ -70,6 +71,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
             p.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_lock_open, 0, 0, 0);
         }
     }
+
 
     public void attemptReset(View view) {
 
@@ -260,11 +262,28 @@ public class ChangePasswordActivity extends AppCompatActivity {
 
     public boolean isValidPassword(String password) {
         boolean isValid = true;
+
+        // Check not same as previous
+        try {
+            if (UserAuth.checkPassword(password, MainApp.user.getPassword())) {
+                System.out.println("Password is same as previous.");
+                bi.password1.setError("Password must not be same as previous.");
+                isValid = false;
+            }
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (InvalidKeySpecException e) {
+            e.printStackTrace();
+        }
+
+        // Check password length
         if (password.length() < 8) {
             System.out.println("Password must be at least 8 characters in length.");
             bi.password1.setError("Password must be at least 8 characters in length.");
             isValid = false;
         }
+
+        // Check special characters
         String upperCaseChars = "(.*[a-zA-Z].*)";
         if (!password.matches(upperCaseChars)) {
             System.out.println("Password must have atleast one alphabet");
@@ -277,12 +296,15 @@ public class ChangePasswordActivity extends AppCompatActivity {
             System.out.println("Password must have atleast one lowercase character");
             isValid = false;
         }*/
+
+        // Check number
         String numbers = "(.*[0-9].*)";
         if (!password.matches(numbers)) {
             System.out.println("Password must have atleast one number");
             bi.password1.setError("Password must have atleast one number");
             isValid = false;
         }
+
         /*String specialChars = "(.*[@,#,$,%].*$)";
         if (!password.matches(specialChars ))
         {

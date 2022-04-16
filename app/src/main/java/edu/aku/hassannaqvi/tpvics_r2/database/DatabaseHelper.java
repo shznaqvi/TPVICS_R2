@@ -1136,4 +1136,40 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return childrenByUID;
     }
+
+
+    public int getChildrenByUUID(String UUID) {
+        String countQuery = "SELECT  * FROM " + ChildTable.TABLE_NAME + " WHERE " + ChildTable.COLUMN_UUID + " = '" + UUID + "' AND " + ChildTable.COLUMN_CSTATUS + " = '1'";
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+    public int getChildrenPhotoCheck(String UID) {
+        String countQuery = "SELECT  * FROM " + ChildTable.TABLE_NAME +
+                " WHERE " + ChildTable.COLUMN_UUID + " = '" + UID +
+                "' AND " + ChildTable.COLUMN_CSTATUS + " = '1' " +
+                " AND (" + ChildTable.COLUMN_SIM + " NOT LIKE '%\"frontFileName\":\"\"%' " +
+                " OR " + ChildTable.COLUMN_SIM + " NOT LIKE '%\"backFileName\":\"\"%') ";
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
+    public int getChildrenCardCheck(String UID) {
+        String countQuery = "SELECT  * FROM " + ChildTable.TABLE_NAME +
+                " WHERE " + ChildTable.COLUMN_UUID + " = '" + UID +
+                "' AND " + ChildTable.COLUMN_CSTATUS + " = '1' " +
+                " AND " + ChildTable.COLUMN_SIM + " LIKE '%\"im01\":\"1\"%' ";
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
+
 }

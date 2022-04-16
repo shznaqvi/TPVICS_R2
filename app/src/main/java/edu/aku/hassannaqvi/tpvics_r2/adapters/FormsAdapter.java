@@ -7,17 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
-
-import org.json.JSONException;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import edu.aku.hassannaqvi.tpvics_r2.R;
-import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tpvics_r2.models.Form;
 
@@ -56,37 +52,13 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
 
-/*        int childCount = 0;
-        childCount = db.getChildrenByUUID(fc.get(position).get_UID());
+        int childCount = 0;
+        childCount = db.getChildrenByUUID(fc.get(position).getUid());
         int photoChild = 0;
-        photoChild = db.getChildrenPhotoCheck(fc.get(position).get_UID());
+        photoChild = db.getChildrenPhotoCheck(fc.get(position).getUid());
         int cardChild = 0;
-        cardChild = db.getChildrenCardCheck(fc.get(position).get_UID());*/
+        cardChild = db.getChildrenCardCheck(fc.get(position).getUid());
 
-       /* int anthroStatus = 0;
-        anthroStatus = db.checkAnthro(fc.get(position).getUid());
-
-        int bloodStatus = 0;
-        bloodStatus = db.checkBlood(fc.get(position).getUid());
-
-        int stoolStatus = 0;
-        stoolStatus = db.checkStool(fc.get(position).getUid());
-
-        String motherName = "";
-        try {
-            motherName = db.getWraName(fc.get(position).getUid());
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Toast.makeText(c, "JSONException(Form): " + e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-
-        String childName = "";
-        try {
-            childName = db.getChildName(fc.get(position).getUid());
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Toast.makeText(c, "JSONException(Form): " + e.getMessage(), Toast.LENGTH_SHORT).show();
-        }*/
 
         String iStatus = "Status  Unknown";
         int iColor = 0;
@@ -126,38 +98,13 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
 
         }
 
-        holder.hhid.setText(fc.get(position).getHhid());
-        holder.ebCode.setText(fc.get(position).getEbCode());
-
+        holder.hhno.setText(fc.get(position).getHhid() + " \t\t(" + fc.get(position).getSysDate() + ")");
+        holder.cluster.setText(fc.get(position).getEbCode());
         holder.istatus.setText(iStatus);
-        //  holder.fatherName.setText(fc.get(position).getAs1q09());
-      /*    holder.mwraCount.setText(anthroStatus == 2 ? "  Done   " : " Pending ");
-        holder.childCount.setText(bloodStatus == 2 ? "  Done   " : " Pending ");
-        holder.adolMaleCount.setText(stoolStatus == 2 ? "  Done   " : " Pending ");
-        holder.mwraCount.setTextColor(anthroStatus == 2 ? Color.GREEN : Color.RED);
-        holder.childCount.setTextColor(bloodStatus == 2 ? Color.GREEN : Color.RED);
-        holder.adolMaleCount.setTextColor(stoolStatus == 2 ? Color.GREEN : Color.RED);*/
-
-        holder.sysdate.setText(fc.get(position).getSysDate());
+        holder.sysdate.setText("  Child Count: " + childCount + " \t\t\t Card Seen: " + cardChild + " \t\t\t Photo Child: " + photoChild);
         holder.istatus.setTextColor(iColor);
 
 
-      /*  holder.itemView.setOnClickListener(v -> {
-            // Get the current state of the item
-
-            MainApp.form = fc.get(position);
-            //MainApp.households.setVisitNo(String.valueOf(Integer.parseInt(MainApp.households.getVisitNo())+1));
-            if (!MainApp.form.getiStatus().equals("1")) {
-
-                editHousehold(position);
-
-            } else {
-                Toast.makeText(c, "This households has been locked. You cannot edit household for locked households", Toast.LENGTH_LONG).show();
-            }
-
-
-        });
-*/
     }
 
 
@@ -167,44 +114,24 @@ public class FormsAdapter extends RecyclerView.Adapter<FormsAdapter.ViewHolder> 
         return fc.size();
     }
 
-    private void editHousehold(int position) {
-        MainApp.form = new Form();
-        try {
-            MainApp.form = db.getFormByPsuhhid(fc.get(position).getEbCode(), fc.get(position).getHhid());
-        } catch (JSONException e) {
-            Log.d(TAG, c.getString(R.string.hh_exists_form) + e.getMessage());
-            Toast.makeText(c, c.getString(R.string.hh_exists_form) + e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-    }
-
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public RecyclerView rv;
         public TextView sysdate;
-        public TextView ebCode;
-        public TextView hhid;
+        public TextView cluster;
+        public TextView hhno;
         public TextView istatus;
-        public TextView mwraCount;
-        public TextView childCount;
-        public TextView adolMaleCount;
-        public TextView adolFemaleCount;
-        public TextView fatherName;
         // each data item is just a string in this case
 
         public ViewHolder(View v) {
             super(v);
 //            rv = v.findViewById(R.id.FormsList);
             sysdate = v.findViewById(R.id.sysdate);
-            ebCode = v.findViewById(R.id.ebCode);
-            hhid = v.findViewById(R.id.hhid);
+            cluster = v.findViewById(R.id.ebCode);
+            hhno = v.findViewById(R.id.hhid);
             istatus = v.findViewById(R.id.istatus);
-            fatherName = v.findViewById(R.id.fathername);
-            mwraCount = v.findViewById(R.id.mwraCount);
-            childCount = v.findViewById(R.id.childCount);
-            adolMaleCount = v.findViewById(R.id.adolMaleCount);
-            adolFemaleCount = v.findViewById(R.id.adolFemaleCount);
 
         }
 

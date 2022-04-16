@@ -102,7 +102,7 @@
             android:layout_height="match_parent"
             android:layout_margin="12dp"
             android:scrollbars="vertical"
-            tools:listitem="@layout/pendingform_layout" />
+            tools:listitem="@layout/pendingform_layout_old" />
 
     </LinearLayout>
 </layout>

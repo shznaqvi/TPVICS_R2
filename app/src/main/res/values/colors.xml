@@ -38,7 +38,8 @@
     <color name="redDark">#990000</color>
     <color name="Pink">#FF80AB</color>
     <color name="lightPink">#F8BBD0</color>
-
+    <color name="colorSecondary">#00617d</color>
+    <color name="gray_material">#727272</color>
     <color name="girlPink">#FF80AB</color>
 
     <color name="motherBg">#FFCDD2</color>

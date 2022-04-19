@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.tpvics_r2;
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
+import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.sharedPref;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -78,15 +79,27 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
             if (daysLeft < 10) {
-                bi.message.setText("Your current password is expiring in " + daysLeft + " day(s) on " + pwExpiry + ". Please change your password to avoid account lockout. (Internet Required.)");
+                bi.newApp.setText("Your current password is expiring in " + daysLeft + " day(s) on " + pwExpiry + ". Please change your password to avoid account lockout. (Internet Required.)");
                 // bi.message.setText("Your password will expire on " + pwExpiry + ". There are only " + daysLeft + " Days left.");
-                bi.message.setVisibility(View.VISIBLE);
+                bi.newApp.setVisibility(View.VISIBLE);
             } else {
-                bi.message.setVisibility(View.GONE);
+                bi.newApp.setVisibility(View.GONE);
             }
 
         } catch (JSONException | ParseException e) {
             e.printStackTrace();
+        }
+
+
+        String latestVersionName = sharedPref.getString("versionName", "");
+        int latestVersionCode = Integer.parseInt(sharedPref.getString("versionCode", "0"));
+
+        if (MainApp.appInfo.getVersionCode() < latestVersionCode) {
+            bi.newApp.setVisibility(View.VISIBLE);
+            bi.newApp.setText("NOTICE: There is a newer version of this app available on server (" + latestVersionName + latestVersionCode + "). \nPlease download update the app now.");
+        } else {
+            bi.newApp.setVisibility(View.GONE);
+
         }
     }
 

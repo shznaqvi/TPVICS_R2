@@ -118,14 +118,14 @@ object CreateTable {
             + RandomHHTable.COLUMN_SNO + " TEXT );"
             )
 
-    const val SQL_CREATE_VERSIONAPP = ("CREATE TABLE "
+/*    const val SQL_CREATE_VERSIONAPP = ("CREATE TABLE "
             + VersionTable.TABLE_NAME + " ("
             + VersionTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + VersionTable.COLUMN_VERSION_CODE + " TEXT, "
             + VersionTable.COLUMN_VERSION_NAME + " TEXT, "
             + VersionTable.COLUMN_PATH_NAME + " TEXT "
             + ");"
-            )
+            )*/
 
 
 }

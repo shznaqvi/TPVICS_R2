@@ -43,10 +43,12 @@ public class MainApp extends Application {
     public static final String _USER_URL = "resetpassword.php";
     public static final String _SERVER_GET_URL = "getDataEnc.php";
     public static final String _PHOTO_UPLOAD_URL = _HOST_URL + "uploads.php";
-    public static final String _UPDATE_URL = MainApp._IP + "/tpvics_r2/app/";
+    public static final String _UPDATE_URL = MainApp._IP + "/tpvics_r2/app/survey";
+    public static final String _APP_FOLDER = "../app/survey";
     public static final String _EMPTY_ = "";
     private static final String TAG = "MainApp";
     public static String IBAHC = "";
+
 
     //COUNTRIES
     public static int URDU = 1;

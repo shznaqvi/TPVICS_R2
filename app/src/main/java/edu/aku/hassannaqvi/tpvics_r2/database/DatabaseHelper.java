@@ -35,7 +35,6 @@ import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.EntryLogTable;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.FormsTable;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.RandomHHTable;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.UsersTable;
-import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.VersionTable;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 import edu.aku.hassannaqvi.tpvics_r2.models.Child;
 import edu.aku.hassannaqvi.tpvics_r2.models.Clusters;
@@ -43,7 +42,6 @@ import edu.aku.hassannaqvi.tpvics_r2.models.EntryLog;
 import edu.aku.hassannaqvi.tpvics_r2.models.Form;
 import edu.aku.hassannaqvi.tpvics_r2.models.RandomHH;
 import edu.aku.hassannaqvi.tpvics_r2.models.Users;
-import edu.aku.hassannaqvi.tpvics_r2.models.VersionApp;
 /*
 import edu.aku.hassannaqvi.tpvics_r2.models.Villages;
 */
@@ -74,7 +72,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CreateTable.SQL_CREATE_USERS);
         db.execSQL(CreateTable.SQL_CREATE_CLUSTERS);
         db.execSQL(CreateTable.SQL_CREATE_RANDOM_HH);
-        db.execSQL(CreateTable.SQL_CREATE_VERSIONAPP);
 
         db.execSQL(CreateTable.SQL_CREATE_FORMS);
         db.execSQL(CreateTable.SQL_CREATE_ENTRYLOGS);
@@ -385,26 +382,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public int syncVersionApp(JSONObject VersionList) throws JSONException {
+    public int syncversionApp(JSONArray VersionList) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
-        db.delete(VersionTable.TABLE_NAME, null, null);
         long count = 0;
-        JSONObject jsonObjectCC = ((JSONArray) VersionList.get(VersionTable.COLUMN_VERSION_PATH)).getJSONObject(0);
-        VersionApp Vc = new VersionApp();
-        Vc.sync(jsonObjectCC);
 
-        ContentValues values = new ContentValues();
+        JSONObject jsonObjectVersion = ((JSONArray) VersionList.getJSONObject(0).get("elements")).getJSONObject(0);
 
-        values.put(VersionTable.COLUMN_PATH_NAME, Vc.getPathname());
-        values.put(VersionTable.COLUMN_VERSION_CODE, Vc.getVersioncode());
-        values.put(VersionTable.COLUMN_VERSION_NAME, Vc.getVersionname());
+        String appPath = jsonObjectVersion.getString("outputFile");
+        String versionCode = jsonObjectVersion.getString("versionCode");
 
-        count = db.insertOrThrow(VersionTable.TABLE_NAME, null, values);
-        if (count > 0) count = 1;
+        MainApp.editor.putString("outputFile", jsonObjectVersion.getString("outputFile"));
+        MainApp.editor.putString("versionCode", jsonObjectVersion.getString("versionCode"));
+        MainApp.editor.putString("versionName", jsonObjectVersion.getString("versionName") + ".");
+        MainApp.editor.apply();
+        count++;
+          /*  VersionApp Vc = new VersionApp();
+            Vc.sync(jsonObjectVersion);
 
+            ContentValues values = new ContentValues();
 
-        db.close();
+            values.put(VersionTable.COLUMN_PATH_NAME, Vc.getPathname());
+            values.put(VersionTable.COLUMN_VERSION_CODE, Vc.getVersioncode());
+            values.put(VersionTable.COLUMN_VERSION_NAME, Vc.getVersionname());
 
+            count = db.insert(VersionTable.TABLE_NAME, null, values);
+            if (count > 0) count = 1;
+
+        } catch (Exception ignored) {
+        } finally {
+            db.close();
+        }*/
 
         return (int) count;
     }

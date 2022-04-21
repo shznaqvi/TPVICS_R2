@@ -1104,6 +1104,23 @@ public class Child extends BaseObservable implements Observable {
         setIm23(im02.equals("1") || this.im08.equals("1") ? this.im23 : "");
         setIm23a(im02.equals("1") || this.im08.equals("1") ? this.im23a : "");
         setIm241(im02.equals("1") ? "" : this.im241);
+        setIm242(im02.equals("1") ? "" : this.im242);
+        setIm243(im02.equals("1") ? "" : this.im243);
+        setIm244(im02.equals("1") ? "" : this.im244);
+        setIm245(im02.equals("1") ? "" : this.im245);
+        setIm246(im02.equals("1") ? "" : this.im246);
+        setIm247(im02.equals("1") ? "" : this.im247);
+        setIm248(im02.equals("1") ? "" : this.im248);
+        setIm249(im02.equals("1") ? "" : this.im249);
+        setIm2410(im02.equals("1") ? "" : this.im2410);
+        setIm2411(im02.equals("1") ? "" : this.im2411);
+        setIm2412(im02.equals("1") ? "" : this.im2412);
+        setIm2413(im02.equals("1") ? "" : this.im2413);
+        setIm2414(im02.equals("1") ? "" : this.im2414);
+        setIm2415(im02.equals("1") ? "" : this.im2415);
+        setIm2416(im02.equals("1") ? "" : this.im2416);
+        setIm2496(im02.equals("1") ? "" : this.im2496);
+        setIm2498(im02.equals("1") ? "" : this.im2498);
 
 
         //setIm07(im02.equals("1") ? this.im07 : "");
@@ -1897,6 +1914,24 @@ public class Child extends BaseObservable implements Observable {
         setIm09(im08.equals("1") ? this.im09 : "");
         setIm10(im08.equals("1") ? this.im10 : "");
         setIm241(im08.equals("2") || im08.equals("98") ? this.im241 : "");
+        setIm241(im08.equals("2") || im08.equals("98") ? this.im241 : "");
+        setIm242(im08.equals("2") || im08.equals("98") ? this.im242 : "");
+        setIm243(im08.equals("2") || im08.equals("98") ? this.im243 : "");
+        setIm244(im08.equals("2") || im08.equals("98") ? this.im244 : "");
+        setIm245(im08.equals("2") || im08.equals("98") ? this.im245 : "");
+        setIm246(im08.equals("2") || im08.equals("98") ? this.im246 : "");
+        setIm247(im08.equals("2") || im08.equals("98") ? this.im247 : "");
+        setIm248(im08.equals("2") || im08.equals("98") ? this.im248 : "");
+        setIm249(im08.equals("2") || im08.equals("98") ? this.im249 : "");
+        setIm2410(im08.equals("2") || im08.equals("98") ? this.im2410 : "");
+        setIm2411(im08.equals("2") || im08.equals("98") ? this.im2411 : "");
+        setIm2412(im08.equals("2") || im08.equals("98") ? this.im2412 : "");
+        setIm2413(im08.equals("2") || im08.equals("98") ? this.im2413 : "");
+        setIm2414(im08.equals("2") || im08.equals("98") ? this.im2414 : "");
+        setIm2415(im08.equals("2") || im08.equals("98") ? this.im2415 : "");
+        setIm2416(im08.equals("2") || im08.equals("98") ? this.im2416 : "");
+        setIm2496(im08.equals("2") || im08.equals("98") ? this.im2496 : "");
+        setIm2498(im08.equals("2") || im08.equals("98") ? this.im2498 : "");
         setIm24a(im08.equals("2") || im08.equals("98") ? this.im24a : "");
 
 

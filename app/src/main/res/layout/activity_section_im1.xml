@@ -312,6 +312,7 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.im03.equals(`3`)}"
                                 android:onClick="@{()->form.setIm03(`3`)}"
+                                android:visibility="gone"
                                 android:text="@string/im0303" />
 
                             <RadioButton

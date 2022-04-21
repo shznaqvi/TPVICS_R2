@@ -94,7 +94,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{form.im08.equals(`1`)}"
-                                android:onClick="@{()->form.setIm08(`1`) + im24.clearCheck()+ im24a.clearCheck()}"
+                                android:onClick="@{()->form.setIm08(`1`) + im24a.clearCheck()}"
                                 android:text="@string/im081" />
 
                             <RadioButton
@@ -1327,174 +1327,192 @@
                                 android:layout_height="match_parent"
                                 android:text="@string/Qim24" />
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/im24" />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/im24" />
 
-                        </LinearLayout>
+                            </LinearLayout>
 
-                        <RadioGroup
-                            android:id="@+id/im24"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <RadioButton
-                                android:id="@+id/im241"
+                            <LinearLayout
+                                android:id="@+id/im24check"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`1`)}"
-                                android:onClick="@{()->form.setIm24(`1`)}"
-                                android:text="@string/im241" />
+                                android:orientation="vertical"
+                                android:tag="0">
 
-                            <RadioButton
-                                android:id="@+id/im2410"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`10`)}"
-                                android:onClick="@{()->form.setIm24(`10`)}"
-                                android:text="@string/im2410" />
+                                <CheckBox
+                                    android:id="@+id/im241"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im241.equals(`1`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm241(form.im241.equals(`1`)?``:`1`)}"
+                                    android:text="@string/im241" />
 
-                            <RadioButton
-                                android:id="@+id/im2411"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:checked="@{form.im24.equals(`11`)}"
-                                android:onClick="@{()->form.setIm24(`11`)}"
-                                android:text="@string/im2411" />
+                                <CheckBox
+                                    android:id="@+id/im2410"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im2410.equals(`10`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm2410(form.im2410.equals(`10`)?``:`10`)}"
+                                    android:text="@string/im2410" />
 
-                            <RadioButton
-                                android:id="@+id/im2412"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`12`)}"
-                                android:onClick="@{()->form.setIm24(`12`)}"
-                                android:text="@string/im2412" />
+                                <CheckBox
+                                    android:id="@+id/im2411"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im2411.equals(`11`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm2411(form.im2411.equals(`11`)?``:`11`)}"
+                                    android:text="@string/im2411" />
 
-                            <RadioButton
-                                android:id="@+id/im2413"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`13`)}"
-                                android:onClick="@{()->form.setIm24(`13`)}"
-                                android:text="@string/im2413" />
+                                <CheckBox
+                                    android:id="@+id/im2412"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im2412.equals(`12`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm2412(form.im2412.equals(`12`)?``:`12`)}"
+                                    android:text="@string/im2412" />
 
-                            <RadioButton
-                                android:id="@+id/im2414"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`14`)}"
-                                android:onClick="@{()->form.setIm24(`14`)}"
-                                android:text="@string/im2414" />
+                                <CheckBox
+                                    android:id="@+id/im2413"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im2413.equals(`13`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm2413(form.im2413.equals(`13`)?``:`13`)}"
+                                    android:text="@string/im2413" />
 
-                            <RadioButton
-                                android:id="@+id/im2415"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`15`)}"
-                                android:onClick="@{()->form.setIm24(`15`)}"
-                                android:text="@string/im2415" />
+                                <CheckBox
+                                    android:id="@+id/im2414"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im2414.equals(`14`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm2414(form.im2414.equals(`14`)?``:`14`)}"
+                                    android:text="@string/im2414" />
 
-                            <RadioButton
-                                android:id="@+id/im2416"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`16`)}"
-                                android:onClick="@{()->form.setIm24(`16`)}"
-                                android:text="@string/im2416" />
+                                <CheckBox
+                                    android:id="@+id/im2415"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im2415.equals(`15`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm2415(form.im2415.equals(`15`)?``:`15`)}"
+                                    android:text="@string/im2415" />
 
-                            <RadioButton
-                                android:id="@+id/im2417"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`98`)}"
-                                android:onClick="@{()->form.setIm24(`98`)}"
-                                android:text="@string/im2417" />
+                                <CheckBox
+                                    android:id="@+id/im2416"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im2416.equals(`16`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm2416(form.im2416.equals(`16`)?``:`16`)}"
+                                    android:text="@string/im2416" />
 
-                            <EditText
-                                android:id="@+id/im2417x"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/im2417"
-                                android:tag="im2417"
-                                android:text="@={form.im2417x}"
-                                android:visibility="@{form.im24.equals(`98`) ? View.VISIBLE : View.GONE}" />
+                                <CheckBox
+                                    android:id="@+id/im242"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im242.equals(`2`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm242(form.im242.equals(`2`)?``:`2`)}"
+                                    android:text="@string/im242" />
 
-                            <RadioButton
-                                android:id="@+id/im242"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`2`)}"
-                                android:onClick="@{()->form.setIm24(`2`)}"
-                                android:text="@string/im242" />
+                                <CheckBox
+                                    android:id="@+id/im243"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im243.equals(`3`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm243(form.im243.equals(`3`)?``:`3`)}"
+                                    android:text="@string/im243" />
 
-                            <RadioButton
-                                android:id="@+id/im243"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`3`)}"
-                                android:onClick="@{()->form.setIm24(`3`)}"
-                                android:text="@string/im243" />
+                                <CheckBox
+                                    android:id="@+id/im244"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im244.equals(`4`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm244(form.im244.equals(`4`)?``:`4`)}"
+                                    android:text="@string/im244" />
 
-                            <RadioButton
-                                android:id="@+id/im244"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`4`)}"
-                                android:onClick="@{()->form.setIm24(`4`)}"
-                                android:text="@string/im244" />
+                                <CheckBox
+                                    android:id="@+id/im245"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im245.equals(`5`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm245(form.im245.equals(`5`)?``:`5`)}"
+                                    android:text="@string/im245" />
 
-                            <RadioButton
-                                android:id="@+id/im245"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`5`)}"
-                                android:onClick="@{()->form.setIm24(`5`)}"
-                                android:text="@string/im245" />
+                                <CheckBox
+                                    android:id="@+id/im246"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im246.equals(`6`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm246(form.im246.equals(`6`)?``:`6`)}"
+                                    android:text="@string/im246" />
 
-                            <RadioButton
-                                android:id="@+id/im246"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`6`)}"
-                                android:onClick="@{()->form.setIm24(`6`)}"
-                                android:text="@string/im246" />
+                                <CheckBox
+                                    android:id="@+id/im247"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im247.equals(`7`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm247(form.im247.equals(`7`)?``:`7`)}"
+                                    android:text="@string/im247" />
 
-                            <RadioButton
-                                android:id="@+id/im247"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`7`)}"
-                                android:onClick="@{()->form.setIm24(`7`)}"
-                                android:text="@string/im247" />
+                                <CheckBox
+                                    android:id="@+id/im248"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im248.equals(`8`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm248(form.im248.equals(`8`)?``:`8`)}"
+                                    android:text="@string/im248" />
 
-                            <RadioButton
-                                android:id="@+id/im248"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`8`)}"
-                                android:onClick="@{()->form.setIm24(`8`)}"
-                                android:text="@string/im248" />
+                                <CheckBox
+                                    android:id="@+id/im249"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im249.equals(`9`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm249(form.im249.equals(`9`)?``:`9`)}"
+                                    android:text="@string/im249" />
 
-                            <RadioButton
-                                android:id="@+id/im249"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`9`)}"
-                                android:onClick="@{()->form.setIm24(`9`)}"
-                                android:text="@string/im249" />
+                                <CheckBox
+                                    android:id="@+id/im2496"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im2496.equals(`96`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm2496(form.im2496.equals(`96`)?``:`96`)}"
+                                    android:text="@string/im2496" />
 
-                            <RadioButton
-                                android:id="@+id/im2499"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:checked="@{form.im24.equals(`98`)}"
-                                android:onClick="@{()->form.setIm24(`98`)}"
-                                android:text="@string/im2499" />
+                                <EditText
+                                    android:id="@+id/im2496x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:hint="@string/im2496"
+                                    android:tag="im2496"
+                                    android:text="@={form.im2496x}"
+                                    android:visibility="@{form.im2496.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
-                        </RadioGroup>
+                                <CheckBox
+                                    android:id="@+id/im2498"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm2498(form.im2498.equals(`98`)?``:`98`)}"
+                                    android:text="@string/im2498" />
+
+                            </LinearLayout>
 
                     </LinearLayout>
 

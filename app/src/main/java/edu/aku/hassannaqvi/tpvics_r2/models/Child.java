@@ -182,8 +182,25 @@ public class Child extends BaseObservable implements Observable {
     private String im23 = _EMPTY_;
     private String im236x = _EMPTY_;
     private String im23a = _EMPTY_;
-    private String im24 = _EMPTY_;
-    private String im2417x = _EMPTY_;
+    private String im241 = _EMPTY_;
+    private String im242 = _EMPTY_;
+    private String im243 = _EMPTY_;
+    private String im244 = _EMPTY_;
+    private String im245 = _EMPTY_;
+    private String im246 = _EMPTY_;
+    private String im247 = _EMPTY_;
+    private String im248 = _EMPTY_;
+    private String im249 = _EMPTY_;
+    private String im2410 = _EMPTY_;
+    private String im2411 = _EMPTY_;
+    private String im2412 = _EMPTY_;
+    private String im2413 = _EMPTY_;
+    private String im2414 = _EMPTY_;
+    private String im2415 = _EMPTY_;
+    private String im2416 = _EMPTY_;
+    private String im2498 = _EMPTY_;
+    private String im2496 = _EMPTY_;
+    private String im2496x = _EMPTY_;
     private String im24a = _EMPTY_;
     private String im24b = _EMPTY_;
     private String im24b98 = _EMPTY_;
@@ -1086,7 +1103,7 @@ public class Child extends BaseObservable implements Observable {
         setIm22a(im02.equals("1") ? "" : this.im22a);
         setIm23(im02.equals("1") || this.im08.equals("1") ? this.im23 : "");
         setIm23a(im02.equals("1") || this.im08.equals("1") ? this.im23a : "");
-        setIm24(im02.equals("1") ? "" : this.im24);
+        setIm241(im02.equals("1") ? "" : this.im241);
 
 
         //setIm07(im02.equals("1") ? this.im07 : "");
@@ -1879,7 +1896,7 @@ public class Child extends BaseObservable implements Observable {
 
         setIm09(im08.equals("1") ? this.im09 : "");
         setIm10(im08.equals("1") ? this.im10 : "");
-        setIm24(im08.equals("2") || im08.equals("98") ? this.im24 : "");
+        setIm241(im08.equals("2") || im08.equals("98") ? this.im241 : "");
         setIm24a(im08.equals("2") || im08.equals("98") ? this.im24a : "");
 
 
@@ -2130,24 +2147,249 @@ public class Child extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.im23a);
     }
 
-    @Bindable
-    public String getIm24() {
-        return im24;
-    }
-
-    public void setIm24(String im24) {
-        this.im24 = im24;
-        notifyPropertyChanged(BR.im24);
-    }
 
     @Bindable
-    public String getIm2417x() {
-        return im2417x;
+    public String getIm241() {
+        return im241;
     }
 
-    public void setIm2417x(String im2417x) {
-        this.im2417x = im2417x;
-        notifyPropertyChanged(BR.im2417x);
+    public void setIm241(String im241) {
+        if (this.im241.equals(im241)) return;
+        this.im241 = im241;
+        notifyPropertyChanged(BR.im241);
+    }
+
+
+    @Bindable
+    public String getIm242() {
+        return im242;
+    }
+
+    public void setIm242(String im242) {
+        if (this.im242.equals(im242)) return;
+        this.im242 = im242;
+        notifyPropertyChanged(BR.im242);
+    }
+
+
+    @Bindable
+    public String getIm243() {
+        return im243;
+    }
+
+    public void setIm243(String im243) {
+        if (this.im243.equals(im243)) return;
+        this.im243 = im243;
+        notifyPropertyChanged(BR.im243);
+    }
+
+
+    @Bindable
+    public String getIm244() {
+        return im244;
+    }
+
+    public void setIm244(String im244) {
+        if (this.im244.equals(im244)) return;
+        this.im244 = im244;
+        notifyPropertyChanged(BR.im244);
+    }
+
+
+    @Bindable
+    public String getIm245() {
+        return im245;
+    }
+
+    public void setIm245(String im245) {
+        if (this.im245.equals(im245)) return;
+        this.im245 = im245;
+        notifyPropertyChanged(BR.im245);
+    }
+
+
+    @Bindable
+    public String getIm246() {
+        return im246;
+    }
+
+    public void setIm246(String im246) {
+        if (this.im246.equals(im246)) return;
+        this.im246 = im246;
+        notifyPropertyChanged(BR.im246);
+    }
+
+
+    @Bindable
+    public String getIm247() {
+        return im247;
+    }
+
+    public void setIm247(String im247) {
+        if (this.im247.equals(im247)) return;
+        this.im247 = im247;
+        notifyPropertyChanged(BR.im247);
+    }
+
+
+    @Bindable
+    public String getIm248() {
+        return im248;
+    }
+
+    public void setIm248(String im248) {
+        if (this.im248.equals(im248)) return;
+        this.im248 = im248;
+        notifyPropertyChanged(BR.im248);
+    }
+
+
+    @Bindable
+    public String getIm249() {
+        return im249;
+    }
+
+    public void setIm249(String im249) {
+        if (this.im249.equals(im249)) return;
+        this.im249 = im249;
+        notifyPropertyChanged(BR.im249);
+    }
+
+
+    @Bindable
+    public String getIm2410() {
+        return im2410;
+    }
+
+    public void setIm2410(String im2410) {
+        if (this.im2410.equals(im2410)) return;
+        this.im2410 = im2410;
+        notifyPropertyChanged(BR.im2410);
+    }
+
+
+    @Bindable
+    public String getIm2411() {
+        return im2411;
+    }
+
+    public void setIm2411(String im2411) {
+        if (this.im2411.equals(im2411)) return;
+        this.im2411 = im2411;
+        notifyPropertyChanged(BR.im2411);
+    }
+
+
+    @Bindable
+    public String getIm2412() {
+        return im2412;
+    }
+
+    public void setIm2412(String im2412) {
+        if (this.im2412.equals(im2412)) return;
+        this.im2412 = im2412;
+        notifyPropertyChanged(BR.im2412);
+    }
+
+
+    @Bindable
+    public String getIm2413() {
+        return im2413;
+    }
+
+    public void setIm2413(String im2413) {
+        if (this.im2413.equals(im2413)) return;
+        this.im2413 = im2413;
+        notifyPropertyChanged(BR.im2413);
+    }
+
+
+    @Bindable
+    public String getIm2414() {
+        return im2414;
+    }
+
+    public void setIm2414(String im2414) {
+        if (this.im2414.equals(im2414)) return;
+        this.im2414 = im2414;
+        notifyPropertyChanged(BR.im2414);
+    }
+
+
+    @Bindable
+    public String getIm2415() {
+        return im2415;
+    }
+
+    public void setIm2415(String im2415) {
+        if (this.im2415.equals(im2415)) return;
+        this.im2415 = im2415;
+        notifyPropertyChanged(BR.im2415);
+    }
+
+
+    @Bindable
+    public String getIm2416() {
+        return im2416;
+    }
+
+    public void setIm2416(String im2416) {
+        if (this.im2416.equals(im2416)) return;
+        this.im2416 = im2416;
+        notifyPropertyChanged(BR.im2416);
+    }
+
+
+    @Bindable
+    public String getIm2498() {
+        return im2498;
+    }
+
+    public void setIm2498(String im2498) {
+        if (this.im2498.equals(im2498)) return;
+        this.im2498 = im2498;
+        setIm241(im2498.equals("98") ? "" : this.im241);
+        setIm242(im2498.equals("98") ? "" : this.im242);
+        setIm243(im2498.equals("98") ? "" : this.im243);
+        setIm244(im2498.equals("98") ? "" : this.im244);
+        setIm245(im2498.equals("98") ? "" : this.im245);
+        setIm246(im2498.equals("98") ? "" : this.im246);
+        setIm247(im2498.equals("98") ? "" : this.im247);
+        setIm248(im2498.equals("98") ? "" : this.im248);
+        setIm249(im2498.equals("98") ? "" : this.im249);
+        setIm2410(im2498.equals("98") ? "" : this.im2410);
+        setIm2411(im2498.equals("98") ? "" : this.im2411);
+        setIm2412(im2498.equals("98") ? "" : this.im2412);
+        setIm2413(im2498.equals("98") ? "" : this.im2413);
+        setIm2414(im2498.equals("98") ? "" : this.im2414);
+        setIm2415(im2498.equals("98") ? "" : this.im2415);
+        setIm2416(im2498.equals("98") ? "" : this.im2416);
+        setIm2496(im2498.equals("98") ? "" : this.im2496);
+        notifyPropertyChanged(BR.im2498);
+    }
+
+
+    @Bindable
+    public String getIm2496() {
+        return im2496;
+    }
+
+    public void setIm2496(String im2496) {
+        if (this.im2496.equals(im2496)) return;
+        this.im2496 = im2496;
+        setIm2496x(im2496.equals("96") ? this.im2496x : "");
+        notifyPropertyChanged(BR.im2496);
+    }
+
+
+    @Bindable
+    public String getIm2496x() {
+        return im2496x;
+    }
+
+    public void setIm2496x(String im2496x) {
+        this.im2496x = im2496x;
+        notifyPropertyChanged(BR.im2496x);
     }
 
     @Bindable
@@ -2858,8 +3100,25 @@ public class Child extends BaseObservable implements Observable {
             this.im23 = json.getString("im23");
             this.im236x = json.getString("im236x");
             this.im23a = json.getString("im23a");
-            this.im24 = json.getString("im24");
-            this.im2417x = json.getString("im2417x");
+            this.im241 = json.getString("im241");
+            this.im242 = json.getString("im242");
+            this.im243 = json.getString("im243");
+            this.im244 = json.getString("im244");
+            this.im245 = json.getString("im245");
+            this.im246 = json.getString("im246");
+            this.im247 = json.getString("im247");
+            this.im248 = json.getString("im248");
+            this.im249 = json.getString("im249");
+            this.im2410 = json.getString("im2410");
+            this.im2411 = json.getString("im2411");
+            this.im2412 = json.getString("im2412");
+            this.im2413 = json.getString("im2413");
+            this.im2414 = json.getString("im2414");
+            this.im2415 = json.getString("im2415");
+            this.im2416 = json.getString("im2416");
+            this.im2498 = json.getString("im2498");
+            this.im2496 = json.getString("im2496");
+            this.im2496x = json.getString("im2496x");
             this.im24a = json.getString("im24a");
             this.im24b = json.getString("im24b");
             this.im24b98 = json.getString("im24b98");
@@ -3020,8 +3279,25 @@ public class Child extends BaseObservable implements Observable {
                 .put("im23", im23)
                 .put("im236x", im236x)
                 .put("im23a", im23a)
-                .put("im24", im24)
-                .put("im2417x", im2417x)
+                .put("im241", im241)
+                .put("im242", im242)
+                .put("im243", im243)
+                .put("im244", im244)
+                .put("im245", im245)
+                .put("im246", im246)
+                .put("im247", im247)
+                .put("im248", im248)
+                .put("im249", im249)
+                .put("im2410", im2410)
+                .put("im2411", im2411)
+                .put("im2412", im2412)
+                .put("im2413", im2413)
+                .put("im2414", im2414)
+                .put("im2415", im2415)
+                .put("im2416", im2416)
+                .put("im2498", im2498)
+                .put("im2496", im2496)
+                .put("im2496x", im2496x)
                 .put("im24a", im24a)
                 .put("im24b", im24b)
                 .put("im24b98", im24b98)

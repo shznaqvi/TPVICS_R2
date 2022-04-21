@@ -248,6 +248,8 @@ public class Child extends BaseObservable implements Observable {
         setProjectName(PROJECT_NAME);
         setEbCode(MainApp.selectedHousehold.getEbCode());
         setHhid(MainApp.selectedHousehold.getHhid());
+        setEc12(MainApp.selectedHousehold.getHhid());
+        setEc05(MainApp.selectedHousehold.getEbCode());
 
     }
 
@@ -792,11 +794,11 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm01(String im01) {
         this.im01 = im01;
-        setIm02(im01.equals("1") ? this.im02 : "");
-        setIm03(im01.equals("2") ? this.im03 : "");
-        setIm08(im01.equals("2") ? this.im08 : "");
 
-       /* setIm04dd(im01.equals("1") ? this.im04dd : "");
+        //Card Present
+        setIm02(im01.equals("1") ? this.im02 : "");
+
+        setIm04dd(im01.equals("1") ? this.im04dd : "");
         setIm04mm(im01.equals("1") ? this.im04mm : "");
         setIm04yy(im01.equals("1") ? this.im04yy : "");
 
@@ -915,7 +917,12 @@ public class Child extends BaseObservable implements Observable {
         setIm0517mm(im01.equals("1") ? this.im0517mm : "");
         setIm0517yy(im01.equals("1") ? this.im0517yy : "");
         setIm051798(im01.equals("1") ?  this.im051798 : "");
-*/
+
+
+        // card not present
+        setIm03(im01.equals("2") ? this.im03 : "");
+        setIm08(im01.equals("2") ? this.im08 : "");
+
 
         //setIm07(im01.equals("1") ? this.im07 : "");
 
@@ -944,7 +951,7 @@ public class Child extends BaseObservable implements Observable {
 
 
 
-/*
+
         // at birth
         setIm0501dd(im02.equals("1") ? this.im0501dd : "");
         setIm0501mm(im02.equals("1") ? this.im0501mm : "");
@@ -1079,7 +1086,7 @@ public class Child extends BaseObservable implements Observable {
         setIm22a(im02.equals("1") ? "" : this.im22a);
         setIm23(im02.equals("1") || this.im08.equals("1") ? this.im23 : "");
         setIm23a(im02.equals("1") || this.im08.equals("1") ? this.im23a : "");
-        setIm24(im02.equals("1") ? "" : this.im24);*/
+        setIm24(im02.equals("1") ? "" : this.im24);
 
 
         //setIm07(im02.equals("1") ? this.im07 : "");
@@ -1095,6 +1102,7 @@ public class Child extends BaseObservable implements Observable {
     public void setIm02a(String im02a) {
         this.im02a = im02a;
         setIm02a96x(im02a.equals("96") ? this.im02a96x : "");
+
         /*final boolean b = im02a.equals("1") || im02a.equals("2") || im02a.equals("3") || im02a.equals("96");
 
         setIm03(b ? "" : this.im03);
@@ -2700,6 +2708,7 @@ public class Child extends BaseObservable implements Observable {
             JSONObject json = null;
             json = new JSONObject(string);
 
+            this.ec12 = json.getString("ec12");
             this.ec13 = json.getString("ec13");
             this.ec14 = json.getString("ec14");
             this.ec15 = json.getString("ec15");

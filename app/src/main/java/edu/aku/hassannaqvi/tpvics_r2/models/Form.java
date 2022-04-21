@@ -202,6 +202,7 @@ public class Form extends BaseObservable implements Observable {
         setHh08(selectedCluster.getGeoarea().split("\\|")[2]);
         setHh09(selectedCluster.getGeoarea().split("\\|")[3]);
         setHh12(selectedHousehold.getHhid());
+        setHh11(selectedHousehold.getEbCode());
 
     }
 

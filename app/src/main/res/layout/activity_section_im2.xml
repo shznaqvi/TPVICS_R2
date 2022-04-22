@@ -1342,13 +1342,13 @@
                                 android:tag="0">
 
                                 <CheckBox
-                                    android:id="@+id/im241"
+                                    android:id="@+id/im2401"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.im2401.equals(`1`)}"
                                     android:enabled="@{!form.im2498.equals(`98`)}"
                                     android:onClick="@{()->form.setIm2401(form.im2401.equals(`1`)?``:`1`)}"
-                                    android:text="@string/im241" />
+                                    android:text="@string/im2401" />
 
                                 <CheckBox
                                     android:id="@+id/im2410"
@@ -1414,76 +1414,76 @@
                                     android:text="@string/im2416" />
 
                                 <CheckBox
-                                    android:id="@+id/im242"
+                                    android:id="@+id/im2402"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.im2402.equals(`2`)}"
                                     android:enabled="@{!form.im2498.equals(`98`)}"
                                     android:onClick="@{()->form.setIm2402(form.im2402.equals(`2`)?``:`2`)}"
-                                    android:text="@string/im242" />
+                                    android:text="@string/im2402" />
 
                                 <CheckBox
-                                    android:id="@+id/im243"
+                                    android:id="@+id/im2403"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.im2403.equals(`3`)}"
                                     android:enabled="@{!form.im2498.equals(`98`)}"
                                     android:onClick="@{()->form.setIm2403(form.im2403.equals(`3`)?``:`3`)}"
-                                    android:text="@string/im243" />
+                                    android:text="@string/im2403" />
 
                                 <CheckBox
-                                    android:id="@+id/im244"
+                                    android:id="@+id/im2404"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.im2404.equals(`4`)}"
                                     android:enabled="@{!form.im2498.equals(`98`)}"
                                     android:onClick="@{()->form.setIm2404(form.im2404.equals(`4`)?``:`4`)}"
-                                    android:text="@string/im244" />
+                                    android:text="@string/im2404" />
 
                                 <CheckBox
-                                    android:id="@+id/im245"
+                                    android:id="@+id/im2405"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.im2405.equals(`5`)}"
                                     android:enabled="@{!form.im2498.equals(`98`)}"
                                     android:onClick="@{()->form.setIm2405(form.im2405.equals(`5`)?``:`5`)}"
-                                    android:text="@string/im245" />
+                                    android:text="@string/im2405" />
 
                                 <CheckBox
-                                    android:id="@+id/im246"
+                                    android:id="@+id/im2406"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.im2406.equals(`6`)}"
                                     android:enabled="@{!form.im2498.equals(`98`)}"
                                     android:onClick="@{()->form.setIm2406(form.im2406.equals(`6`)?``:`6`)}"
-                                    android:text="@string/im246" />
+                                    android:text="@string/im2406" />
 
                                 <CheckBox
-                                    android:id="@+id/im247"
+                                    android:id="@+id/im2407"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.im2407.equals(`7`)}"
                                     android:enabled="@{!form.im2498.equals(`98`)}"
                                     android:onClick="@{()->form.setIm2407(form.im2407.equals(`7`)?``:`7`)}"
-                                    android:text="@string/im247" />
+                                    android:text="@string/im2407" />
 
                                 <CheckBox
-                                    android:id="@+id/im248"
+                                    android:id="@+id/im2408"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.im2408.equals(`8`)}"
                                     android:enabled="@{!form.im2498.equals(`98`)}"
                                     android:onClick="@{()->form.setIm2408(form.im2408.equals(`8`)?``:`8`)}"
-                                    android:text="@string/im248" />
+                                    android:text="@string/im2408" />
 
                                 <CheckBox
-                                    android:id="@+id/im249"
+                                    android:id="@+id/im2409"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:checked="@{form.im2409.equals(`9`)}"
                                     android:enabled="@{!form.im2498.equals(`98`)}"
                                     android:onClick="@{()->form.setIm2409(form.im2409.equals(`9`)?``:`9`)}"
-                                    android:text="@string/im249" />
+                                    android:text="@string/im2409" />
 
                                 <CheckBox
                                     android:id="@+id/im2496"

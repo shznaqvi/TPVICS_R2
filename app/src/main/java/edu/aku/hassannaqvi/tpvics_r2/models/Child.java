@@ -913,20 +913,25 @@ public class Child extends BaseObservable implements Observable {
         setIm0514dd(im01.equals("1") ? this.im0514dd : "");
         setIm0514mm(im01.equals("1") ? this.im0514mm : "");
         setIm0514yy(im01.equals("1") ? this.im0514yy : "");
-        setIm051498(im01.equals("1") ?  this.im051498 : "");
+        setIm051498(im01.equals("1") ? this.im051498 : "");
 
 
         // at 9 months
         setIm0515dd(im01.equals("1") ? this.im0515dd : "");
         setIm0515mm(im01.equals("1") ? this.im0515mm : "");
         setIm0515yy(im01.equals("1") ? this.im0515yy : "");
-        setIm051598(im01.equals("1") ?  this.im051598 : "");
-        setIm051795(im01.equals("1") ? this.im051795 : "");
+        setIm051598(im01.equals("1") ? this.im051598 : "");
+        setIm0515b95(im01.equals("1") ? this.im0515b95 : "");
+
+        setIm0515bdd(im01.equals("1") ? this.im0515bdd : "");
+        setIm0515bmm(im01.equals("1") ? this.im0515bmm : "");
+        setIm0515byy(im01.equals("1") ? this.im0515byy : "");
+        setIm0515b98(im01.equals("1") ? this.im0515b98 : "");
 
         setIm0516dd(im01.equals("1") ? this.im0516dd : "");
         setIm0516mm(im01.equals("1") ? this.im0516mm : "");
         setIm0516yy(im01.equals("1") ? this.im0516yy : "");
-        setIm051698(im01.equals("1") ?  this.im051698 : "");
+        setIm051698(im01.equals("1") ? this.im051698 : "");
 
 
         // at 15 months
@@ -1061,20 +1066,25 @@ public class Child extends BaseObservable implements Observable {
         setIm0514dd(im02.equals("1") ? this.im0514dd : "");
         setIm0514mm(im02.equals("1") ? this.im0514mm : "");
         setIm0514yy(im02.equals("1") ? this.im0514yy : "");
-        setIm051498(im02.equals("1") ?  this.im051498 : "");
+        setIm051498(im02.equals("1") ? this.im051498 : "");
 
 
         // at 9 months
         setIm0515dd(im02.equals("1") ? this.im0515dd : "");
         setIm0515mm(im02.equals("1") ? this.im0515mm : "");
         setIm0515yy(im02.equals("1") ? this.im0515yy : "");
-        setIm051598(im02.equals("1") ?  this.im051598 : "");
-        setIm051795(im02.equals("1") ? this.im051795 : "");
+        setIm051598(im02.equals("1") ? this.im051598 : "");
+        setIm0515b95(im02.equals("1") ? this.im0515b95 : "");
+
+        setIm0515bdd(im02.equals("1") ? this.im0515bdd : "");
+        setIm0515bmm(im02.equals("1") ? this.im0515bmm : "");
+        setIm0515byy(im02.equals("1") ? this.im0515byy : "");
+        setIm0515b98(im02.equals("1") ? this.im0515b98 : "");
 
         setIm0516dd(im02.equals("1") ? this.im0516dd : "");
         setIm0516mm(im02.equals("1") ? this.im0516mm : "");
         setIm0516yy(im02.equals("1") ? this.im0516yy : "");
-        setIm051698(im02.equals("1") ?  this.im051698 : "");
+        setIm051698(im02.equals("1") ? this.im051698 : "");
 
         // at 15 months
         setIm0517dd(im02.equals("1") ? this.im0517dd : "");

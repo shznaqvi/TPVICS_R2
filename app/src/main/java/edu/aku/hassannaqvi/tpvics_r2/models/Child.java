@@ -2994,8 +2994,7 @@ public class Child extends BaseObservable implements Observable {
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
-
-            this.ec12 = json.getString("ec12");
+            //this.ec12 = json.getString("ec12");
             this.ec13 = json.getString("ec13");
             this.ec14 = json.getString("ec14");
             this.ec15 = json.getString("ec15");
@@ -3018,7 +3017,6 @@ public class Child extends BaseObservable implements Observable {
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
-
             this.ec01 = json.getString("ec01");
             this.ec02 = json.getString("ec02");
             this.ec03 = json.getString("ec03");

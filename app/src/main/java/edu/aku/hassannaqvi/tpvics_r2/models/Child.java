@@ -938,7 +938,8 @@ public class Child extends BaseObservable implements Observable {
         setIm0517dd(im01.equals("1") ? this.im0517dd : "");
         setIm0517mm(im01.equals("1") ? this.im0517mm : "");
         setIm0517yy(im01.equals("1") ? this.im0517yy : "");
-        setIm051798(im01.equals("1") ?  this.im051798 : "");
+        setIm051798(im01.equals("1") ? this.im051798 : "");
+        setIm051795(im01.equals("1") ? this.im051795 : "");
 
 
         // card not present
@@ -1090,7 +1091,8 @@ public class Child extends BaseObservable implements Observable {
         setIm0517dd(im02.equals("1") ? this.im0517dd : "");
         setIm0517mm(im02.equals("1") ? this.im0517mm : "");
         setIm0517yy(im02.equals("1") ? this.im0517yy : "");
-        setIm051798(im02.equals("1") ?  this.im051798 : "");
+        setIm051798(im02.equals("1") ? this.im051798 : "");
+        setIm051795(im02.equals("1") ? this.im051795 : "");
 
         setIm08(im02.equals("1") ? "" : this.im08);
         setIm09(im02.equals("1") ? "" : this.im09);

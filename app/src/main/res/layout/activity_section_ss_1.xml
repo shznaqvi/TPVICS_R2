@@ -778,6 +778,14 @@
                                 android:onClick="@{()->form.setSs06(`71`)}"
                                 android:text="@string/ss06l" />
 
+                            <RadioButton
+                                android:id="@+id/ss06m"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss06.equals(`81`)}"
+                                android:onClick="@{()->form.setSs06(`81`)}"
+                                android:text="@string/ss06m" />
+
                             <TextView
                                 style="@style/sub_labels"
                                 android:layout_width="match_parent"

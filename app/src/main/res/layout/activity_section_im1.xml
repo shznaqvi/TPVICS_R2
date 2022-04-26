@@ -564,7 +564,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:visibility="@{ form.trueAgeInMonths >= 6  &amp;&amp; form.trueAgeInMonths &lt;= 23  ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{ form.im02.equals(`1`)  &amp;&amp; form.trueAgeInMonths >= 6  &amp;&amp; form.trueAgeInMonths &lt;= 23  ? View.VISIBLE : View.GONE}">
 
                     <!-- Take Photo   -->
                     <androidx.cardview.widget.CardView

@@ -464,11 +464,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put(ClusterTable.COLUMN_DIST_ID, clusters.getDistId());
             values.put(ClusterTable.COLUMN_EB_CODE, clusters.getEbcode());
 
-
             long rowID = db.insertOrThrow(ClusterTable.TABLE_NAME, null, values);
             if (rowID != -1) insertCount++;
         }
-
 
         db.close();
 

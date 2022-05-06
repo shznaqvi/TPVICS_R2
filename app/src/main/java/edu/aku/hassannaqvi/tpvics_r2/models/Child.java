@@ -962,6 +962,7 @@ public class Child extends BaseObservable implements Observable {
         this.im02 = im02;
 
         setTrueAgeInMonths(this.ageInMonths);
+        setIm0497(im02.equals("1") ? this.im0497 : "");
 
         // SEEN
         setIm04dd(im02.equals("1") ? this.im04dd : "");

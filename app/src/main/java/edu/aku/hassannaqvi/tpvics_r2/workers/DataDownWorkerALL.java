@@ -53,7 +53,7 @@ import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
 
 public class DataDownWorkerALL extends Worker {
 
-    private final String TAG = "DataDownWorkerALL";
+    private static final String TAG = "DataDownWorkerALL";
 
     private final int position;
     private final Context mContext;
@@ -364,4 +364,11 @@ public class DataDownWorkerALL extends Worker {
         return false;
     }
 
+    public static void longInfo(String str) {
+        if (str.length() > 4000) {
+            Log.i(TAG, str.substring(0, 4000));
+            longInfo(str.substring(4000));
+        } else
+            Log.i(TAG, str);
+    }
 }

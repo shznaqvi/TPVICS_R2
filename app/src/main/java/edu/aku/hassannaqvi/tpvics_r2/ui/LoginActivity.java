@@ -84,6 +84,7 @@ public class LoginActivity extends AppCompatActivity {
     private int countryCode;
     private ArrayList<String> countryNameList;
     private ArrayList<String> countryCodeList;
+    private int clicks;
    /* private int PhotoSerial = 0;
     private String photolist;
     ActivityResultLauncher<Intent> takePhotoLauncher = registerForActivityResult(
@@ -128,7 +129,6 @@ public class LoginActivity extends AppCompatActivity {
                         Manifest.permission.ACCESS_NETWORK_STATE,
                         Manifest.permission.WAKE_LOCK,
                         Manifest.permission.INTERNET,
-                        Manifest.permission.READ_PHONE_STATE,
                         Manifest.permission.READ_EXTERNAL_STORAGE,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE,
                         Manifest.permission.READ_PHONE_STATE,
@@ -596,5 +596,21 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    public void showCredits(View view) {
+        if (clicks < 7) {
+            clicks++;
+            Toast.makeText(this, String.valueOf(clicks), Toast.LENGTH_SHORT).show();
+        } else {
+            clicks = 0;
+            Toast.makeText(this, "TEAM CREDITS: " +
+                            "\r\nHassan Naqvi, " +
+                            "Ali Azaz, " +
+                            "Gul Sanober, " +
+                            "Ramsha Ahmed, " +
+                            "Javed Khan",
+                    Toast.LENGTH_LONG)
+                    .show();
+        }
+    }
 }
 

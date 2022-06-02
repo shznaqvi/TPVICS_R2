@@ -1,5 +1,7 @@
 package edu.aku.hassannaqvi.tpvics_r2.workers;
 
+import static edu.aku.hassannaqvi.tpvics_r2.core.CipherSecure.buildSslSocketFactory;
+import static edu.aku.hassannaqvi.tpvics_r2.core.CipherSecure.certIsValid;
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp._APP_FOLDER;
 
 import android.content.Context;
@@ -25,27 +27,19 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
-import java.security.KeyManagementException;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
-import java.security.cert.CertificateExpiredException;
 import java.security.cert.CertificateFactory;
-import java.security.cert.CertificateNotYetValidException;
-import java.security.cert.X509Certificate;
+import java.util.concurrent.TimeUnit;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLPeerUnverifiedException;
 import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSocketFactory;
-import javax.net.ssl.TrustManagerFactory;
 
 import edu.aku.hassannaqvi.tpvics_r2.core.CipherSecure;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
@@ -59,6 +53,8 @@ public class DataDownWorkerALL extends Worker {
     private final Context mContext;
     private final String uploadTable, uploadWhere, uploadColumns;
     HttpsURLConnection urlConnection;
+    private long startTime;
+    private int responseLength = 0, requestLength = 0;
 
     public DataDownWorkerALL(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
@@ -80,7 +76,7 @@ public class DataDownWorkerALL extends Worker {
      * So that we will understand the work is executed
      * */
 
-    private static SSLSocketFactory buildSslSocketFactory(Context context) {
+   /* private static SSLSocketFactory buildSslSocketFactory(Context context) {
         try {
 
 
@@ -105,7 +101,7 @@ public class DataDownWorkerALL extends Worker {
             String tmfAlgorithm = TrustManagerFactory.getDefaultAlgorithm();
             TrustManagerFactory tmf = TrustManagerFactory.getInstance(tmfAlgorithm);
             tmf.init(keyStore);
-/*
+*//*
 
             SSLContext context = SSLContext.getInstance("TLS");
             context.init(null, new X509TrustManager[]{new X509TrustManager() {
@@ -123,7 +119,7 @@ public class DataDownWorkerALL extends Worker {
             }}, new SecureRandom());
             HttpsURLConnection.setDefaultSSLSocketFactory(
                     context.getSocketFactory());
-            */
+            *//*
             // Create an SSLContext that uses our TrustManager
             SSLContext context1 = SSLContext.getInstance("TLSv1.2");
             context1.init(null, tmf.getTrustManagers(), null);
@@ -132,11 +128,12 @@ public class DataDownWorkerALL extends Worker {
             e.printStackTrace();
         }
         return null;
-    }
+    }*/
 
     @NonNull
     @Override
     public Result doWork() {
+        startTime = System.currentTimeMillis();
 
         String nTitle = uploadTable + " : Data Upload";
 
@@ -154,7 +151,7 @@ public class DataDownWorkerALL extends Worker {
 
 
             ca = cf.generateCertificate(caInput);
-            System.out.println("ca=" + ((X509Certificate) ca).getSubjectDN());
+            //     System.out.println("ca=" + ((X509Certificate) ca).getSubjectDN());
         } catch (CertificateException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -191,6 +188,7 @@ public class DataDownWorkerALL extends Worker {
             urlConnection.setRequestProperty("Content-Type", "application/json");
             urlConnection.setRequestProperty("charset", "utf-8");
             urlConnection.setUseCaches(false);
+            startTime = System.currentTimeMillis();
             urlConnection.connect();
 
             Certificate[] certs = urlConnection.getServerCertificates();
@@ -218,18 +216,20 @@ public class DataDownWorkerALL extends Worker {
                 //jsonSync.put(uploadData);
                 jsonParam.put(jsonTable);
                 // .put(jsonSync);
+                String cipheredRequest = CipherSecure.encryptGCM(String.valueOf(jsonTable));
 
+                requestLength = cipheredRequest.length();
 
                 Log.d(TAG + " : " + uploadTable, "doWork: jsonTable: " + jsonTable);
-                wr.writeBytes(CipherSecure.encrypt(String.valueOf(jsonTable)));
-                Log.d(TAG + " : " + uploadTable, "doWork: Encrypted: " + CipherSecure.encrypt(String.valueOf(jsonTable)));
+                wr.writeBytes(CipherSecure.encryptGCM(String.valueOf(jsonTable)));
+                Log.d(TAG + " : " + uploadTable, "doWork: Encrypted: " + CipherSecure.encryptGCM(String.valueOf(jsonTable)));
                 wr.flush();
                 wr.close();
 
 
                 if (urlConnection.getResponseCode() == HttpsURLConnection.HTTP_OK) {
 
-                    int length = urlConnection.getContentLength();
+                    responseLength = urlConnection.getContentLength();
 
                     InputStream in = new BufferedInputStream(urlConnection.getInputStream());
 
@@ -246,12 +246,14 @@ public class DataDownWorkerALL extends Worker {
                         data = new Data.Builder()
                                 .putString("error", String.valueOf(result))
                                 .putInt("position", this.position)
+                                .putString("time", getTime())
+                                .putString("size", getSize(requestLength) + "/" + getSize(responseLength))
                                 .build();
                         return Result.failure(data);
                     }
 
 
-                    result = new StringBuilder(CipherSecure.decrypt(result.toString()));
+                    result = new StringBuilder(CipherSecure.decryptGCM(result.toString()));
                     Log.d(TAG + " : " + uploadTable, "doWork: result-decrypt: " + result);
 
                     // result = [{"status":0,"message":"No record found.","error":1}]
@@ -274,6 +276,8 @@ public class DataDownWorkerALL extends Worker {
                         data = new Data.Builder()
                                 .putString("error", jsonObject.getString("message"))
                                 .putInt("position", this.position)
+                                .putString("time", getTime())
+                                .putString("size", getSize(requestLength) + "/" + getSize(responseLength))
                                 .build();
 
                         return Result.failure(data);
@@ -284,6 +288,8 @@ public class DataDownWorkerALL extends Worker {
                         data = new Data.Builder()
                                 .putString("error", "No data received from server: " + result)
                                 .putInt("position", this.position)
+                                .putString("time", getTime())
+                                .putString("size", getSize(requestLength) + "/" + getSize(responseLength))
                                 .build();
                         return Result.failure(data);
                     }
@@ -291,6 +297,8 @@ public class DataDownWorkerALL extends Worker {
                     data = new Data.Builder()
                             .putString("error", String.valueOf(urlConnection.getResponseCode()))
                             .putInt("position", this.position)
+                            .putString("time", getTime())
+                            .putString("size", getSize(requestLength) + "/" + getSize(responseLength))
                             .build();
                     return Result.failure(data);
                 }
@@ -298,6 +306,8 @@ public class DataDownWorkerALL extends Worker {
                 data = new Data.Builder()
                         .putString("error", "Invalid Certificate")
                         .putInt("position", this.position)
+                        .putString("time", getTime())
+                        .putString("size", getSize(requestLength) + "/" + getSize(responseLength))
                         .build();
 
                 return Result.failure(data);
@@ -306,6 +316,8 @@ public class DataDownWorkerALL extends Worker {
             data = new Data.Builder()
                     .putString("error", String.valueOf(e.getMessage()))
                     .putInt("position", this.position)
+                    .putString("time", getTime())
+                    .putString("size", getSize(requestLength) + "/" + getSize(responseLength))
                     .build();
             return Result.failure(data);
 
@@ -314,6 +326,8 @@ public class DataDownWorkerALL extends Worker {
             data = new Data.Builder()
                     .putString("error", e.getClass().getSimpleName() + ": " + e.getMessage())
                     .putInt("position", this.position)
+                    .putString("time", getTime())
+                    .putString("size", getSize(requestLength) + "/" + getSize(responseLength))
                     .build();
 
             return Result.failure(data);
@@ -321,6 +335,8 @@ public class DataDownWorkerALL extends Worker {
             data = new Data.Builder()
                     .putString("error", e.getClass().getSimpleName() + ": " + e.getMessage())
                     .putInt("position", this.position)
+                    .putString("time", getTime())
+                    .putString("size", getSize(requestLength) + "/" + getSize(responseLength))
                     .build();
 
             return Result.failure(data);
@@ -334,13 +350,15 @@ public class DataDownWorkerALL extends Worker {
         data = new Data.Builder()
                 //     .putString("data", String.valueOf(result))
                 .putInt("position", this.position)
+                .putString("time", getTime())
+                .putString("size", getSize(requestLength) + "/" + getSize(responseLength))
                 .build();
 
 
         return Result.success(data);
     }
 
-    private boolean certIsValid(Certificate[] certs, Certificate ca) {
+   /* private boolean certIsValid(Certificate[] certs, Certificate ca) {
         for (Certificate cert : certs) {
             System.out.println("Certificate is: " + cert);
             if (cert instanceof X509Certificate) {
@@ -362,7 +380,7 @@ public class DataDownWorkerALL extends Worker {
 
         }
         return false;
-    }
+    }*/
 
     public static void longInfo(String str) {
         if (str.length() > 4000) {
@@ -370,5 +388,21 @@ public class DataDownWorkerALL extends Worker {
             longInfo(str.substring(4000));
         } else
             Log.i(TAG, str);
+    }
+
+
+    private String getSize(int length) {
+        if (length < 0) return "0B";
+        double lengthM = length / 1024 / 1024;
+        return lengthM > 1 ? lengthM + "MB" : (length / 1024) > 1 ? (length / 1024) + "KB" : length + "B";
+    }
+
+    private String getTime() {
+
+        long timeElapsed = System.currentTimeMillis() - startTime;
+        long toMinutes = TimeUnit.MILLISECONDS.toMinutes(timeElapsed);
+        long toSeconds = TimeUnit.MILLISECONDS.toSeconds(timeElapsed - (toMinutes * 60 * 1000));
+
+        return toMinutes > 0 ? toMinutes + "m " + toSeconds + "s" : toSeconds > 0 ? TimeUnit.MILLISECONDS.toSeconds(timeElapsed) + "s" : timeElapsed + "ms";
     }
 }

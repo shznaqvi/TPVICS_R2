@@ -86,8 +86,21 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // Enables code shrinking, obfuscation, and optimization for only
+            // your project's release build type.
+            minifyEnabled true
+
+            // Enables resource shrinking, which is performed by the
+            // Android Gradle plugin.
+            shrinkResources true
+
+            // Includes the default ProGuard rules files that are packaged with
+            // the Android Gradle plugin. To learn more, go to the section about
+            // R8 configuration files.
+            proguardFiles getDefaultProguardFile(
+                    'proguard-android-optimize.txt'),
+                    'proguard-rules.pro',
+                    'proguard-rules-new.pro'
         }
 
         debug {
@@ -138,8 +151,8 @@ dependencies {
     implementation 'id.zelory:compressor:2.1.1'
 
     // Sqlcipher
-    implementation 'net.zetetic:android-database-sqlcipher:4.5.1'
-    implementation "androidx.sqlite:sqlite-ktx:2.2.0"
+    implementation "net.zetetic:android-database-sqlcipher:4.5.0"
+    implementation "androidx.sqlite:sqlite:2.0.1"
 
     //Rooted
     implementation 'com.scottyab:rootbeer-lib:0.1.0'

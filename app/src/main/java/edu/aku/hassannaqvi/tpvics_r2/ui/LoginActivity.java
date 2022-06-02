@@ -1,5 +1,8 @@
 package edu.aku.hassannaqvi.tpvics_r2.ui;
 
+import static edu.aku.hassannaqvi.tpvics_r2.core.CipherSecure.decryptGCM;
+import static edu.aku.hassannaqvi.tpvics_r2.core.CipherSecure.encryptGCM;
+import static edu.aku.hassannaqvi.tpvics_r2.core.CipherSecure.hashSHA256;
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.PROJECT_NAME;
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.sharedPref;
 import static edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper.DATABASE_COPY;
@@ -158,6 +161,19 @@ public class LoginActivity extends AppCompatActivity {
         bi.txtinstalldate.setText(MainApp.appInfo.getAppInfo());
 
         dbBackup();
+        String plainText = "This is an encrypted message.";
+        String encrypted = "awqqGx60wJZAl0s0NVpEWkxJQVRIR0xFT3VRUk8rZEU3eE80c2lqelpTcE8yYW9WeXJNPXfsBUWaMeWMuRhbH1aAxIo=";
+        try {
+
+            encrypted = encryptGCM(plainText);
+            Log.d(TAG, "onCreate: Encrypted: " + encrypted);
+            Log.d(TAG, "onCreate: Decrypted: " + decryptGCM(encrypted));
+            Log.d(TAG, "onCreate: hash: " + hashSHA256());
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

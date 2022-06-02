@@ -39,14 +39,15 @@ public class MainApp extends Application {
     // public static final String _IP = "http://f49461:8080/prosystem";// .TEST server
     //public static final String _IP = "http://43.245.131.159:8080";// .TEST server
     public static final String _HOST_URL = MainApp._IP + "/tpvics_r2/api/";// .TEST server;
-    public static final String _SERVER_URL = "syncenc.php";
+    public static final String _SERVER_URL = "syncgcm.php";
     public static final String _USER_URL = "resetpassword.php";
-    public static final String _SERVER_GET_URL = "getDataEnc.php";
+    public static final String _SERVER_GET_URL = "getDatagcm.php";
     public static final String _PHOTO_UPLOAD_URL = _HOST_URL + "uploads.php";
     public static final String _UPDATE_URL = MainApp._IP + "/tpvics_r2/app/survey";
     public static final String _APP_FOLDER = "../app/survey";
     public static final String _EMPTY_ = "";
     private static final String TAG = "MainApp";
+    public static int TRATS = 8;
     public static String IBAHC = "";
 
 
@@ -100,6 +101,7 @@ public class MainApp extends Application {
     public static List<Integer> childCompleted;
     public static boolean householdChecked = false;
     public static long preAgeInMonths;
+
 
 
     public static void hideSystemUI(View decorView) {
@@ -211,13 +213,15 @@ public class MainApp extends Application {
         // Initialize SQLCipher library
         SQLiteDatabase.loadLibs(this);
 
+
         // Prepare encryption KEY
         ApplicationInfo ai = null;
         try {
             ai = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
             Bundle bundle = ai.metaData;
-            int TRATS = bundle.getInt("YEK_TRATS");
-            IBAHC = bundle.getString("YEK_REVRES").substring(TRATS, TRATS + 16);
+            TRATS = bundle.getInt("YEK_TRATS");
+            //IBAHC = bundle.getString("YEK_REVRES").substring(TRATS, TRATS + 16);
+            IBAHC = bundle.getString("YEK_REVRES");
             Log.d(TAG, "onCreate: YEK_REVRES = " + IBAHC);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();

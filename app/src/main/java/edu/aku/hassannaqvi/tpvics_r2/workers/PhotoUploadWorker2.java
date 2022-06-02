@@ -37,7 +37,6 @@ import java.net.URL;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
 import java.util.Random;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -286,7 +285,7 @@ public class PhotoUploadWorker2 extends Worker {
 
 
                 ca = cf.generateCertificate(caInput);
-                System.out.println("ca=" + ((X509Certificate) ca).getSubjectDN());
+            //    System.out.println("ca=" + ((X509Certificate) ca).getSubjectDN());
             } catch (CertificateException e) {
                 e.printStackTrace();
             } catch (IOException e) {

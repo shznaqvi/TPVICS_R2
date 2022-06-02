@@ -11,6 +11,7 @@ public class SyncModel {
     String message;
     String filter = null;
     String select = null;
+    String info;
 
     public SyncModel(String tableName) {
 
@@ -92,6 +93,14 @@ public class SyncModel {
 
     public void setFilter(String filter) {
         this.filter = filter;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
     }
 
     public String getSelect() {

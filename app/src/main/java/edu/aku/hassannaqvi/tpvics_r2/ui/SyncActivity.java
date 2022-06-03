@@ -287,12 +287,12 @@ public class SyncActivity extends AppCompatActivity {
 
                                 // Log.d(TAG, "onChanged Methods: " + method1.getName());
                                 /**
-                                 * MAKE SURE TABLE_NAME = <table> IS SAME AS updateSynced<table> :
+                                 * MAKE SURE TABLE_NAME = <table> IS SAME AS sync<table> :
                                  *
                                  *      -   public static final String TABLE_NAME = "<table>";  // in Contract
-                                 *      -   public JSONArray updateSynced<table>() {              // in DatabaseHelper
+                                 *      -   public JSONArray sync<table>() {              // in DatabaseHelper
                                  *
-                                 *      e.g: Forms and updateSyncedForms
+                                 *      e.g: Forms and syncForms
                                  *
                                  */
                                 //Log.d(TAG, "onChanged Names: sync" + tableName);

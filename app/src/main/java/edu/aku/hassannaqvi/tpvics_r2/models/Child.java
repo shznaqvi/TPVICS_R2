@@ -47,6 +47,10 @@ public class Child extends BaseObservable implements Observable {
 
     private String synced = _EMPTY_;
     private String syncDate = _EMPTY_;
+    private String gpsLat = _EMPTY_;
+    private String gpsLng = _EMPTY_;
+    private String gpsDT = _EMPTY_;
+    private String gpsAcc = _EMPTY_;
 
 
     // Field Variables
@@ -390,6 +394,46 @@ public class Child extends BaseObservable implements Observable {
 
     public void setSyncDate(String syncDate) {
         this.syncDate = syncDate;
+    }
+
+    @Bindable
+    public String getGpsLat() {
+        return gpsLat;
+    }
+
+    public void setGpsLat(String gpsLat) {
+        this.gpsLat = gpsLat;
+        notifyPropertyChanged(BR.gpsLat);
+    }
+
+    @Bindable
+    public String getGpsLng() {
+        return gpsLng;
+    }
+
+    public void setGpsLng(String gpsLng) {
+        this.gpsLng = gpsLng;
+        notifyPropertyChanged(BR.gpsLng);
+    }
+
+    @Bindable
+    public String getGpsDT() {
+        return gpsDT;
+    }
+
+    public void setGpsDT(String gpsDT) {
+        this.gpsDT = gpsDT;
+        notifyPropertyChanged(BR.gpsDT);
+    }
+
+    @Bindable
+    public String getGpsAcc() {
+        return gpsAcc;
+    }
+
+    public void setGpsAcc(String gpsAcc) {
+        this.gpsAcc = gpsAcc;
+        notifyPropertyChanged(BR.gpsAcc);
     }
 
 
@@ -2976,6 +3020,10 @@ public class Child extends BaseObservable implements Observable {
         this.appver = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_APPVERSION));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SYNC_DATE));
+        this.gpsLat = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_GPSLAT));
+        this.gpsLng = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_GPSLNG));
+        this.gpsDT = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_GPSDATE));
+        this.gpsAcc = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_GPSACC));
 
         sCHHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SCH)));
         sCBHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SCB)));
@@ -3432,6 +3480,10 @@ public class Child extends BaseObservable implements Observable {
         json.put(TableContracts.ChildTable.COLUMN_SYNCED, this.synced);
         json.put(TableContracts.ChildTable.COLUMN_SYNC_DATE, this.syncDate);
         json.put(TableContracts.ChildTable.COLUMN_APPVERSION, this.appver);
+        json.put(TableContracts.ChildTable.COLUMN_GPSLAT, this.gpsLat);
+        json.put(TableContracts.ChildTable.COLUMN_GPSLNG, this.gpsLng);
+        json.put(TableContracts.ChildTable.COLUMN_GPSDATE, this.gpsDT);
+        json.put(TableContracts.ChildTable.COLUMN_GPSACC, this.gpsAcc);
         json.put(TableContracts.ChildTable.COLUMN_SCH, new JSONObject(sCHtoString()));
         json.put(TableContracts.ChildTable.COLUMN_SCB, new JSONObject(sCBtoString()));
         json.put(TableContracts.ChildTable.COLUMN_SIM, new JSONObject(sIMtoString()));

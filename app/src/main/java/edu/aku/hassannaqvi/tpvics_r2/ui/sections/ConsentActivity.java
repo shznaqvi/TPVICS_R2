@@ -2,8 +2,11 @@ package edu.aku.hassannaqvi.tpvics_r2.ui.sections;
 
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.form;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -37,6 +40,7 @@ public class ConsentActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.setForm(form);
+        setGPS();
 
         String consentText = getString(R.string.hh18t, MainApp.user.getFullname());
         bi.consentTextView.setText(consentText);
@@ -127,5 +131,31 @@ public class ConsentActivity extends AppCompatActivity {
         //finish();
     }
 
+    public void setGPS() {
+        SharedPreferences GPSPref = getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
+        try {
+            String lat = GPSPref.getString("Latitude", "0");
+            String lang = GPSPref.getString("Longitude", "0");
+            String acc = GPSPref.getString("Accuracy", "0");
 
+            if (lat == "0" && lang == "0") {
+                Toast.makeText(this, "Could not obtained points", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Points set", Toast.LENGTH_SHORT).show();
+            }
+
+            String date = DateFormat.format("dd-MM-yyyy HH:mm", Long.parseLong(GPSPref.getString("Time", "0"))).toString();
+
+            form.setGpsLat(lat);
+            form.setGpsLng(lang);
+            form.setGpsAcc(acc);
+            form.setGpsDT(date); // Timestamp is converted to date above
+
+//            Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
+
+        } catch (Exception e) {
+            Log.e(TAG, "setGPS: " + e.getMessage());
+        }
+
+    }
 }

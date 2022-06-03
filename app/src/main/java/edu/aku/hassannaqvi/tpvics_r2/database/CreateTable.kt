@@ -20,6 +20,10 @@ object CreateTable {
             + FormsTable.COLUMN_ISTATUS + " TEXT,"
             + FormsTable.COLUMN_DEVICEID + " TEXT,"
             + FormsTable.COLUMN_DEVICETAGID + " TEXT,"
+            + FormsTable.COLUMN_GPSLAT + " TEXT,"
+            + FormsTable.COLUMN_GPSLNG + " TEXT,"
+            + FormsTable.COLUMN_GPSDATE + " TEXT,"
+            + FormsTable.COLUMN_GPSACC + " TEXT,"
 /*
             + FormsTable.COLUMN_ENTRY_TYPE + " TEXT,"
 */
@@ -73,6 +77,10 @@ object CreateTable {
             + ChildTable.COLUMN_SYNCED + " TEXT, "
             + ChildTable.COLUMN_SYNC_DATE + " TEXT, "
             + ChildTable.COLUMN_APPVERSION + " TEXT, "
+            + ChildTable.COLUMN_GPSLAT + " TEXT,"
+            + ChildTable.COLUMN_GPSLNG + " TEXT,"
+            + ChildTable.COLUMN_GPSDATE + " TEXT,"
+            + ChildTable.COLUMN_GPSACC + " TEXT,"
             + ChildTable.COLUMN_SCH + " TEXT, "
             + ChildTable.COLUMN_SCB + " TEXT, "
             + ChildTable.COLUMN_SIM + " TEXT "
@@ -127,5 +135,22 @@ object CreateTable {
             + ");"
             )*/
 
+    const val SQL_ALTER_FORMS_GPS_LAT =
+        ("ALTER TABLE " + FormsTable.TABLE_NAME + " ADD " + FormsTable.COLUMN_GPSLAT + " TEXT; ")
+    const val SQL_ALTER_FORMS_GPS_LNG =
+        ("ALTER TABLE " + FormsTable.TABLE_NAME + " ADD " + FormsTable.COLUMN_GPSLNG + " TEXT; ")
+    const val SQL_ALTER_FORMS_GPS_DATE =
+        ("ALTER TABLE " + FormsTable.TABLE_NAME + " ADD " + FormsTable.COLUMN_GPSDATE + " TEXT; ")
+    const val SQL_ALTER_FORMS_GPS_ACC =
+        ("ALTER TABLE " + FormsTable.TABLE_NAME + " ADD " + FormsTable.COLUMN_GPSACC + " TEXT; ")
+
+    const val SQL_ALTER_CHILD_GPS_LAT =
+        ("ALTER TABLE " + ChildTable.TABLE_NAME + " ADD " + ChildTable.COLUMN_GPSLAT + " TEXT; ")
+    const val SQL_ALTER_CHILD_GPS_LNG =
+        ("ALTER TABLE " + ChildTable.TABLE_NAME + " ADD " + ChildTable.COLUMN_GPSLNG + " TEXT; ")
+    const val SQL_ALTER_CHILD_GPS_DATE =
+        ("ALTER TABLE " + ChildTable.TABLE_NAME + " ADD " + ChildTable.COLUMN_GPSDATE + " TEXT; ")
+    const val SQL_ALTER_CHILD_GPS_ACC =
+        ("ALTER TABLE " + ChildTable.TABLE_NAME + " ADD " + ChildTable.COLUMN_GPSACC + " TEXT; ")
 
 }

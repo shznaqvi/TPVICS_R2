@@ -54,6 +54,10 @@ public class Form extends BaseObservable implements Observable {
     private String synced = _EMPTY_;
     private String syncDate = _EMPTY_;
     private String entryType = _EMPTY_;
+    private String gpsLat = _EMPTY_;
+    private String gpsLng = _EMPTY_;
+    private String gpsDT = _EMPTY_;
+    private String gpsAcc = _EMPTY_;
 
 
     // FIELD VARIABLES
@@ -348,6 +352,46 @@ public class Form extends BaseObservable implements Observable {
 
     public void setSyncDate(String syncDate) {
         this.syncDate = syncDate;
+    }
+
+    @Bindable
+    public String getGpsLat() {
+        return gpsLat;
+    }
+
+    public void setGpsLat(String gpsLat) {
+        this.gpsLat = gpsLat;
+        notifyPropertyChanged(BR.gpsLat);
+    }
+
+    @Bindable
+    public String getGpsLng() {
+        return gpsLng;
+    }
+
+    public void setGpsLng(String gpsLng) {
+        this.gpsLng = gpsLng;
+        notifyPropertyChanged(BR.gpsLng);
+    }
+
+    @Bindable
+    public String getGpsDT() {
+        return gpsDT;
+    }
+
+    public void setGpsDT(String gpsDT) {
+        this.gpsDT = gpsDT;
+        notifyPropertyChanged(BR.gpsDT);
+    }
+
+    @Bindable
+    public String getGpsAcc() {
+        return gpsAcc;
+    }
+
+    public void setGpsAcc(String gpsAcc) {
+        this.gpsAcc = gpsAcc;
+        notifyPropertyChanged(BR.gpsAcc);
     }
 /*
 
@@ -1681,6 +1725,10 @@ public class Form extends BaseObservable implements Observable {
         this.iStatus = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_ISTATUS));
         this.synced = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED));
         this.syncDate = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SYNC_DATE));
+        this.gpsLat = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_GPSLAT));
+        this.gpsLng = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_GPSLNG));
+        this.gpsDT = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_GPSDATE));
+        this.gpsAcc = cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_GPSACC));
 
 
         sHHHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SHH)));
@@ -1968,6 +2016,10 @@ public class Form extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_SYNCED, this.synced);
         json.put(FormsTable.COLUMN_SYNC_DATE, this.syncDate);
         json.put(FormsTable.COLUMN_APPVERSION, this.appver);
+        json.put(FormsTable.COLUMN_GPSLAT, this.gpsLat);
+        json.put(FormsTable.COLUMN_GPSLNG, this.gpsLng);
+        json.put(FormsTable.COLUMN_GPSDATE, this.gpsDT);
+        json.put(FormsTable.COLUMN_GPSACC, this.gpsAcc);
 
         json.put(FormsTable.COLUMN_ID, this.id);
         json.put(FormsTable.COLUMN_UID, this.uid);

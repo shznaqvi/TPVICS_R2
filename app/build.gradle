@@ -7,6 +7,7 @@ android {
     buildFeatures {
         dataBinding true
         viewBinding true
+        compose true
 
     }
     Properties versionProps = new Properties()
@@ -111,6 +112,14 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.1.1'
+    }
 }
 
 dependencies {
@@ -120,10 +129,10 @@ dependencies {
 
 
     implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.5.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.8.1'
+    implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.9.0'
 /*    implementation 'androidx.databinding:compilerCommon:3.2.0-alpha11'
     implementation 'androidx.databinding:databinding-compiler-common:7.0.3'*/
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
@@ -151,8 +160,8 @@ dependencies {
     implementation 'id.zelory:compressor:2.1.1'
 
     // Sqlcipher
-    implementation "net.zetetic:android-database-sqlcipher:4.5.0"
-    implementation "androidx.sqlite:sqlite:2.0.1"
+    implementation "net.zetetic:android-database-sqlcipher:4.5.1"
+    implementation "androidx.sqlite:sqlite:2.2.0"
 
     //Rooted
     implementation 'com.scottyab:rootbeer-lib:0.1.0'
@@ -160,6 +169,18 @@ dependencies {
     // Android Database Browser
     debugImplementation 'com.amitshekhar.android:debug-db-encrypt:1.0.6'
 
-
+    // COMPOSE
+    // Integration with activities
+    implementation 'androidx.activity:activity-compose:1.4.0'
+    // Compose Material Design
+    implementation 'androidx.compose.material:material:1.1.1'
+    // Animations
+    implementation 'androidx.compose.animation:animation:1.1.1'
+    // Tooling support (Previews, etc.)
+    implementation 'androidx.compose.ui:ui-tooling:1.1.1'
+    // Integration with ViewModels
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1'
+    // UI Tests
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.1.1'
 
 }

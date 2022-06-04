@@ -1,13 +1,13 @@
 package edu.aku.hassannaqvi.tpvics_r2.core;
 
-import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.editor;
-import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.sharedPref;
-
 import android.Manifest;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.Bundle;
 import android.text.format.DateFormat;
 
 import androidx.core.app.ActivityCompat;
@@ -26,8 +26,8 @@ public class GPSLocationListener implements LocationListener {
 
     public void onLocationChanged(Location location) {
 
-/*        SharedPreferences sharedPref = mainApp.getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();*/
+        SharedPreferences sharedPref = mainApp.getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
 
         String dt = DateFormat.format("dd-MM-yyyy HH:mm", Long.parseLong(sharedPref.getString("Time", "0"))).toString();
 
@@ -79,6 +79,10 @@ public class GPSLocationListener implements LocationListener {
             //Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    public void onStatusChanged(String s, int i, Bundle b) {
+        showCurrentLocation();
     }
 
     protected boolean isBetterLocation(Location location, Location currentBestLocation) {

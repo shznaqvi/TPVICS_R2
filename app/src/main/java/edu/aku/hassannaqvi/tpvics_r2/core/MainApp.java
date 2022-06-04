@@ -26,6 +26,7 @@ import org.json.JSONArray;
 import java.io.File;
 import java.util.List;
 
+import edu.aku.hassannaqvi.tpvics_r2.R;
 import edu.aku.hassannaqvi.tpvics_r2.models.Child;
 import edu.aku.hassannaqvi.tpvics_r2.models.Clusters;
 import edu.aku.hassannaqvi.tpvics_r2.models.Form;
@@ -208,7 +209,7 @@ public class MainApp extends Application {
         //Initiate DateTime
         //Initializ App info
         appInfo = new AppInfo(this);
-        sharedPref = getSharedPreferences(PROJECT_NAME, MODE_PRIVATE);
+        sharedPref = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
         editor = sharedPref.edit();
         deviceid = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
 

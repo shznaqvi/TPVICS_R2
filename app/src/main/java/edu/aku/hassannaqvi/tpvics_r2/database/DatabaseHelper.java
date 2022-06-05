@@ -7,14 +7,6 @@ import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.child;
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.selectedCluster;
 import static edu.aku.hassannaqvi.tpvics_r2.core.MainApp.selectedHousehold;
 import static edu.aku.hassannaqvi.tpvics_r2.core.UserAuth.checkPassword;
-import static edu.aku.hassannaqvi.tpvics_r2.database.CreateTable.SQL_ALTER_CHILD_GPS_ACC;
-import static edu.aku.hassannaqvi.tpvics_r2.database.CreateTable.SQL_ALTER_CHILD_GPS_DATE;
-import static edu.aku.hassannaqvi.tpvics_r2.database.CreateTable.SQL_ALTER_CHILD_GPS_LAT;
-import static edu.aku.hassannaqvi.tpvics_r2.database.CreateTable.SQL_ALTER_CHILD_GPS_LNG;
-import static edu.aku.hassannaqvi.tpvics_r2.database.CreateTable.SQL_ALTER_FORMS_GPS_ACC;
-import static edu.aku.hassannaqvi.tpvics_r2.database.CreateTable.SQL_ALTER_FORMS_GPS_DATE;
-import static edu.aku.hassannaqvi.tpvics_r2.database.CreateTable.SQL_ALTER_FORMS_GPS_LAT;
-import static edu.aku.hassannaqvi.tpvics_r2.database.CreateTable.SQL_ALTER_FORMS_GPS_LNG;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -67,7 +59,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = PROJECT_NAME + ".db";
     public static final String DATABASE_COPY = PROJECT_NAME + "_copy.db";
     private static final int DATABASE_VERSION = 2;
-    private static final String DATABASE_PASSWORD = IBAHC;
+    public static final String DATABASE_PASSWORD = IBAHC;
     private final String TAG = "DatabaseHelper";
 
     public DatabaseHelper(Context context) {
@@ -91,15 +83,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         switch (oldVersion) {
             case 1:
-                db.execSQL(SQL_ALTER_FORMS_GPS_LAT);
-                db.execSQL(SQL_ALTER_FORMS_GPS_LNG);
-                db.execSQL(SQL_ALTER_FORMS_GPS_DATE);
-                db.execSQL(SQL_ALTER_FORMS_GPS_ACC);
+                db.execSQL(CreateTable.SQL_ALTER_FORMS_GPS_LAT);
+                db.execSQL(CreateTable.SQL_ALTER_FORMS_GPS_LNG);
+                db.execSQL(CreateTable.SQL_ALTER_FORMS_GPS_DATE);
+                db.execSQL(CreateTable.SQL_ALTER_FORMS_GPS_ACC);
 
-                db.execSQL(SQL_ALTER_CHILD_GPS_LAT);
-                db.execSQL(SQL_ALTER_CHILD_GPS_LNG);
-                db.execSQL(SQL_ALTER_CHILD_GPS_DATE);
-                db.execSQL(SQL_ALTER_CHILD_GPS_ACC);
+                db.execSQL(CreateTable.SQL_ALTER_CHILD_GPS_LAT);
+                db.execSQL(CreateTable.SQL_ALTER_CHILD_GPS_LNG);
+                db.execSQL(CreateTable.SQL_ALTER_CHILD_GPS_DATE);
+                db.execSQL(CreateTable.SQL_ALTER_CHILD_GPS_ACC);
+                // DO NOT BREAK AFTER EACH VERSION
+                //break;
+            case 2:
+
+            default:
+
         }
     }
 
@@ -305,14 +303,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             loggedInUser = new Users().hydrate(c);
 
         }
-
-        c.close();
-
+        boolean countCheck = c.getCount() > 0;
+        if (c != null && !c.isClosed()) {
+            c.close();
+        }
 
         if (checkPassword(password, loggedInUser.getPassword())) {
             MainApp.user = loggedInUser;
             MainApp.selectedDistrict = loggedInUser.getDist_id();
-            return c.getCount() > 0;
+            return countCheck;
         } else {
             return false;
         }
@@ -349,18 +348,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     having,                    // don't filter by row groups
                     orderBy                    // The sort order
             );
-            while (c.moveToNext()) {
-                Form forms = new Form();
-                forms.setId(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
-                forms.setUid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_UID)));
-                forms.setSysDate(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE)));
-                forms.setUserName(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_USERNAME)));
-                allForms.add(forms);
-            }
+        while (c.moveToNext()) {
+            Form forms = new Form();
+            forms.setId(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_ID)));
+            forms.setUid(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_UID)));
+            forms.setSysDate(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYSDATE)));
+            forms.setUserName(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_USERNAME)));
+            allForms.add(forms);
+        }
 
-            if (c != null) {
-                c.close();
-            }
+        if (c != null && !c.isClosed()) {
+            c.close();
+        }
 
         return allForms;
     }
@@ -460,6 +459,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             if (rowID != -1) insertCount++;
         }
 
+
+        db.close();
+
+        db.close();
+
         return insertCount;
     }
 
@@ -482,6 +486,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             long rowID = db.insertOrThrow(ClusterTable.TABLE_NAME, null, values);
             if (rowID != -1) insertCount++;
         }
+
 
         return insertCount;
     }
@@ -515,8 +520,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             long rowID = db.insertOrThrow(RandomHHTable.TABLE_NAME, null, values);
             if (rowID != -1) insertCount++;
         }
-
-
 
         return insertCount;
     }
@@ -561,7 +564,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         }
 
-        c.close();
+        if (c != null && !c.isClosed()) {
+            c.close();
+        }
 
         Log.d(TAG, "getUnsyncedFormHH: " + allForms.toString().length());
         Log.d(TAG, "getUnsyncedFormHH: " + allForms);
@@ -756,11 +761,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     having,                    // don't filter by row groups
                     orderBy                    // The sort order
             );
-            while (c.moveToNext()) {
-                form = new Form().Hydrate(c);
-            }
+        while (c.moveToNext()) {
+            form = new Form().Hydrate(c);
+        }
 
-                c.close();
+        if (c != null && !c.isClosed()) {
+            c.close();
+        }
 
         return form;
     }
@@ -804,9 +811,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 allFC.add(fc);
             }
 
-        if (c != null) {
-                c.close();
-            }
+        if (c != null && !c.isClosed()) {
+            c.close();
+        }
 
         return allFC;
     }
@@ -846,9 +853,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 fc.setSynced(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED)));
                 allFC.add(fc);
             }
-            if (c != null) {
-                c.close();
-            }
+        if (c != null) {
+            c.close();
+        }
+        if (db != null) {
+            db.close();
+        }
         return allFC;
     }
 
@@ -889,9 +899,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 fc.setSynced(c.getString(c.getColumnIndexOrThrow(FormsTable.COLUMN_SYNCED)));
                 allFC.add(fc);
             }
-            if (c != null) {
-                c.close();
-            }
+        if (c != null && !c.isClosed()) {
+            c.close();
+        }
         return allFC;
     }
 
@@ -929,7 +939,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             form = (new Form().Hydrate(c));
         }
 
-        c.close();
+        if (c != null && !c.isClosed()) {
+            c.close();
+        }
         return form;
 
     }
@@ -968,7 +980,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             randHH = new RandomHH().hydrate(c);
         }
 
-        c.close();
+        if (c != null && !c.isClosed()) {
+            c.close();
+        }
+
 
         return randHH;
     }
@@ -1002,7 +1017,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             cluster = new Clusters().hydrate(c);
         }
 
-        c.close();
+        if (c != null && !c.isClosed()) {
+            c.close();
+        }
+
         return cluster;
 
     }
@@ -1052,7 +1070,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             cluster = new Clusters().hydrate(c);
         }
 
-        c.close();
+        if (c != null && !c.isClosed()) {
+            c.close();
+        }
+
 
         return cluster;
 
@@ -1084,8 +1105,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         while (c.moveToNext()) {
             randomHH = new RandomHH().hydrate(c);
         }
-
-        c.close();
+        if (c != null && !c.isClosed()) {
+            c.close();
+        }
         return randomHH;
     }
 
@@ -1118,7 +1140,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             childrenByUID.add(new Child().Hydrate(c));
         }
 
-        if (c != null) {
+        if (c != null && !c.isClosed()) {
             c.close();
         }
 

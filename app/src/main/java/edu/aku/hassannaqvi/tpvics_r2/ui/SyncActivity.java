@@ -280,7 +280,7 @@ public class SyncActivity extends AppCompatActivity {
                             System.out.println("SYSTEM onChanged: result" + result);
                             db = MainApp.appInfo.dbHelper;
                             JSONArray jsonArray = new JSONArray();
-                            final int[] insertCount = {0};
+                            //int insertCount = 0;
 
                             Method method = null;
                             for (Method method1 : db.getClass().getDeclaredMethods()) {
@@ -327,6 +327,7 @@ public class SyncActivity extends AppCompatActivity {
                                         JSONArray finalJsonArray = jsonArray;
                                         String finalTime = time;
                                         String finalSize = size;
+
                                         SyncModel downloadTable = downloadTables.get(position);
                                         new Thread(new Runnable() {
 
@@ -342,9 +343,9 @@ public class SyncActivity extends AppCompatActivity {
                                                         syncListAdapter.updatesyncList(downloadTables);
                                                     }
                                                 });
-                                                Object returnValue = null;
+                                                int insertCount = 0;
                                                 try {
-                                                    returnValue = finalMethod.invoke(db, finalJsonArray);
+                                                    insertCount = (int) finalMethod.invoke(db, finalJsonArray);
                                                 } catch (IllegalAccessException | InvocationTargetException ite) {
                                                     ite.printStackTrace();
                                                     downloadTable.setstatus("Process Failed2");
@@ -357,12 +358,11 @@ public class SyncActivity extends AppCompatActivity {
                                                         }
                                                     });
                                                 }
-                                                insertCount[0] = (int) returnValue;
 
-                                                downloadTable.setmessage("Received: " + finalJsonArray.length() + "  •  Saved: " + insertCount[0]);
-                                                downloadTable.setstatus(insertCount[0] == 0 ? "Unsuccessful" : "Successful");
+                                                downloadTable.setmessage("Received: " + finalJsonArray.length() + "  •  Saved: " + insertCount);
+                                                downloadTable.setstatus(insertCount == 0 ? "Unsuccessful" : "Successful");
                                                 downloadTables.get(position).setInfo("Time: " + finalTime + "/" + getTime() + "\t Size: " + finalSize);
-                                                downloadTable.setstatusID(insertCount[0] == 0 ? 1 : 3);
+                                                downloadTable.setstatusID(insertCount == 0 ? 1 : 3);
                                                 runOnUiThread(new Runnable() {
                                                     @Override
                                                     public void run() {

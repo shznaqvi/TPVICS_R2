@@ -1,5 +1,8 @@
 package edu.aku.hassannaqvi.tpvics_r2.core;
 
+import static edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper.DATABASE_NAME;
+import static edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper.DATABASE_PASSWORD;
+
 import android.Manifest;
 import android.app.Application;
 import android.content.Context;
@@ -239,8 +242,10 @@ public class MainApp extends Application {
     private void initSecure() {
         // Initialize SQLCipher library
         SQLiteDatabase.loadLibs(this);
-
-
+        File databaseFile = getDatabasePath(DATABASE_NAME);
+       /* databaseFile.mkdirs();
+        databaseFile.delete();*/
+        SQLiteDatabase database = SQLiteDatabase.openOrCreateDatabase(databaseFile, DATABASE_PASSWORD, null);
         // Prepare encryption KEY
         ApplicationInfo ai = null;
         try {

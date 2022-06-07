@@ -116,7 +116,7 @@ public class CipherSecure {
 
             CertificateFactory cf = CertificateFactory.getInstance("X.509");
             AssetManager assetManager = context.getAssets();
-            InputStream caInput = assetManager.open("star_aku_edu.crt");
+            InputStream caInput = assetManager.open("vcoe1_aku_edu.cer");
             Certificate ca;
             try {
                 ca = cf.generateCertificate(caInput);
@@ -155,7 +155,7 @@ public class CipherSecure {
                     context.getSocketFactory());
             */
             // Create an SSLContext that uses our TrustManager
-            SSLContext context1 = SSLContext.getInstance("TLSv1.3");
+            SSLContext context1 = SSLContext.getInstance("TLSv1.2");
             context1.init(null, tmf.getTrustManagers(), null);
             return context1.getSocketFactory();
         } catch (NoSuchAlgorithmException | KeyStoreException | KeyManagementException | CertificateException | IOException e) {

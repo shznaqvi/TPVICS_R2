@@ -31,6 +31,10 @@ import java.security.NoSuchAlgorithmException;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
 import javax.crypto.BadPaddingException;
@@ -82,7 +86,7 @@ public class DataDownWorkerALL extends Worker {
 
             CertificateFactory cf = CertificateFactory.getInstance("X.509");
             AssetManager assetManager = context.getAssets();
-            InputStream caInput = assetManager.open("star_aku_edu.crt");
+            InputStream caInput = assetManager.open("vcoe1_aku_edu.cer");
             Certificate ca;
             try {
                 ca = cf.generateCertificate(caInput);
@@ -147,7 +151,7 @@ public class DataDownWorkerALL extends Worker {
         try {
             CertificateFactory cf = CertificateFactory.getInstance("X.509");
             AssetManager assetManager = mContext.getAssets();
-            caInput = assetManager.open("star_aku_edu.crt");
+            caInput = assetManager.open("vcoe1_aku_edu.cer");
 
 
             ca = cf.generateCertificate(caInput);
@@ -230,7 +234,9 @@ public class DataDownWorkerALL extends Worker {
                 if (urlConnection.getResponseCode() == HttpsURLConnection.HTTP_OK) {
 
                     responseLength = urlConnection.getContentLength();
-
+                    if (checkDateTime() instanceof Result.Failure) {
+                        return checkDateTime();
+                    }
                     InputStream in = new BufferedInputStream(urlConnection.getInputStream());
 
                     BufferedReader reader = new BufferedReader(new InputStreamReader(in));
@@ -390,6 +396,51 @@ public class DataDownWorkerALL extends Worker {
             Log.i(TAG, str);
     }
 
+    private Result checkDateTime() {
+
+        long serverDate = urlConnection.getDate();
+        Log.d(TAG, "doWork(Server Date): " + serverDate);
+
+        Calendar deviceCalendar = Calendar.getInstance();
+        Calendar serverCalendar = Calendar.getInstance();
+        deviceCalendar.setTime(new Date());
+        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z");
+        SimpleDateFormat sdd = new SimpleDateFormat("dd-MMM-yyyy, HH:mm \n(zzzz)");
+
+        // try {
+        serverCalendar.setTime(new Date(serverDate));
+        //serverCalendar.setTime(sdf.parse(serverDate));
+       /* } catch (ParseException e) {
+            e.printStackTrace();
+        }*/
+        //Here you say to java the initial timezone. This is the secret
+        //sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+        //Will print in UTC
+        System.out.println(sdf.format(serverCalendar.getTime()));
+
+        //Here you set to your timezone
+        sdf.setTimeZone(TimeZone.getDefault());
+        //Will print on your default Timezone
+        System.out.println(sdf.format(serverCalendar.getTime()));
+
+        long deviceTime = deviceCalendar.getTimeInMillis();
+        long serverTime = serverCalendar.getTimeInMillis();
+        long timeDiff = Math.abs(deviceTime - serverTime);
+        Log.d(TAG, "doWork(TimeDiff): " + timeDiff);
+        int hours = (int) (timeDiff / (1000 * 60 * 60));
+
+        if (hours > 1) {
+            Data data = new Data.Builder()
+                    .putString("error", "Your device date is invalid! Adjust date and time and try again")
+                    .putString("deviceTime", sdd.format(deviceCalendar.getTime()))
+                    .putString("serverTime", sdd.format(serverCalendar.getTime()))
+                    .putInt("position", this.position)
+                    .build();
+            return Result.failure(data);
+        }
+        return Result.success();
+    }
 
     private String getSize(int length) {
         if (length < 0) return "0B";

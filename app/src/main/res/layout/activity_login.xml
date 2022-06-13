@@ -117,6 +117,7 @@
 
                                 <EditText
                                     android:id="@+id/username"
+                                    android:longClickable="false"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_gravity="center_horizontal"
@@ -147,6 +148,7 @@
 
                                     <EditText
                                         android:id="@+id/password"
+                                        android:longClickable="false"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_gravity="center_horizontal"

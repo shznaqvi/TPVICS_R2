@@ -22,6 +22,8 @@ import android.view.View;
 
 import androidx.core.app.ActivityCompat;
 
+import com.scottyab.rootbeer.RootBeer;
+
 import net.sqlcipher.database.SQLiteDatabase;
 
 import org.json.JSONArray;
@@ -203,12 +205,14 @@ public class MainApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-/*
+
         RootBeer rootBeer = new RootBeer(this);
         if (rootBeer.isRooted()) {
             android.os.Process.killProcess(android.os.Process.myPid());
-            System.exit(1);
-        }*/
+            throw new RuntimeException("This is a crash");
+
+            //System.exit(1);
+        }
         //Initiate DateTime
         //Initializ App info
         appInfo = new AppInfo(this);

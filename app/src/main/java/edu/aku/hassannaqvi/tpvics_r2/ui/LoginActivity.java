@@ -330,7 +330,7 @@ public class LoginActivity extends AppCompatActivity {
                 return;
             }
 
-            // Check for a valid username address.
+            // UserName and Password cannot be same
             if (username.equals(password)) {
                 bi.username.setError(getString(R.string.username_password_same));
                 focusView = bi.username;

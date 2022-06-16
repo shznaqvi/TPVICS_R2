@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.tpvics_r2.ui;
 
+import static edu.aku.hassannaqvi.tpvics_r2.core.UserAuth.checkPassword;
 import static edu.aku.hassannaqvi.tpvics_r2.core.UserAuth.generatePassword;
 
 import android.os.Bundle;
@@ -249,7 +250,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         // return Validator.emptyCheckingContainer(this, bi.GrpName);
 
 
-        String hashedPasswordOld = "";
+/*        String hashedPasswordOld = "";
         try {
             hashedPasswordOld = generatePassword(bi.passwordOld.getText().toString(), null);
         } catch (NoSuchAlgorithmException e) {
@@ -258,12 +259,33 @@ public class ChangePasswordActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        Log.d(TAG, "formValidation(oldHash): "+MainApp.user.getPassword());
+        Log.d(TAG, "formValidation(newHash): "+hashedPasswordOld);
         if (!MainApp.user.getPassword().equals(hashedPasswordOld)) {
             bi.passwordOld.setError("Old password do not match.");
             Toast.makeText(this, "Old password do not match.", Toast.LENGTH_SHORT).show();
             return false;
         } else {
             bi.passwordOld.setError(null);
+
+        }*/
+
+        try {
+            if (!checkPassword(bi.passwordOld.getText().toString(), MainApp.user.getPassword())) {
+                bi.passwordOld.setError("Old password do not match.");
+                Toast.makeText(this, "Old password do not match.", Toast.LENGTH_SHORT).show();
+                return false;
+            } else {
+                bi.passwordOld.setError(null);
+
+            }
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "NoSuchAlgorithmException(UserAuth.checkPassword): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+
+        } catch (InvalidKeySpecException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "InvalidKeySpecException(UserAuth.checkPassword): " + e.getMessage(), Toast.LENGTH_SHORT).show();
 
         }
 

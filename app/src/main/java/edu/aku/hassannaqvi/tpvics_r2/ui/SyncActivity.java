@@ -52,6 +52,7 @@ import java.util.concurrent.TimeUnit;
 
 import edu.aku.hassannaqvi.tpvics_r2.R;
 import edu.aku.hassannaqvi.tpvics_r2.adapters.SyncListAdapter;
+import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.ChildTable;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.ClusterTable;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts.EntryLogTable;
@@ -187,6 +188,31 @@ public class SyncActivity extends AppCompatActivity {
                     Toast.makeText(SyncActivity.this, "JSONException(EntryLog)" + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
 
+                // INCLUDE DATA FOR UNLOCKED RECORDS
+                if (bi.uploadUnlocked.isChecked()) {
+                    // Forms - unlocked
+                    uploadTables.add(new SyncModel(FormsTable.TABLE_NAME, true));
+                    try {
+                        MainApp.uploadData.add(db.getUnlockedUnsyncedFormHH());
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Log.d(TAG, "ProcessStart: JSONException(Forms): " + e.getMessage());
+                        Toast.makeText(this, "JSONException(Forms): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+
+
+                    //Child - unlocked
+                    uploadTables.add(new SyncModel(TableContracts.ChildTable.TABLE_NAME, true));
+                    try {
+                        MainApp.uploadData.add(db.getUnlockedUnsyncedChild());
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Log.d(TAG, "ProcessStart: JSONException(Child): " + e.getMessage());
+                        Toast.makeText(SyncActivity.this, "JSONException(Child)" + e.getMessage(), Toast.LENGTH_LONG).show();
+
+                    }
+                }
+
                 MainApp.downloadData = new String[uploadData.size()];
 
                 setAdapter(uploadTables);
@@ -220,6 +246,9 @@ public class SyncActivity extends AppCompatActivity {
                     filter = " (colflag != '1' or colflag is null) AND dist_id = '" + MainApp.user.getDist_id() + "' ";
                     downloadTables.add(new SyncModel(ClusterTable.TABLE_NAME, select, filter));
                     downloadTables.add(new SyncModel(RandomHHTable.TABLE_NAME, select, filter));
+                    select = " * ";
+                    filter = " deviceid = '" + MainApp.deviceid + "_x' ";
+                    downloadTables.add(new SyncModel("Unlocked", select, filter));
                 }
                 MainApp.downloadData = new String[downloadTables.size()];
                 setAdapter(downloadTables);

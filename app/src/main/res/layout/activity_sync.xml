@@ -363,7 +363,20 @@
                         android:layout_height="match_parent" />
                 </LinearLayout>
 
-
+                <CheckBox
+                    android:id="@+id/uploadUnlocked"
+                    style="null"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_margin="4dp"
+                    android:background="@color/grayLight"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:text="Also upload unlocked forms"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
             </LinearLayout>
 
 

@@ -2,13 +2,17 @@ package edu.aku.hassannaqvi.tpvics_r2.core;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.widget.EditText;
+import android.widget.TextView;
 
-import androidx.annotation.Nullable;
+import java.lang.reflect.Field;
 
 @SuppressLint("AppCompatCustomView")
 public class NoMenuEditText extends EditText
@@ -21,20 +25,23 @@ public class NoMenuEditText extends EditText
      * to never appear.
      * @return false
      */
-    boolean canPaste()
-    {
+    boolean canPaste() {
         return false;
     }
 
-    /** This is a replacement method for the base TextView class' method of the same name. This method
+    boolean textLock = false;
+    String originalText = "";
+
+    /**
+     * This is a replacement method for the base TextView class' method of the same name. This method
      * is used in hidden class android.widget.Editor to determine whether the PASTE/REPLACE popup
      * appears when triggered from the text insertion handle. Returning false forces this window
      * to never appear.
+     *
      * @return false
      */
     @Override
-    public boolean isSuggestionsEnabled()
-    {
+    public boolean isSuggestionsEnabled() {
         return false;
     }
 
@@ -59,12 +66,38 @@ public class NoMenuEditText extends EditText
         init();
     }
 
-    private void init()
-    {
+    private void init() {
         this.setCustomSelectionActionModeCallback(new ActionModeCallbackInterceptor());
         this.setLongClickable(false);
-    }
 
+        addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
+                boolean userChange = Math.abs(count - before) == 1;
+                if (userChange) {
+                    originalText = charSequence.toString();
+                } else {
+                    if (textLock == false) {
+                        textLock = true;
+                        setText(originalText);
+                        setSelection(originalText.length());
+                        textLock = false;
+                    }
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+    }
 
     /**
      * Prevents the action bar (top horizontal bar with cut, copy, paste, etc.) from appearing
@@ -77,7 +110,8 @@ public class NoMenuEditText extends EditText
         public boolean onCreateActionMode(ActionMode mode, Menu menu) { return false; }
         public boolean onPrepareActionMode(ActionMode mode, Menu menu) { return false; }
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) { return false; }
-        public void onDestroyActionMode(ActionMode mode) {}
+        public void onDestroyActionMode(ActionMode mode) {
+        }
     }
 
     @Override
@@ -90,6 +124,46 @@ public class NoMenuEditText extends EditText
         return super.getSelectionStart();
     }
 
+    @Override
+    public boolean onTextContextMenuItem(int id) {
+        switch (id) {
+            case android.R.id.paste:
+            case android.R.id.pasteAsPlainText:
+                return false;
+
+        }
+        return super.onTextContextMenuItem(id);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            // setInsertionDisabled when user touches the view
+            this.setInsertionDisabled();
+        }
+        return super.onTouchEvent(event);
+    }
+
+    /**
+     * This method sets TextView#Editor#mInsertionControllerEnabled field to false
+     * to return false from the Editor#hasInsertionController() method to PREVENT showing
+     * of the insertionController from EditText
+     * The Editor#hasInsertionController() method is called in  Editor#onTouchUpEvent(MotionEvent event) method.
+     */
+
+    private void setInsertionDisabled() {
+        try {
+            Field editorField = TextView.class.getDeclaredField("mEditor");
+            editorField.setAccessible(true);
+            Object editorObject = editorField.get(this);
+
+            Class editorClass = Class.forName("android.widget.Editor");
+            Field mInsertionControllerEnabledField = editorClass.getDeclaredField("mInsertionControllerEnabled");
+            mInsertionControllerEnabledField.setAccessible(true);
+            mInsertionControllerEnabledField.set(editorObject, false);
+        } catch (Exception ignored) {
+            // ignore exception here
+        }
+    }
 
 }
-

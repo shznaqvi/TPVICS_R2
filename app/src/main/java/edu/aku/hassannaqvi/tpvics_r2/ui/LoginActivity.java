@@ -1,6 +1,5 @@
 package edu.aku.hassannaqvi.tpvics_r2.ui;
 
-import static edu.aku.hassannaqvi.tpvics_r2.core.CipherSecure.buildSslSocketFactory;
 import static edu.aku.hassannaqvi.tpvics_r2.core.CipherSecure.decryptGCM;
 import static edu.aku.hassannaqvi.tpvics_r2.core.CipherSecure.encryptGCM;
 import static edu.aku.hassannaqvi.tpvics_r2.core.CipherSecure.hashSHA256;
@@ -20,7 +19,6 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
-import android.util.AttributeSet;
 import android.util.Base64;
 import android.util.Log;
 import android.view.ActionMode;
@@ -31,7 +29,6 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -70,7 +67,6 @@ import edu.aku.hassannaqvi.tpvics_r2.R;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.core.AppInfo;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
-import edu.aku.hassannaqvi.tpvics_r2.core.NoMenuEditText;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivityLoginBinding;
 import edu.aku.hassannaqvi.tpvics_r2.models.EntryLog;
@@ -706,10 +702,10 @@ public class LoginActivity extends AppCompatActivity {
 
     final GestureDetector gestureDetector = new GestureDetector(new GestureDetector.SimpleOnGestureListener() {
         public void onLongPress(MotionEvent e) {
-            Toast.makeText(getApplicationContext(),
-                    "You are not allowed to copy :)", Toast.LENGTH_SHORT).show();
-                setResult(RESULT_CANCELED);
-            }
+            /*Toast.makeText(getApplicationContext(),
+                    "You are not allowed to copy :)", Toast.LENGTH_SHORT).show();*/
+            setResult(RESULT_CANCELED);
+        }
     });
 
     @Override

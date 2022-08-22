@@ -1,5 +1,6 @@
 package edu.aku.hassannaqvi.tpvics_r2.ui;
 
+import static edu.aku.hassannaqvi.tpvics_r2.core.CipherSecure.buildSslSocketFactory;
 import static edu.aku.hassannaqvi.tpvics_r2.core.CipherSecure.decryptGCM;
 import static edu.aku.hassannaqvi.tpvics_r2.core.CipherSecure.encryptGCM;
 import static edu.aku.hassannaqvi.tpvics_r2.core.CipherSecure.hashSHA256;
@@ -19,13 +20,18 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
+import android.util.AttributeSet;
 import android.util.Base64;
 import android.util.Log;
+import android.view.ActionMode;
+import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -64,6 +70,7 @@ import edu.aku.hassannaqvi.tpvics_r2.R;
 import edu.aku.hassannaqvi.tpvics_r2.contracts.TableContracts;
 import edu.aku.hassannaqvi.tpvics_r2.core.AppInfo;
 import edu.aku.hassannaqvi.tpvics_r2.core.MainApp;
+import edu.aku.hassannaqvi.tpvics_r2.core.NoMenuEditText;
 import edu.aku.hassannaqvi.tpvics_r2.database.DatabaseHelper;
 import edu.aku.hassannaqvi.tpvics_r2.databinding.ActivityLoginBinding;
 import edu.aku.hassannaqvi.tpvics_r2.models.EntryLog;
@@ -176,6 +183,57 @@ public class LoginActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        // Disable every mode to disable copy
+        bi.username.setCustomSelectionActionModeCallback(new ActionMode.Callback() {
+
+            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+                // TODO Auto-generated method stub
+                return false;
+            }
+
+            public void onDestroyActionMode(ActionMode mode) {
+                // TODO Auto-generated method stub
+
+            }
+
+            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+                // TODO Auto-generated method stub
+                return false;
+            }
+
+            public boolean onActionItemClicked(ActionMode mode,
+                                               MenuItem item) {
+                // TODO Auto-generated method stub
+                return false;
+            }
+        });
+
+        // Disable every mode to disable copy
+
+        bi.password.setCustomSelectionActionModeCallback(new ActionMode.Callback() {
+
+            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+                // TODO Auto-generated method stub
+                return false;
+            }
+
+            public void onDestroyActionMode(ActionMode mode) {
+                // TODO Auto-generated method stub
+
+            }
+
+            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+                // TODO Auto-generated method stub
+                return false;
+            }
+
+            public boolean onActionItemClicked(ActionMode mode,
+                                               MenuItem item) {
+                // TODO Auto-generated method stub
+                return false;
+            }
+        });
     }
 
     @Override
@@ -640,6 +698,29 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.LENGTH_LONG)
                     .show();
         }
+
+
     }
+
+
+
+    final GestureDetector gestureDetector = new GestureDetector(new GestureDetector.SimpleOnGestureListener() {
+        public void onLongPress(MotionEvent e) {
+            Toast.makeText(getApplicationContext(),
+                    "You are not allowed to copy :)", Toast.LENGTH_SHORT).show();
+                setResult(RESULT_CANCELED);
+            }
+    });
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        gestureDetector.onTouchEvent(event);
+        return super.dispatchTouchEvent(event);
+    }
+
+
+
+
+
 }
 

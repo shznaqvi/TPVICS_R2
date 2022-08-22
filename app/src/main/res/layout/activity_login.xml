@@ -115,7 +115,7 @@
                                 android:layout_margin="20dp"
                                 android:orientation="vertical">
 
-                                <EditText
+                                <edu.aku.hassannaqvi.tpvics_r2.core.NoMenuEditText
                                     android:id="@+id/username"
                                     android:longClickable="false"
                                     android:layout_width="match_parent"
@@ -146,7 +146,7 @@
                                     android:layout_height="wrap_content"
                                     android:orientation="horizontal">
 
-                                    <EditText
+                                    <edu.aku.hassannaqvi.tpvics_r2.core.NoMenuEditText
                                         android:id="@+id/password"
                                         android:longClickable="false"
                                         android:layout_width="0dp"

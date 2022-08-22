@@ -115,6 +115,8 @@ public class MainApp extends Application {
     public static boolean householdChecked = false;
     public static long preAgeInMonths;
 
+    public static NoMenuEditText noMenuEditText;
+
 
 
     public static void hideSystemUI(View decorView) {
